@@ -1,0 +1,15 @@
+{
+  "name": "lviv-shorts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Львів за 30 секунд — programmatic 1080x1920@60 YouTube Short (Canvas + headless Chrome + FFmpeg)",
+  "type": "module",
+  "scripts": {
+    "build": "bash make_video.sh",
+    "frames": "node render/render.mjs",
+    "snap": "node render/snapshot.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.56.1"
+  }
+}
