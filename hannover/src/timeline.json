@@ -1,0 +1,157 @@
+{
+ "scenes": {
+  "hook": 0.0,
+  "f1": 3.66,
+  "f2": 8.438,
+  "f3": 13.168,
+  "f4": 18.026,
+  "f5": 22.596,
+  "out": 25.95,
+  "end": 30.0
+ },
+ "voice": {
+  "hook": 0.35,
+  "f1": 3.96,
+  "f2": 8.738,
+  "f3": 13.468,
+  "f4": 18.326,
+  "f5": 22.896,
+  "out": 26.25
+ },
+ "durs": {
+  "hook": 2.96,
+  "f1": 4.128,
+  "f2": 4.08,
+  "f3": 4.208,
+  "f4": 3.92,
+  "f5": 2.704,
+  "out": 1.536
+ },
+ "subs": [
+  {
+   "s": 0.35,
+   "e": 1.83,
+   "text": "Hannover. Fünf Fakten,"
+  },
+  {
+   "s": 1.83,
+   "e": 3.51,
+   "text": "die kaum jemand kennt."
+  },
+  {
+   "s": 3.96,
+   "e": 4.347,
+   "text": "Eins:"
+  },
+  {
+   "s": 4.347,
+   "e": 5.508,
+   "text": "Über hundert Jahre lang"
+  },
+  {
+   "s": 5.508,
+   "e": 6.497,
+   "text": "regierten Hannovers"
+  },
+  {
+   "s": 6.497,
+   "e": 7.271,
+   "text": "Herrscher auch"
+  },
+  {
+   "s": 7.271,
+   "e": 8.288,
+   "text": "Großbritannien."
+  },
+  {
+   "s": 8.738,
+   "e": 9.175,
+   "text": "Zwei:"
+  },
+  {
+   "s": 9.175,
+   "e": 10.535,
+   "text": "Ein roter Strich auf dem"
+  },
+  {
+   "s": 10.535,
+   "e": 11.701,
+   "text": "Pflaster führt zu 36"
+  },
+  {
+   "s": 11.701,
+   "e": 13.018,
+   "text": "Sehenswürdigkeiten."
+  },
+  {
+   "s": 13.468,
+   "e": 13.871,
+   "text": "Drei:"
+  },
+  {
+   "s": 13.871,
+   "e": 15.035,
+   "text": "Im Neuen Rathaus fährt"
+  },
+  {
+   "s": 15.035,
+   "e": 16.154,
+   "text": "ein Aufzug schräg, im"
+  },
+  {
+   "s": 16.154,
+   "e": 17.184,
+   "text": "Bogen bis unter die"
+  },
+  {
+   "s": 17.184,
+   "e": 17.876,
+   "text": "Kuppel."
+  },
+  {
+   "s": 18.326,
+   "e": 18.767,
+   "text": "Vier:"
+  },
+  {
+   "s": 18.767,
+   "e": 19.943,
+   "text": "Die Große Fontäne in"
+  },
+  {
+   "s": 19.943,
+   "e": 21.364,
+   "text": "Herrenhausen schießt über"
+  },
+  {
+   "s": 21.364,
+   "e": 22.446,
+   "text": "70 Meter hoch."
+  },
+  {
+   "s": 22.896,
+   "e": 23.302,
+   "text": "Fünf:"
+  },
+  {
+   "s": 23.302,
+   "e": 24.428,
+   "text": "Hier liegt das größte"
+  },
+  {
+   "s": 24.428,
+   "e": 25.8,
+   "text": "Messegelände der Welt."
+  },
+  {
+   "s": 26.25,
+   "e": 27.261,
+   "text": "Warst du schon mal in"
+  },
+  {
+   "s": 27.261,
+   "e": 27.986,
+   "text": "Hannover?"
+  }
+ ]
+}

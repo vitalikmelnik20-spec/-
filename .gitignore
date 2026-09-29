@@ -9,3 +9,7 @@ halloween/render/snapshots/
 halloween/render/audio/
 halloween/output/*.mp4
 halloween/.kokoro/
+hannover/render/segments/
+hannover/render/snapshots/
+hannover/render/audio/
+hannover/.piper/
