@@ -1,0 +1,1232 @@
+[
+ {
+  "id": "V01",
+  "kind": "video",
+  "start": 0,
+  "dur": 8,
+  "act": "COLD OPEN",
+  "narration": "Every Halloween for seven years, at exactly 11:47 at night, someone knocked on Walter Greene's door.",
+  "prompt": "Night, 1990s, the front porch of a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors, seen from inside the open doorway. On the porch under the yellow light stands a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase. Carved jack-o'-lanterns glow on the steps.",
+  "action": "Very slow push-in toward the small figure. It slowly raises the white pillowcase toward the camera. The jack-o'-lantern candles flicker, dry leaves drift across the boards. The figure never moves its mask."
+ },
+ {
+  "id": "F001",
+  "kind": "image",
+  "start": 8,
+  "dur": 10,
+  "act": "COLD OPEN",
+  "narration": "It was always the same trick-or-treater. A small figure in a pumpkin mask, and a brown coat far too big for it.",
+  "prompt": "Close-up of the faded papier-mache pumpkin mask of a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase, lit by a warm yellow porch light, dark eye holes, night.",
+  "action": ""
+ },
+ {
+  "id": "F002",
+  "kind": "image",
+  "start": 18,
+  "dur": 10,
+  "act": "COLD OPEN",
+  "narration": "It never said trick or treat. It never said thank you. It just held out an old white pillowcase, and waited.",
+  "prompt": "Close-up of an old white cotton pillowcase held open by a small hand in an oversized brown wool sleeve, porch light, dark background.",
+  "action": ""
+ },
+ {
+  "id": "F003",
+  "kind": "image",
+  "start": 28,
+  "dur": 10,
+  "act": "COLD OPEN",
+  "narration": "And every year, Walter noticed the same impossible thing. The child never grew. Not an inch. Not in seven years.",
+  "prompt": "An old wooden porch post with several pencil height marks at exactly the same level, each labeled with a different year in small handwriting (illegible), flashlight beam.",
+  "action": ""
+ },
+ {
+  "id": "F004",
+  "kind": "image",
+  "start": 38,
+  "dur": 10,
+  "act": "COLD OPEN",
+  "narration": "This is the story of an old man, a quiet little town in Vermont, and a trick-or-treater who came back every Halloween.",
+  "prompt": "Portrait of Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt, sitting on a porch swing at night, a bowl of candy in his lap, warm porch light on his face, thoughtful and a little sad.",
+  "action": ""
+ },
+ {
+  "id": "F005",
+  "kind": "image",
+  "start": 48,
+  "dur": 10,
+  "act": "COLD OPEN",
+  "narration": "And it's the story of what that old man found, when he finally decided to follow it home.",
+  "prompt": "From behind: an old man with a flashlight standing at the edge of a wide empty autumn field of tall dry grass behind a farmhouse, a crooked split-rail fence, bare trees on the far edge at night, fog over the grass, full moon.",
+  "action": ""
+ },
+ {
+  "id": "F006",
+  "kind": "image",
+  "start": 58,
+  "dur": 10,
+  "act": "COLD OPEN",
+  "narration": "This is the story of the last trick-or-treater of Maple Falls, Vermont. And it begins, of all things, with a scarecrow.",
+  "prompt": "Title-card composition: a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors at night with glowing jack-o'-lanterns, the field and fog behind it, large empty dark sky on the left for the title.",
+  "action": ""
+ },
+ {
+  "id": "F007",
+  "kind": "image",
+  "start": 68,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "Walter Greene lived in the same white farmhouse on Orchard Lane for twenty-six years. At the edge of town, where the houses ended and the fields began.",
+  "prompt": "a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors on a crisp sunny October afternoon, red and gold maple leaves on the lawn, the empty field stretching behind it.",
+  "action": ""
+ },
+ {
+  "id": "F008",
+  "kind": "image",
+  "start": 78,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "He and his wife, Margaret, never had children of their own. So every Halloween, they made the whole town's children their own.",
+  "prompt": "A warm vintage 1970s photograph of Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt (younger, in his fifties) and a cheerful American woman in her sixties with curly auburn-gray hair and a warm smile (younger) laughing together on the porch surrounded by carved pumpkins.",
+  "action": ""
+ },
+ {
+  "id": "F009",
+  "kind": "image",
+  "start": 88,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "Margaret baked caramel apples for three days straight. Walter carved pumpkins until his hands ached. The porch looked like a pumpkin patch.",
+  "prompt": "A cozy farmhouse kitchen with dozens of shiny caramel apples on wax paper, and a porch outside the window covered with carved pumpkins, warm light.",
+  "action": ""
+ },
+ {
+  "id": "F010",
+  "kind": "image",
+  "start": 98,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "And every year, Walter wore the same costume. A scarecrow. Margaret had sewn it for him in 1962, their first Halloween in the house, straw hat and all.",
+  "prompt": "a cheerful American woman in her sixties with curly auburn-gray hair and a warm smile in a 1960s kitchen sewing straw into the sleeve of a patched denim jacket, a battered straw hat on the table, vintage colors.",
+  "action": ""
+ },
+ {
+  "id": "F011",
+  "kind": "image",
+  "start": 108,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "Kids from all over Maple Falls walked the long road to Orchard Lane, just to get a caramel apple from the scarecrow and his wife.",
+  "prompt": "Vintage 1980s scene: kids in homemade Halloween costumes on the porch steps, Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar handing out caramel apples, glowing pumpkins, warm light.",
+  "action": ""
+ },
+ {
+  "id": "F012",
+  "kind": "image",
+  "start": 118,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "In the spring of 1988, Margaret passed away in her sleep. She was sixty-six. The whole town came to say goodbye.",
+  "prompt": "A small white country church on a hill in spring, many cars parked along the road, blooming trees, quiet gray sky.",
+  "action": ""
+ },
+ {
+  "id": "F013",
+  "kind": "image",
+  "start": 128,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "That October, Walter didn't carve a single pumpkin. The porch stayed dark. The scarecrow costume stayed folded in the cedar chest upstairs.",
+  "prompt": "A dark empty farmhouse porch at dusk in autumn, no pumpkins, the porch light off, fallen leaves piling up on the steps.",
+  "action": ""
+ },
+ {
+  "id": "F014",
+  "kind": "image",
+  "start": 138,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "But on the morning of Halloween, a little girl from down the road left a drawing in his mailbox. A scarecrow, holding a caramel apple.",
+  "prompt": "A child's crayon drawing of a smiling scarecrow holding a red apple, sticking out of an old rural mailbox, morning autumn light.",
+  "action": ""
+ },
+ {
+  "id": "F015",
+  "kind": "image",
+  "start": 148,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "Walter looked at that drawing for a long time. Then he went upstairs, opened the cedar chest, and took out the straw hat.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt kneeling by an open cedar chest in an attic bedroom, holding a battered straw hat in both hands, soft window light.",
+  "action": ""
+ },
+ {
+  "id": "F016",
+  "kind": "image",
+  "start": 158,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "He couldn't make caramel apples the way Margaret did. So he drove to the store and bought the biggest chocolate bars they had.",
+  "prompt": "A small-town grocery store in 1988, an old man's hands placing big chocolate bars into a shopping basket, fluorescent light.",
+  "action": ""
+ },
+ {
+  "id": "V02",
+  "kind": "video",
+  "start": 168,
+  "dur": 8,
+  "act": "АКТ 1",
+  "narration": "That night, the scarecrow of Orchard Lane opened his door again. And the children came, just like always.",
+  "prompt": "Dusk, the front porch of a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors. Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar kneels on the steps lighting candles inside a row of carved jack-o'-lanterns.",
+  "action": "Walter lights the last jack-o'-lantern, stands up slowly, adjusts his straw hat and looks down the road with a small smile. The porch light turns on. Leaves drift. Slow push-in."
+ },
+ {
+  "id": "F017",
+  "kind": "image",
+  "start": 176,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "It was a good night. The best he'd had since spring. Witches, cowboys, and a tiny astronaut who made him laugh until he had to sit down.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar laughing on the porch as a small kid in a homemade silver astronaut costume holds up a candy bucket, jack-o'-lanterns, warm light.",
+  "action": ""
+ },
+ {
+  "id": "F018",
+  "kind": "image",
+  "start": 186,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "By eleven, the last of the kids had gone home. Walter sat on the porch swing in his scarecrow costume, with half a bowl of candy left.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar sitting alone on a porch swing at night, a half-empty bowl of chocolate bars beside him, candles burning low in the pumpkins.",
+  "action": ""
+ },
+ {
+  "id": "F019",
+  "kind": "image",
+  "start": 196,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "He talked to Margaret for a while. Out loud. He told her about the astronaut. He told her he missed her. The field was silent.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar looking up at the starry night sky from the porch swing, the dark field beyond the railing, a gentle sad smile.",
+  "action": ""
+ },
+ {
+  "id": "F020",
+  "kind": "image",
+  "start": 206,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "At eleven forty, he blew out the candles and went inside. He hung the straw hat on the hook by the door, and put the kettle on.",
+  "prompt": "A battered straw hat hanging on a wooden hook by a farmhouse front door, a kettle on the stove in the kitchen beyond, warm lamp light.",
+  "action": ""
+ },
+ {
+  "id": "F021",
+  "kind": "image",
+  "start": 216,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "At exactly 11:47, there was a knock. Three soft knocks. Low on the door, too low for a grown-up. Walter looked at the clock.",
+  "prompt": "Close-up of an old kitchen wall clock showing 11:47, a steaming kettle below it, dim warm light.",
+  "action": ""
+ },
+ {
+  "id": "V03",
+  "kind": "video",
+  "start": 226,
+  "dur": 8,
+  "act": "АКТ 1",
+  "narration": "On the porch stood a child in a papier-mache pumpkin mask, holding out an old white pillowcase.",
+  "prompt": "Night, view from inside as a front door swings open onto the porch of a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors. On the porch stands a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase.",
+  "action": "The door opens slowly. The small masked figure stands perfectly still, then lifts the pillowcase a little higher. The candles in the pumpkins are out, thin smoke rises. Static camera, slight push-in."
+ },
+ {
+  "id": "F022",
+  "kind": "image",
+  "start": 234,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "The mask was homemade. Faded orange paint, a crooked painted smile, two dark holes for eyes. The kind of mask nobody had made in decades.",
+  "prompt": "Macro close-up of an old faded papier-mache pumpkin mask with cracked orange paint and a crooked painted smile, porch light.",
+  "action": ""
+ },
+ {
+  "id": "F023",
+  "kind": "image",
+  "start": 244,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "The child wore a man's brown wool coat, so big the sleeves were rolled up four times, and the hem dragged on the porch boards.",
+  "prompt": "Close-up of the hem of an oversized old brown wool coat dragging on wooden porch boards, small worn shoes peeking out, dry leaves.",
+  "action": ""
+ },
+ {
+  "id": "F024",
+  "kind": "image",
+  "start": 254,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "Walter smiled and asked where the child's folks were. It was awfully late. The child didn't answer. It just held the pillowcase a little higher.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt bending down in the doorway with a kind smile, talking to a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase, porch light between them.",
+  "action": ""
+ },
+ {
+  "id": "F025",
+  "kind": "image",
+  "start": 264,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "So Walter dropped in a chocolate bar. For a second, a breath of cold air came out of the pillowcase. Like air from a cellar.",
+  "prompt": "A chocolate bar falling into the dark opening of an old white pillowcase, a faint wisp of cold mist rising from inside, porch light.",
+  "action": ""
+ },
+ {
+  "id": "F026",
+  "kind": "image",
+  "start": 274,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "The child turned and walked down the steps. Not toward the road, where the houses were. Toward the empty field behind the house.",
+  "prompt": "From behind: a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase walking down porch steps toward a wide empty autumn field of tall dry grass behind a farmhouse, a crooked split-rail fence, bare trees on the far edge at night, moonlight, the brown coat dragging.",
+  "action": ""
+ },
+ {
+  "id": "F027",
+  "kind": "image",
+  "start": 284,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "Walter grabbed his flashlight and called after it. But by the time he reached the steps, the field was empty. Just grass and moonlight.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt standing on the porch steps pointing a flashlight into an empty moonlit field, the beam catching only tall grass and fog.",
+  "action": ""
+ },
+ {
+  "id": "F028",
+  "kind": "image",
+  "start": 294,
+  "dur": 10,
+  "act": "АКТ 1",
+  "narration": "He told himself it was a neighbor's kid playing a prank. And he kept telling himself that for almost a year.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt sitting at a kitchen table at night with a cup of tea, staring at the dark window, unsettled.",
+  "action": ""
+ },
+ {
+  "id": "F029",
+  "kind": "image",
+  "start": 304,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "Halloween, 1989. Walter wore his scarecrow costume again. The kids came again. And at exactly 11:47, there were three soft knocks.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar standing frozen in the front hallway, one hand on the doorknob, the wall clock showing 11:47 behind him.",
+  "action": ""
+ },
+ {
+  "id": "F030",
+  "kind": "image",
+  "start": 314,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "Same pumpkin mask. Same brown coat, with the sleeves rolled up four times. Same white pillowcase. Walter's heart started pounding.",
+  "prompt": "a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase standing on the porch under the yellow light, exactly as before, fog in the dark yard behind.",
+  "action": ""
+ },
+ {
+  "id": "F031",
+  "kind": "image",
+  "start": 324,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "This time he noticed something else. The coat was damp. Not from rain, it hadn't rained in weeks. It smelled like cold, wet stone.",
+  "prompt": "Close-up of the shoulder of an old brown wool coat covered in tiny beads of cold moisture, porch light, dark background.",
+  "action": ""
+ },
+ {
+  "id": "F032",
+  "kind": "image",
+  "start": 334,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "He put a chocolate bar in the pillowcase and watched the child walk toward the field. This time, he followed it to the fence.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar standing at a split-rail fence at night with a flashlight, watching a small figure walk into the tall grass of a wide empty autumn field of tall dry grass behind a farmhouse, a crooked split-rail fence, bare trees on the far edge.",
+  "action": ""
+ },
+ {
+  "id": "F033",
+  "kind": "image",
+  "start": 344,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "It walked straight into the tall grass. The grass didn't move. The dry leaves didn't crunch. And halfway across the field, it was just gone.",
+  "prompt": "Moonlit field of tall dry grass, completely still, a faint trail of mist where a small figure has just disappeared, eerie calm.",
+  "action": ""
+ },
+ {
+  "id": "V04",
+  "kind": "video",
+  "start": 354,
+  "dur": 8,
+  "act": "АКТ 2",
+  "narration": "It walked into the field without bending a single blade of grass. And then, it simply wasn't there anymore.",
+  "prompt": "Night, a wide empty autumn field of tall dry grass behind a farmhouse, a crooked split-rail fence, bare trees on the far edge under a full moon with low fog. From behind, a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase walks slowly into the tall grass.",
+  "action": "The small figure walks forward without bending a single blade of grass. Halfway across the field it slowly becomes transparent and dissolves into the fog. The grass stays perfectly still. The camera holds."
+ },
+ {
+  "id": "F034",
+  "kind": "image",
+  "start": 362,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "Walter didn't sleep that night. He sat at the kitchen table with a notebook, and wrote down everything he could remember.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt writing in a small notebook at a kitchen table under a hanging lamp at night, a cold cup of tea beside him.",
+  "action": ""
+ },
+ {
+  "id": "F035",
+  "kind": "image",
+  "start": 372,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "The time. The coat. The smell. The way the smile on the mask was painted a little crooked on the left. He dated the page. October 31st, 1989.",
+  "prompt": "Close-up of an open notebook page with neat handwritten notes and a small pencil sketch of a pumpkin mask (text illegible), lamp light.",
+  "action": ""
+ },
+ {
+  "id": "F036",
+  "kind": "image",
+  "start": 382,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "Halloween, 1990. Walter waited by the door with his notebook. At 11:47, three soft knocks. He wrote down the time before he opened the door.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt standing by the front door holding a notebook and pencil, looking at the door, the hallway clock behind him.",
+  "action": ""
+ },
+ {
+  "id": "F037",
+  "kind": "image",
+  "start": 392,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "The year before, he had marked the child's height on the porch post with a pencil. He checked it again. Exactly the same.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt kneeling beside a porch post holding a pencil to a faded pencil mark, a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase standing just beside the post, porch light.",
+  "action": ""
+ },
+ {
+  "id": "F038",
+  "kind": "image",
+  "start": 402,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "Halloween, 1991. The same. Halloween, 1992. The same. The kids who came earlier in the evening were growing up. They got taller every year.",
+  "prompt": "A collage-like row of three vintage Polaroid photos of the same group of kids on a porch in Halloween costumes, getting taller each year.",
+  "action": ""
+ },
+ {
+  "id": "F039",
+  "kind": "image",
+  "start": 412,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "But the child in the pumpkin mask stayed exactly the same height. Four feet and two inches. Year after year after year.",
+  "prompt": "Close-up of an old porch post with four pencil marks at exactly the same height, one above the other year labels, flashlight light.",
+  "action": ""
+ },
+ {
+  "id": "F040",
+  "kind": "image",
+  "start": 422,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "In 1992, Walter finally asked. What's your name, son? The child raised one small hand in the wool sleeve, and pointed at the field.",
+  "prompt": "a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase on the porch raising one hand in an oversized wool sleeve, pointing toward the dark field, Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt watching from the doorway.",
+  "action": ""
+ },
+ {
+  "id": "V05",
+  "kind": "video",
+  "start": 432,
+  "dur": 8,
+  "act": "АКТ 2",
+  "narration": "It didn't say a word. It only pointed at the field. And Walter understood that it wanted him to follow.",
+  "prompt": "Night, close shot on the porch of a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors: a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase stands under the porch light, one arm raised, pointing past the camera toward the dark field.",
+  "action": "The pointing arm stays perfectly still. The camera slowly pans from the mask along the pointing sleeve to the dark field, where fog slowly drifts over the grass."
+ },
+ {
+  "id": "F041",
+  "kind": "image",
+  "start": 440,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "But Walter was seventy-two, the field was dark, and something in him was afraid. So he closed the door. And he hated himself for it.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt leaning his back against the closed front door inside the dark hallway, eyes shut, ashamed.",
+  "action": ""
+ },
+ {
+  "id": "F042",
+  "kind": "image",
+  "start": 450,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "That winter, he started asking questions. Carefully. He didn't want the town to think the old scarecrow had lost his mind.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt in a winter coat talking with a neighbor over a snowy fence, a small Vermont town in winter behind them.",
+  "action": ""
+ },
+ {
+  "id": "F043",
+  "kind": "image",
+  "start": 460,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "He asked his neighbors if a family with a little boy lived nearby. Nobody knew of one. Not on Orchard Lane. Not for a very long time.",
+  "prompt": "A quiet snowy country road lined with a few old farmhouses, smoke from chimneys, bare trees, gray winter light.",
+  "action": ""
+ },
+ {
+  "id": "F044",
+  "kind": "image",
+  "start": 470,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "So he drove to the Maple Falls public library and asked the librarian to help him look through the old newspapers on microfilm.",
+  "prompt": "A small-town public library interior in the early 1990s, wooden shelves, an old microfilm reader machine glowing on a desk.",
+  "action": ""
+ },
+ {
+  "id": "F045",
+  "kind": "image",
+  "start": 480,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "He didn't know what he was looking for. So he started with Halloween. Every November first, of every year, going back as far as they had.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt sitting at a glowing microfilm reader in a dim library, scrolling through old newspaper pages, reflection in his glasses.",
+  "action": ""
+ },
+ {
+  "id": "F046",
+  "kind": "image",
+  "start": 490,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "It took him three weeks. Then, in the paper from November 2nd, 1951, he found a headline that made his hands go cold.",
+  "prompt": "Close-up of a microfilm screen showing an old 1951 newspaper front page with a large headline and columns of text (all illegible), eerie glow.",
+  "action": ""
+ },
+ {
+  "id": "F047",
+  "kind": "image",
+  "start": 500,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "Local boy missing on Halloween night. Nine-year-old Billy Harlan. Last seen walking alone on Orchard Lane, at about a quarter to midnight.",
+  "prompt": "Extreme close-up of an old yellowed newspaper column with a bold headline and a small photo box (text illegible), shallow focus.",
+  "action": ""
+ },
+ {
+  "id": "F048",
+  "kind": "image",
+  "start": 510,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "There was a photograph. A small, freckled boy grinning at the camera, holding up a homemade papier-mache pumpkin mask. The same mask.",
+  "prompt": "An old black-and-white 1950s photograph of a smiling freckled boy about nine years old holding up a homemade papier-mache pumpkin mask, grainy.",
+  "action": ""
+ },
+ {
+  "id": "F049",
+  "kind": "image",
+  "start": 520,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "The article said Billy had worn his late father's brown wool coat that night, because it was cold. Sleeves rolled up four times.",
+  "prompt": "An old black-and-white 1950s photo of a small boy in a huge men's overcoat with rolled-up sleeves standing on a porch, grainy.",
+  "action": ""
+ },
+ {
+  "id": "F050",
+  "kind": "image",
+  "start": 530,
+  "dur": 10,
+  "act": "АКТ 2",
+  "narration": "Walter sat in the dark library for a long time. The boy had been gone for forty-one years. And he was still out trick-or-treating.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt sitting motionless in front of the glowing microfilm reader in an empty dark library, hand over his mouth.",
+  "action": ""
+ },
+ {
+  "id": "F051",
+  "kind": "image",
+  "start": 540,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "The article mentioned Billy's older sister, Dorothy. It took Walter two months, but he found her. A retired schoolteacher living in Burlington.",
+  "prompt": "A small tidy brick house on a quiet street in Burlington, Vermont, in early spring, bare trees, a neat front garden.",
+  "action": ""
+ },
+ {
+  "id": "F052",
+  "kind": "image",
+  "start": 550,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "He almost didn't go. What could he possibly say? Your little brother knocks on my door every Halloween? She'd call the police on him.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt sitting in his parked car outside a brick house, hands on the steering wheel, hesitating.",
+  "action": ""
+ },
+ {
+  "id": "F053",
+  "kind": "image",
+  "start": 560,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "But in March of 1994, he drove up to Burlington with a box of chocolates, and the old newspaper clipping folded in his coat pocket.",
+  "prompt": "A box of chocolates and a folded yellowed newspaper clipping on the passenger seat of an old car, spring light through the window.",
+  "action": ""
+ },
+ {
+  "id": "F054",
+  "kind": "image",
+  "start": 570,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "Dorothy Harlan was small and sharp-eyed. She looked at the clipping, then at Walter, and said quietly: You've seen him. Haven't you?",
+  "prompt": "Dorothy, an American woman in her late fifties with short silver-blond hair, sharp kind eyes and reading glasses on a chain, wearing a navy cardigan in her doorway holding an old newspaper clipping, looking up at an old man with wide, knowing eyes.",
+  "action": ""
+ },
+ {
+  "id": "F055",
+  "kind": "image",
+  "start": 580,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "Walter told her everything. The knocks. The mask. The pillowcase. The field. She listened without interrupting, holding his hand the whole time.",
+  "prompt": "Dorothy, an American woman in her late fifties with short silver-blond hair, sharp kind eyes and reading glasses on a chain, wearing a navy cardigan and Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt sitting on a floral sofa in a cozy living room, she holds his hand, teacups on the table.",
+  "action": ""
+ },
+ {
+  "id": "F056",
+  "kind": "image",
+  "start": 590,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "Then she told him what happened in 1951. Billy had begged to go out alone that year. Just once. He was nine. He was big enough, he said.",
+  "prompt": "A vintage 1950s photograph of a young teenage girl and a small freckled boy sitting on porch steps together, black and white.",
+  "action": ""
+ },
+ {
+  "id": "F057",
+  "kind": "image",
+  "start": 600,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "He wanted to go to one last house. The old Kessler farmhouse, out past the end of Orchard Lane. The Kesslers always gave out popcorn balls.",
+  "prompt": "An old 1940s-style farmhouse at the end of a dirt road at night, a warm light in one window, a field around it, vintage feel.",
+  "action": ""
+ },
+ {
+  "id": "F058",
+  "kind": "image",
+  "start": 610,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "The Kessler house burned down in 1960, two years before Walter moved in. Today it was just an empty field. The field behind his house.",
+  "prompt": "a wide empty autumn field of tall dry grass behind a farmhouse, a crooked split-rail fence, bare trees on the far edge in daylight, with a few old foundation stones hidden in the grass and a white farmhouse at the edge, overcast sky.",
+  "action": ""
+ },
+ {
+  "id": "F059",
+  "kind": "image",
+  "start": 620,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "Dorothy said the whole town had searched for a month. The woods, the river, every barn and cellar in Maple Falls. They never found anything.",
+  "prompt": "A vintage 1950s scene of men with lanterns walking through a misty autumn forest searching, black and white, grainy.",
+  "action": ""
+ },
+ {
+  "id": "F060",
+  "kind": "image",
+  "start": 630,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "Their mother never moved away. Every Halloween until the day she died, she left the porch light on all night, in case Billy found his way home.",
+  "prompt": "A single warm porch light glowing on a small old 1950s house at night, an empty porch chair, fallen leaves, fog, lonely and hopeful.",
+  "action": ""
+ },
+ {
+  "id": "F061",
+  "kind": "image",
+  "start": 640,
+  "dur": 10,
+  "act": "АКТ 3",
+  "narration": "Before he left, she squeezed his hand. Please, she said. If he comes again, go with him. He's been waiting a long time for someone to follow.",
+  "prompt": "Dorothy, an American woman in her late fifties with short silver-blond hair, sharp kind eyes and reading glasses on a chain, wearing a navy cardigan at the door squeezing the hand of Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt with both hands, tears in her eyes, soft spring light.",
+  "action": ""
+ },
+ {
+  "id": "V06",
+  "kind": "video",
+  "start": 650,
+  "dur": 8,
+  "act": "АКТ 3",
+  "narration": "Dorothy Harlan had waited forty-three years for an answer. She asked Walter for only one thing: to follow him.",
+  "prompt": "Soft spring afternoon, a cozy living room. Dorothy, an American woman in her late fifties with short silver-blond hair, sharp kind eyes and reading glasses on a chain, wearing a navy cardigan sits by the window holding an old black-and-white photo of her little brother, Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt sitting beside her.",
+  "action": "Dorothy gently touches the photo with her thumb and closes her eyes. Walter puts a hand on her shoulder. Dust floats in the window light. Very slow push-in on the photo."
+ },
+ {
+  "id": "F062",
+  "kind": "image",
+  "start": 658,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "Halloween, 1994. Walter was seventy-four. He put on the scarecrow costume one more time, and handed out candy to the children, just like always.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar handing out chocolate bars to kids in costumes on the porch, jack-o'-lanterns glowing, the dark field behind the house.",
+  "action": ""
+ },
+ {
+  "id": "F063",
+  "kind": "image",
+  "start": 668,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "At eleven thirty, he put on his warm boots, put new batteries in his flashlight, and sat by the door with his coat on.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar sitting on a wooden chair by the front door, wearing a coat over the costume, a flashlight in his lap, waiting.",
+  "action": ""
+ },
+ {
+  "id": "F064",
+  "kind": "image",
+  "start": 678,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "The field behind the house was silver with frost. The moon was full. A thin fog was lying low over the grass, like water.",
+  "prompt": "a wide empty autumn field of tall dry grass behind a farmhouse, a crooked split-rail fence, bare trees on the far edge at night silver with frost under a full moon, a low layer of fog lying over the grass like water.",
+  "action": ""
+ },
+ {
+  "id": "F065",
+  "kind": "image",
+  "start": 688,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "At 11:47, three soft knocks. Walter opened the door. The small figure in the pumpkin mask was standing there, holding out its pillowcase.",
+  "prompt": "a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase on the porch under the yellow light, seen over the shoulder of an old man in a straw hat opening the door.",
+  "action": ""
+ },
+ {
+  "id": "F066",
+  "kind": "image",
+  "start": 698,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "Walter dropped in a chocolate bar. Then he knelt down, so the mask was level with his eyes, and said quietly: Okay, Billy. Show me.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar kneeling on the porch face to face with a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase, gentle and brave expression, porch light.",
+  "action": ""
+ },
+ {
+  "id": "V07",
+  "kind": "video",
+  "start": 708,
+  "dur": 8,
+  "act": "АКТ 4",
+  "narration": "For the first time in seven years, the child didn't vanish. It walked slowly into the fog. And Walter followed.",
+  "prompt": "Night, the back of a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors facing a wide empty autumn field of tall dry grass behind a farmhouse, a crooked split-rail fence, bare trees on the far edge with frost and low fog under a full moon. a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase walks slowly into the field; Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar follows a few steps behind with a flashlight.",
+  "action": "The small figure walks steadily into the fog without looking back. Walter follows, the flashlight beam swaying in the mist. The camera follows them from behind at a slow walking pace."
+ },
+ {
+  "id": "F067",
+  "kind": "image",
+  "start": 716,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "They crossed the field together. The old man in the scarecrow hat, and the small figure in the pumpkin mask, side by side in the fog.",
+  "prompt": "Wide shot: an old man in a straw hat and a small figure in a pumpkin mask walking side by side through a foggy moonlit field.",
+  "action": ""
+ },
+ {
+  "id": "F068",
+  "kind": "image",
+  "start": 726,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "The grass around Walter crunched with frost. Around the child, there was no sound at all. Walter's breath came out in white clouds. The child's didn't.",
+  "prompt": "Close-up of frosty grass: an old man's boots leaving footprints in the frost, beside them small shoes leaving no marks at all, white breath in the air above.",
+  "action": ""
+ },
+ {
+  "id": "F069",
+  "kind": "image",
+  "start": 736,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "Halfway across, the fog grew thicker. Walter could barely see his own hands. But the pumpkin mask seemed to glow faintly, just ahead of him.",
+  "prompt": "Dense fog in a field at night, a faint warm orange glow of a pumpkin mask barely visible ahead, a flashlight beam scattering in the mist.",
+  "action": ""
+ },
+ {
+  "id": "F070",
+  "kind": "image",
+  "start": 746,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "Then the child stopped. In the middle of the field was something Walter had walked past a hundred times, and never really seen.",
+  "prompt": "a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase standing still in the fog, a dark shape of an old structure just in front of it, moonlight.",
+  "action": ""
+ },
+ {
+  "id": "F071",
+  "kind": "image",
+  "start": 756,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "An old stone well. Covered with rotting gray boards. Half hidden by weeds and brambles. It must have belonged to the Kessler farm.",
+  "prompt": "Close view of an old round stone well in the middle of a field, covered with rotting gray wooden boards, half hidden by weeds and brambles, frost on the boards, fog around it, lit by a flashlight beam.",
+  "action": ""
+ },
+ {
+  "id": "V08",
+  "kind": "video",
+  "start": 766,
+  "dur": 8,
+  "act": "АКТ 4",
+  "narration": "The child pointed down at the boards. Then, right before Walter's eyes, it faded into the fog.",
+  "prompt": "Night, in thick fog in the middle of a field: an old round stone well in the middle of a field, covered with rotting gray wooden boards, half hidden by weeds and brambles. a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase stands beside it. Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar stands a few steps away, holding a flashlight.",
+  "action": "The small figure slowly points down at the boards. Then it gradually fades away into the fog, leaving the white pillowcase and the pumpkin mask lying on the boards. Walter lowers his flashlight. Static camera."
+ },
+ {
+  "id": "F072",
+  "kind": "image",
+  "start": 774,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "Walter stood alone in the field. On the gray boards of the well lay the old white pillowcase. And beside it, the pumpkin mask.",
+  "prompt": "An old white pillowcase and a faded papier-mache pumpkin mask lying on frosty gray boards covering a stone well, flashlight beam, fog.",
+  "action": ""
+ },
+ {
+  "id": "F073",
+  "kind": "image",
+  "start": 784,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "He picked up the mask with trembling hands. The papier-mache was soft and damp. The inside smelled like cold, wet stone. Just like the coat.",
+  "prompt": "An old man's trembling hands holding a damp faded papier-mache pumpkin mask, flashlight light, fog and night around.",
+  "action": ""
+ },
+ {
+  "id": "F074",
+  "kind": "image",
+  "start": 794,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "He didn't try to open the well. He sat down on the frosty grass beside it, holding the mask in his lap, and waited for morning.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar sitting on frosty grass beside the covered well, the pumpkin mask in his lap, head bowed, fog, moonlight.",
+  "action": ""
+ },
+ {
+  "id": "F075",
+  "kind": "image",
+  "start": 804,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "At sunrise, he walked back to the house, still wearing the straw hat, and called the county sheriff.",
+  "prompt": "Sunrise over a frosty field, an old man in a straw hat walking slowly back toward a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors, golden light through fog.",
+  "action": ""
+ },
+ {
+  "id": "F076",
+  "kind": "image",
+  "start": 814,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "Sheriff Tom Brady had known Walter for thirty years. He didn't laugh. He looked at the mask for a long time, and then he made some calls.",
+  "prompt": "A middle-aged county sheriff in a tan uniform and brown campaign hat at a farmhouse kitchen table, looking at a faded pumpkin mask, serious.",
+  "action": ""
+ },
+ {
+  "id": "F077",
+  "kind": "image",
+  "start": 824,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "By noon, there were trucks in the field. Men with ropes and lights pulled the gray boards off the old Kessler well, for the first time in decades.",
+  "prompt": "Daytime in an autumn field: sheriff's trucks, several men with ropes and work lights lifting old gray boards off a stone well, overcast sky.",
+  "action": ""
+ },
+ {
+  "id": "F078",
+  "kind": "image",
+  "start": 834,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "The well had been dry for decades. At the bottom, under forty-three autumns of leaves, they found what the whole town had searched for in 1951.",
+  "prompt": "Men standing in a quiet circle around an open stone well in a field, hats in hands, heads bowed, gray autumn light.",
+  "action": ""
+ },
+ {
+  "id": "F079",
+  "kind": "image",
+  "start": 844,
+  "dur": 10,
+  "act": "АКТ 4",
+  "narration": "Billy had fallen into the old well in the dark that night, on his way to one last house. After forty-three years, he could finally come home.",
+  "prompt": "A vintage paper trick-or-treat bag from the 1950s, faded and stained, lying on a folded white cloth, soft respectful light.",
+  "action": ""
+ },
+ {
+  "id": "F080",
+  "kind": "image",
+  "start": 854,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Billy Harlan was laid to rest in November of 1994, next to his mother and father, in the old Maple Falls cemetery on the hill.",
+  "prompt": "An old New England cemetery on a hill in November, stone headstones, red and yellow leaves, a small group of people gathered, soft light.",
+  "action": ""
+ },
+ {
+  "id": "F081",
+  "kind": "image",
+  "start": 864,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Dorothy drove down from Burlington. Walter walked beside her up the hill, through the red and yellow leaves.",
+  "prompt": "Dorothy, an American woman in her late fifties with short silver-blond hair, sharp kind eyes and reading glasses on a chain, wearing a navy cardigan and Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt in dark coats walking slowly up a leaf-covered cemetery path, arm in arm.",
+  "action": ""
+ },
+ {
+  "id": "F082",
+  "kind": "image",
+  "start": 874,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "She asked Walter to put one thing in with her brother. Not flowers. The pumpkin mask. He'd want it, she said. It was his favorite.",
+  "prompt": "Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt's hands holding the faded papier-mache pumpkin mask gently, Dorothy, an American woman in her late fifties with short silver-blond hair, sharp kind eyes and reading glasses on a chain, wearing a navy cardigan beside him, autumn cemetery in soft focus.",
+  "action": ""
+ },
+ {
+  "id": "F083",
+  "kind": "image",
+  "start": 884,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "After the service, she held Walter's hand and cried. Thank you, she said. You're the only one who ever followed him.",
+  "prompt": "Dorothy, an American woman in her late fifties with short silver-blond hair, sharp kind eyes and reading glasses on a chain, wearing a navy cardigan hugging Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt in the cemetery, both in tears, leaves falling around them.",
+  "action": ""
+ },
+ {
+  "id": "V09",
+  "kind": "video",
+  "start": 894,
+  "dur": 8,
+  "act": "АКТ 5",
+  "narration": "Walter left one more thing on the grave. A chocolate bar. The biggest one they sold.",
+  "prompt": "Late autumn afternoon on a cemetery hill: a small new white headstone covered with a few red maple leaves. Walter, a kind American man in his seventies with thinning white hair, a gray mustache, gentle blue eyes and wire-rimmed glasses, wearing a brown cardigan over a plaid flannel shirt kneels in front of it.",
+  "action": "Walter gently places a big chocolate bar on top of the headstone, rests his hand on the stone for a moment, then stands up and slowly walks away. Leaves drift down. Slow push-in on the chocolate bar."
+ },
+ {
+  "id": "F084",
+  "kind": "image",
+  "start": 902,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Halloween, 1995. Walter put on his scarecrow costume and handed out candy to every child in Maple Falls. Then he sat by the door, and waited.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar sitting on the chair by the front door late at night, a bowl of chocolate bars on his knees, watching the door.",
+  "action": ""
+ },
+ {
+  "id": "F085",
+  "kind": "image",
+  "start": 912,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Eleven forty-five. Eleven forty-six. Eleven forty-seven. The field was quiet. Nobody knocked. Walter sat there until one in the morning.",
+  "prompt": "Close-up of the kitchen wall clock showing 11:48, a quiet dark hallway and a closed front door in soft focus.",
+  "action": ""
+ },
+ {
+  "id": "F086",
+  "kind": "image",
+  "start": 922,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "He should have felt relieved. And he was. But he also felt something he didn't expect. He missed him. He missed his little visitor.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar looking out the dark window at the empty moonlit field, a melancholy smile.",
+  "action": ""
+ },
+ {
+  "id": "F087",
+  "kind": "image",
+  "start": 932,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Walter handed out candy for three more Halloweens. Every year, at 11:47, he looked at the door. And every year, nobody knocked.",
+  "prompt": "Walter, a kind old man with a gray mustache and wire-rimmed glasses, dressed in a homemade scarecrow costume: a battered straw hat, a patched denim jacket with straw sticking out of the sleeves and collar on the porch surrounded by kids in costumes, laughing, the empty field behind the house glowing under the moon.",
+  "action": ""
+ },
+ {
+  "id": "F088",
+  "kind": "image",
+  "start": 942,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "In the spring of 1998, Walter Greene passed away peacefully in his armchair, with the window open to the field. He was seventy-eight.",
+  "prompt": "An empty armchair by an open window in a farmhouse living room in spring, a light curtain moving in the breeze, a straw hat on the side table.",
+  "action": ""
+ },
+ {
+  "id": "F089",
+  "kind": "image",
+  "start": 952,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Half the town came to say goodbye. Grown men and women who had once gotten caramel apples from the scarecrow on Orchard Lane.",
+  "prompt": "Many people of different ages in dark clothes outside a small white country church on a spring day, some smiling through tears.",
+  "action": ""
+ },
+ {
+  "id": "F090",
+  "kind": "image",
+  "start": 962,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Somebody left his old straw hat on the steps of the church. Nobody knew who. Nobody remembered bringing it. But nobody moved it, either.",
+  "prompt": "A battered straw hat resting alone on the stone steps of a white country church, spring light, a few petals around it.",
+  "action": ""
+ },
+ {
+  "id": "F091",
+  "kind": "image",
+  "start": 972,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "That summer, the white farmhouse on Orchard Lane was sold to a young family from Boston. The Morales family. Two parents and an eight-year-old girl named Sofia.",
+  "prompt": "A young family unloading a moving truck in front of a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors on a sunny summer day, a little girl running toward the porch.",
+  "action": ""
+ },
+ {
+  "id": "F092",
+  "kind": "image",
+  "start": 982,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "They loved the house. The big porch. The swing. The field out back, where Sofia played all summer long.",
+  "prompt": "A little girl playing in a wide empty autumn field of tall dry grass behind a farmhouse, a crooked split-rail fence, bare trees on the far edge in golden summer light, the white farmhouse behind her, happy and peaceful.",
+  "action": ""
+ },
+ {
+  "id": "F093",
+  "kind": "image",
+  "start": 992,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "The neighbors told them about Walter. The scarecrow. The caramel apples. They said Orchard Lane had always been the best street for Halloween.",
+  "prompt": "An elderly neighbor woman talking to Elena, a Latina American woman in her mid-thirties with long dark hair in a loose braid, wearing a cozy oatmeal sweater over a white picket fence, both smiling, late summer afternoon.",
+  "action": ""
+ },
+ {
+  "id": "F094",
+  "kind": "image",
+  "start": 1002,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "So on Halloween, 1998, the Morales family carved twelve pumpkins, and turned on every light on the porch. Sofia dressed up as a witch.",
+  "prompt": "a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors at dusk decorated with twelve glowing jack-o'-lanterns, a little girl in a witch hat and cape on the porch steps.",
+  "action": ""
+ },
+ {
+  "id": "F095",
+  "kind": "image",
+  "start": 1012,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "The kids came from all over town. It was a wonderful night. By eleven, Sofia had fallen asleep on the couch in her witch hat.",
+  "prompt": "A little girl asleep on a living room couch in a witch costume and hat, a candy bucket beside her, warm lamp light.",
+  "action": ""
+ },
+ {
+  "id": "F096",
+  "kind": "image",
+  "start": 1022,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Her mother, Elena, was cleaning up the kitchen when she heard it. Three soft knocks at the front door. She looked at the clock. It was 11:47.",
+  "prompt": "Elena, a Latina American woman in her mid-thirties with long dark hair in a loose braid, wearing a cozy oatmeal sweater in a farmhouse kitchen at night, turning toward the hallway with a dish towel in her hand, the wall clock showing 11:47.",
+  "action": ""
+ },
+ {
+  "id": "V10",
+  "kind": "video",
+  "start": 1032,
+  "dur": 8,
+  "act": "АКТ 5",
+  "narration": "On the porch stood two trick-or-treaters. A small one in a pumpkin mask. And a tall scarecrow.",
+  "prompt": "Night, view from inside as a front door opens onto the porch of a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors, glowing jack-o'-lanterns on the steps. On the porch stand two trick-or-treaters: a small child-sized trick-or-treater about four feet tall, wearing a faded hand-painted papier-mache pumpkin mask with a crooked painted smile and two dark eye holes, and a man's brown wool overcoat far too big for him with the sleeves rolled up and the hem dragging, holding an old white pillowcase, and next to him a tall old man in a homemade scarecrow costume, a battered straw hat hiding his face, straw sticking out of his patched denim sleeves.",
+  "action": "The door opens. The two figures stand perfectly still. The small one lifts the pillowcase; the tall scarecrow slowly holds out one wrinkled open hand. Candles flicker. Slow push-in."
+ },
+ {
+  "id": "F097",
+  "kind": "image",
+  "start": 1040,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "The tall one wore a battered straw hat and a patched denim jacket, with straw sticking out of the sleeves. Its face was hidden under the brim.",
+  "prompt": "Close-up of a battered straw hat and the patched denim collar of a scarecrow costume with straw sticking out, face in deep shadow under the brim, porch light.",
+  "action": ""
+ },
+ {
+  "id": "F098",
+  "kind": "image",
+  "start": 1050,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "The small one held out an old white pillowcase. The tall one held out its hand. It was an old man's hand, wrinkled and gentle.",
+  "prompt": "Close-up of an old man's wrinkled open hand held out next to a small hand holding a white pillowcase, porch light, jack-o'-lantern glow.",
+  "action": ""
+ },
+ {
+  "id": "F099",
+  "kind": "image",
+  "start": 1060,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Elena didn't scream. She said later she couldn't explain it, but she wasn't afraid. She put a chocolate bar in each of their hands.",
+  "prompt": "Elena, a Latina American woman in her mid-thirties with long dark hair in a loose braid, wearing a cozy oatmeal sweater in the doorway gently placing a chocolate bar into the hand of a tall scarecrow figure, a small pumpkin-masked figure beside it.",
+  "action": ""
+ },
+ {
+  "id": "F100",
+  "kind": "image",
+  "start": 1070,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "The scarecrow tipped its straw hat to her. Then the two of them turned and walked down the porch steps, side by side, toward the field.",
+  "prompt": "A tall scarecrow figure tipping its straw hat on a porch at night, a small figure in a pumpkin mask beside it, glowing pumpkins.",
+  "action": ""
+ },
+ {
+  "id": "V11",
+  "kind": "video",
+  "start": 1080,
+  "dur": 8,
+  "act": "АКТ 5",
+  "narration": "They walked into the field together, the old man and the boy. And halfway across, they were gone.",
+  "prompt": "Night, a wide empty autumn field of tall dry grass behind a farmhouse, a crooked split-rail fence, bare trees on the far edge under a full moon with low fog, seen from the porch. A tall old man in a scarecrow costume and straw hat and a small figure in a pumpkin mask and oversized brown coat walk away into the field, holding hands.",
+  "action": "The two figures walk slowly away into the fog, hand in hand. Halfway across the field they fade gently and disappear. The fog drifts over the untouched frost. The camera holds."
+ },
+ {
+  "id": "F101",
+  "kind": "image",
+  "start": 1088,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "In the morning, Elena went out to the field. The frost was untouched. No footprints. Just two chocolate wrappers, folded neatly on the fence post.",
+  "prompt": "Two chocolate bar wrappers folded neatly on top of a frosty split-rail fence post, untouched frosty field behind, golden morning light.",
+  "action": ""
+ },
+ {
+  "id": "F102",
+  "kind": "image",
+  "start": 1098,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "She told the neighbors. The old woman next door started to cry, then laughed. Walter always said he'd go trick-or-treating someday, she said.",
+  "prompt": "An elderly neighbor woman laughing through tears on her porch, Elena, a Latina American woman in her mid-thirties with long dark hair in a loose braid, wearing a cozy oatmeal sweater beside her holding two folded wrappers, morning light.",
+  "action": ""
+ },
+ {
+  "id": "F103",
+  "kind": "image",
+  "start": 1108,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "The Morales family still lives in the white house on Orchard Lane. And every Halloween, they keep the porch light on until midnight.",
+  "prompt": "a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors at night in the present day, the porch light on, jack-o'-lanterns glowing, fog over the field.",
+  "action": ""
+ },
+ {
+  "id": "F104",
+  "kind": "image",
+  "start": 1118,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Sofia is grown now. But she still comes home every October thirty-first, and sits on the porch swing with a bowl of the biggest chocolate bars in town.",
+  "prompt": "A young woman in her thirties sitting on a porch swing at night wrapped in a blanket, a bowl of big chocolate bars beside her, jack-o'-lanterns.",
+  "action": ""
+ },
+ {
+  "id": "F105",
+  "kind": "image",
+  "start": 1128,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "At 11:47, there are always three soft knocks. Two trick-or-treaters. A small one in a pumpkin mask. A tall one in a straw hat.",
+  "prompt": "View through a front door's small window: two silhouettes on the porch, a tall one in a straw hat and a small one in a pumpkin mask, warm porch light.",
+  "action": ""
+ },
+ {
+  "id": "F106",
+  "kind": "image",
+  "start": 1138,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "They never say trick or treat. They never say thank you. But the scarecrow always tips his hat. And the boy always waves goodbye.",
+  "prompt": "A small figure in a pumpkin mask waving goodbye from the bottom of porch steps at night, a tall scarecrow beside him tipping his hat.",
+  "action": ""
+ },
+ {
+  "id": "F107",
+  "kind": "image",
+  "start": 1148,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "People in Maple Falls don't talk about it much. But on Halloween, nobody on Orchard Lane turns their porch light off before midnight.",
+  "prompt": "A quiet rural street in Vermont on Halloween night, every porch light on, jack-o'-lanterns glowing, fog in the fields beyond.",
+  "action": ""
+ },
+ {
+  "id": "F108",
+  "kind": "image",
+  "start": 1158,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Because they know that somewhere out there, two old friends are still walking from house to house. Just like they always wanted to.",
+  "prompt": "Two tiny distant silhouettes, a tall one in a straw hat and a small one, walking along a foggy moonlit country road lined with glowing porches.",
+  "action": ""
+ },
+ {
+  "id": "F109",
+  "kind": "image",
+  "start": 1168,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "So this Halloween, if you're handing out candy late, and you hear three soft knocks close to midnight, don't be afraid.",
+  "prompt": "Close-up of an ordinary modern front door at night with a Halloween wreath, warm light under the door, a bowl of candy on a table beside it.",
+  "action": ""
+ },
+ {
+  "id": "V12",
+  "kind": "video",
+  "start": 1178,
+  "dur": 8,
+  "act": "АКТ 5",
+  "narration": "Just leave the porch light on a little longer. Somebody's still out there, trick-or-treating.",
+  "prompt": "Night, a present-day American street on Halloween: a porch with glowing jack-o'-lanterns and the porch light on. At the edge of the dark field beyond, a tall figure in a straw hat and a small figure in a pumpkin mask stand side by side, facing the house.",
+  "action": "The two figures slowly raise their hands and wave toward the house. The porch light flickers warmly once. Fog drifts across the field. Very slow push-in."
+ },
+ {
+  "id": "F110",
+  "kind": "image",
+  "start": 1186,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "And if the smaller one holds out an old white pillowcase, give it something sweet. He waited a very long time for that one last house.",
+  "prompt": "An old white pillowcase with a big chocolate bar inside, lying on a porch step next to a glowing jack-o'-lantern, night.",
+  "action": ""
+ },
+ {
+  "id": "F111",
+  "kind": "image",
+  "start": 1196,
+  "dur": 10,
+  "act": "АКТ 5",
+  "narration": "Happy Halloween. Leave your porch light on until midnight. And if you hear three soft knocks at 11:47, you'll know who it is.",
+  "prompt": "Final shot: a white two-story New England farmhouse with black shutters, a covered front porch with a wooden swing and a single yellow porch light, at the edge of a wide empty field, surrounded by maple trees in autumn colors at night, jack-o'-lanterns glowing, two faint figures at the edge of the foggy field, large empty sky at the top for the end screen.",
+  "action": ""
+ }
+]

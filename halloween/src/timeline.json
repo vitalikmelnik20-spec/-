@@ -1,0 +1,2839 @@
+{
+"total": 1317.61,
+"shots": [
+{
+"id": "V01",
+"kind": "video",
+"act": "COLD OPEN",
+"start": 0.0,
+"dur": 8.94,
+"vo": 0.45,
+"voLen": 7.893
+},
+{
+"id": "F001",
+"kind": "image",
+"act": "COLD OPEN",
+"start": 8.94,
+"dur": 10,
+"vo": 9.49,
+"voLen": 7.637
+},
+{
+"id": "F002",
+"kind": "image",
+"act": "COLD OPEN",
+"start": 18.94,
+"dur": 10,
+"vo": 19.49,
+"voLen": 7.381
+},
+{
+"id": "F003",
+"kind": "image",
+"act": "COLD OPEN",
+"start": 28.94,
+"dur": 10,
+"vo": 29.49,
+"voLen": 7.936
+},
+{
+"id": "F004",
+"kind": "image",
+"act": "COLD OPEN",
+"start": 38.94,
+"dur": 10,
+"vo": 39.49,
+"voLen": 8.363
+},
+{
+"id": "F005",
+"kind": "image",
+"act": "COLD OPEN",
+"start": 48.94,
+"dur": 10,
+"vo": 49.49,
+"voLen": 6.059
+},
+{
+"id": "F006",
+"kind": "image",
+"act": "COLD OPEN",
+"start": 58.94,
+"dur": 10,
+"vo": 59.49,
+"voLen": 8.085
+},
+{
+"id": "F007",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 68.94,
+"dur": 12.0,
+"vo": 69.49,
+"voLen": 10.496
+},
+{
+"id": "F008",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 80.94,
+"dur": 10,
+"vo": 81.49,
+"voLen": 8.299
+},
+{
+"id": "F009",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 90.94,
+"dur": 11.06,
+"vo": 91.49,
+"voLen": 9.557
+},
+{
+"id": "F010",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 102.0,
+"dur": 13.64,
+"vo": 102.55,
+"voLen": 12.139
+},
+{
+"id": "F011",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 115.64,
+"dur": 10.14,
+"vo": 116.19,
+"voLen": 8.64
+},
+{
+"id": "F012",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 125.78,
+"dur": 10.82,
+"vo": 126.33,
+"voLen": 9.323
+},
+{
+"id": "F013",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 136.6,
+"dur": 11.7,
+"vo": 137.15,
+"voLen": 10.197
+},
+{
+"id": "F014",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 148.3,
+"dur": 10.52,
+"vo": 148.85,
+"voLen": 9.024
+},
+{
+"id": "F015",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 158.82,
+"dur": 10,
+"vo": 159.37,
+"voLen": 7.808
+},
+{
+"id": "F016",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 168.82,
+"dur": 10,
+"vo": 169.37,
+"voLen": 8.064
+},
+{
+"id": "V02",
+"kind": "video",
+"act": "\u0410\u041a\u0422 1",
+"start": 178.82,
+"dur": 8.01,
+"vo": 179.27,
+"voLen": 6.955
+},
+{
+"id": "F017",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 186.83,
+"dur": 10.7,
+"vo": 187.38,
+"voLen": 9.195
+},
+{
+"id": "F018",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 197.53,
+"dur": 10.99,
+"vo": 198.08,
+"voLen": 9.493
+},
+{
+"id": "F019",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 208.52,
+"dur": 10,
+"vo": 209.07,
+"voLen": 8.277
+},
+{
+"id": "F020",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 218.52,
+"dur": 10,
+"vo": 219.07,
+"voLen": 8.469
+},
+{
+"id": "F021",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 228.52,
+"dur": 11.04,
+"vo": 229.07,
+"voLen": 9.536
+},
+{
+"id": "V03",
+"kind": "video",
+"act": "\u0410\u041a\u0422 1",
+"start": 239.56,
+"dur": 8,
+"vo": 240.01,
+"voLen": 6.443
+},
+{
+"id": "F022",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 247.56,
+"dur": 11.95,
+"vo": 248.11,
+"voLen": 10.453
+},
+{
+"id": "F023",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 259.51,
+"dur": 10.35,
+"vo": 260.06,
+"voLen": 8.853
+},
+{
+"id": "F024",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 269.86,
+"dur": 11.4,
+"vo": 270.41,
+"voLen": 9.899
+},
+{
+"id": "F025",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 281.26,
+"dur": 10.22,
+"vo": 281.81,
+"voLen": 8.725
+},
+{
+"id": "F026",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 291.48,
+"dur": 10,
+"vo": 292.03,
+"voLen": 8.405
+},
+{
+"id": "F027",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 301.48,
+"dur": 10.44,
+"vo": 302.03,
+"voLen": 8.939
+},
+{
+"id": "F028",
+"kind": "image",
+"act": "\u0410\u041a\u0422 1",
+"start": 311.92,
+"dur": 10,
+"vo": 312.47,
+"voLen": 6.997
+},
+{
+"id": "F029",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 321.92,
+"dur": 13.19,
+"vo": 322.47,
+"voLen": 11.691
+},
+{
+"id": "F030",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 335.11,
+"dur": 11.46,
+"vo": 335.66,
+"voLen": 9.963
+},
+{
+"id": "F031",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 346.57,
+"dur": 10.7,
+"vo": 347.12,
+"voLen": 9.195
+},
+{
+"id": "F032",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 357.27,
+"dur": 10,
+"vo": 357.82,
+"voLen": 8.171
+},
+{
+"id": "F033",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 367.27,
+"dur": 11.25,
+"vo": 367.82,
+"voLen": 9.749
+},
+{
+"id": "V04",
+"kind": "video",
+"act": "\u0410\u041a\u0422 2",
+"start": 378.52,
+"dur": 8.24,
+"vo": 378.97,
+"voLen": 7.189
+},
+{
+"id": "F034",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 386.76,
+"dur": 10,
+"vo": 387.31,
+"voLen": 7.403
+},
+{
+"id": "F035",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 396.76,
+"dur": 13.15,
+"vo": 397.31,
+"voLen": 11.648
+},
+{
+"id": "F036",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 409.91,
+"dur": 13.7,
+"vo": 410.46,
+"voLen": 12.203
+},
+{
+"id": "F037",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 423.61,
+"dur": 10,
+"vo": 424.16,
+"voLen": 7.893
+},
+{
+"id": "F038",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 433.61,
+"dur": 14.45,
+"vo": 434.16,
+"voLen": 12.949
+},
+{
+"id": "F039",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 448.06,
+"dur": 10,
+"vo": 448.61,
+"voLen": 8.363
+},
+{
+"id": "F040",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 458.06,
+"dur": 12.19,
+"vo": 458.61,
+"voLen": 10.688
+},
+{
+"id": "V05",
+"kind": "video",
+"act": "\u0410\u041a\u0422 2",
+"start": 470.25,
+"dur": 8,
+"vo": 470.7,
+"voLen": 6.763
+},
+{
+"id": "F041",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 478.25,
+"dur": 10.46,
+"vo": 478.8,
+"voLen": 8.96
+},
+{
+"id": "F042",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 488.71,
+"dur": 10,
+"vo": 489.26,
+"voLen": 8.128
+},
+{
+"id": "F043",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 498.71,
+"dur": 11.51,
+"vo": 499.26,
+"voLen": 10.005
+},
+{
+"id": "F044",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 510.22,
+"dur": 10.1,
+"vo": 510.77,
+"voLen": 8.597
+},
+{
+"id": "F045",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 520.32,
+"dur": 10.46,
+"vo": 520.87,
+"voLen": 8.96
+},
+{
+"id": "F046",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 530.78,
+"dur": 10.97,
+"vo": 531.33,
+"voLen": 9.472
+},
+{
+"id": "F047",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 541.75,
+"dur": 12.0,
+"vo": 542.3,
+"voLen": 10.496
+},
+{
+"id": "F048",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 553.75,
+"dur": 10.99,
+"vo": 554.3,
+"voLen": 9.493
+},
+{
+"id": "F049",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 564.74,
+"dur": 10.4,
+"vo": 565.29,
+"voLen": 8.896
+},
+{
+"id": "F050",
+"kind": "image",
+"act": "\u0410\u041a\u0422 2",
+"start": 575.14,
+"dur": 10.74,
+"vo": 575.69,
+"voLen": 9.237
+},
+{
+"id": "F051",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 585.88,
+"dur": 11.25,
+"vo": 586.43,
+"voLen": 9.749
+},
+{
+"id": "F052",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 597.13,
+"dur": 10.4,
+"vo": 597.68,
+"voLen": 8.896
+},
+{
+"id": "F053",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 607.53,
+"dur": 11.29,
+"vo": 608.08,
+"voLen": 9.792
+},
+{
+"id": "F054",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 618.82,
+"dur": 10.44,
+"vo": 619.37,
+"voLen": 8.939
+},
+{
+"id": "F055",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 629.26,
+"dur": 11.34,
+"vo": 629.81,
+"voLen": 9.835
+},
+{
+"id": "F056",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 640.6,
+"dur": 12.27,
+"vo": 641.15,
+"voLen": 10.773
+},
+{
+"id": "F057",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 652.87,
+"dur": 11.93,
+"vo": 653.42,
+"voLen": 10.432
+},
+{
+"id": "F058",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 664.8,
+"dur": 12.59,
+"vo": 665.35,
+"voLen": 11.093
+},
+{
+"id": "F059",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 677.39,
+"dur": 11.21,
+"vo": 677.94,
+"voLen": 9.707
+},
+{
+"id": "F060",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 688.6,
+"dur": 11.23,
+"vo": 689.15,
+"voLen": 9.728
+},
+{
+"id": "F061",
+"kind": "image",
+"act": "\u0410\u041a\u0422 3",
+"start": 699.83,
+"dur": 11.08,
+"vo": 700.38,
+"voLen": 9.579
+},
+{
+"id": "V06",
+"kind": "video",
+"act": "\u0410\u041a\u0422 3",
+"start": 710.91,
+"dur": 8.84,
+"vo": 711.36,
+"voLen": 7.787
+},
+{
+"id": "F062",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 719.75,
+"dur": 12.96,
+"vo": 720.3,
+"voLen": 11.456
+},
+{
+"id": "F063",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 732.71,
+"dur": 10,
+"vo": 733.26,
+"voLen": 7.68
+},
+{
+"id": "F064",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 742.71,
+"dur": 10.27,
+"vo": 743.26,
+"voLen": 8.768
+},
+{
+"id": "F065",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 752.98,
+"dur": 11.97,
+"vo": 753.53,
+"voLen": 10.475
+},
+{
+"id": "F066",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 764.95,
+"dur": 10.54,
+"vo": 765.5,
+"voLen": 9.045
+},
+{
+"id": "V07",
+"kind": "video",
+"act": "\u0410\u041a\u0422 4",
+"start": 775.49,
+"dur": 8.75,
+"vo": 775.94,
+"voLen": 7.701
+},
+{
+"id": "F067",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 784.24,
+"dur": 10.52,
+"vo": 784.79,
+"voLen": 9.024
+},
+{
+"id": "F068",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 794.76,
+"dur": 12.02,
+"vo": 795.31,
+"voLen": 10.517
+},
+{
+"id": "F069",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 806.78,
+"dur": 11.31,
+"vo": 807.33,
+"voLen": 9.813
+},
+{
+"id": "F070",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 818.09,
+"dur": 10,
+"vo": 818.64,
+"voLen": 8.107
+},
+{
+"id": "F071",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 828.09,
+"dur": 10.57,
+"vo": 828.64,
+"voLen": 9.067
+},
+{
+"id": "V08",
+"kind": "video",
+"act": "\u0410\u041a\u0422 4",
+"start": 838.66,
+"dur": 8,
+"vo": 839.11,
+"voLen": 6.571
+},
+{
+"id": "F072",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 846.66,
+"dur": 10.31,
+"vo": 847.21,
+"voLen": 8.811
+},
+{
+"id": "F073",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 856.97,
+"dur": 11.85,
+"vo": 857.52,
+"voLen": 10.347
+},
+{
+"id": "F074",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 868.82,
+"dur": 10.05,
+"vo": 869.37,
+"voLen": 8.555
+},
+{
+"id": "F075",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 878.87,
+"dur": 10,
+"vo": 879.42,
+"voLen": 6.144
+},
+{
+"id": "F076",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 888.87,
+"dur": 10.38,
+"vo": 889.42,
+"voLen": 8.875
+},
+{
+"id": "F077",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 899.25,
+"dur": 11.16,
+"vo": 899.8,
+"voLen": 9.664
+},
+{
+"id": "F078",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 910.41,
+"dur": 12.68,
+"vo": 910.96,
+"voLen": 11.179
+},
+{
+"id": "F079",
+"kind": "image",
+"act": "\u0410\u041a\u0422 4",
+"start": 923.09,
+"dur": 11.16,
+"vo": 923.64,
+"voLen": 9.664
+},
+{
+"id": "F080",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 934.25,
+"dur": 11.55,
+"vo": 934.8,
+"voLen": 10.048
+},
+{
+"id": "F081",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 945.8,
+"dur": 10,
+"vo": 946.35,
+"voLen": 7.253
+},
+{
+"id": "F082",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 955.8,
+"dur": 10.35,
+"vo": 956.35,
+"voLen": 8.853
+},
+{
+"id": "F083",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 966.15,
+"dur": 10,
+"vo": 966.7,
+"voLen": 7.488
+},
+{
+"id": "V09",
+"kind": "video",
+"act": "\u0410\u041a\u0422 5",
+"start": 976.15,
+"dur": 8,
+"vo": 976.6,
+"voLen": 5.76
+},
+{
+"id": "F084",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 984.15,
+"dur": 13.0,
+"vo": 984.7,
+"voLen": 11.499
+},
+{
+"id": "F085",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 997.15,
+"dur": 12.25,
+"vo": 997.7,
+"voLen": 10.752
+},
+{
+"id": "F086",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1009.4,
+"dur": 10,
+"vo": 1009.95,
+"voLen": 8.107
+},
+{
+"id": "F087",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1019.4,
+"dur": 11.38,
+"vo": 1019.95,
+"voLen": 9.877
+},
+{
+"id": "F088",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1030.78,
+"dur": 11.82,
+"vo": 1031.33,
+"voLen": 10.325
+},
+{
+"id": "F089",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1042.6,
+"dur": 10,
+"vo": 1043.15,
+"voLen": 8.277
+},
+{
+"id": "F090",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1052.6,
+"dur": 10.82,
+"vo": 1053.15,
+"voLen": 9.323
+},
+{
+"id": "F091",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1063.42,
+"dur": 12.96,
+"vo": 1063.97,
+"voLen": 11.456
+},
+{
+"id": "F092",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1076.38,
+"dur": 10,
+"vo": 1076.93,
+"voLen": 7.083
+},
+{
+"id": "F093",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1086.38,
+"dur": 10.95,
+"vo": 1086.93,
+"voLen": 9.451
+},
+{
+"id": "F094",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1097.33,
+"dur": 12.51,
+"vo": 1097.88,
+"voLen": 11.008
+},
+{
+"id": "F095",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1109.84,
+"dur": 10.42,
+"vo": 1110.39,
+"voLen": 8.917
+},
+{
+"id": "F096",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1120.26,
+"dur": 11.95,
+"vo": 1120.81,
+"voLen": 10.453
+},
+{
+"id": "V10",
+"kind": "video",
+"act": "\u0410\u041a\u0422 5",
+"start": 1132.21,
+"dur": 8,
+"vo": 1132.66,
+"voLen": 6.251
+},
+{
+"id": "F097",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1140.21,
+"dur": 10.82,
+"vo": 1140.76,
+"voLen": 9.323
+},
+{
+"id": "F098",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1151.03,
+"dur": 10.74,
+"vo": 1151.58,
+"voLen": 9.237
+},
+{
+"id": "F099",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1161.77,
+"dur": 10.16,
+"vo": 1162.32,
+"voLen": 8.661
+},
+{
+"id": "F100",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1171.93,
+"dur": 10.1,
+"vo": 1172.48,
+"voLen": 8.597
+},
+{
+"id": "V11",
+"kind": "video",
+"act": "\u0410\u041a\u0422 5",
+"start": 1182.03,
+"dur": 8,
+"vo": 1182.48,
+"voLen": 5.973
+},
+{
+"id": "F101",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1190.03,
+"dur": 11.63,
+"vo": 1190.58,
+"voLen": 10.133
+},
+{
+"id": "F102",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1201.66,
+"dur": 10.74,
+"vo": 1202.21,
+"voLen": 9.237
+},
+{
+"id": "F103",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1212.4,
+"dur": 10.48,
+"vo": 1212.95,
+"voLen": 8.981
+},
+{
+"id": "F104",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1222.88,
+"dur": 12.04,
+"vo": 1223.43,
+"voLen": 10.539
+},
+{
+"id": "F105",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1234.92,
+"dur": 11.57,
+"vo": 1235.47,
+"voLen": 10.069
+},
+{
+"id": "F106",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1246.49,
+"dur": 10.4,
+"vo": 1247.04,
+"voLen": 8.896
+},
+{
+"id": "F107",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1256.89,
+"dur": 10.93,
+"vo": 1257.44,
+"voLen": 9.429
+},
+{
+"id": "F108",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1267.82,
+"dur": 10,
+"vo": 1268.37,
+"voLen": 8.405
+},
+{
+"id": "F109",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1277.82,
+"dur": 10,
+"vo": 1278.37,
+"voLen": 7.765
+},
+{
+"id": "V12",
+"kind": "video",
+"act": "\u0410\u041a\u0422 5",
+"start": 1287.82,
+"dur": 8,
+"vo": 1288.27,
+"voLen": 5.547
+},
+{
+"id": "F110",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1295.82,
+"dur": 10.8,
+"vo": 1296.37,
+"voLen": 9.301
+},
+{
+"id": "F111",
+"kind": "image",
+"act": "\u0410\u041a\u0422 5",
+"start": 1306.62,
+"dur": 10.99,
+"vo": 1307.17,
+"voLen": 9.493
+}
+],
+"subs": [
+{
+"s": 0.45,
+"e": 3.002,
+"text": "Every Halloween for seven years,"
+},
+{
+"s": 3.042,
+"e": 5.24,
+"text": "at exactly 11:47 at night,"
+},
+{
+"s": 5.28,
+"e": 8.593,
+"text": "someone knocked on Walter Greene's door."
+},
+{
+"s": 9.49,
+"e": 12.414000000000001,
+"text": "It was always the same trick-or-treater."
+},
+{
+"s": 12.454,
+"e": 17.377,
+"text": "A small figure in a pumpkin mask, and a brown coat far too big for it."
+},
+{
+"s": 19.49,
+"e": 23.169,
+"text": "It never said trick or treat. It never said thank you."
+},
+{
+"s": 23.209,
+"e": 27.121,
+"text": "It just held out an old white pillowcase, and waited."
+},
+{
+"s": 29.49,
+"e": 33.506,
+"text": "And every year, Walter noticed the same impossible thing."
+},
+{
+"s": 33.546,
+"e": 37.676,
+"text": "The child never grew. Not an inch. Not in seven years."
+},
+{
+"s": 39.49,
+"e": 41.871,
+"text": "This is the story of an old man,"
+},
+{
+"s": 41.911,
+"e": 44.237,
+"text": "a quiet little town in Vermont,"
+},
+{
+"s": 44.277,
+"e": 48.103,
+"text": "and a trick-or-treater who came back every Halloween."
+},
+{
+"s": 49.49,
+"e": 52.588,
+"text": "And it's the story of what that old man found,"
+},
+{
+"s": 52.628,
+"e": 55.799,
+"text": "when he finally decided to follow it home."
+},
+{
+"s": 59.49,
+"e": 64.17599999999999,
+"text": "This is the story of the last trick-or-treater of Maple Falls, Vermont."
+},
+{
+"s": 64.216,
+"e": 67.825,
+"text": "And it begins, of all things, with a scarecrow."
+},
+{
+"s": 69.49,
+"e": 72.22999999999999,
+"text": "Walter Greene lived in the same white"
+},
+{
+"s": 72.27,
+"e": 75.577,
+"text": "farmhouse on Orchard Lane for twenty-six years."
+},
+{
+"s": 75.617,
+"e": 80.236,
+"text": "At the edge of town, where the houses ended and the fields began."
+},
+{
+"s": 81.49,
+"e": 85.40499999999999,
+"text": "He and his wife, Margaret, never had children of their own."
+},
+{
+"s": 85.445,
+"e": 90.039,
+"text": "So every Halloween, they made the whole town's children their own."
+},
+{
+"s": 91.49,
+"e": 95.09599999999999,
+"text": "Margaret baked caramel apples for three days straight."
+},
+{
+"s": 95.136,
+"e": 98.24499999999999,
+"text": "Walter carved pumpkins until his hands ached."
+},
+{
+"s": 98.285,
+"e": 101.297,
+"text": "The porch looked like a pumpkin patch."
+},
+{
+"s": 102.55,
+"e": 107.103,
+"text": "And every year, Walter wore the same costume. A scarecrow."
+},
+{
+"s": 107.143,
+"e": 110.318,
+"text": "Margaret had sewn it for him in 1962,"
+},
+{
+"s": 110.358,
+"e": 114.939,
+"text": "their first Halloween in the house, straw hat and all."
+},
+{
+"s": 116.19,
+"e": 120.69699999999999,
+"text": "Kids from all over Maple Falls walked the long road to Orchard Lane,"
+},
+{
+"s": 120.737,
+"e": 125.08,
+"text": "just to get a caramel apple from the scarecrow and his wife."
+},
+{
+"s": 126.33,
+"e": 131.055,
+"text": "In the spring of 1988, Margaret passed away in her sleep."
+},
+{
+"s": 131.095,
+"e": 135.903,
+"text": "She was sixty-six. The whole town came to say goodbye."
+},
+{
+"s": 137.15,
+"e": 140.823,
+"text": "That October, Walter didn't carve a single pumpkin."
+},
+{
+"s": 140.863,
+"e": 142.827,
+"text": "The porch stayed dark."
+},
+{
+"s": 142.867,
+"e": 147.597,
+"text": "The scarecrow costume stayed folded in the cedar chest upstairs."
+},
+{
+"s": 148.85,
+"e": 151.173,
+"text": "But on the morning of Halloween,"
+},
+{
+"s": 151.213,
+"e": 155.202,
+"text": "a little girl from down the road left a drawing in his mailbox."
+},
+{
+"s": 155.242,
+"e": 158.124,
+"text": "A scarecrow, holding a caramel apple."
+},
+{
+"s": 159.37,
+"e": 162.475,
+"text": "Walter looked at that drawing for a long time."
+},
+{
+"s": 162.515,
+"e": 167.428,
+"text": "Then he went upstairs, opened the cedar chest, and took out the straw hat."
+},
+{
+"s": 169.37,
+"e": 172.848,
+"text": "He couldn't make caramel apples the way Margaret did."
+},
+{
+"s": 172.888,
+"e": 177.684,
+"text": "So he drove to the store and bought the biggest chocolate bars they had."
+},
+{
+"s": 179.27,
+"e": 183.36,
+"text": "That night, the scarecrow of Orchard Lane opened his door again."
+},
+{
+"s": 183.4,
+"e": 186.475,
+"text": "And the children came, just like always."
+},
+{
+"s": 187.38,
+"e": 190.80200000000002,
+"text": "It was a good night. The best he'd had since spring."
+},
+{
+"s": 190.842,
+"e": 192.37,
+"text": "Witches, cowboys,"
+},
+{
+"s": 192.41,
+"e": 196.825,
+"text": "and a tiny astronaut who made him laugh until he had to sit down."
+},
+{
+"s": 198.08,
+"e": 201.317,
+"text": "By eleven, the last of the kids had gone home."
+},
+{
+"s": 201.357,
+"e": 205.103,
+"text": "Walter sat on the porch swing in his scarecrow costume,"
+},
+{
+"s": 205.143,
+"e": 207.823,
+"text": "with half a bowl of candy left."
+},
+{
+"s": 209.07,
+"e": 211.92700000000002,
+"text": "He talked to Margaret for a while. Out loud."
+},
+{
+"s": 211.967,
+"e": 214.203,
+"text": "He told her about the astronaut."
+},
+{
+"s": 214.243,
+"e": 217.597,
+"text": "He told her he missed her. The field was silent."
+},
+{
+"s": 219.07,
+"e": 222.92600000000002,
+"text": "At eleven forty, he blew out the candles and went inside."
+},
+{
+"s": 222.966,
+"e": 227.789,
+"text": "He hung the straw hat on the hook by the door, and put the kettle on."
+},
+{
+"s": 229.07,
+"e": 233.074,
+"text": "At exactly 11:47, there was a knock. Three soft knocks."
+},
+{
+"s": 233.114,
+"e": 236.21200000000002,
+"text": "Low on the door, too low for a grown-up."
+},
+{
+"s": 236.252,
+"e": 238.856,
+"text": "Walter looked at the clock."
+},
+{
+"s": 240.01,
+"e": 243.792,
+"text": "On the porch stood a child in a papier-mache pumpkin mask,"
+},
+{
+"s": 243.832,
+"e": 246.703,
+"text": "holding out an old white pillowcase."
+},
+{
+"s": 248.11,
+"e": 250.148,
+"text": "The mask was homemade."
+},
+{
+"s": 250.188,
+"e": 255.1,
+"text": "Faded orange paint, a crooked painted smile, two dark holes for eyes."
+},
+{
+"s": 255.14,
+"e": 258.813,
+"text": "The kind of mask nobody had made in decades."
+},
+{
+"s": 260.06,
+"e": 262.842,
+"text": "The child wore a man's brown wool coat,"
+},
+{
+"s": 262.882,
+"e": 265.996,
+"text": "so big the sleeves were rolled up four times,"
+},
+{
+"s": 266.036,
+"e": 269.163,
+"text": "and the hem dragged on the porch boards."
+},
+{
+"s": 270.41,
+"e": 273.98499999999996,
+"text": "Walter smiled and asked where the child's folks were."
+},
+{
+"s": 274.025,
+"e": 277.155,
+"text": "It was awfully late. The child didn't answer."
+},
+{
+"s": 277.195,
+"e": 280.559,
+"text": "It just held the pillowcase a little higher."
+},
+{
+"s": 281.81,
+"e": 284.476,
+"text": "So Walter dropped in a chocolate bar."
+},
+{
+"s": 284.516,
+"e": 288.56199999999995,
+"text": "For a second, a breath of cold air came out of the pillowcase."
+},
+{
+"s": 288.602,
+"e": 290.785,
+"text": "Like air from a cellar."
+},
+{
+"s": 292.03,
+"e": 294.844,
+"text": "The child turned and walked down the steps."
+},
+{
+"s": 294.884,
+"e": 297.697,
+"text": "Not toward the road, where the houses were."
+},
+{
+"s": 297.737,
+"e": 300.685,
+"text": "Toward the empty field behind the house."
+},
+{
+"s": 302.03,
+"e": 305.269,
+"text": "Walter grabbed his flashlight and called after it."
+},
+{
+"s": 305.309,
+"e": 308.972,
+"text": "But by the time he reached the steps, the field was empty."
+},
+{
+"s": 309.012,
+"e": 311.219,
+"text": "Just grass and moonlight."
+},
+{
+"s": 312.47,
+"e": 316.06199999999995,
+"text": "He told himself it was a neighbor's kid playing a prank."
+},
+{
+"s": 316.102,
+"e": 319.717,
+"text": "And he kept telling himself that for almost a year."
+},
+{
+"s": 322.47,
+"e": 327.349,
+"text": "Halloween, 1989. Walter wore his scarecrow costume again."
+},
+{
+"s": 327.389,
+"e": 329.63,
+"text": "The kids came again."
+},
+{
+"s": 329.67,
+"e": 334.411,
+"text": "And at exactly 11:47, there were three soft knocks."
+},
+{
+"s": 335.66,
+"e": 337.443,
+"text": "Same pumpkin mask."
+},
+{
+"s": 337.483,
+"e": 341.513,
+"text": "Same brown coat, with the sleeves rolled up four times."
+},
+{
+"s": 341.553,
+"e": 345.873,
+"text": "Same white pillowcase. Walter's heart started pounding."
+},
+{
+"s": 347.12,
+"e": 350.83599999999996,
+"text": "This time he noticed something else. The coat was damp."
+},
+{
+"s": 350.876,
+"e": 353.808,
+"text": "Not from rain, it hadn't rained in weeks."
+},
+{
+"s": 353.848,
+"e": 356.565,
+"text": "It smelled like cold, wet stone."
+},
+{
+"s": 357.82,
+"e": 360.452,
+"text": "He put a chocolate bar in the pillowcase"
+},
+{
+"s": 360.492,
+"e": 363.33,
+"text": "and watched the child walk toward the field."
+},
+{
+"s": 363.37,
+"e": 366.241,
+"text": "This time, he followed it to the fence."
+},
+{
+"s": 367.82,
+"e": 370.637,
+"text": "It walked straight into the tall grass."
+},
+{
+"s": 370.677,
+"e": 374.22299999999996,
+"text": "The grass didn't move. The dry leaves didn't crunch."
+},
+{
+"s": 374.263,
+"e": 377.819,
+"text": "And halfway across the field, it was just gone."
+},
+{
+"s": 378.97,
+"e": 383.188,
+"text": "It walked into the field without bending a single blade of grass."
+},
+{
+"s": 383.228,
+"e": 386.409,
+"text": "And then, it simply wasn't there anymore."
+},
+{
+"s": 387.31,
+"e": 389.32399999999996,
+"text": "Walter didn't sleep that night."
+},
+{
+"s": 389.364,
+"e": 391.998,
+"text": "He sat at the kitchen table with a notebook,"
+},
+{
+"s": 392.038,
+"e": 394.963,
+"text": "and wrote down everything he could remember."
+},
+{
+"s": 397.31,
+"e": 400.066,
+"text": "The time. The coat. The smell."
+},
+{
+"s": 400.106,
+"e": 405.59,
+"text": "The way the smile on the mask was painted a little crooked on the left."
+},
+{
+"s": 405.63,
+"e": 409.208,
+"text": "He dated the page. October 31st, 1989."
+},
+{
+"s": 410.46,
+"e": 412.267,
+"text": "Halloween, 1990."
+},
+{
+"s": 412.307,
+"e": 415.96099999999996,
+"text": "Walter waited by the door with his notebook."
+},
+{
+"s": 416.001,
+"e": 418.599,
+"text": "At 11:47, three soft knocks."
+},
+{
+"s": 418.639,
+"e": 422.913,
+"text": "He wrote down the time before he opened the door."
+},
+{
+"s": 424.16,
+"e": 425.546,
+"text": "The year before,"
+},
+{
+"s": 425.586,
+"e": 429.467,
+"text": "he had marked the child's height on the porch post with a pencil."
+},
+{
+"s": 429.507,
+"e": 432.303,
+"text": "He checked it again. Exactly the same."
+},
+{
+"s": 434.16,
+"e": 438.98499999999996,
+"text": "Halloween, 1991. The same. Halloween, 1992. The same."
+},
+{
+"s": 439.025,
+"e": 444.15,
+"text": "The kids who came earlier in the evening were growing up."
+},
+{
+"s": 444.19,
+"e": 447.359,
+"text": "They got taller every year."
+},
+{
+"s": 448.61,
+"e": 453.10499999999996,
+"text": "But the child in the pumpkin mask stayed exactly the same height."
+},
+{
+"s": 453.145,
+"e": 457.223,
+"text": "Four feet and two inches. Year after year after year."
+},
+{
+"s": 458.61,
+"e": 463.08099999999996,
+"text": "In 1992, Walter finally asked. What's your name, son?"
+},
+{
+"s": 463.121,
+"e": 469.548,
+"text": "The child raised one small hand in the wool sleeve, and pointed at the field."
+},
+{
+"s": 470.7,
+"e": 474.042,
+"text": "It didn't say a word. It only pointed at the field."
+},
+{
+"s": 474.082,
+"e": 477.713,
+"text": "And Walter understood that it wanted him to follow."
+},
+{
+"s": 478.8,
+"e": 484.078,
+"text": "But Walter was seventy-two, the field was dark, and something in him was afraid."
+},
+{
+"s": 484.118,
+"e": 488.01,
+"text": "So he closed the door. And he hated himself for it."
+},
+{
+"s": 489.26,
+"e": 492.808,
+"text": "That winter, he started asking questions. Carefully."
+},
+{
+"s": 492.848,
+"e": 497.638,
+"text": "He didn't want the town to think the old scarecrow had lost his mind."
+},
+{
+"s": 499.26,
+"e": 503.893,
+"text": "He asked his neighbors if a family with a little boy lived nearby."
+},
+{
+"s": 503.933,
+"e": 507.008,
+"text": "Nobody knew of one. Not on Orchard Lane."
+},
+{
+"s": 507.048,
+"e": 509.515,
+"text": "Not for a very long time."
+},
+{
+"s": 510.77,
+"e": 514.57,
+"text": "So he drove to the Maple Falls public library and asked"
+},
+{
+"s": 514.61,
+"e": 519.617,
+"text": "the librarian to help him look through the old newspapers on microfilm."
+},
+{
+"s": 520.87,
+"e": 523.5020000000001,
+"text": "He didn't know what he was looking for."
+},
+{
+"s": 523.542,
+"e": 525.6510000000001,
+"text": "So he started with Halloween."
+},
+{
+"s": 525.691,
+"e": 530.08,
+"text": "Every November first, of every year, going back as far as they had."
+},
+{
+"s": 531.33,
+"e": 533.9250000000001,
+"text": "It took him three weeks. Then,"
+},
+{
+"s": 533.965,
+"e": 536.998,
+"text": "in the paper from November 2nd, 1951,"
+},
+{
+"s": 537.038,
+"e": 541.052,
+"text": "he found a headline that made his hands go cold."
+},
+{
+"s": 542.3,
+"e": 545.25,
+"text": "Local boy missing on Halloween night."
+},
+{
+"s": 545.29,
+"e": 547.63,
+"text": "Nine-year-old Billy Harlan."
+},
+{
+"s": 547.67,
+"e": 553.046,
+"text": "Last seen walking alone on Orchard Lane, at about a quarter to midnight."
+},
+{
+"s": 554.3,
+"e": 556.6070000000001,
+"text": "There was a photograph. A small,"
+},
+{
+"s": 556.647,
+"e": 559.166,
+"text": "freckled boy grinning at the camera,"
+},
+{
+"s": 559.206,
+"e": 562.366,
+"text": "holding up a homemade papier-mache pumpkin mask."
+},
+{
+"s": 562.406,
+"e": 564.043,
+"text": "The same mask."
+},
+{
+"s": 565.29,
+"e": 570.493,
+"text": "The article said Billy had worn his late father's brown wool coat that night,"
+},
+{
+"s": 570.533,
+"e": 574.436,
+"text": "because it was cold. Sleeves rolled up four times."
+},
+{
+"s": 575.69,
+"e": 578.9730000000001,
+"text": "Walter sat in the dark library for a long time."
+},
+{
+"s": 579.013,
+"e": 582.015,
+"text": "The boy had been gone for forty-one years."
+},
+{
+"s": 582.055,
+"e": 585.177,
+"text": "And he was still out trick-or-treating."
+},
+{
+"s": 586.43,
+"e": 589.9150000000001,
+"text": "The article mentioned Billy's older sister, Dorothy."
+},
+{
+"s": 589.955,
+"e": 592.999,
+"text": "It took Walter two months, but he found her."
+},
+{
+"s": 593.039,
+"e": 596.429,
+"text": "A retired schoolteacher living in Burlington."
+},
+{
+"s": 597.68,
+"e": 600.836,
+"text": "He almost didn't go. What could he possibly say?"
+},
+{
+"s": 600.876,
+"e": 604.3520000000001,
+"text": "Your little brother knocks on my door every Halloween?"
+},
+{
+"s": 604.392,
+"e": 606.826,
+"text": "She'd call the police on him."
+},
+{
+"s": 608.08,
+"e": 609.998,
+"text": "But in March of 1994,"
+},
+{
+"s": 610.038,
+"e": 613.7370000000001,
+"text": "he drove up to Burlington with a box of chocolates,"
+},
+{
+"s": 613.777,
+"e": 618.122,
+"text": "and the old newspaper clipping folded in his coat pocket."
+},
+{
+"s": 619.37,
+"e": 622.13,
+"text": "Dorothy Harlan was small and sharp-eyed."
+},
+{
+"s": 622.17,
+"e": 626.9770000000001,
+"text": "She looked at the clipping, then at Walter, and said quietly: You've seen him."
+},
+{
+"s": 627.017,
+"e": 628.559,
+"text": "Haven't you?"
+},
+{
+"s": 629.81,
+"e": 633.14,
+"text": "Walter told her everything. The knocks. The mask."
+},
+{
+"s": 633.18,
+"e": 635.24,
+"text": "The pillowcase. The field."
+},
+{
+"s": 635.28,
+"e": 639.895,
+"text": "She listened without interrupting, holding his hand the whole time."
+},
+{
+"s": 641.15,
+"e": 644.4050000000001,
+"text": "Then she told him what happened in 1951."
+},
+{
+"s": 644.445,
+"e": 648.5880000000001,
+"text": "Billy had begged to go out alone that year. Just once."
+},
+{
+"s": 648.628,
+"e": 652.173,
+"text": "He was nine. He was big enough, he said."
+},
+{
+"s": 653.42,
+"e": 656.154,
+"text": "He wanted to go to one last house."
+},
+{
+"s": 656.194,
+"e": 660.495,
+"text": "The old Kessler farmhouse, out past the end of Orchard Lane."
+},
+{
+"s": 660.535,
+"e": 664.102,
+"text": "The Kesslers always gave out popcorn balls."
+},
+{
+"s": 665.35,
+"e": 670.8570000000001,
+"text": "The Kessler house burned down in 1960, two years before Walter moved in."
+},
+{
+"s": 670.897,
+"e": 673.8280000000001,
+"text": "Today it was just an empty field."
+},
+{
+"s": 673.868,
+"e": 676.693,
+"text": "The field behind his house."
+},
+{
+"s": 677.94,
+"e": 681.5260000000001,
+"text": "Dorothy said the whole town had searched for a month."
+},
+{
+"s": 681.566,
+"e": 685.4870000000001,
+"text": "The woods, the river, every barn and cellar in Maple Falls."
+},
+{
+"s": 685.527,
+"e": 687.897,
+"text": "They never found anything."
+},
+{
+"s": 689.15,
+"e": 691.283,
+"text": "Their mother never moved away."
+},
+{
+"s": 691.323,
+"e": 693.922,
+"text": "Every Halloween until the day she died,"
+},
+{
+"s": 693.962,
+"e": 696.509,
+"text": "she left the porch light on all night,"
+},
+{
+"s": 696.549,
+"e": 699.128,
+"text": "in case Billy found his way home."
+},
+{
+"s": 700.38,
+"e": 704.062,
+"text": "Before he left, she squeezed his hand. Please, she said."
+},
+{
+"s": 704.102,
+"e": 706.416,
+"text": "If he comes again, go with him."
+},
+{
+"s": 706.456,
+"e": 710.209,
+"text": "He's been waiting a long time for someone to follow."
+},
+{
+"s": 711.36,
+"e": 715.418,
+"text": "Dorothy Harlan had waited forty-three years for an answer."
+},
+{
+"s": 715.458,
+"e": 719.397,
+"text": "She asked Walter for only one thing: to follow him."
+},
+{
+"s": 720.3,
+"e": 723.671,
+"text": "Halloween, 1994. Walter was seventy-four."
+},
+{
+"s": 723.711,
+"e": 727.404,
+"text": "He put on the scarecrow costume one more time,"
+},
+{
+"s": 727.444,
+"e": 732.006,
+"text": "and handed out candy to the children, just like always."
+},
+{
+"s": 733.26,
+"e": 735.999,
+"text": "At eleven thirty, he put on his warm boots,"
+},
+{
+"s": 736.039,
+"e": 738.4240000000001,
+"text": "put new batteries in his flashlight,"
+},
+{
+"s": 738.464,
+"e": 741.19,
+"text": "and sat by the door with his coat on."
+},
+{
+"s": 743.26,
+"e": 746.671,
+"text": "The field behind the house was silver with frost."
+},
+{
+"s": 746.711,
+"e": 748.368,
+"text": "The moon was full."
+},
+{
+"s": 748.408,
+"e": 752.278,
+"text": "A thin fog was lying low over the grass, like water."
+},
+{
+"s": 753.53,
+"e": 757.4100000000001,
+"text": "At 11:47, three soft knocks. Walter opened the door."
+},
+{
+"s": 757.45,
+"e": 761.576,
+"text": "The small figure in the pumpkin mask was standing there,"
+},
+{
+"s": 761.616,
+"e": 764.255,
+"text": "holding out its pillowcase."
+},
+{
+"s": 765.5,
+"e": 769.0780000000001,
+"text": "Walter dropped in a chocolate bar. Then he knelt down,"
+},
+{
+"s": 769.118,
+"e": 771.7090000000001,
+"text": "so the mask was level with his eyes,"
+},
+{
+"s": 771.749,
+"e": 774.795,
+"text": "and said quietly: Okay, Billy. Show me."
+},
+{
+"s": 775.94,
+"e": 779.98,
+"text": "For the first time in seven years, the child didn't vanish."
+},
+{
+"s": 780.02,
+"e": 783.891,
+"text": "It walked slowly into the fog. And Walter followed."
+},
+{
+"s": 784.79,
+"e": 786.981,
+"text": "They crossed the field together."
+},
+{
+"s": 787.021,
+"e": 789.2620000000001,
+"text": "The old man in the scarecrow hat,"
+},
+{
+"s": 789.302,
+"e": 791.9490000000001,
+"text": "and the small figure in the pumpkin mask,"
+},
+{
+"s": 791.989,
+"e": 794.064,
+"text": "side by side in the fog."
+},
+{
+"s": 795.31,
+"e": 798.2750000000001,
+"text": "The grass around Walter crunched with frost."
+},
+{
+"s": 798.315,
+"e": 801.2800000000001,
+"text": "Around the child, there was no sound at all."
+},
+{
+"s": 801.32,
+"e": 804.124,
+"text": "Walter's breath came out in white clouds."
+},
+{
+"s": 804.164,
+"e": 806.077,
+"text": "The child's didn't."
+},
+{
+"s": 807.33,
+"e": 810.053,
+"text": "Halfway across, the fog grew thicker."
+},
+{
+"s": 810.093,
+"e": 812.873,
+"text": "Walter could barely see his own hands."
+},
+{
+"s": 812.913,
+"e": 817.393,
+"text": "But the pumpkin mask seemed to glow faintly, just ahead of him."
+},
+{
+"s": 818.64,
+"e": 820.3620000000001,
+"text": "Then the child stopped."
+},
+{
+"s": 820.402,
+"e": 824.995,
+"text": "In the middle of the field was something Walter had walked past a hundred times,"
+},
+{
+"s": 825.035,
+"e": 826.997,
+"text": "and never really seen."
+},
+{
+"s": 828.64,
+"e": 832.138,
+"text": "An old stone well. Covered with rotting gray boards."
+},
+{
+"s": 832.178,
+"e": 834.682,
+"text": "Half hidden by weeds and brambles."
+},
+{
+"s": 834.722,
+"e": 837.957,
+"text": "It must have belonged to the Kessler farm."
+},
+{
+"s": 839.11,
+"e": 841.822,
+"text": "The child pointed down at the boards."
+},
+{
+"s": 841.862,
+"e": 845.931,
+"text": "Then, right before Walter's eyes, it faded into the fog."
+},
+{
+"s": 847.21,
+"e": 849.5930000000001,
+"text": "Walter stood alone in the field."
+},
+{
+"s": 849.633,
+"e": 853.558,
+"text": "On the gray boards of the well lay the old white pillowcase."
+},
+{
+"s": 853.598,
+"e": 856.271,
+"text": "And beside it, the pumpkin mask."
+},
+{
+"s": 857.52,
+"e": 860.556,
+"text": "He picked up the mask with trembling hands."
+},
+{
+"s": 860.596,
+"e": 863.1850000000001,
+"text": "The papier-mache was soft and damp."
+},
+{
+"s": 863.225,
+"e": 866.0930000000001,
+"text": "The inside smelled like cold, wet stone."
+},
+{
+"s": 866.133,
+"e": 868.117,
+"text": "Just like the coat."
+},
+{
+"s": 869.37,
+"e": 871.615,
+"text": "He didn't try to open the well."
+},
+{
+"s": 871.655,
+"e": 874.484,
+"text": "He sat down on the frosty grass beside it,"
+},
+{
+"s": 874.524,
+"e": 878.175,
+"text": "holding the mask in his lap, and waited for morning."
+},
+{
+"s": 879.42,
+"e": 881.764,
+"text": "At sunrise, he walked back to the house,"
+},
+{
+"s": 881.804,
+"e": 883.5980000000001,
+"text": "still wearing the straw hat,"
+},
+{
+"s": 883.638,
+"e": 885.814,
+"text": "and called the county sheriff."
+},
+{
+"s": 889.42,
+"e": 892.702,
+"text": "Sheriff Tom Brady had known Walter for thirty years."
+},
+{
+"s": 892.742,
+"e": 894.1550000000001,
+"text": "He didn't laugh."
+},
+{
+"s": 894.195,
+"e": 898.545,
+"text": "He looked at the mask for a long time, and then he made some calls."
+},
+{
+"s": 899.8,
+"e": 902.552,
+"text": "By noon, there were trucks in the field."
+},
+{
+"s": 902.592,
+"e": 907.169,
+"text": "Men with ropes and lights pulled the gray boards off the old Kessler well,"
+},
+{
+"s": 907.209,
+"e": 909.714,
+"text": "for the first time in decades."
+},
+{
+"s": 910.96,
+"e": 914.773,
+"text": "The well had been dry for decades. At the bottom,"
+},
+{
+"s": 914.813,
+"e": 917.8040000000001,
+"text": "under forty-three autumns of leaves,"
+},
+{
+"s": 917.844,
+"e": 922.389,
+"text": "they found what the whole town had searched for in 1951."
+},
+{
+"s": 923.64,
+"e": 927.466,
+"text": "Billy had fallen into the old well in the dark that night,"
+},
+{
+"s": 927.506,
+"e": 929.73,
+"text": "on his way to one last house."
+},
+{
+"s": 929.77,
+"e": 933.554,
+"text": "After forty-three years, he could finally come home."
+},
+{
+"s": 934.8,
+"e": 938.654,
+"text": "Billy Harlan was laid to rest in November of 1994,"
+},
+{
+"s": 938.694,
+"e": 941.291,
+"text": "next to his mother and father,"
+},
+{
+"s": 941.331,
+"e": 945.098,
+"text": "in the old Maple Falls cemetery on the hill."
+},
+{
+"s": 946.35,
+"e": 948.912,
+"text": "Dorothy drove down from Burlington."
+},
+{
+"s": 948.952,
+"e": 953.853,
+"text": "Walter walked beside her up the hill, through the red and yellow leaves."
+},
+{
+"s": 956.35,
+"e": 959.873,
+"text": "She asked Walter to put one thing in with her brother."
+},
+{
+"s": 959.913,
+"e": 963.436,
+"text": "Not flowers. The pumpkin mask. He'd want it, she said."
+},
+{
+"s": 963.476,
+"e": 965.453,
+"text": "It was his favorite."
+},
+{
+"s": 966.7,
+"e": 969.855,
+"text": "After the service, she held Walter's hand and cried."
+},
+{
+"s": 969.895,
+"e": 971.452,
+"text": "Thank you, she said."
+},
+{
+"s": 971.492,
+"e": 974.438,
+"text": "You're the only one who ever followed him."
+},
+{
+"s": 976.6,
+"e": 980.274,
+"text": "Walter left one more thing on the grave. A chocolate bar."
+},
+{
+"s": 980.314,
+"e": 982.61,
+"text": "The biggest one they sold."
+},
+{
+"s": 984.7,
+"e": 986.3910000000001,
+"text": "Halloween, 1995."
+},
+{
+"s": 986.431,
+"e": 989.9770000000001,
+"text": "Walter put on his scarecrow costume and handed"
+},
+{
+"s": 990.017,
+"e": 993.192,
+"text": "out candy to every child in Maple Falls."
+},
+{
+"s": 993.232,
+"e": 996.449,
+"text": "Then he sat by the door, and waited."
+},
+{
+"s": 997.7,
+"e": 1001.961,
+"text": "Eleven forty-five. Eleven forty-six. Eleven forty-seven."
+},
+{
+"s": 1002.001,
+"e": 1004.9970000000001,
+"text": "The field was quiet. Nobody knocked."
+},
+{
+"s": 1005.037,
+"e": 1008.702,
+"text": "Walter sat there until one in the morning."
+},
+{
+"s": 1009.95,
+"e": 1012.514,
+"text": "He should have felt relieved. And he was."
+},
+{
+"s": 1012.554,
+"e": 1015.2660000000001,
+"text": "But he also felt something he didn't expect."
+},
+{
+"s": 1015.306,
+"e": 1018.307,
+"text": "He missed him. He missed his little visitor."
+},
+{
+"s": 1019.95,
+"e": 1023.714,
+"text": "Walter handed out candy for three more Halloweens."
+},
+{
+"s": 1023.754,
+"e": 1027.1490000000001,
+"text": "Every year, at 11:47, he looked at the door."
+},
+{
+"s": 1027.189,
+"e": 1030.077,
+"text": "And every year, nobody knocked."
+},
+{
+"s": 1031.33,
+"e": 1033.392,
+"text": "In the spring of 1998,"
+},
+{
+"s": 1033.432,
+"e": 1037.411,
+"text": "Walter Greene passed away peacefully in his armchair,"
+},
+{
+"s": 1037.451,
+"e": 1041.905,
+"text": "with the window open to the field. He was seventy-eight."
+},
+{
+"s": 1043.15,
+"e": 1045.505,
+"text": "Half the town came to say goodbye."
+},
+{
+"s": 1045.545,
+"e": 1048.159,
+"text": "Grown men and women who had once gotten"
+},
+{
+"s": 1048.199,
+"e": 1051.677,
+"text": "caramel apples from the scarecrow on Orchard Lane."
+},
+{
+"s": 1053.15,
+"e": 1057.0040000000001,
+"text": "Somebody left his old straw hat on the steps of the church."
+},
+{
+"s": 1057.044,
+"e": 1060.239,
+"text": "Nobody knew who. Nobody remembered bringing it."
+},
+{
+"s": 1060.279,
+"e": 1062.723,
+"text": "But nobody moved it, either."
+},
+{
+"s": 1063.97,
+"e": 1065.271,
+"text": "That summer,"
+},
+{
+"s": 1065.311,
+"e": 1070.133,
+"text": "the white farmhouse on Orchard Lane was sold to a young family from Boston."
+},
+{
+"s": 1070.173,
+"e": 1071.865,
+"text": "The Morales family."
+},
+{
+"s": 1071.905,
+"e": 1075.676,
+"text": "Two parents and an eight-year-old girl named Sofia."
+},
+{
+"s": 1076.93,
+"e": 1080.207,
+"text": "They loved the house. The big porch. The swing."
+},
+{
+"s": 1080.247,
+"e": 1084.263,
+"text": "The field out back, where Sofia played all summer long."
+},
+{
+"s": 1086.93,
+"e": 1090.327,
+"text": "The neighbors told them about Walter. The scarecrow."
+},
+{
+"s": 1090.367,
+"e": 1091.991,
+"text": "The caramel apples."
+},
+{
+"s": 1092.031,
+"e": 1096.631,
+"text": "They said Orchard Lane had always been the best street for Halloween."
+},
+{
+"s": 1097.88,
+"e": 1099.931,
+"text": "So on Halloween, 1998,"
+},
+{
+"s": 1099.971,
+"e": 1103.252,
+"text": "the Morales family carved twelve pumpkins,"
+},
+{
+"s": 1103.292,
+"e": 1106.3880000000001,
+"text": "and turned on every light on the porch."
+},
+{
+"s": 1106.428,
+"e": 1109.138,
+"text": "Sofia dressed up as a witch."
+},
+{
+"s": 1110.39,
+"e": 1112.874,
+"text": "The kids came from all over town."
+},
+{
+"s": 1112.914,
+"e": 1114.949,
+"text": "It was a wonderful night."
+},
+{
+"s": 1114.989,
+"e": 1119.557,
+"text": "By eleven, Sofia had fallen asleep on the couch in her witch hat."
+},
+{
+"s": 1120.81,
+"e": 1125.3690000000001,
+"text": "Her mother, Elena, was cleaning up the kitchen when she heard it."
+},
+{
+"s": 1125.409,
+"e": 1128.236,
+"text": "Three soft knocks at the front door."
+},
+{
+"s": 1128.276,
+"e": 1131.513,
+"text": "She looked at the clock. It was 11:47."
+},
+{
+"s": 1132.66,
+"e": 1135.452,
+"text": "On the porch stood two trick-or-treaters."
+},
+{
+"s": 1135.492,
+"e": 1139.161,
+"text": "A small one in a pumpkin mask. And a tall scarecrow."
+},
+{
+"s": 1140.76,
+"e": 1144.852,
+"text": "The tall one wore a battered straw hat and a patched denim jacket,"
+},
+{
+"s": 1144.892,
+"e": 1147.553,
+"text": "with straw sticking out of the sleeves."
+},
+{
+"s": 1147.593,
+"e": 1150.333,
+"text": "Its face was hidden under the brim."
+},
+{
+"s": 1151.58,
+"e": 1154.9460000000001,
+"text": "The small one held out an old white pillowcase."
+},
+{
+"s": 1154.986,
+"e": 1157.429,
+"text": "The tall one held out its hand."
+},
+{
+"s": 1157.469,
+"e": 1161.067,
+"text": "It was an old man's hand, wrinkled and gentle."
+},
+{
+"s": 1162.32,
+"e": 1163.96,
+"text": "Elena didn't scream."
+},
+{
+"s": 1164.0,
+"e": 1167.844,
+"text": "She said later she couldn't explain it, but she wasn't afraid."
+},
+{
+"s": 1167.884,
+"e": 1171.231,
+"text": "She put a chocolate bar in each of their hands."
+},
+{
+"s": 1172.48,
+"e": 1175.1870000000001,
+"text": "The scarecrow tipped its straw hat to her."
+},
+{
+"s": 1175.227,
+"e": 1178.8500000000001,
+"text": "Then the two of them turned and walked down the porch steps,"
+},
+{
+"s": 1178.89,
+"e": 1181.327,
+"text": "side by side, toward the field."
+},
+{
+"s": 1182.48,
+"e": 1186.074,
+"text": "They walked into the field together, the old man and the boy."
+},
+{
+"s": 1186.114,
+"e": 1188.703,
+"text": "And halfway across, they were gone."
+},
+{
+"s": 1190.58,
+"e": 1193.692,
+"text": "In the morning, Elena went out to the field."
+},
+{
+"s": 1193.732,
+"e": 1196.564,
+"text": "The frost was untouched. No footprints."
+},
+{
+"s": 1196.604,
+"e": 1200.963,
+"text": "Just two chocolate wrappers, folded neatly on the fence post."
+},
+{
+"s": 1202.21,
+"e": 1204.017,
+"text": "She told the neighbors."
+},
+{
+"s": 1204.057,
+"e": 1207.448,
+"text": "The old woman next door started to cry, then laughed."
+},
+{
+"s": 1207.488,
+"e": 1211.697,
+"text": "Walter always said he'd go trick-or-treating someday, she said."
+},
+{
+"s": 1212.95,
+"e": 1217.429,
+"text": "The Morales family still lives in the white house on Orchard Lane."
+},
+{
+"s": 1217.469,
+"e": 1222.181,
+"text": "And every Halloween, they keep the porch light on until midnight."
+},
+{
+"s": 1223.43,
+"e": 1225.156,
+"text": "Sofia is grown now."
+},
+{
+"s": 1225.196,
+"e": 1228.8020000000001,
+"text": "But she still comes home every October thirty-first,"
+},
+{
+"s": 1228.842,
+"e": 1234.219,
+"text": "and sits on the porch swing with a bowl of the biggest chocolate bars in town."
+},
+{
+"s": 1235.47,
+"e": 1239.017,
+"text": "At 11:47, there are always three soft knocks."
+},
+{
+"s": 1239.057,
+"e": 1243.108,
+"text": "Two trick-or-treaters. A small one in a pumpkin mask."
+},
+{
+"s": 1243.148,
+"e": 1245.789,
+"text": "A tall one in a straw hat."
+},
+{
+"s": 1247.04,
+"e": 1250.711,
+"text": "They never say trick or treat. They never say thank you."
+},
+{
+"s": 1250.751,
+"e": 1253.44,
+"text": "But the scarecrow always tips his hat."
+},
+{
+"s": 1253.48,
+"e": 1256.186,
+"text": "And the boy always waves goodbye."
+},
+{
+"s": 1257.44,
+"e": 1260.731,
+"text": "People in Maple Falls don't talk about it much."
+},
+{
+"s": 1260.771,
+"e": 1262.3690000000001,
+"text": "But on Halloween,"
+},
+{
+"s": 1262.409,
+"e": 1267.119,
+"text": "nobody on Orchard Lane turns their porch light off before midnight."
+},
+{
+"s": 1268.37,
+"e": 1271.132,
+"text": "Because they know that somewhere out there,"
+},
+{
+"s": 1271.172,
+"e": 1274.4940000000001,
+"text": "two old friends are still walking from house to house."
+},
+{
+"s": 1274.534,
+"e": 1277.025,
+"text": "Just like they always wanted to."
+},
+{
+"s": 1278.37,
+"e": 1281.578,
+"text": "So this Halloween, if you're handing out candy late,"
+},
+{
+"s": 1281.618,
+"e": 1284.674,
+"text": "and you hear three soft knocks close to midnight,"
+},
+{
+"s": 1284.714,
+"e": 1286.385,
+"text": "don't be afraid."
+},
+{
+"s": 1288.27,
+"e": 1291.003,
+"text": "Just leave the porch light on a little longer."
+},
+{
+"s": 1291.043,
+"e": 1294.067,
+"text": "Somebody's still out there, trick-or-treating."
+},
+{
+"s": 1296.37,
+"e": 1300.15,
+"text": "And if the smaller one holds out an old white pillowcase,"
+},
+{
+"s": 1300.19,
+"e": 1302.143,
+"text": "give it something sweet."
+},
+{
+"s": 1302.183,
+"e": 1305.921,
+"text": "He waited a very long time for that one last house."
+},
+{
+"s": 1307.17,
+"e": 1311.6200000000001,
+"text": "Happy Halloween. Leave your porch light on until midnight."
+},
+{
+"s": 1311.66,
+"e": 1316.913,
+"text": "And if you hear three soft knocks at 11:47, you'll know who it is."
+}
+]
+}

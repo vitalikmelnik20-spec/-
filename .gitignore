@@ -4,3 +4,8 @@ render/snapshots/
 render/audio/
 .tts/
 __pycache__/
+halloween/render/segments/
+halloween/render/snapshots/
+halloween/render/audio/
+halloween/output/*.mp4
+halloween/.kokoro/
