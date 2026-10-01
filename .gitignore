@@ -13,3 +13,8 @@ hannover/render/segments/
 hannover/render/snapshots/
 hannover/render/audio/
 hannover/.piper/
+rivne/render/segments/
+rivne/render/snapshots/
+rivne/render/audio/
+rivne/.tts/
+rivne/.piper/
