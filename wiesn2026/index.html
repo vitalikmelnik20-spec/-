@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Wiesn 2026 Intro</title>
+<style>
+  @font-face { font-family: 'Anton'; src: url('fonts/Anton.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'Inter'; src: url('fonts/Inter-400.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'Inter'; src: url('fonts/Inter-700.woff2') format('woff2'); font-weight: 700; }
+  @font-face { font-family: 'Inter'; src: url('fonts/Inter-800.woff2') format('woff2'); font-weight: 800; }
+  @font-face { font-family: 'Inter'; src: url('fonts/Inter-900.woff2') format('woff2'); font-weight: 900; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #0B6BBF; }
+  svg { display: block; }
+</style>
+</head>
+<body>
+<svg id="stage" xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+<script>
+'use strict';
+/* Wiesn 2026 intro. Every frame is a pure function of t (seconds): render(t) rebuilds the SVG.
+ * No timers and no CSS animations, so the same t always gives the same image. */
+const W = 1920, H = 1080, FPS = 30, DUR = 20, FREEZE = 590 / FPS; // the last 10 frames are a static hold
+const SAFE = { x0: 96, x1: 1824, y0: 54, y1: 1026 };                // 5 % safety margins
+const C = { blue: '#0B6BBF', white: '#FFFFFF', gold: '#F2A900', cream: '#FFF4DC', brown: '#3B2416', red: '#D7263D' };
+const OL = 10; // outline width
+const SHIFT = 5 / FPS; // hard scene shift: 5 frames
+
+/* ---------- maths ---------- */
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, u) => a + (b - a) * u;
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const E = {
+  outBack: u => { const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(u - 1, 3) + c1 * Math.pow(u - 1, 2); },
+  outCubic: u => 1 - Math.pow(1 - u, 3),
+  inOutCubic: u => (u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2),
+  inQuad: u => u * u,
+  outExpo: u => (u >= 1 ? 1 : 1 - Math.pow(2, -10 * u)),
+  outBounce: u => { const n = 7.5625, d = 2.75; if (u < 1 / d) return n * u * u; if (u < 2 / d) return n * (u -= 1.5 / d) * u + 0.75; if (u < 2.5 / d) return n * (u -= 2.25 / d) * u + 0.9375; return n * (u -= 2.625 / d) * u + 0.984375; },
+};
+const hash = n => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+const f2 = v => (Math.round(v * 100) / 100).toFixed(2);
+
+/* German number formats */
+const euroCents = v => f2(v).replace('.', ',') + ' €';
+const euroThousands = v => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
+/* a counter that lands exactly on its target */
+function count(t, a, b, target, ease, fmt) {
+  const u = prog(t, a, b);
+  return fmt(u >= 1 ? target : target * ease(u));
+}
+
+/* ---------- svg helpers ---------- */
+let UID = 0;
+const tf = (x, y, s = 1, r = 0) => `translate(${x.toFixed(2)} ${y.toFixed(2)}) rotate(${r.toFixed(3)}) scale(${s.toFixed(4)})`;
+function txt(x, y, str, o = {}) {
+  const fam = o.font || 'Inter', size = o.size || 64, wgt = o.weight || (fam === 'Anton' ? 400 : 800);
+  const st = o.stroke ? ` stroke="${o.stroke}" stroke-width="${o.sw || OL}" stroke-linejoin="round" paint-order="stroke"` : '';
+  const mw = o.maxw ? ` data-maxw="${o.maxw}"` : '';
+  const ls = o.ls ? ` letter-spacing="${o.ls}"` : '';
+  return `<text x="${x}" y="${y}" font-family="${fam}" font-weight="${wgt}" font-size="${size}" fill="${o.fill || C.brown}" text-anchor="${o.anchor || 'middle'}" dominant-baseline="${o.base || 'central'}"${st}${mw}${ls}>${str}</text>`;
+}
+/* flat card: offset shadow + fill + thick outline */
+function card(x, y, w, h, r, fill, o = {}) {
+  const sh = o.shadow == null ? 14 : o.shadow;
+  return (sh ? `<rect x="${x + sh}" y="${y + sh}" width="${w}" height="${h}" rx="${r}" fill="${C.brown}"/>` : '') +
+    `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fill}" stroke="${C.brown}" stroke-width="${OL}"/>`;
+}
+
+/* ---------- backgrounds ---------- */
+function rauten(t, alpha = 1) {
+  const id = 'r' + (UID++);
+  const ox = (t * 60) % 160, oy = (t * 45) % 120;
+  return `<defs><pattern id="${id}" width="160" height="120" patternUnits="userSpaceOnUse" patternTransform="translate(${ox.toFixed(2)} ${oy.toFixed(2)})">
+      <rect width="160" height="120" fill="${C.white}"/>
+      <path d="M80 0 L160 60 L80 120 L0 60 Z" fill="${C.blue}" opacity="${alpha}"/>
+    </pattern></defs><rect width="${W}" height="${H}" fill="url(#${id})"/>`;
+}
+function darkBg(t) {
+  const id = 'd' + (UID++);
+  const ox = (t * 40) % 160;
+  return `<defs><pattern id="${id}" width="160" height="120" patternUnits="userSpaceOnUse" patternTransform="translate(${ox.toFixed(2)} 0)">
+      <rect width="160" height="120" fill="${C.brown}"/>
+      <path d="M80 0 L160 60 L80 120 L0 60 Z" fill="#4A2E1C"/>
+    </pattern></defs><rect width="${W}" height="${H}" fill="url(#${id})"/>`;
+}
+function blueBg(t) {
+  const id = 'b' + (UID++);
+  const ox = (t * 50) % 160, oy = (t * 30) % 120;
+  return `<defs><pattern id="${id}" width="160" height="120" patternUnits="userSpaceOnUse" patternTransform="translate(${ox.toFixed(2)} ${oy.toFixed(2)})">
+      <rect width="160" height="120" fill="${C.blue}"/>
+      <path d="M80 0 L160 60 L80 120 L0 60 Z" fill="#1678CC"/>
+    </pattern></defs><rect width="${W}" height="${H}" fill="url(#${id})"/>`;
+}
+
+/* ---------- props ---------- */
+/* Maßkrug, origin = bottom centre. fill 0..1, over 0..1 (foam overflowing the rim) */
+function mug(x, y, s, fill, over, lt, rot = 0) {
+  const w = 300, h = 420, id = 'm' + (UID++);
+  const l = -w / 2 + 18, r = w / 2 - 18, top = -h + 14, bot = -34;
+  const lvl = bot - fill * (bot - top);
+  let g = `<g transform="${tf(x, y, s, rot)}">`;
+  // handle
+  g += `<path d="M ${w / 2 - 6} ${-h + 70} C ${w / 2 + 120} ${-h + 60}, ${w / 2 + 120} -90, ${w / 2 - 6} -100" fill="none" stroke="${C.brown}" stroke-width="64" stroke-linecap="round"/>`;
+  g += `<path d="M ${w / 2 - 6} ${-h + 70} C ${w / 2 + 120} ${-h + 60}, ${w / 2 + 120} -90, ${w / 2 - 6} -100" fill="none" stroke="#E6F4FF" stroke-width="40" stroke-linecap="round"/>`;
+  // glass body
+  g += `<defs><clipPath id="${id}"><rect x="${l}" y="${top}" width="${r - l}" height="${bot - top}" rx="18"/></clipPath></defs>`;
+  g += `<rect x="${-w / 2}" y="${-h}" width="${w}" height="${h}" rx="30" fill="#E6F4FF"/>`;
+  g += `<g clip-path="url(#${id})">`;
+  if (fill > 0) {
+    g += `<rect x="${l}" y="${lvl}" width="${r - l}" height="${bot - lvl}" fill="${C.gold}"/>`;
+    g += `<rect x="${l}" y="${lvl}" width="40" height="${bot - lvl}" fill="#FFC633"/>`;
+    for (let i = 0; i < 16; i++) { // rising bubbles
+      const by = bot - ((hash(i * 3.1) + lt * (0.5 + hash(i) * 0.6)) % 1) * (bot - lvl);
+      const bx = l + 20 + hash(i * 7.3) * (r - l - 40);
+      if (by > lvl + 30) g += `<circle cx="${bx.toFixed(1)}" cy="${by.toFixed(1)}" r="${(4 + hash(i * 5) * 5).toFixed(1)}" fill="${C.cream}" opacity="0.75"/>`;
+    }
+    const fh = 54 * clamp(fill * 4);
+    g += `<rect x="${l}" y="${lvl - 4}" width="${r - l}" height="${fh}" fill="${C.cream}"/>`;
+  }
+  g += `</g>`;
+  // dimples of a classic Maßkrug
+  for (let row = 0; row < 4; row++) for (let col = 0; col < 3; col++) {
+    const dx = -78 + col * 78 + (row % 2 ? 39 : 0), dy = -h + 110 + row * 70;
+    if (dx > 110) continue;
+    g += `<ellipse cx="${dx}" cy="${dy}" rx="26" ry="20" fill="none" stroke="#FFFFFF" stroke-width="5" opacity="0.55"/>`;
+  }
+  g += `<rect x="${-w / 2}" y="${-h}" width="${w}" height="${h}" rx="30" fill="none" stroke="${C.brown}" stroke-width="${OL}"/>`;
+  g += `<rect x="${-w / 2 + 6}" y="-40" width="${w - 12}" height="34" rx="12" fill="#CFE6F7" stroke="${C.brown}" stroke-width="6"/>`;
+  g += `<rect x="${-w / 2 + 26}" y="${-h + 40}" width="16" height="${h - 110}" rx="8" fill="#FFFFFF" opacity="0.8"/>`;
+  // foam cap + drips over the rim
+  if (fill >= 0.98) {
+    const cap = 0.35 + 0.65 * over;
+    let foam = '';
+    for (let i = 0; i < 7; i++) {
+      const cx = -w / 2 + 10 + i * ((w - 20) / 6), rr = (38 + 10 * hash(i * 2.2)) * cap + Math.sin(lt * 5 + i) * 2;
+      foam += `<circle cx="${cx.toFixed(1)}" cy="${(-h - 6 - 18 * cap * hash(i * 9.1)).toFixed(1)}" r="${rr.toFixed(1)}"/>`;
+    }
+    [[-110, 150], [-35, 230], [55, 120], [118, 190]].forEach(([dx, len], i) => {
+      const L = len * clamp(over * 1.3 - i * 0.12) + 4 * Math.sin(lt * 3 + i);
+      if (L > 4) foam += `<rect x="${dx - 17}" y="${-h - 10}" width="34" height="${L.toFixed(1)}" rx="17"/>`;
+    });
+    g += `<g fill="${C.cream}" stroke="${C.brown}" stroke-width="${OL}" paint-order="stroke">${foam}</g>`;
+    g += `<g fill="${C.cream}">${foam}</g>`;
+  }
+  return g + `</g>`;
+}
+/* tumbler of water, origin = bottom centre */
+function waterGlass(x, y, s, lvl, lt) {
+  const id = 'w' + (UID++);
+  const tw = 135, bw = 105, h = 400;
+  const body = `M ${-tw} ${-h} L ${tw} ${-h} L ${bw} 0 L ${-bw} 0 Z`;
+  const wy = -24 - lvl * (h - 70);
+  let g = `<g transform="${tf(x, y, s)}"><defs><clipPath id="${id}"><path d="${body}"/></clipPath></defs>`;
+  g += `<path d="${body}" fill="#EAF7FF"/>`;
+  g += `<g clip-path="url(#${id})">`;
+  if (lvl > 0) {
+    let wave = `M ${-tw} ${wy}`;
+    for (let i = 0; i <= 12; i++) { const xx = -tw + i * (2 * tw / 12); wave += ` L ${xx.toFixed(1)} ${(wy + Math.sin(lt * 6 + i * 0.9) * 6).toFixed(1)}`; }
+    wave += ` L ${tw} 0 L ${-tw} 0 Z`;
+    g += `<path d="${wave}" fill="#5DB8FF"/>`;
+    g += `<path d="${wave}" fill="none" stroke="#FFFFFF" stroke-width="8" opacity="0.8" transform="translate(0 6)" clip-path="url(#${id})"/>`;
+    for (let i = 0; i < 10; i++) {
+      const by = -20 - ((hash(i * 4.7) + lt * 0.7) % 1) * (-20 - wy);
+      g += `<circle cx="${(-80 + hash(i * 2.9) * 160).toFixed(1)}" cy="${by.toFixed(1)}" r="${(4 + hash(i) * 5).toFixed(1)}" fill="#FFFFFF" opacity="0.8"/>`;
+    }
+    [[-50, 0], [40, 1]].forEach(([ix, k]) => {
+      const iy = wy - 10 + Math.sin(lt * 4 + k * 2) * 6;
+      g += `<rect x="${ix - 32}" y="${iy - 32}" width="64" height="64" rx="12" fill="#FFFFFF" stroke="${C.brown}" stroke-width="6" transform="rotate(${(k ? 14 : -10) + Math.sin(lt * 3 + k) * 6} ${ix} ${iy})" opacity="0.95"/>`;
+    });
+  }
+  g += `</g><path d="${body}" fill="none" stroke="${C.brown}" stroke-width="${OL}" stroke-linejoin="round"/>`;
+  g += `<path d="M ${-tw + 34} ${-h + 40} L ${-bw + 26} -40" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity="0.85"/>`;
+  return g + `</g>`;
+}
+/* price panel: big number + caption */
+function pricePanel(cx, cy, num, label, o = {}) {
+  const w = 820, h = 470;
+  let g = `<g transform="${tf(cx, cy, o.s == null ? 1 : o.s, o.rot || 0)}">`;
+  g += card(-w / 2, -h / 2, w, h, 40, C.cream);
+  g += `<rect x="${-w / 2}" y="${h / 2 - 150}" width="${w}" height="150" rx="0" fill="${C.blue}"/>`;
+  g += `<path d="M ${-w / 2} ${h / 2 - 150} L ${w / 2} ${h / 2 - 150}" stroke="${C.brown}" stroke-width="${OL}"/>`;
+  g += `<rect x="${-w / 2}" y="${-h / 2}" width="${w}" height="${h}" rx="40" fill="none" stroke="${C.brown}" stroke-width="${OL}"/>`;
+  g += `<g transform="translate(${o.nx || 0} 0) scale(${o.ns || 1})">` + txt(0, -70, num, { font: 'Anton', size: 240, fill: C.brown, maxw: 740 }) + `</g>`;
+  g += `<g transform="translate(${o.lx || 0} 0)">` + txt(0, h / 2 - 75, label, { size: 72, weight: 800, fill: C.white, maxw: 740 }) + `</g>`;
+  return g + `</g>`;
+}
+
+/* ---------- scene 1+2: beer (0–3) and water (3–6) ---------- */
+function S12(t) {
+  let g = rauten(t);
+  // mug: centre stage, then a hard 5-frame shift to the left at 3.0
+  const sh = E.inOutCubic(prog(t, 3.0, 3.0 + SHIFT));
+  const mx = lerp(600, 250, sh), ms = lerp(1.12, 0.62, sh);
+  const pop = E.outBack(prog(t, 0.0, 0.3));
+  const fill = E.outCubic(prog(t, 0.2, 1.2));
+  const over = prog(t, 1.05, 2.0);
+  const wob = Math.sin(t * 7) * 2.2 * (1 - sh) + Math.sin(t * 2.4) * 1.5;
+  g += mug(mx, 900, ms * pop, fill, over, t, wob);
+  // water glass appears in the mug's place
+  if (t >= 3.0) {
+    const gp = E.outBack(prog(t, 3.02, 3.3));
+    g += waterGlass(640, 900, 1.05 * gp, E.outCubic(prog(t, 3.15, 4.0)), t - 3);
+  }
+  // price panel on the right
+  const pin = E.outBack(prog(t, 0.15, 0.5));
+  const bob = Math.sin(t * 2.2) * 6;
+  const beerNum = count(t, 0.35, 1.7, 15.90, E.outCubic, euroCents);
+  const waterNum = count(t, 3.2, 4.5, 11.13, E.outCubic, euroCents);
+  const land1 = 1 + 0.08 * Math.exp(-Math.max(0, t - 1.7) * 9) * (t >= 1.7 ? 1 : 0);
+  const land2 = 1 + 0.08 * Math.exp(-Math.max(0, t - 4.5) * 9) * (t >= 4.5 ? 1 : 0);
+  const pcx = 1380, pcy = 470 + bob;
+  if (t < 3.0) {
+    g += pricePanel(pcx, pcy, beerNum, '1 Maß Bier', { s: pin, ns: land1 });
+  } else {
+    const sw = E.inOutCubic(prog(t, 3.0, 3.0 + SHIFT));
+    // content swap inside the panel: a hard horizontal shift, clipped to the panel
+    const id = 'pc' + (UID++);
+    g += `<defs><clipPath id="${id}"><rect x="${pcx - 400}" y="${pcy - 230}" width="800" height="460" rx="36"/></clipPath></defs>`;
+    g += pricePanel(pcx, pcy, '', '');
+    g += `<g clip-path="url(#${id})">`;
+    if (sw < 1) g += `<g transform="translate(${-900 * sw} 0)">${pricePanel(pcx, pcy, euroCents(15.90), '1 Maß Bier')}</g>`;
+    g += `<g transform="translate(${900 * (1 - sw)} 0)">${pricePanel(pcx, pcy, waterNum, '1 Liter Wasser', { ns: land2 })}</g>`;
+    g += `</g>`;
+  }
+  // KEIN WITZ stamp at 5.0 s
+  if (t >= 5.0) {
+    const u = prog(t, 5.0, 5.0 + 6 / FPS);
+    const s = lerp(2.6, 1, E.outCubic(u)) * (1 + 0.04 * Math.sin((t - 5) * 9) * (u >= 1 ? 1 : 0));
+    g += `<g transform="${tf(1380, 868, s, -9)}" opacity="${clamp(u * 3)}">
+      <rect x="-330" y="-92" width="660" height="184" rx="22" fill="${C.cream}" opacity="0.92"/>
+      <rect x="-330" y="-92" width="660" height="184" rx="22" fill="none" stroke="${C.red}" stroke-width="14"/>
+      <rect x="-306" y="-68" width="612" height="136" rx="12" fill="none" stroke="${C.red}" stroke-width="5"/>
+      ${txt(0, 4, 'KEIN WITZ', { font: 'Anton', size: 130, fill: C.red, ls: 6 })}</g>`;
+    if (u < 1) g += `<rect width="${W}" height="${H}" fill="${C.red}" opacity="${(0.25 * (1 - u)).toFixed(3)}"/>`;
+  }
+  return g;
+}
+
+/* ---------- scene 3: the toilet (6–9.5) ---------- */
+function S3(t) {
+  const lt = t - 6;
+  let g = darkBg(t);
+  // falling coins in the background
+  for (let i = 0; i < 26; i++) {
+    const x = 760 + hash(i * 3.3) * 1100, y = -80 + ((hash(i * 1.7) * 1200 + lt * (300 + 260 * hash(i))) % 1240);
+    const sq = Math.abs(Math.cos(lt * 4 + i));
+    g += `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${(26 * sq + 4).toFixed(1)}" ry="26" fill="${C.gold}" stroke="#7A4E00" stroke-width="5" opacity="0.35"/>`;
+  }
+  // door with WC sign
+  const dp = E.outBack(prog(lt, 0.0, 0.35));
+  const crack = 18 + 10 * Math.sin(lt * 5) + 8 * Math.sin(lt * 13);
+  g += `<g transform="${tf(470, 960, dp)}">`;
+  g += `<path d="M -40 0 L -40 -40 L 40 -40 L 40 0 Z" fill="none"/>`;
+  // light spilling from the door gap
+  g += `<path d="M 175 0 L ${175 + crack} 0 L ${520 + crack * 6} 60 L ${300} 60 Z" fill="${C.gold}" opacity="0.35"/>`;
+  g += `<rect x="-235" y="-800" width="470" height="800" rx="16" fill="${C.cream}" stroke="${C.brown}" stroke-width="${OL}"/>`;
+  g += `<rect x="-195" y="-760" width="390" height="760" fill="${C.gold}"/>`;
+  g += `<rect x="-195" y="-760" width="${390 - crack}" height="760" fill="${C.blue}" stroke="${C.brown}" stroke-width="${OL}"/>`;
+  g += `<rect x="-160" y="-720" width="${310 - crack}" height="300" rx="10" fill="none" stroke="#095A9F" stroke-width="10"/>`;
+  g += `<rect x="-160" y="-380" width="${310 - crack}" height="330" rx="10" fill="none" stroke="#095A9F" stroke-width="10"/>`;
+  g += `<circle cx="${150 - crack}" cy="-400" r="22" fill="${C.gold}" stroke="${C.brown}" stroke-width="7"/>`;
+  const sw = Math.sin(lt * 3.2) * 4;
+  g += `<g transform="rotate(${sw.toFixed(2)} 0 -660)">` + card(-130, -660, 240, 150, 18, C.cream, { shadow: 8 }) + txt(-10, -583, 'WC', { font: 'Anton', size: 110, fill: C.brown }) + `</g>`;
+  g += `</g>`;
+  // counter: accelerates to 30.000 €
+  const num = count(t, 6.25, 8.75, 30000, E.inQuad, euroThousands);
+  const land = t >= 8.75 ? 1 + 0.1 * Math.exp(-(t - 8.75) * 8) : 1;
+  const np = E.outBack(prog(lt, 0.1, 0.4));
+  const glow = 0.25 + 0.15 * Math.sin(lt * 6);
+  g += `<g transform="${tf(1270, 470, np * land)}">`;
+  g += `<ellipse cx="0" cy="0" rx="560" ry="200" fill="${C.gold}" opacity="${glow.toFixed(3)}" filter="url(#blur)"/>`;
+  g += txt(0, 0, num, { font: 'Anton', size: 280, fill: C.gold, stroke: '#1E120A', sw: 22, maxw: 1050 });
+  g += `</g>`;
+  const lp = E.outBack(prog(lt, 0.3, 0.6));
+  g += `<g transform="${tf(1270, 760, lp)}">` + txt(0, 0, '1 Gang zur Toilette', { size: 76, weight: 900, fill: C.cream, maxw: 1050 }) + `</g>`;
+  return g;
+}
+
+/* ---------- scene 4: three oddities (9.5–14) ---------- */
+function rollator(lt) {
+  let g = `<defs><clipPath id="rl"><rect x="-380" y="-330" width="900" height="640"/></clipPath></defs><g clip-path="url(#rl)">`;
+  // speed lines
+  for (let i = 0; i < 6; i++) {
+    const y = -170 + i * 62, len = 50 + hash(i * 3) * 60, off = ((lt * 500 + hash(i) * 120) % 70);
+    g += `<path d="M ${-250 - off} ${y} l ${-len} 0" stroke="${i % 2 ? C.gold : C.blue}" stroke-width="18" stroke-linecap="round"/>`;
+  }
+  g += `</g>`;
+  const jit = Math.sin(lt * 40) * 3;
+  g += `<g transform="translate(${jit} ${Math.abs(Math.sin(lt * 20)) * -6}) rotate(-4)">`;
+  // frame
+  const tube = `fill="none" stroke="${C.brown}" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"`;
+  g += `<path d="M -170 120 L -120 -230 L -190 -250" ${tube}/>`;
+  g += `<path d="M 170 120 L 90 -150 L -110 -170" ${tube}/>`;
+  g += `<path d="M -130 -60 L 120 -60" ${tube}/>`;
+  g += `<rect x="-240" y="-275" width="90" height="44" rx="20" fill="${C.red}" stroke="${C.brown}" stroke-width="8"/>`;
+  g += card(-120, -120, 230, 50, 16, C.red, { shadow: 0 });
+  g += `<path d="M -90 -40 L 80 -40 L 60 40 L -70 40 Z" fill="${C.gold}" stroke="${C.brown}" stroke-width="8" stroke-linejoin="round"/>`;
+  g += `<path d="M -60 -40 L -45 40 M -15 -40 L -10 40 M 30 -40 L 25 40" stroke="${C.brown}" stroke-width="5"/>`;
+  [[-170, 120], [170, 120]].forEach(([wx, wy]) => {
+    const a = -lt * 720;
+    g += `<g transform="translate(${wx} ${wy}) rotate(${a.toFixed(1)})"><circle r="70" fill="${C.brown}"/><circle r="44" fill="${C.cream}"/>
+      <path d="M -44 0 L 44 0 M 0 -44 L 0 44" stroke="${C.brown}" stroke-width="9"/><circle r="12" fill="${C.brown}"/></g>`;
+  });
+  return g + `</g>`;
+}
+function vanishingMugs(lt) {
+  let g = '';
+  for (let i = 0; i < 5; i++) {
+    const tv = 0.3 + i * 0.2, u = prog(lt, tv, tv + 0.16);
+    const x = -280 + i * 140;
+    if (u < 1) {
+      const s = 0.36 * (u > 0 ? (1 + 0.3 * Math.sin(u * Math.PI)) * (1 - E.inQuad(u)) : 1);
+      g += mug(x, 150 + Math.sin(lt * 6 + i) * 4, s, 1, 0.4, lt + i);
+    }
+    if (u > 0 && u < 1) { // poof
+      for (let k = 0; k < 6; k++) { const an = k / 6 * Math.PI * 2, d = 30 + 80 * u; g += `<circle cx="${(x + Math.cos(an) * d).toFixed(1)}" cy="${(70 + Math.sin(an) * d).toFixed(1)}" r="${(16 * (1 - u)).toFixed(1)}" fill="${C.cream}" stroke="${C.brown}" stroke-width="4"/>`; }
+    }
+    if (u >= 1) g += `<ellipse cx="${x}" cy="150" rx="50" ry="10" fill="${C.brown}" opacity="0.18"/>`;
+  }
+  const bp = E.outBack(prog(lt, 0.15, 0.45));
+  g += `<g transform="${tf(110, -175, bp, -8 + Math.sin(lt * 4) * 5)}"><circle r="125" fill="${C.red}" stroke="${C.brown}" stroke-width="${OL}"/>${txt(0, 4, '×1.000', { font: 'Anton', size: 92, fill: C.cream })}</g>`;
+  return g;
+}
+function parrot(wing) {
+  // small yellow-grey parrot (cockatiel-like), origin at its feet
+  return `<path d="M -10 -20 L -70 40" stroke="#8A9096" stroke-width="16" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-50" rx="34" ry="46" fill="#A5ABB1" stroke="${C.brown}" stroke-width="7"/>
+    <g transform="rotate(${wing.toFixed(1)} 6 -60)"><path d="M 6 -70 C 60 -80, 70 -30, 30 -10 C 20 -30, 10 -40, 6 -70 Z" fill="#7E858C" stroke="${C.brown}" stroke-width="6" stroke-linejoin="round"/></g>
+    <circle cx="-4" cy="-104" r="30" fill="${C.gold}" stroke="${C.brown}" stroke-width="7"/>
+    <path d="M -6 -130 C -10 -165, 10 -175, 20 -170 C 6 -160, 2 -148, 4 -132" fill="${C.gold}" stroke="${C.brown}" stroke-width="6"/>
+    <circle cx="-16" cy="-96" r="10" fill="#FF8A3D"/>
+    <circle cx="6" cy="-110" r="5" fill="${C.brown}"/>
+    <path d="M 22 -104 L 40 -96 L 22 -88 Z" fill="#6B6F73" stroke="${C.brown}" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M -12 -4 L -12 6 M 10 -4 L 10 6" stroke="${C.brown}" stroke-width="6" stroke-linecap="round"/>`;
+}
+function waitress(lt) {
+  const B = C.brown;
+  let g = '';
+  const sway = Math.sin(lt * 3) * 2;
+  g += `<g transform="rotate(${sway.toFixed(2)} 0 0)">`;
+  // arms holding mugs
+  g += `<path d="M -60 -440 L -190 -360" stroke="${B}" stroke-width="40" stroke-linecap="round"/>`;
+  g += `<path d="M 60 -440 L 190 -360" stroke="${B}" stroke-width="40" stroke-linecap="round"/>`;
+  g += mug(-235, -250, 0.3, 1, 0.5, lt);
+  g += mug(-300, -250, 0.3, 1, 0.5, lt + 1);
+  g += mug(230, -250, 0.3, 1, 0.5, lt + 2);
+  g += mug(295, -250, 0.3, 1, 0.5, lt + 3);
+  g += `<path d="M -225 -350 L -170 -360 M 220 -350 L 170 -360" stroke="${B}" stroke-width="30" stroke-linecap="round"/>`;
+  // body: dirndl silhouette
+  g += `<path d="M -75 -470 L 75 -470 L 62 -320 L -62 -320 Z" fill="${B}"/>`;
+  g += `<path d="M -62 -330 C -120 -250, -170 -120, -180 -30 L 180 -30 C 170 -120, 120 -250, 62 -330 Z" fill="${B}"/>`;
+  g += `<path d="M -70 -310 C -95 -200, -100 -120, -95 -40 L 95 -40 C 100 -120, 95 -200, 70 -310 Z" fill="${C.cream}" stroke="${B}" stroke-width="7"/>`;
+  g += `<path d="M -70 -310 L 70 -310" stroke="${C.red}" stroke-width="16"/>`;
+  g += `<path d="M -50 -30 L -50 0 M 50 -30 L 50 0" stroke="${B}" stroke-width="30" stroke-linecap="round"/>`;
+  g += `<rect x="-22" y="-510" width="44" height="50" fill="${B}"/>`;
+  g += `<circle cx="0" cy="-555" r="56" fill="${B}"/>`;
+  g += `<circle cx="-48" cy="-592" r="30" fill="${B}"/>`;
+  return g + `</g>`;
+}
+function oddityCard(k, lt) {
+  const titles = [['ROLLATOR', 'GEKLAUT'], ['1.000 KRÜGE', 'WEG'], ['VOGEL IM', 'BIERZELT']];
+  let g = card(160, 210, 1600, 690, 44, C.cream);
+  // icon area
+  g += `<g transform="translate(560 ${k === 2 ? 860 : 560})">`;
+  if (k === 0) g += rollator(lt);
+  if (k === 1) g += vanishingMugs(lt);
+  if (k === 2) {
+    g += waitress(lt);
+    // parrot flies in on an arc and lands on the shoulder
+    const u = E.outCubic(prog(lt, 0.1, 0.75));
+    const p0 = [420, -720], p1 = [180, -900], p2 = [-100, -462];
+    const px = (1 - u) * (1 - u) * p0[0] + 2 * (1 - u) * u * p1[0] + u * u * p2[0];
+    const py = (1 - u) * (1 - u) * p0[1] + 2 * (1 - u) * u * p1[1] + u * u * p2[1];
+    const flying = u < 1;
+    const wing = flying ? -60 + 60 * Math.sin(lt * 45) : 0;
+    const bob = flying ? 0 : Math.sin(lt * 9) * 3;
+    g += `<g transform="${tf(px, py + bob, 1.1, flying ? -12 : 0)}">${parrot(wing)}</g>`;
+  }
+  g += `</g>`;
+  // caption
+  g += txt(1255, 470, titles[k][0], { font: 'Anton', size: 150, fill: C.brown, maxw: 760 });
+  g += txt(1255, 650, titles[k][1], { font: 'Anton', size: 150, fill: C.red, maxw: 760 });
+  // tag
+  g += card(960, 170, 590, 92, 46, C.red, { shadow: 8 }) + txt(1255, 217, `KURIOSITÄT ${k + 1}/3`, { size: 64, weight: 900, fill: C.cream });
+  return g;
+}
+function S4(t) {
+  let g = blueBg(t);
+  const starts = [9.5, 11.0, 12.5];
+  for (let k = 0; k < 3; k++) {
+    const t0 = starts[k], t1 = t0 + 1.5;
+    if (t < t0 - 0.01 || t >= t1 + SHIFT) continue;
+    const lt = t - t0;
+    let x = 0;
+    if (k > 0) x = W * (1 - E.outBack(prog(t, t0, t0 + 6 / FPS)));     // fly in, overshooting
+    if (k < 2 && t >= t1) x = -W * E.inOutCubic(prog(t, t1, t1 + SHIFT)); // shift out
+    if (k === 2 && t >= t1) x = 0;
+    g += `<g transform="translate(${x.toFixed(2)} 0)">${oddityCard(k, lt)}</g>`;
+  }
+  return g;
+}
+
+/* ---------- scene 5+6: title (14–18) and finale (18–20) ---------- */
+function pretzel() {
+  const d = 'M -150 70 C -250 -60, -150 -190, -40 -130 C 50 -80, 60 50, 0 80 C -60 50, -50 -80, 40 -130 C 150 -190, 250 -60, 150 70 C 90 140, -90 140, -150 70 Z';
+  let g = `<path d="${d}" fill="none" stroke="${C.brown}" stroke-width="66" stroke-linejoin="round"/>`;
+  g += `<path d="${d}" fill="none" stroke="#C47A2C" stroke-width="44" stroke-linejoin="round"/>`;
+  g += `<path d="${d}" fill="none" stroke="#E0A050" stroke-width="10" stroke-dasharray="2 40" stroke-linecap="round" transform="translate(-6 -8)"/>`;
+  for (let i = 0; i < 14; i++) g += `<rect x="${(-170 + hash(i * 3.3) * 340).toFixed(1)}" y="${(-150 + hash(i * 5.1) * 230).toFixed(1)}" width="9" height="9" fill="${C.cream}" transform="rotate(30)" opacity="0.9"/>`;
+  return g;
+}
+function heart() {
+  const d = 'M 0 110 C -60 60, -160 10, -160 -60 C -160 -130, -70 -150, 0 -90 C 70 -150, 160 -130, 160 -60 C 160 10, 60 60, 0 110 Z';
+  return `<path d="${d}" fill="#9C5A2A" stroke="${C.brown}" stroke-width="${OL}" stroke-linejoin="round"/>
+    <path d="${d}" fill="none" stroke="${C.cream}" stroke-width="10" stroke-dasharray="14 12" transform="scale(0.8) translate(0 -8)" stroke-linecap="round"/>
+    <circle cx="-50" cy="-30" r="14" fill="${C.red}"/><circle cx="50" cy="-30" r="14" fill="${C.blue}"/><circle cx="0" cy="20" r="14" fill="${C.gold}"/>
+    <path d="M -40 -110 C -80 -170, 80 -170, 40 -110" fill="none" stroke="${C.red}" stroke-width="12"/>`;
+}
+function S56(t) {
+  const lt = t - 14;
+  let g = rauten(t);
+  // falling props, bouncing on landing, then gently alive
+  const props = [
+    { x: 330, y: 880, t0: 0.05, draw: s => `<g transform="scale(${s})">${pretzel()}</g>`, s: 0.72 },
+    { x: 1440, y: 990, t0: 0.25, draw: s => mug(0, 0, s, 1, 0.7, lt), s: 0.55 },
+    { x: 1705, y: 900, t0: 0.45, draw: s => `<g transform="scale(${s})">${heart()}</g>`, s: 0.7 },
+  ];
+  props.forEach((p, i) => {
+    const u = prog(lt, p.t0, p.t0 + 0.75);
+    const y = lerp(-420, p.y, E.outBounce(u));
+    const rot = (1 - u) * (i % 2 ? 25 : -25) + Math.sin(t * 2.2 + i * 2) * 3;
+    g += `<g transform="${tf(p.x, y, 1, rot)}">${p.draw(p.s)}</g>`;
+  });
+  // title
+  const tp = E.outBack(prog(lt, 0.2, 0.55));
+  const breathe = 1 + 0.012 * Math.sin(t * 3);
+  g += `<g transform="${tf(960, 360, tp * breathe, (1 - tp) * -6)}">`;
+  g += `<g transform="translate(14 16)">${txt(0, 0, 'WIESN 2026', { font: 'Anton', size: 300, fill: C.brown, stroke: C.brown, sw: 28, ls: 4 })}</g>`;
+  g += txt(0, 0, 'WIESN 2026', { font: 'Anton', size: 300, fill: C.cream, stroke: C.brown, sw: 28, ls: 4, maxw: 1600 });
+  g += `</g>`;
+  // subtitle words, one by one
+  const words = ['Alle', 'Preise.', 'Alle', 'Kuriositäten.'];
+  const wt = [1.0, 1.35, 1.7, 2.05];
+  const barP = E.outCubic(prog(lt, 0.85, 1.05));
+  if (barP > 0) {
+    const bw = 1240 * barP;
+    g += card(960 - bw / 2, 580, bw, 130, 65, C.brown, { shadow: 0 });
+  }
+  // fixed word positions (measured once at load in WORDX)
+  words.forEach((w, i) => {
+    const u = prog(lt, wt[i], wt[i] + 0.22);
+    if (u <= 0) return;
+    const s = E.outBack(u);
+    g += `<g transform="${tf(WORDX[i], 645 - (1 - s) * 40, s)}">${txt(0, 0, w, { size: 80, weight: 900, fill: i % 2 ? C.gold : C.cream })}</g>`;
+  });
+  // finale badge
+  if (t >= 18.0) {
+    const u = E.outBack(prog(t, 18.0, 18.35));
+    const by = lerp(1250, 880, u);
+    const shine = ((t - 18.2) / 1.2) % 1;
+    const id = 'bc' + (UID++);
+    g += `<g transform="${tf(960, by, 1, (1 - u) * 8)}">`;
+    g += `<defs><clipPath id="${id}"><rect x="-370" y="-82" width="740" height="164" rx="82"/></clipPath></defs>`;
+    g += card(-370, -82, 740, 164, 82, C.gold);
+    if (t > 18.2) g += `<g clip-path="url(#${id})"><rect x="${(-520 + shine * 1100).toFixed(1)}" y="-120" width="70" height="240" fill="#FFFFFF" opacity="0.45" transform="skewX(-20)"/></g>`;
+    g += txt(0, 4, 'IN 20 MINUTEN', { font: 'Anton', size: 104, fill: C.brown, ls: 3, maxw: 600 });
+    g += `</g>`;
+  }
+  return g;
+}
+
+/* ---------- compositor ---------- */
+let WORDX = [];
+const SCENES = [[0, S12], [6, S3], [9.5, S4], [14, S56]];
+function render(tIn) {
+  const t = Math.min(tIn, FREEZE);
+  UID = 0;
+  let i = 0; for (let k = 0; k < SCENES.length; k++) if (t >= SCENES[k][0]) i = k;
+  const b = SCENES[i][0];
+  let body;
+  if (i > 0 && t < b + SHIFT) { // hard push between scenes (5 frames)
+    const e = E.inOutCubic(prog(t, b, b + SHIFT));
+    body = `<g transform="translate(${(-W * e).toFixed(2)} 0)">${SCENES[i - 1][1](t)}</g><g transform="translate(${(W * (1 - e)).toFixed(2)} 0)">${SCENES[i][1](t)}</g>`;
+  } else body = SCENES[i][1](t);
+  // end-of-toilet-scene camera shake
+  let sx = 0, sy = 0;
+  if (t > 8.75 && t < 9.4) { const a = 16 * Math.exp(-(t - 8.75) * 5); sx = Math.sin(t * 83) * a; sy = Math.cos(t * 67) * a; }
+  const svg = document.getElementById('stage');
+  svg.innerHTML = `<defs><filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="40"/></filter></defs>` +
+    `<rect width="${W}" height="${H}" fill="${C.brown}"/><g transform="translate(${sx.toFixed(2)} ${sy.toFixed(2)})">${body}</g>`;
+  // shrink any text tagged with data-maxw that is wider than allowed
+  svg.querySelectorAll('text[data-maxw]').forEach(el => {
+    const mw = +el.dataset.maxw, w = el.getComputedTextLength();
+    if (w > mw) el.setAttribute('font-size', (parseFloat(el.getAttribute('font-size')) * mw / w).toFixed(2));
+  });
+  return true;
+}
+function measureWords() {
+  const svg = document.getElementById('stage');
+  const words = ['Alle', 'Preise.', 'Alle', 'Kuriositäten.'];
+  svg.innerHTML = words.map(w => txt(0, 0, w, { size: 80, weight: 900 })).join('');
+  const ws = [...svg.querySelectorAll('text')].map(e => e.getComputedTextLength());
+  const gap = 26, total = ws.reduce((a, b) => a + b, 0) + gap * (ws.length - 1);
+  let x = 960 - total / 2;
+  WORDX = ws.map(w => { const c = x + w / 2; x += w + gap; return c; });
+}
+window.READY = (async () => {
+  await Promise.all(['400 100px Anton', '400 100px Inter', '700 100px Inter', '800 100px Inter', '900 100px Inter']
+    .map(f => document.fonts.load(f, 'ÄÖÜäöüß€×0123456789')));
+  measureWords();
+  render(0);
+  return true;
+})();
+window.render = render;
+(async () => { await window.READY; const q = new URLSearchParams(location.search); if (q.has('t')) render(parseFloat(q.get('t'))); })();
+</script>
+</body>
+</html>
