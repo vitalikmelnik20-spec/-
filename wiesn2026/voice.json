@@ -1,0 +1,53 @@
+{
+ "sr": 22050,
+ "lines": [
+  {
+   "start": 0.15,
+   "end": 2.593,
+   "window_end": 3.0,
+   "length_scale": 0.92,
+   "max_pause": 0.22,
+   "text": "Fünfzehn Euro neunzig für eine Maß."
+  },
+  {
+   "start": 3.15,
+   "end": 5.288,
+   "window_end": 6.0,
+   "length_scale": 0.92,
+   "max_pause": 0.22,
+   "text": "Über elf Euro für einen Liter Wasser."
+  },
+  {
+   "start": 6.15,
+   "end": 8.954,
+   "window_end": 9.5,
+   "length_scale": 0.92,
+   "max_pause": 0.22,
+   "text": "Dreißigtausend Euro für einen Gang zur Toilette."
+  },
+  {
+   "start": 9.55,
+   "end": 13.803,
+   "window_end": 14.05,
+   "length_scale": 0.8,
+   "max_pause": 0.22,
+   "text": "Ein geklauter Rollator, tausend verschwundene Krüge, und ein Vogel im Bierzelt."
+  },
+  {
+   "start": 14.1,
+   "end": 18.301,
+   "window_end": 18.5,
+   "length_scale": 0.7,
+   "max_pause": 0.12,
+   "text": "Wiesn zwanzig sechsundzwanzig: alle Preise, alle Kuriositäten."
+  },
+  {
+   "start": 18.5,
+   "end": 19.732,
+   "window_end": 19.95,
+   "length_scale": 0.86,
+   "max_pause": 0.22,
+   "text": "In zwanzig Minuten."
+  }
+ ]
+}

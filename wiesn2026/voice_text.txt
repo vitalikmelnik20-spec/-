@@ -1,8 +1,22 @@
 Wiesn 2026 – Intro (20 s) – Sprechertext
 
+Drehbuch (ursprüngliche Zeitfenster):
 0,0–3,0   Fünfzehn Euro neunzig für eine Maß.
 3,0–6,0   Über elf Euro für einen Liter Wasser.
 6,0–9,5   Dreißigtausend Euro für einen Gang zur Toilette.
 9,5–14,0  Ein geklauter Rollator, tausend verschwundene Krüge – und ein Vogel im Bierzelt.
 14,0–18,0 Das ist die Wiesn 2026: alle Preise, alle Kuriositäten.
 18,0–20,0 In zwanzig Minuten.
+
+Tatsächlich eingesprochen (voice.mp3, weibliche Stimme, Start–Ende in Sekunden):
+0,15–2,59    Fünfzehn Euro neunzig für eine Maß.
+3,15–5,29    Über elf Euro für einen Liter Wasser.
+6,15–8,95    Dreißigtausend Euro für einen Gang zur Toilette.
+9,55–13,80   Ein geklauter Rollator, tausend verschwundene Krüge, und ein Vogel im Bierzelt.
+14,10–18,30  Wiesn zwanzig sechsundzwanzig: alle Preise, alle Kuriositäten.
+18,50–19,73  In zwanzig Minuten.
+
+Hinweis: „Das ist die Wiesn 2026: …“ braucht in natürlichem Tempo über 5 s und passt nicht
+in das 4-s-Fenster. Gesprochen wird deshalb der Bildschirmtext „Wiesn 2026 – Alle Preise.
+Alle Kuriositäten.“, die Jahreszahl umgangssprachlich als „zwanzig sechsundzwanzig“.
+„In zwanzig Minuten“ beginnt bei 18,5 s, direkt nachdem der Badge erschienen ist.
