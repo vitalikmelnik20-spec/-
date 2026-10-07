@@ -28,3 +28,5 @@ chicago/render/segments/
 chicago/render/snapshots/
 chicago/render/audio/
 chicago/.kokoro/
+.claude/skills/
+remotion-lab/out/

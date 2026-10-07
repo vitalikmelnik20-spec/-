@@ -1,0 +1,33 @@
+{
+  "name": "remotion-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Remotion workspace for programmatic videos (React). Remotion is free for individuals / companies with up to 3 employees.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts",
+    "still": "remotion still src/index.ts"
+  },
+  "dependencies": {
+    "@remotion/captions": "^4.0.534",
+    "@remotion/cli": "^4.0.534",
+    "@remotion/lottie": "^4.0.534",
+    "@remotion/media": "^4.0.534",
+    "@remotion/noise": "^4.0.534",
+    "@remotion/paths": "^4.0.534",
+    "@remotion/renderer": "^4.0.534",
+    "@remotion/shapes": "^4.0.534",
+    "@remotion/transitions": "^4.0.534",
+    "gsap": "^3.15.0",
+    "lottie-web": "^5.13.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.534"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "hyperframes": "^0.8.140",
+    "typescript": "^7.0.2"
+  }
+}
