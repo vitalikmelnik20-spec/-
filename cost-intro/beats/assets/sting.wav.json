@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "audio": "assets/sting.wav",
+  "beats": [
+    {
+      "time": 1.86,
+      "strength": 0.137
+    },
+    {
+      "time": 2.058,
+      "strength": 0.198
+    },
+    {
+      "time": 2.256,
+      "strength": 0.293
+    },
+    {
+      "time": 2.454,
+      "strength": 0.464
+    },
+    {
+      "time": 2.652,
+      "strength": 0.528
+    },
+    {
+      "time": 2.85,
+      "strength": 0.674
+    },
+    {
+      "time": 3.048,
+      "strength": 0.343
+    },
+    {
+      "time": 3.246,
+      "strength": 0.899
+    },
+    {
+      "time": 3.444,
+      "strength": 0.528
+    },
+    {
+      "time": 3.642,
+      "strength": 0.218
+    },
+    {
+      "time": 3.84,
+      "strength": 0.872
+    },
+    {
+      "time": 4.038,
+      "strength": 0.424
+    },
+    {
+      "time": 4.236,
+      "strength": 0.126
+    },
+    {
+      "time": 4.434,
+      "strength": 0.636
+    },
+    {
+      "time": 4.632,
+      "strength": 0.351
+    },
+    {
+      "time": 4.83,
+      "strength": 0.701
+    },
+    {
+      "time": 5.028,
+      "strength": 0.567
+    },
+    {
+      "time": 5.226,
+      "strength": 0.31
+    },
+    {
+      "time": 5.424,
+      "strength": 1
+    },
+    {
+      "time": 5.622,
+      "strength": 0.561
+    },
+    {
+      "time": 5.82,
+      "strength": 0.186
+    }
+  ]
+}
