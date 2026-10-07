@@ -1,0 +1,814 @@
+[
+ {
+  "text": "Could",
+  "startMs": 250,
+  "endMs": 670,
+  "timestampMs": 460,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 670,
+  "endMs": 847,
+  "timestampMs": 759,
+  "confidence": null
+ },
+ {
+  "text": " actually",
+  "startMs": 847,
+  "endMs": 1148,
+  "timestampMs": 997,
+  "confidence": null
+ },
+ {
+  "text": " afford",
+  "startMs": 1148,
+  "endMs": 1388,
+  "timestampMs": 1268,
+  "confidence": null
+ },
+ {
+  "text": " to",
+  "startMs": 1388,
+  "endMs": 1507,
+  "timestampMs": 1447,
+  "confidence": null
+ },
+ {
+  "text": " live",
+  "startMs": 1507,
+  "endMs": 1687,
+  "timestampMs": 1597,
+  "confidence": null
+ },
+ {
+  "text": " in",
+  "startMs": 1687,
+  "endMs": 1807,
+  "timestampMs": 1747,
+  "confidence": null
+ },
+ {
+  "text": " Chicago?",
+  "startMs": 1807,
+  "endMs": 2296,
+  "timestampMs": 2052,
+  "confidence": null
+ },
+ {
+  "text": "First,",
+  "startMs": 3120,
+  "endMs": 3594,
+  "timestampMs": 3357,
+  "confidence": null
+ },
+ {
+  "text": " rent.",
+  "startMs": 3594,
+  "endMs": 3815,
+  "timestampMs": 3705,
+  "confidence": null
+ },
+ {
+  "text": " A",
+  "startMs": 3815,
+  "endMs": 3905,
+  "timestampMs": 3860,
+  "confidence": null
+ },
+ {
+  "text": " typical",
+  "startMs": 3905,
+  "endMs": 4301,
+  "timestampMs": 4103,
+  "confidence": null
+ },
+ {
+  "text": " one-bedroom",
+  "startMs": 4301,
+  "endMs": 4807,
+  "timestampMs": 4554,
+  "confidence": null
+ },
+ {
+  "text": " averages",
+  "startMs": 4807,
+  "endMs": 5390,
+  "timestampMs": 5098,
+  "confidence": null
+ },
+ {
+  "text": " around",
+  "startMs": 5390,
+  "endMs": 5843,
+  "timestampMs": 5616,
+  "confidence": null
+ },
+ {
+  "text": " twenty-four",
+  "startMs": 5843,
+  "endMs": 6435,
+  "timestampMs": 6139,
+  "confidence": null
+ },
+ {
+  "text": " fifty-seven",
+  "startMs": 6435,
+  "endMs": 7231,
+  "timestampMs": 6833,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 7231,
+  "endMs": 7321,
+  "timestampMs": 7276,
+  "confidence": null
+ },
+ {
+  "text": " month.",
+  "startMs": 7321,
+  "endMs": 7674,
+  "timestampMs": 7497,
+  "confidence": null
+ },
+ {
+  "text": "Then",
+  "startMs": 8120,
+  "endMs": 8486,
+  "timestampMs": 8303,
+  "confidence": null
+ },
+ {
+  "text": " groceries.",
+  "startMs": 8486,
+  "endMs": 8883,
+  "timestampMs": 8684,
+  "confidence": null
+ },
+ {
+  "text": " A",
+  "startMs": 8883,
+  "endMs": 9221,
+  "timestampMs": 9052,
+  "confidence": null
+ },
+ {
+  "text": " basic",
+  "startMs": 9221,
+  "endMs": 9431,
+  "timestampMs": 9326,
+  "confidence": null
+ },
+ {
+  "text": " food",
+  "startMs": 9431,
+  "endMs": 9611,
+  "timestampMs": 9521,
+  "confidence": null
+ },
+ {
+  "text": " budget",
+  "startMs": 9611,
+  "endMs": 9851,
+  "timestampMs": 9731,
+  "confidence": null
+ },
+ {
+  "text": " for",
+  "startMs": 9851,
+  "endMs": 10005,
+  "timestampMs": 9928,
+  "confidence": null
+ },
+ {
+  "text": " one",
+  "startMs": 10005,
+  "endMs": 10155,
+  "timestampMs": 10080,
+  "confidence": null
+ },
+ {
+  "text": " adult",
+  "startMs": 10155,
+  "endMs": 10365,
+  "timestampMs": 10260,
+  "confidence": null
+ },
+ {
+  "text": " is",
+  "startMs": 10365,
+  "endMs": 10699,
+  "timestampMs": 10532,
+  "confidence": null
+ },
+ {
+  "text": " roughly",
+  "startMs": 10699,
+  "endMs": 11084,
+  "timestampMs": 10891,
+  "confidence": null
+ },
+ {
+  "text": " three",
+  "startMs": 11084,
+  "endMs": 11294,
+  "timestampMs": 11189,
+  "confidence": null
+ },
+ {
+  "text": " hundred",
+  "startMs": 11294,
+  "endMs": 11753,
+  "timestampMs": 11524,
+  "confidence": null
+ },
+ {
+  "text": " eighty-six",
+  "startMs": 11753,
+  "endMs": 12140,
+  "timestampMs": 11947,
+  "confidence": null
+ },
+ {
+  "text": " dollars",
+  "startMs": 12140,
+  "endMs": 12604,
+  "timestampMs": 12372,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 12604,
+  "endMs": 12694,
+  "timestampMs": 12649,
+  "confidence": null
+ },
+ {
+  "text": " month.",
+  "startMs": 12694,
+  "endMs": 13034,
+  "timestampMs": 12864,
+  "confidence": null
+ },
+ {
+  "text": "Eating",
+  "startMs": 13134,
+  "endMs": 13571,
+  "timestampMs": 13353,
+  "confidence": null
+ },
+ {
+  "text": " out",
+  "startMs": 13571,
+  "endMs": 13721,
+  "timestampMs": 13646,
+  "confidence": null
+ },
+ {
+  "text": " isn't",
+  "startMs": 13721,
+  "endMs": 13931,
+  "timestampMs": 13826,
+  "confidence": null
+ },
+ {
+  "text": " cheap",
+  "startMs": 13931,
+  "endMs": 14141,
+  "timestampMs": 14036,
+  "confidence": null
+ },
+ {
+  "text": " either.",
+  "startMs": 14141,
+  "endMs": 14381,
+  "timestampMs": 14261,
+  "confidence": null
+ },
+ {
+  "text": " A",
+  "startMs": 14381,
+  "endMs": 14526,
+  "timestampMs": 14454,
+  "confidence": null
+ },
+ {
+  "text": " casual",
+  "startMs": 14526,
+  "endMs": 14880,
+  "timestampMs": 14703,
+  "confidence": null
+ },
+ {
+  "text": " meal,",
+  "startMs": 14880,
+  "endMs": 15194,
+  "timestampMs": 15037,
+  "confidence": null
+ },
+ {
+  "text": " about",
+  "startMs": 15194,
+  "endMs": 15419,
+  "timestampMs": 15307,
+  "confidence": null
+ },
+ {
+  "text": " twenty",
+  "startMs": 15419,
+  "endMs": 15776,
+  "timestampMs": 15598,
+  "confidence": null
+ },
+ {
+  "text": " dollars.",
+  "startMs": 15776,
+  "endMs": 16373,
+  "timestampMs": 16074,
+  "confidence": null
+ },
+ {
+  "text": " A",
+  "startMs": 16373,
+  "endMs": 16514,
+  "timestampMs": 16443,
+  "confidence": null
+ },
+ {
+  "text": " cappuccino,",
+  "startMs": 16514,
+  "endMs": 17122,
+  "timestampMs": 16818,
+  "confidence": null
+ },
+ {
+  "text": " around",
+  "startMs": 17122,
+  "endMs": 17594,
+  "timestampMs": 17358,
+  "confidence": null
+ },
+ {
+  "text": " five-fifty.",
+  "startMs": 17594,
+  "endMs": 18277,
+  "timestampMs": 17936,
+  "confidence": null
+ },
+ {
+  "text": "And",
+  "startMs": 18377,
+  "endMs": 18746,
+  "timestampMs": 18562,
+  "confidence": null
+ },
+ {
+  "text": " getting",
+  "startMs": 18746,
+  "endMs": 19016,
+  "timestampMs": 18881,
+  "confidence": null
+ },
+ {
+  "text": " around?",
+  "startMs": 19016,
+  "endMs": 19256,
+  "timestampMs": 19136,
+  "confidence": null
+ },
+ {
+  "text": " A",
+  "startMs": 19256,
+  "endMs": 19610,
+  "timestampMs": 19433,
+  "confidence": null
+ },
+ {
+  "text": " regular",
+  "startMs": 19610,
+  "endMs": 19880,
+  "timestampMs": 19745,
+  "confidence": null
+ },
+ {
+  "text": " C-T-A",
+  "startMs": 19880,
+  "endMs": 20219,
+  "timestampMs": 20050,
+  "confidence": null
+ },
+ {
+  "text": " thirty-day",
+  "startMs": 20219,
+  "endMs": 20726,
+  "timestampMs": 20473,
+  "confidence": null
+ },
+ {
+  "text": " pass",
+  "startMs": 20726,
+  "endMs": 21036,
+  "timestampMs": 20881,
+  "confidence": null
+ },
+ {
+  "text": " costs",
+  "startMs": 21036,
+  "endMs": 21363,
+  "timestampMs": 21200,
+  "confidence": null
+ },
+ {
+  "text": " about",
+  "startMs": 21363,
+  "endMs": 21608,
+  "timestampMs": 21486,
+  "confidence": null
+ },
+ {
+  "text": " eighty-five",
+  "startMs": 21608,
+  "endMs": 22210,
+  "timestampMs": 21909,
+  "confidence": null
+ },
+ {
+  "text": " dollars.",
+  "startMs": 22210,
+  "endMs": 23005,
+  "timestampMs": 22607,
+  "confidence": null
+ },
+ {
+  "text": "Utilities",
+  "startMs": 23120,
+  "endMs": 23756,
+  "timestampMs": 23438,
+  "confidence": null
+ },
+ {
+  "text": " add",
+  "startMs": 23756,
+  "endMs": 23906,
+  "timestampMs": 23831,
+  "confidence": null
+ },
+ {
+  "text": " roughly",
+  "startMs": 23906,
+  "endMs": 24176,
+  "timestampMs": 24041,
+  "confidence": null
+ },
+ {
+  "text": " one",
+  "startMs": 24176,
+  "endMs": 24326,
+  "timestampMs": 24251,
+  "confidence": null
+ },
+ {
+  "text": " hundred",
+  "startMs": 24326,
+  "endMs": 24596,
+  "timestampMs": 24461,
+  "confidence": null
+ },
+ {
+  "text": " eighty-six",
+  "startMs": 24596,
+  "endMs": 24990,
+  "timestampMs": 24793,
+  "confidence": null
+ },
+ {
+  "text": " dollars,",
+  "startMs": 24990,
+  "endMs": 25542,
+  "timestampMs": 25266,
+  "confidence": null
+ },
+ {
+  "text": " and",
+  "startMs": 25542,
+  "endMs": 25758,
+  "timestampMs": 25650,
+  "confidence": null
+ },
+ {
+  "text": " internet",
+  "startMs": 25758,
+  "endMs": 26161,
+  "timestampMs": 25960,
+  "confidence": null
+ },
+ {
+  "text": " and",
+  "startMs": 26161,
+  "endMs": 26400,
+  "timestampMs": 26280,
+  "confidence": null
+ },
+ {
+  "text": " phone",
+  "startMs": 26400,
+  "endMs": 26701,
+  "timestampMs": 26550,
+  "confidence": null
+ },
+ {
+  "text": " push",
+  "startMs": 26701,
+  "endMs": 26945,
+  "timestampMs": 26823,
+  "confidence": null
+ },
+ {
+  "text": " it",
+  "startMs": 26945,
+  "endMs": 27065,
+  "timestampMs": 27005,
+  "confidence": null
+ },
+ {
+  "text": " even",
+  "startMs": 27065,
+  "endMs": 27506,
+  "timestampMs": 27286,
+  "confidence": null
+ },
+ {
+  "text": " higher.",
+  "startMs": 27506,
+  "endMs": 27930,
+  "timestampMs": 27718,
+  "confidence": null
+ },
+ {
+  "text": "Put",
+  "startMs": 28120,
+  "endMs": 28486,
+  "timestampMs": 28303,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 28486,
+  "endMs": 28636,
+  "timestampMs": 28561,
+  "confidence": null
+ },
+ {
+  "text": " basics",
+  "startMs": 28636,
+  "endMs": 28876,
+  "timestampMs": 28756,
+  "confidence": null
+ },
+ {
+  "text": " together,",
+  "startMs": 28876,
+  "endMs": 29176,
+  "timestampMs": 29026,
+  "confidence": null
+ },
+ {
+  "text": " and",
+  "startMs": 29176,
+  "endMs": 29443,
+  "timestampMs": 29309,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 29443,
+  "endMs": 29533,
+  "timestampMs": 29488,
+  "confidence": null
+ },
+ {
+  "text": " single",
+  "startMs": 29533,
+  "endMs": 29773,
+  "timestampMs": 29653,
+  "confidence": null
+ },
+ {
+  "text": " person",
+  "startMs": 29773,
+  "endMs": 30093,
+  "timestampMs": 29933,
+  "confidence": null
+ },
+ {
+  "text": " could",
+  "startMs": 30093,
+  "endMs": 30355,
+  "timestampMs": 30224,
+  "confidence": null
+ },
+ {
+  "text": " easily",
+  "startMs": 30355,
+  "endMs": 30858,
+  "timestampMs": 30606,
+  "confidence": null
+ },
+ {
+  "text": " spend",
+  "startMs": 30858,
+  "endMs": 31171,
+  "timestampMs": 31014,
+  "confidence": null
+ },
+ {
+  "text": " around",
+  "startMs": 31171,
+  "endMs": 31480,
+  "timestampMs": 31325,
+  "confidence": null
+ },
+ {
+  "text": " thirty-two",
+  "startMs": 31480,
+  "endMs": 31995,
+  "timestampMs": 31737,
+  "confidence": null
+ },
+ {
+  "text": " to",
+  "startMs": 31995,
+  "endMs": 32224,
+  "timestampMs": 32110,
+  "confidence": null
+ },
+ {
+  "text": " thirty-three",
+  "startMs": 32224,
+  "endMs": 32736,
+  "timestampMs": 32480,
+  "confidence": null
+ },
+ {
+  "text": " hundred",
+  "startMs": 32736,
+  "endMs": 33289,
+  "timestampMs": 33012,
+  "confidence": null
+ },
+ {
+  "text": " dollars",
+  "startMs": 33289,
+  "endMs": 33680,
+  "timestampMs": 33485,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 33680,
+  "endMs": 33836,
+  "timestampMs": 33758,
+  "confidence": null
+ },
+ {
+  "text": " month.",
+  "startMs": 33836,
+  "endMs": 34049,
+  "timestampMs": 33942,
+  "confidence": null
+ },
+ {
+  "text": "And",
+  "startMs": 34149,
+  "endMs": 34505,
+  "timestampMs": 34327,
+  "confidence": null
+ },
+ {
+  "text": " that's",
+  "startMs": 34505,
+  "endMs": 34745,
+  "timestampMs": 34625,
+  "confidence": null
+ },
+ {
+  "text": " before",
+  "startMs": 34745,
+  "endMs": 34985,
+  "timestampMs": 34865,
+  "confidence": null
+ },
+ {
+  "text": " healthcare,",
+  "startMs": 34985,
+  "endMs": 35345,
+  "timestampMs": 35165,
+  "confidence": null
+ },
+ {
+  "text": " insurance,",
+  "startMs": 35345,
+  "endMs": 35675,
+  "timestampMs": 35510,
+  "confidence": null
+ },
+ {
+  "text": " taxes,",
+  "startMs": 35675,
+  "endMs": 36165,
+  "timestampMs": 35920,
+  "confidence": null
+ },
+ {
+  "text": " or",
+  "startMs": 36165,
+  "endMs": 36321,
+  "timestampMs": 36243,
+  "confidence": null
+ },
+ {
+  "text": " entertainment.",
+  "startMs": 36321,
+  "endMs": 37044,
+  "timestampMs": 36683,
+  "confidence": null
+ },
+ {
+  "text": "Would",
+  "startMs": 37143,
+  "endMs": 37569,
+  "timestampMs": 37356,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 37569,
+  "endMs": 37748,
+  "timestampMs": 37659,
+  "confidence": null
+ },
+ {
+  "text": " live",
+  "startMs": 37748,
+  "endMs": 37928,
+  "timestampMs": 37838,
+  "confidence": null
+ },
+ {
+  "text": " here",
+  "startMs": 37928,
+  "endMs": 38108,
+  "timestampMs": 38018,
+  "confidence": null
+ },
+ {
+  "text": " for",
+  "startMs": 38108,
+  "endMs": 38258,
+  "timestampMs": 38183,
+  "confidence": null
+ },
+ {
+  "text": " that",
+  "startMs": 38258,
+  "endMs": 38438,
+  "timestampMs": 38348,
+  "confidence": null
+ },
+ {
+  "text": " price?",
+  "startMs": 38438,
+  "endMs": 38648,
+  "timestampMs": 38543,
+  "confidence": null
+ },
+ {
+  "text": " Comment",
+  "startMs": 38648,
+  "endMs": 38918,
+  "timestampMs": 38783,
+  "confidence": null
+ },
+ {
+  "text": " yes",
+  "startMs": 38918,
+  "endMs": 39247,
+  "timestampMs": 39082,
+  "confidence": null
+ },
+ {
+  "text": " or",
+  "startMs": 39247,
+  "endMs": 39458,
+  "timestampMs": 39353,
+  "confidence": null
+ },
+ {
+  "text": " no!",
+  "startMs": 39458,
+  "endMs": 39625,
+  "timestampMs": 39542,
+  "confidence": null
+ }
+]

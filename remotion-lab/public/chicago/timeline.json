@@ -1,0 +1,71 @@
+{
+ "scenes": {
+  "hook": 0.0,
+  "rent": 3.0,
+  "food": 8.0,
+  "eat": 13.0,
+  "transit": 18.0,
+  "util": 23.0,
+  "total": 28.0,
+  "payoff": 34.0,
+  "cta": 37.0,
+  "end": 39.75
+ },
+ "voice": {
+  "hook": 0.25,
+  "rent": 3.12,
+  "food": 8.12,
+  "eat": 13.134,
+  "transit": 18.377,
+  "util": 23.12,
+  "total": 28.12,
+  "payoff": 34.149,
+  "cta": 37.143
+ },
+ "durs": {
+  "hook": 2.046,
+  "rent": 4.554,
+  "food": 4.914,
+  "eat": 5.143,
+  "transit": 4.628,
+  "util": 4.81,
+  "total": 5.929,
+  "payoff": 2.895,
+  "cta": 2.482
+ },
+ "speed": {
+  "hook": 1.1,
+  "rent": 1.1,
+  "food": 1.25,
+  "eat": 1.25,
+  "transit": 1.1,
+  "util": 1.22,
+  "total": 1.16,
+  "payoff": 1.19,
+  "cta": 1.1
+ },
+ "cues": {
+  "rent.rent_word": 3.12,
+  "rent.price": 5.833,
+  "food.price": 11.074,
+  "eat.meal": 15.409,
+  "eat.coffee": 17.584,
+  "transit.price": 21.598,
+  "util.price": 24.129,
+  "util.internet": 25.748,
+  "total.price": 31.47,
+  "cta.yes": 38.884
+ },
+ "lines": {
+  "hook": "Could you actually afford to live in Chicago?",
+  "rent": "First, rent. A typical one-bedroom averages around twenty-four fifty-seven a month.",
+  "food": "Then groceries. A basic food budget for one adult is roughly three hundred eighty-six dollars a month.",
+  "eat": "Eating out isn't cheap either. A casual meal, about twenty dollars. A cappuccino, around five-fifty.",
+  "transit": "And getting around? A regular C-T-A thirty-day pass costs about eighty-five dollars.",
+  "util": "Utilities add roughly one hundred eighty-six dollars, and internet and phone push it even higher.",
+  "total": "Put the basics together, and a single person could easily spend around thirty-two to thirty-three hundred dollars a month.",
+  "payoff": "And that's before healthcare, insurance, taxes, or entertainment.",
+  "cta": "Would you live here for that price? Comment yes or no!"
+ },
+ "voice_name": "am_puck"
+}

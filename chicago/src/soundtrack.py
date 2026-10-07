@@ -252,9 +252,15 @@ act = duck > 0.5
 db = lambda z: 10 * np.log10(np.mean(z[act] ** 2) + 1e-12)
 print(f"voice/background during speech: {db(vox[:, 0]) - db(bed[:, 0]):+.1f} dB  (music {db(music[:, 0] * 0.36):.1f}, fx {db(fx[:, 0] * 0.4):.1f}, amb {db(am[:, 0] * 0.5):.1f}, voice {db(vox[:, 0]):.1f} dBFS)")
 mix = bed + vox * 1.0
-mix = np.tanh(mix / np.abs(mix).max() * 1.15) / np.tanh(1.15) * 0.85
+norm = np.abs(mix).max()
+mix = np.tanh(mix / norm * 1.15) / np.tanh(1.15) * 0.85
+# optional stem for the Remotion version: music + ambience only (already ducked under the voice), same gain staging
+bed_stem = np.tanh((music * 0.36 + am * 0.5) / norm * 1.15) / np.tanh(1.15) * 0.85
 t = np.arange(N) / SR; mix *= np.clip((DUR - 0.02 - t) / 0.35, 0, 1)[:, None]
 out = sys.argv[1] if len(sys.argv) > 1 else "render/audio/mix.wav"
 os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
 wavfile.write(out, SR, (mix * 32767).astype(np.int16))
 print("written", out)
+if len(sys.argv) > 2:
+    bed_stem *= np.clip((DUR - 0.02 - t) / 0.35, 0, 1)[:, None]
+    wavfile.write(sys.argv[2], SR, (bed_stem * 32767).astype(np.int16)); print("written", sys.argv[2])
