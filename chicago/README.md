@@ -20,7 +20,7 @@ The monthly total is an illustrative sum of the monthly categories shown. Rent, 
 
 ## Voice-over
 
-The voice is Kokoro-82M with the American English voice `af_heart`, running locally. It is delivered at 1.10–1.25× speed in an energetic creator style. Each line starts just after its scene cut, and every price animation lands on the moment the narrator says that number. These cue times are measured from the real audio by synthesising each line's prefix.
+The voice is Kokoro-82M with the American English male voice `am_puck` (lively, young creator tone), running locally. It is delivered at 1.10–1.25× speed in an energetic creator style. Each line starts just after its scene cut, and every price animation lands on the moment the narrator says that number. These cue times are measured from the real audio by synthesising each line's prefix.
 
 The brief's script reads at about 49 s at a natural pace, which does not fit into 40 s. These lines were tightened without changing any figure:
 

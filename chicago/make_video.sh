@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Chicago — the REAL cost of living (40 s, 1080x1920, 30 fps)
-#   voice (Kokoro "af_heart", cached in assets/voice) -> music + SFX + ambience mix -> 1200 frames -> MP4 -> verify
+#   voice (Kokoro male "am_puck", cached in assets/voice) -> music + SFX + ambience mix -> 1200 frames -> MP4 -> verify
 #   FORCE_TTS=1 ./make_video.sh   re-synthesise the voice-over (downloads Kokoro into .kokoro/ on first run)
 set -euo pipefail; cd "$(dirname "$0")"
 OUT=output/chicago_cost_of_living_40s.mp4
@@ -9,7 +9,7 @@ python3 -c "import numpy, scipy, soundfile" 2>/dev/null || pip install -q numpy 
 if [ "${FORCE_TTS:-0}" = 1 ] || [ ! -f src/timeline.json ]; then
   python3 -c "import kokoro_onnx" 2>/dev/null || pip install -q kokoro-onnx
   mkdir -p .kokoro; for f in kokoro-v1.0.onnx voices-v1.0.bin; do [ -f .kokoro/$f ] || curl -sSL -o .kokoro/$f "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/$f"; done
-  python3 src/voice.py .kokoro af_heart
+  python3 src/voice.py .kokoro am_puck
 fi
 mkdir -p render/audio output
 python3 src/soundtrack.py render/audio/mix.wav

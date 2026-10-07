@@ -1,4 +1,4 @@
-"""American English voice-over (Kokoro-82M, voice "af_heart", local ONNX on CPU) + timeline.
+"""American English voice-over (Kokoro-82M, male voice "am_puck", local ONNX on CPU) + timeline.
     python3 src/voice.py [.kokoro] [voice]
 Writes assets/voice/<key>.wav and src/timeline.json (voice starts + caption-free word timing).
 Scene windows are fixed by the edit; each line starts just after its scene cut. The speaking
@@ -11,7 +11,7 @@ import soundfile as sf
 from kokoro_onnx import Kokoro
 
 MD = sys.argv[1] if len(sys.argv) > 1 else ".kokoro"
-VOICE = sys.argv[2] if len(sys.argv) > 2 else "af_heart"
+VOICE = sys.argv[2] if len(sys.argv) > 2 else "am_puck"
 SCENES = [("hook", 0.0), ("rent", 3.0), ("food", 8.0), ("eat", 13.0), ("transit", 18.0),
           ("util", 23.0), ("total", 28.0), ("payoff", 34.0), ("cta", 37.0), ("end", 39.75)]  # the voice may finish inside the 0.5 s visual hold
 LINES = {  # spoken text (numbers written the way they are said)
