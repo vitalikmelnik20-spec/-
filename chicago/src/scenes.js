@@ -149,7 +149,7 @@ function S_food(g, t) {
     const x = lerp(sx, tx, u), y = lerp(sy, ty, u) - Math.sin(u * Math.PI) * 300;
     item(g, k, x, y, lerp(1.25, 0.82, u), (1 - u) * (i % 2 ? -3 : 3));
     // price-tag style label pops at landing (item names only — no invented prices)
-    const tp = prog(lt, t0s[i] + 0.45, t0s[i] + 0.6) * (1 - prog(lt, t0s[i] + 1.2, t0s[i] + 1.45));
+    const tp = prog(lt, t0s[i] + 0.45, t0s[i] + 0.55) * (1 - prog(lt, t0s[i] + 0.72, t0s[i] + 0.8)); // one tag at a time
     if (tp > 0) chip(g, k.toUpperCase(), tx + 30, ty - 120, 30, '#FFC857', '#1A1200', tp, { font: FONT.black });
   });
   cart(g, cx, cy + bob, 1.05, lt);
@@ -175,14 +175,14 @@ function S_eat(g, t) {
   g.beginPath(); g.moveTo(0, mid + 40); g.lineTo(W, mid - 40); g.stroke(); g.restore();
   // plate slides in, coffee spins in
   const pu = Ease.outBack(prog(lt, 0.15, 0.7));
-  plate(g, lerp(-500, 540, pu), 800 + Math.sin(t * 2) * 6, 1.15, t);
+  plate(g, lerp(-500, 540, pu), 850 + Math.sin(t * 2) * 6, 1.05, t);
   const cu = prog(lt, 2.7, 3.4);
   if (cu > 0) coffee(g, lerp(1500, 560, Ease.outBack(cu)), 1690 + Math.sin(t * 2.4) * 5, 1.05, t, (1 - Ease.outCubic(cu)) * 6);
   const mc = CUE['eat.meal'], cc = CUE['eat.coffee'];
   chip(g, 'EATING OUT · CASUAL MEAL', 540, 430, 44, 'rgba(255,255,255,0.95)', '#2A1206', prog(t, SC.eat + 0.3, SC.eat + 0.6));
   if (t >= mc - 0.5) {
     const u = prog(t, mc - 0.5, mc + 0.15), land = t >= mc + 0.15 ? 1 + 0.14 * Math.exp(-(t - mc - 0.15) * 9) : 1;
-    g.save(); g.translate(540, 610); g.scale(land, land); bigText(g, '~' + money(u >= 1 ? 20 : 20 * easeLand(u)), 0, 0, 190, { color: u >= 1 ? COL.green : COL.white, glow: u >= 1 ? 'rgba(43,227,139,0.7)' : null, stroke: 0.07 }); g.restore();
+    g.save(); g.translate(540, 645); g.scale(land, land); bigText(g, '~' + money(u >= 1 ? 20 : 20 * easeLand(u)), 0, 0, 190, { color: u >= 1 ? COL.green : COL.white, glow: u >= 1 ? 'rgba(43,227,139,0.7)' : null, stroke: 0.07 }); g.restore();
   }
   chip(g, 'COFFEE · CAPPUCCINO', 540, 1110, 40, 'rgba(255,255,255,0.95)', '#06161A', prog(t, cc - 1.0, cc - 0.7));
   if (t >= cc - 0.45) {
