@@ -24,3 +24,7 @@ wiesn2026/snapshots/
 wiesn2026/.tts/
 wiesn2026/voice/
 wiesn2026/mix.wav
+chicago/render/segments/
+chicago/render/snapshots/
+chicago/render/audio/
+chicago/.kokoro/
