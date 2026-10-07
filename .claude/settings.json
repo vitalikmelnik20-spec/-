@@ -1,0 +1,5 @@
+{
+  "env": {
+    "LAST30DAYS_PYTHON": "/usr/bin/python3.12"
+  }
+}
