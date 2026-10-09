@@ -1,0 +1,15 @@
+# Final narration as spoken in olympia_cost_of_living.mp4
+# Voice: Kokoro-82M (local, offline) - American English male voice "am_puck", rate 1.2x
+# Times = start of each line in the video (seconds). Numbers are written the way they are spoken.
+
+[00.12s - 02.55s]  Washington has no state income tax on wages.
+[02.77s - 07.73s]  But does that make its capital affordable? Meet Olympia, where the price of housing might change your mind.
+[08.03s - 16.06s]  First, rent. The Census Bureau reports median gross rent of about sixteen hundred dollars a month, based on data from twenty twenty through twenty twenty-four.
+[16.40s - 22.33s]  Want to buy instead? The median value of owner-occupied homes was about four hundred eighty-six thousand dollars.
+[22.67s - 29.45s]  Now for the twist. Washington has no broad state personal income tax on wages, but that doesn't mean you escape every tax.
+[29.75s - 37.41s]  And here's another surprise: local buses operated by Intercity Transit have been fare-free. Check the current service rules before you plan your commute.
+[37.71s - 45.44s]  So Olympia offers a state-capital lifestyle, Pacific Northwest scenery, and a transit perk. But housing is the number you really need to watch.
+[45.74s - 48.66s]  Would you live in Olympia at these prices? Comment yes or no.
+
+# Same text as the brief's draft, unchanged word for word.
+# On screen the spoken figures appear as exact Census values ($1,599 / $486,200); the voice rounds them ("about").

@@ -32,3 +32,5 @@ chicago/.kokoro/
 remotion-lab/out/
 remotion-lab/public/chicago/sfx/
 cost-intro/snapshots/
+olympia/build/
+olympia/.kokoro

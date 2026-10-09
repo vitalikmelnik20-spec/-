@@ -1,0 +1,1038 @@
+[
+ {
+  "text": "Washington",
+  "startMs": 120,
+  "endMs": 743,
+  "timestampMs": 432,
+  "confidence": null
+ },
+ {
+  "text": " has",
+  "startMs": 743,
+  "endMs": 927,
+  "timestampMs": 835,
+  "confidence": null
+ },
+ {
+  "text": " no",
+  "startMs": 927,
+  "endMs": 1053,
+  "timestampMs": 990,
+  "confidence": null
+ },
+ {
+  "text": " state",
+  "startMs": 1053,
+  "endMs": 1263,
+  "timestampMs": 1158,
+  "confidence": null
+ },
+ {
+  "text": " income",
+  "startMs": 1263,
+  "endMs": 1501,
+  "timestampMs": 1382,
+  "confidence": null
+ },
+ {
+  "text": " tax",
+  "startMs": 1501,
+  "endMs": 1723,
+  "timestampMs": 1612,
+  "confidence": null
+ },
+ {
+  "text": " on",
+  "startMs": 1723,
+  "endMs": 1901,
+  "timestampMs": 1812,
+  "confidence": null
+ },
+ {
+  "text": " wages.",
+  "startMs": 1901,
+  "endMs": 2491,
+  "timestampMs": 2196,
+  "confidence": null
+ },
+ {
+  "text": "But",
+  "startMs": 2771,
+  "endMs": 3081,
+  "timestampMs": 2926,
+  "confidence": null
+ },
+ {
+  "text": " does",
+  "startMs": 3081,
+  "endMs": 3340,
+  "timestampMs": 3210,
+  "confidence": null
+ },
+ {
+  "text": " that",
+  "startMs": 3340,
+  "endMs": 3532,
+  "timestampMs": 3436,
+  "confidence": null
+ },
+ {
+  "text": " make",
+  "startMs": 3532,
+  "endMs": 3724,
+  "timestampMs": 3628,
+  "confidence": null
+ },
+ {
+  "text": " its",
+  "startMs": 3724,
+  "endMs": 3886,
+  "timestampMs": 3805,
+  "confidence": null
+ },
+ {
+  "text": " capital",
+  "startMs": 3886,
+  "endMs": 4167,
+  "timestampMs": 4027,
+  "confidence": null
+ },
+ {
+  "text": " affordable?",
+  "startMs": 4167,
+  "endMs": 4561,
+  "timestampMs": 4364,
+  "confidence": null
+ },
+ {
+  "text": " Meet",
+  "startMs": 4701,
+  "endMs": 4870,
+  "timestampMs": 4786,
+  "confidence": null
+ },
+ {
+  "text": " Olympia,",
+  "startMs": 4870,
+  "endMs": 5450,
+  "timestampMs": 5160,
+  "confidence": null
+ },
+ {
+  "text": " where",
+  "startMs": 5450,
+  "endMs": 5645,
+  "timestampMs": 5547,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 5645,
+  "endMs": 5788,
+  "timestampMs": 5716,
+  "confidence": null
+ },
+ {
+  "text": " price",
+  "startMs": 5788,
+  "endMs": 6023,
+  "timestampMs": 5906,
+  "confidence": null
+ },
+ {
+  "text": " of",
+  "startMs": 6023,
+  "endMs": 6181,
+  "timestampMs": 6102,
+  "confidence": null
+ },
+ {
+  "text": " housing",
+  "startMs": 6181,
+  "endMs": 6523,
+  "timestampMs": 6352,
+  "confidence": null
+ },
+ {
+  "text": " might",
+  "startMs": 6523,
+  "endMs": 6731,
+  "timestampMs": 6627,
+  "confidence": null
+ },
+ {
+  "text": " change",
+  "startMs": 6731,
+  "endMs": 7212,
+  "timestampMs": 6972,
+  "confidence": null
+ },
+ {
+  "text": " your",
+  "startMs": 7212,
+  "endMs": 7387,
+  "timestampMs": 7300,
+  "confidence": null
+ },
+ {
+  "text": " mind.",
+  "startMs": 7387,
+  "endMs": 7667,
+  "timestampMs": 7527,
+  "confidence": null
+ },
+ {
+  "text": "First,",
+  "startMs": 8028,
+  "endMs": 8688,
+  "timestampMs": 8358,
+  "confidence": null
+ },
+ {
+  "text": " rent.",
+  "startMs": 8758,
+  "endMs": 8986,
+  "timestampMs": 8872,
+  "confidence": null
+ },
+ {
+  "text": " The",
+  "startMs": 8986,
+  "endMs": 9272,
+  "timestampMs": 9129,
+  "confidence": null
+ },
+ {
+  "text": " Census",
+  "startMs": 9272,
+  "endMs": 9490,
+  "timestampMs": 9381,
+  "confidence": null
+ },
+ {
+  "text": " Bureau",
+  "startMs": 9490,
+  "endMs": 9707,
+  "timestampMs": 9599,
+  "confidence": null
+ },
+ {
+  "text": " reports",
+  "startMs": 9707,
+  "endMs": 9959,
+  "timestampMs": 9833,
+  "confidence": null
+ },
+ {
+  "text": " median",
+  "startMs": 9959,
+  "endMs": 10342,
+  "timestampMs": 10151,
+  "confidence": null
+ },
+ {
+  "text": " gross",
+  "startMs": 10342,
+  "endMs": 10649,
+  "timestampMs": 10496,
+  "confidence": null
+ },
+ {
+  "text": " rent",
+  "startMs": 10649,
+  "endMs": 10979,
+  "timestampMs": 10814,
+  "confidence": null
+ },
+ {
+  "text": " of",
+  "startMs": 10979,
+  "endMs": 11168,
+  "timestampMs": 11074,
+  "confidence": null
+ },
+ {
+  "text": " about",
+  "startMs": 11168,
+  "endMs": 11360,
+  "timestampMs": 11264,
+  "confidence": null
+ },
+ {
+  "text": " sixteen",
+  "startMs": 11360,
+  "endMs": 11865,
+  "timestampMs": 11612,
+  "confidence": null
+ },
+ {
+  "text": " hundred",
+  "startMs": 11865,
+  "endMs": 12324,
+  "timestampMs": 12094,
+  "confidence": null
+ },
+ {
+  "text": " dollars",
+  "startMs": 12324,
+  "endMs": 12667,
+  "timestampMs": 12496,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 12667,
+  "endMs": 12806,
+  "timestampMs": 12736,
+  "confidence": null
+ },
+ {
+  "text": " month,",
+  "startMs": 12806,
+  "endMs": 12998,
+  "timestampMs": 12902,
+  "confidence": null
+ },
+ {
+  "text": " based",
+  "startMs": 13218,
+  "endMs": 13464,
+  "timestampMs": 13341,
+  "confidence": null
+ },
+ {
+  "text": " on",
+  "startMs": 13464,
+  "endMs": 13688,
+  "timestampMs": 13576,
+  "confidence": null
+ },
+ {
+  "text": " data",
+  "startMs": 13688,
+  "endMs": 14066,
+  "timestampMs": 13877,
+  "confidence": null
+ },
+ {
+  "text": " from",
+  "startMs": 14066,
+  "endMs": 14295,
+  "timestampMs": 14180,
+  "confidence": null
+ },
+ {
+  "text": " twenty",
+  "startMs": 14295,
+  "endMs": 14605,
+  "timestampMs": 14450,
+  "confidence": null
+ },
+ {
+  "text": " twenty",
+  "startMs": 14605,
+  "endMs": 14863,
+  "timestampMs": 14734,
+  "confidence": null
+ },
+ {
+  "text": " through",
+  "startMs": 14863,
+  "endMs": 15124,
+  "timestampMs": 14994,
+  "confidence": null
+ },
+ {
+  "text": " twenty",
+  "startMs": 15124,
+  "endMs": 15450,
+  "timestampMs": 15287,
+  "confidence": null
+ },
+ {
+  "text": " twenty-four.",
+  "startMs": 15450,
+  "endMs": 16004,
+  "timestampMs": 15727,
+  "confidence": null
+ },
+ {
+  "text": "Want",
+  "startMs": 16404,
+  "endMs": 16820,
+  "timestampMs": 16612,
+  "confidence": null
+ },
+ {
+  "text": " to",
+  "startMs": 16820,
+  "endMs": 16946,
+  "timestampMs": 16883,
+  "confidence": null
+ },
+ {
+  "text": " buy",
+  "startMs": 16946,
+  "endMs": 17096,
+  "timestampMs": 17021,
+  "confidence": null
+ },
+ {
+  "text": " instead?",
+  "startMs": 17096,
+  "endMs": 17354,
+  "timestampMs": 17225,
+  "confidence": null
+ },
+ {
+  "text": " The",
+  "startMs": 17434,
+  "endMs": 17732,
+  "timestampMs": 17583,
+  "confidence": null
+ },
+ {
+  "text": " median",
+  "startMs": 17732,
+  "endMs": 17967,
+  "timestampMs": 17850,
+  "confidence": null
+ },
+ {
+  "text": " value",
+  "startMs": 17967,
+  "endMs": 18175,
+  "timestampMs": 18071,
+  "confidence": null
+ },
+ {
+  "text": " of",
+  "startMs": 18175,
+  "endMs": 18300,
+  "timestampMs": 18238,
+  "confidence": null
+ },
+ {
+  "text": " owner-occupied",
+  "startMs": 18300,
+  "endMs": 19153,
+  "timestampMs": 18726,
+  "confidence": null
+ },
+ {
+  "text": " homes",
+  "startMs": 19153,
+  "endMs": 19587,
+  "timestampMs": 19370,
+  "confidence": null
+ },
+ {
+  "text": " was",
+  "startMs": 19587,
+  "endMs": 19889,
+  "timestampMs": 19738,
+  "confidence": null
+ },
+ {
+  "text": " about",
+  "startMs": 19889,
+  "endMs": 20097,
+  "timestampMs": 19993,
+  "confidence": null
+ },
+ {
+  "text": " four",
+  "startMs": 20097,
+  "endMs": 20379,
+  "timestampMs": 20238,
+  "confidence": null
+ },
+ {
+  "text": " hundred",
+  "startMs": 20379,
+  "endMs": 20802,
+  "timestampMs": 20590,
+  "confidence": null
+ },
+ {
+  "text": " eighty-six",
+  "startMs": 20802,
+  "endMs": 21446,
+  "timestampMs": 21124,
+  "confidence": null
+ },
+ {
+  "text": " thousand",
+  "startMs": 21446,
+  "endMs": 21839,
+  "timestampMs": 21642,
+  "confidence": null
+ },
+ {
+  "text": " dollars.",
+  "startMs": 21839,
+  "endMs": 22270,
+  "timestampMs": 22054,
+  "confidence": null
+ },
+ {
+  "text": "Now",
+  "startMs": 22669,
+  "endMs": 23052,
+  "timestampMs": 22860,
+  "confidence": null
+ },
+ {
+  "text": " for",
+  "startMs": 23052,
+  "endMs": 23203,
+  "timestampMs": 23127,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 23203,
+  "endMs": 23354,
+  "timestampMs": 23278,
+  "confidence": null
+ },
+ {
+  "text": " twist.",
+  "startMs": 23354,
+  "endMs": 23559,
+  "timestampMs": 23456,
+  "confidence": null
+ },
+ {
+  "text": " Washington",
+  "startMs": 23629,
+  "endMs": 24070,
+  "timestampMs": 23850,
+  "confidence": null
+ },
+ {
+  "text": " has",
+  "startMs": 24070,
+  "endMs": 24264,
+  "timestampMs": 24167,
+  "confidence": null
+ },
+ {
+  "text": " no",
+  "startMs": 24264,
+  "endMs": 24410,
+  "timestampMs": 24337,
+  "confidence": null
+ },
+ {
+  "text": " broad",
+  "startMs": 24410,
+  "endMs": 24618,
+  "timestampMs": 24514,
+  "confidence": null
+ },
+ {
+  "text": " state",
+  "startMs": 24618,
+  "endMs": 24884,
+  "timestampMs": 24751,
+  "confidence": null
+ },
+ {
+  "text": " personal",
+  "startMs": 24884,
+  "endMs": 25587,
+  "timestampMs": 25236,
+  "confidence": null
+ },
+ {
+  "text": " income",
+  "startMs": 25587,
+  "endMs": 26047,
+  "timestampMs": 25817,
+  "confidence": null
+ },
+ {
+  "text": " tax",
+  "startMs": 26047,
+  "endMs": 26317,
+  "timestampMs": 26182,
+  "confidence": null
+ },
+ {
+  "text": " on",
+  "startMs": 26317,
+  "endMs": 26505,
+  "timestampMs": 26411,
+  "confidence": null
+ },
+ {
+  "text": " wages,",
+  "startMs": 26505,
+  "endMs": 27109,
+  "timestampMs": 26807,
+  "confidence": null
+ },
+ {
+  "text": " but",
+  "startMs": 27279,
+  "endMs": 27421,
+  "timestampMs": 27350,
+  "confidence": null
+ },
+ {
+  "text": " that",
+  "startMs": 27421,
+  "endMs": 27620,
+  "timestampMs": 27520,
+  "confidence": null
+ },
+ {
+  "text": " doesn't",
+  "startMs": 27620,
+  "endMs": 27985,
+  "timestampMs": 27803,
+  "confidence": null
+ },
+ {
+  "text": " mean",
+  "startMs": 27985,
+  "endMs": 28172,
+  "timestampMs": 28078,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 28172,
+  "endMs": 28414,
+  "timestampMs": 28293,
+  "confidence": null
+ },
+ {
+  "text": " escape",
+  "startMs": 28414,
+  "endMs": 28728,
+  "timestampMs": 28571,
+  "confidence": null
+ },
+ {
+  "text": " every",
+  "startMs": 28728,
+  "endMs": 29043,
+  "timestampMs": 28886,
+  "confidence": null
+ },
+ {
+  "text": " tax.",
+  "startMs": 29043,
+  "endMs": 29388,
+  "timestampMs": 29216,
+  "confidence": null
+ },
+ {
+  "text": "And",
+  "startMs": 29748,
+  "endMs": 30171,
+  "timestampMs": 29960,
+  "confidence": null
+ },
+ {
+  "text": " here's",
+  "startMs": 30171,
+  "endMs": 30471,
+  "timestampMs": 30321,
+  "confidence": null
+ },
+ {
+  "text": " another",
+  "startMs": 30471,
+  "endMs": 30807,
+  "timestampMs": 30639,
+  "confidence": null
+ },
+ {
+  "text": " surprise:",
+  "startMs": 30807,
+  "endMs": 31178,
+  "timestampMs": 30992,
+  "confidence": null
+ },
+ {
+  "text": " local",
+  "startMs": 31328,
+  "endMs": 31518,
+  "timestampMs": 31423,
+  "confidence": null
+ },
+ {
+  "text": " buses",
+  "startMs": 31518,
+  "endMs": 31982,
+  "timestampMs": 31750,
+  "confidence": null
+ },
+ {
+  "text": " operated",
+  "startMs": 31982,
+  "endMs": 32539,
+  "timestampMs": 32260,
+  "confidence": null
+ },
+ {
+  "text": " by",
+  "startMs": 32539,
+  "endMs": 32717,
+  "timestampMs": 32628,
+  "confidence": null
+ },
+ {
+  "text": " Intercity",
+  "startMs": 32717,
+  "endMs": 33309,
+  "timestampMs": 33013,
+  "confidence": null
+ },
+ {
+  "text": " Transit",
+  "startMs": 33309,
+  "endMs": 33748,
+  "timestampMs": 33528,
+  "confidence": null
+ },
+ {
+  "text": " have",
+  "startMs": 33748,
+  "endMs": 33988,
+  "timestampMs": 33868,
+  "confidence": null
+ },
+ {
+  "text": " been",
+  "startMs": 33988,
+  "endMs": 34153,
+  "timestampMs": 34070,
+  "confidence": null
+ },
+ {
+  "text": " fare-free.",
+  "startMs": 34153,
+  "endMs": 34558,
+  "timestampMs": 34356,
+  "confidence": null
+ },
+ {
+  "text": " Check",
+  "startMs": 34798,
+  "endMs": 35141,
+  "timestampMs": 34970,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 35141,
+  "endMs": 35277,
+  "timestampMs": 35209,
+  "confidence": null
+ },
+ {
+  "text": " current",
+  "startMs": 35277,
+  "endMs": 35624,
+  "timestampMs": 35451,
+  "confidence": null
+ },
+ {
+  "text": " service",
+  "startMs": 35624,
+  "endMs": 35986,
+  "timestampMs": 35805,
+  "confidence": null
+ },
+ {
+  "text": " rules",
+  "startMs": 35986,
+  "endMs": 36221,
+  "timestampMs": 36104,
+  "confidence": null
+ },
+ {
+  "text": " before",
+  "startMs": 36221,
+  "endMs": 36614,
+  "timestampMs": 36418,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 36614,
+  "endMs": 36750,
+  "timestampMs": 36682,
+  "confidence": null
+ },
+ {
+  "text": " plan",
+  "startMs": 36750,
+  "endMs": 36910,
+  "timestampMs": 36830,
+  "confidence": null
+ },
+ {
+  "text": " your",
+  "startMs": 36910,
+  "endMs": 37101,
+  "timestampMs": 37006,
+  "confidence": null
+ },
+ {
+  "text": " commute.",
+  "startMs": 37101,
+  "endMs": 37346,
+  "timestampMs": 37224,
+  "confidence": null
+ },
+ {
+  "text": "So",
+  "startMs": 37706,
+  "endMs": 38134,
+  "timestampMs": 37920,
+  "confidence": null
+ },
+ {
+  "text": " Olympia",
+  "startMs": 38134,
+  "endMs": 38477,
+  "timestampMs": 38305,
+  "confidence": null
+ },
+ {
+  "text": " offers",
+  "startMs": 38477,
+  "endMs": 38767,
+  "timestampMs": 38622,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 38767,
+  "endMs": 38892,
+  "timestampMs": 38830,
+  "confidence": null
+ },
+ {
+  "text": " state-capital",
+  "startMs": 38892,
+  "endMs": 39420,
+  "timestampMs": 39156,
+  "confidence": null
+ },
+ {
+  "text": " lifestyle,",
+  "startMs": 39420,
+  "endMs": 40056,
+  "timestampMs": 39738,
+  "confidence": null
+ },
+ {
+  "text": " Pacific",
+  "startMs": 40126,
+  "endMs": 40463,
+  "timestampMs": 40294,
+  "confidence": null
+ },
+ {
+  "text": " Northwest",
+  "startMs": 40463,
+  "endMs": 41198,
+  "timestampMs": 40830,
+  "confidence": null
+ },
+ {
+  "text": " scenery,",
+  "startMs": 41198,
+  "endMs": 41553,
+  "timestampMs": 41376,
+  "confidence": null
+ },
+ {
+  "text": " and",
+  "startMs": 41553,
+  "endMs": 41729,
+  "timestampMs": 41641,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 41729,
+  "endMs": 41820,
+  "timestampMs": 41774,
+  "confidence": null
+ },
+ {
+  "text": " transit",
+  "startMs": 41820,
+  "endMs": 42161,
+  "timestampMs": 41990,
+  "confidence": null
+ },
+ {
+  "text": " perk.",
+  "startMs": 42161,
+  "endMs": 42506,
+  "timestampMs": 42334,
+  "confidence": null
+ },
+ {
+  "text": " But",
+  "startMs": 42886,
+  "endMs": 43209,
+  "timestampMs": 43048,
+  "confidence": null
+ },
+ {
+  "text": " housing",
+  "startMs": 43209,
+  "endMs": 43544,
+  "timestampMs": 43376,
+  "confidence": null
+ },
+ {
+  "text": " is",
+  "startMs": 43544,
+  "endMs": 43685,
+  "timestampMs": 43614,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 43685,
+  "endMs": 43809,
+  "timestampMs": 43747,
+  "confidence": null
+ },
+ {
+  "text": " number",
+  "startMs": 43809,
+  "endMs": 44030,
+  "timestampMs": 43920,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 44030,
+  "endMs": 44293,
+  "timestampMs": 44162,
+  "confidence": null
+ },
+ {
+  "text": " really",
+  "startMs": 44293,
+  "endMs": 44613,
+  "timestampMs": 44453,
+  "confidence": null
+ },
+ {
+  "text": " need",
+  "startMs": 44613,
+  "endMs": 44781,
+  "timestampMs": 44697,
+  "confidence": null
+ },
+ {
+  "text": " to",
+  "startMs": 44781,
+  "endMs": 45004,
+  "timestampMs": 44892,
+  "confidence": null
+ },
+ {
+  "text": " watch.",
+  "startMs": 45004,
+  "endMs": 45380,
+  "timestampMs": 45192,
+  "confidence": null
+ },
+ {
+  "text": "Would",
+  "startMs": 45740,
+  "endMs": 46143,
+  "timestampMs": 45942,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 46143,
+  "endMs": 46300,
+  "timestampMs": 46222,
+  "confidence": null
+ },
+ {
+  "text": " live",
+  "startMs": 46300,
+  "endMs": 46485,
+  "timestampMs": 46392,
+  "confidence": null
+ },
+ {
+  "text": " in",
+  "startMs": 46485,
+  "endMs": 46614,
+  "timestampMs": 46549,
+  "confidence": null
+ },
+ {
+  "text": " Olympia",
+  "startMs": 46614,
+  "endMs": 46885,
+  "timestampMs": 46750,
+  "confidence": null
+ },
+ {
+  "text": " at",
+  "startMs": 46885,
+  "endMs": 47013,
+  "timestampMs": 46949,
+  "confidence": null
+ },
+ {
+  "text": " these",
+  "startMs": 47013,
+  "endMs": 47227,
+  "timestampMs": 47120,
+  "confidence": null
+ },
+ {
+  "text": " prices?",
+  "startMs": 47227,
+  "endMs": 47470,
+  "timestampMs": 47348,
+  "confidence": null
+ },
+ {
+  "text": " Comment",
+  "startMs": 47550,
+  "endMs": 47965,
+  "timestampMs": 47758,
+  "confidence": null
+ },
+ {
+  "text": " yes",
+  "startMs": 47965,
+  "endMs": 48238,
+  "timestampMs": 48102,
+  "confidence": null
+ },
+ {
+  "text": " or",
+  "startMs": 48238,
+  "endMs": 48437,
+  "timestampMs": 48338,
+  "confidence": null
+ },
+ {
+  "text": " no.",
+  "startMs": 48437,
+  "endMs": 48595,
+  "timestampMs": 48516,
+  "confidence": null
+ }
+]

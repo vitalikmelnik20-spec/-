@@ -1,0 +1,1073 @@
+{
+ "voice_name": "am_puck",
+ "speed": 1.2,
+ "total": 49.405,
+ "starts": {
+  "hook": 0.12,
+  "city": 2.771,
+  "rent": 8.028,
+  "buy": 16.404,
+  "tax": 22.669,
+  "transit": 29.748,
+  "summary": 37.706,
+  "cta": 45.74
+ },
+ "durs": {
+  "hook": 2.431,
+  "city": 4.956,
+  "rent": 8.036,
+  "buy": 5.926,
+  "tax": 6.779,
+  "transit": 7.658,
+  "summary": 7.734,
+  "cta": 2.915
+ },
+ "lines": {
+  "hook": "Washington has no state income tax on wages.",
+  "city": "But does that make its capital affordable? Meet Olympia, where the price of housing might change your mind.",
+  "rent": "First, rent. The Census Bureau reports median gross rent of about sixteen hundred dollars a month, based on data from twenty twenty through twenty twenty-four.",
+  "buy": "Want to buy instead? The median value of owner-occupied homes was about four hundred eighty-six thousand dollars.",
+  "tax": "Now for the twist. Washington has no broad state personal income tax on wages, but that doesn't mean you escape every tax.",
+  "transit": "And here's another surprise: local buses operated by Intercity Transit have been fare-free. Check the current service rules before you plan your commute.",
+  "summary": "So Olympia offers a state-capital lifestyle, Pacific Northwest scenery, and a transit perk. But housing is the number you really need to watch.",
+  "cta": "Would you live in Olympia at these prices? Comment yes or no."
+ },
+ "words": [
+  {
+   "key": "hook",
+   "i": 0,
+   "text": "Washington",
+   "start": 0.12,
+   "end": 0.743
+  },
+  {
+   "key": "hook",
+   "i": 1,
+   "text": "has",
+   "start": 0.743,
+   "end": 0.927
+  },
+  {
+   "key": "hook",
+   "i": 2,
+   "text": "no",
+   "start": 0.927,
+   "end": 1.053
+  },
+  {
+   "key": "hook",
+   "i": 3,
+   "text": "state",
+   "start": 1.053,
+   "end": 1.263
+  },
+  {
+   "key": "hook",
+   "i": 4,
+   "text": "income",
+   "start": 1.263,
+   "end": 1.501
+  },
+  {
+   "key": "hook",
+   "i": 5,
+   "text": "tax",
+   "start": 1.501,
+   "end": 1.723
+  },
+  {
+   "key": "hook",
+   "i": 6,
+   "text": "on",
+   "start": 1.723,
+   "end": 1.901
+  },
+  {
+   "key": "hook",
+   "i": 7,
+   "text": "wages.",
+   "start": 1.901,
+   "end": 2.491
+  },
+  {
+   "key": "city",
+   "i": 0,
+   "text": "But",
+   "start": 2.771,
+   "end": 3.065
+  },
+  {
+   "key": "city",
+   "i": 1,
+   "text": "does",
+   "start": 3.065,
+   "end": 3.31
+  },
+  {
+   "key": "city",
+   "i": 2,
+   "text": "that",
+   "start": 3.31,
+   "end": 3.492
+  },
+  {
+   "key": "city",
+   "i": 3,
+   "text": "make",
+   "start": 3.492,
+   "end": 3.674
+  },
+  {
+   "key": "city",
+   "i": 4,
+   "text": "its",
+   "start": 3.674,
+   "end": 3.828
+  },
+  {
+   "key": "city",
+   "i": 5,
+   "text": "capital",
+   "start": 3.828,
+   "end": 4.094
+  },
+  {
+   "key": "city",
+   "i": 6,
+   "text": "affordable?",
+   "start": 4.094,
+   "end": 4.468
+  },
+  {
+   "key": "city",
+   "i": 7,
+   "text": "Meet",
+   "start": 4.468,
+   "end": 4.65
+  },
+  {
+   "key": "city",
+   "i": 8,
+   "text": "Olympia,",
+   "start": 4.65,
+   "end": 5.275
+  },
+  {
+   "key": "city",
+   "i": 9,
+   "text": "where",
+   "start": 5.275,
+   "end": 5.485
+  },
+  {
+   "key": "city",
+   "i": 10,
+   "text": "the",
+   "start": 5.485,
+   "end": 5.639
+  },
+  {
+   "key": "city",
+   "i": 11,
+   "text": "price",
+   "start": 5.639,
+   "end": 5.892
+  },
+  {
+   "key": "city",
+   "i": 12,
+   "text": "of",
+   "start": 5.892,
+   "end": 6.062
+  },
+  {
+   "key": "city",
+   "i": 13,
+   "text": "housing",
+   "start": 6.062,
+   "end": 6.43
+  },
+  {
+   "key": "city",
+   "i": 14,
+   "text": "might",
+   "start": 6.43,
+   "end": 6.654
+  },
+  {
+   "key": "city",
+   "i": 15,
+   "text": "change",
+   "start": 6.654,
+   "end": 7.172
+  },
+  {
+   "key": "city",
+   "i": 16,
+   "text": "your",
+   "start": 7.172,
+   "end": 7.361
+  },
+  {
+   "key": "city",
+   "i": 17,
+   "text": "mind.",
+   "start": 7.361,
+   "end": 7.668
+  },
+  {
+   "key": "rent",
+   "i": 0,
+   "text": "First,",
+   "start": 8.028,
+   "end": 8.428
+  },
+  {
+   "key": "rent",
+   "i": 1,
+   "text": "rent.",
+   "start": 8.428,
+   "end": 8.677
+  },
+  {
+   "key": "rent",
+   "i": 2,
+   "text": "The",
+   "start": 8.677,
+   "end": 8.99
+  },
+  {
+   "key": "rent",
+   "i": 3,
+   "text": "Census",
+   "start": 8.99,
+   "end": 9.228
+  },
+  {
+   "key": "rent",
+   "i": 4,
+   "text": "Bureau",
+   "start": 9.228,
+   "end": 9.466
+  },
+  {
+   "key": "rent",
+   "i": 5,
+   "text": "reports",
+   "start": 9.466,
+   "end": 9.741
+  },
+  {
+   "key": "rent",
+   "i": 6,
+   "text": "median",
+   "start": 9.741,
+   "end": 10.16
+  },
+  {
+   "key": "rent",
+   "i": 7,
+   "text": "gross",
+   "start": 10.16,
+   "end": 10.495
+  },
+  {
+   "key": "rent",
+   "i": 8,
+   "text": "rent",
+   "start": 10.495,
+   "end": 10.856
+  },
+  {
+   "key": "rent",
+   "i": 9,
+   "text": "of",
+   "start": 10.856,
+   "end": 11.062
+  },
+  {
+   "key": "rent",
+   "i": 10,
+   "text": "about",
+   "start": 11.062,
+   "end": 11.272
+  },
+  {
+   "key": "rent",
+   "i": 11,
+   "text": "sixteen",
+   "start": 11.272,
+   "end": 11.824
+  },
+  {
+   "key": "rent",
+   "i": 12,
+   "text": "hundred",
+   "start": 11.824,
+   "end": 12.326
+  },
+  {
+   "key": "rent",
+   "i": 13,
+   "text": "dollars",
+   "start": 12.326,
+   "end": 12.701
+  },
+  {
+   "key": "rent",
+   "i": 14,
+   "text": "a",
+   "start": 12.701,
+   "end": 12.853
+  },
+  {
+   "key": "rent",
+   "i": 15,
+   "text": "month,",
+   "start": 12.853,
+   "end": 13.063
+  },
+  {
+   "key": "rent",
+   "i": 16,
+   "text": "based",
+   "start": 13.063,
+   "end": 13.323
+  },
+  {
+   "key": "rent",
+   "i": 17,
+   "text": "on",
+   "start": 13.323,
+   "end": 13.559
+  },
+  {
+   "key": "rent",
+   "i": 18,
+   "text": "data",
+   "start": 13.559,
+   "end": 13.957
+  },
+  {
+   "key": "rent",
+   "i": 19,
+   "text": "from",
+   "start": 13.957,
+   "end": 14.199
+  },
+  {
+   "key": "rent",
+   "i": 20,
+   "text": "twenty",
+   "start": 14.199,
+   "end": 14.526
+  },
+  {
+   "key": "rent",
+   "i": 21,
+   "text": "twenty",
+   "start": 14.526,
+   "end": 14.798
+  },
+  {
+   "key": "rent",
+   "i": 22,
+   "text": "through",
+   "start": 14.798,
+   "end": 15.073
+  },
+  {
+   "key": "rent",
+   "i": 23,
+   "text": "twenty",
+   "start": 15.073,
+   "end": 15.417
+  },
+  {
+   "key": "rent",
+   "i": 24,
+   "text": "twenty-four.",
+   "start": 15.417,
+   "end": 16.004
+  },
+  {
+   "key": "buy",
+   "i": 0,
+   "text": "Want",
+   "start": 16.404,
+   "end": 16.833
+  },
+  {
+   "key": "buy",
+   "i": 1,
+   "text": "to",
+   "start": 16.833,
+   "end": 16.963
+  },
+  {
+   "key": "buy",
+   "i": 2,
+   "text": "buy",
+   "start": 16.963,
+   "end": 17.117
+  },
+  {
+   "key": "buy",
+   "i": 3,
+   "text": "instead?",
+   "start": 17.117,
+   "end": 17.383
+  },
+  {
+   "key": "buy",
+   "i": 4,
+   "text": "The",
+   "start": 17.383,
+   "end": 17.684
+  },
+  {
+   "key": "buy",
+   "i": 5,
+   "text": "median",
+   "start": 17.684,
+   "end": 17.922
+  },
+  {
+   "key": "buy",
+   "i": 6,
+   "text": "value",
+   "start": 17.922,
+   "end": 18.132
+  },
+  {
+   "key": "buy",
+   "i": 7,
+   "text": "of",
+   "start": 18.132,
+   "end": 18.258
+  },
+  {
+   "key": "buy",
+   "i": 8,
+   "text": "owner-occupied",
+   "start": 18.258,
+   "end": 19.12
+  },
+  {
+   "key": "buy",
+   "i": 9,
+   "text": "homes",
+   "start": 19.12,
+   "end": 19.558
+  },
+  {
+   "key": "buy",
+   "i": 10,
+   "text": "was",
+   "start": 19.558,
+   "end": 19.864
+  },
+  {
+   "key": "buy",
+   "i": 11,
+   "text": "about",
+   "start": 19.864,
+   "end": 20.074
+  },
+  {
+   "key": "buy",
+   "i": 12,
+   "text": "four",
+   "start": 20.074,
+   "end": 20.359
+  },
+  {
+   "key": "buy",
+   "i": 13,
+   "text": "hundred",
+   "start": 20.359,
+   "end": 20.786
+  },
+  {
+   "key": "buy",
+   "i": 14,
+   "text": "eighty-six",
+   "start": 20.786,
+   "end": 21.437
+  },
+  {
+   "key": "buy",
+   "i": 15,
+   "text": "thousand",
+   "start": 21.437,
+   "end": 21.834
+  },
+  {
+   "key": "buy",
+   "i": 16,
+   "text": "dollars.",
+   "start": 21.834,
+   "end": 22.269
+  },
+  {
+   "key": "tax",
+   "i": 0,
+   "text": "Now",
+   "start": 22.669,
+   "end": 23.061
+  },
+  {
+   "key": "tax",
+   "i": 1,
+   "text": "for",
+   "start": 23.061,
+   "end": 23.215
+  },
+  {
+   "key": "tax",
+   "i": 2,
+   "text": "the",
+   "start": 23.215,
+   "end": 23.369
+  },
+  {
+   "key": "tax",
+   "i": 3,
+   "text": "twist.",
+   "start": 23.369,
+   "end": 23.579
+  },
+  {
+   "key": "tax",
+   "i": 4,
+   "text": "Washington",
+   "start": 23.579,
+   "end": 24.025
+  },
+  {
+   "key": "tax",
+   "i": 5,
+   "text": "has",
+   "start": 24.025,
+   "end": 24.221
+  },
+  {
+   "key": "tax",
+   "i": 6,
+   "text": "no",
+   "start": 24.221,
+   "end": 24.369
+  },
+  {
+   "key": "tax",
+   "i": 7,
+   "text": "broad",
+   "start": 24.369,
+   "end": 24.579
+  },
+  {
+   "key": "tax",
+   "i": 8,
+   "text": "state",
+   "start": 24.579,
+   "end": 24.848
+  },
+  {
+   "key": "tax",
+   "i": 9,
+   "text": "personal",
+   "start": 24.848,
+   "end": 25.559
+  },
+  {
+   "key": "tax",
+   "i": 10,
+   "text": "income",
+   "start": 25.559,
+   "end": 26.024
+  },
+  {
+   "key": "tax",
+   "i": 11,
+   "text": "tax",
+   "start": 26.024,
+   "end": 26.297
+  },
+  {
+   "key": "tax",
+   "i": 12,
+   "text": "on",
+   "start": 26.297,
+   "end": 26.487
+  },
+  {
+   "key": "tax",
+   "i": 13,
+   "text": "wages,",
+   "start": 26.487,
+   "end": 27.098
+  },
+  {
+   "key": "tax",
+   "i": 14,
+   "text": "but",
+   "start": 27.098,
+   "end": 27.252
+  },
+  {
+   "key": "tax",
+   "i": 15,
+   "text": "that",
+   "start": 27.252,
+   "end": 27.468
+  },
+  {
+   "key": "tax",
+   "i": 16,
+   "text": "doesn't",
+   "start": 27.468,
+   "end": 27.863
+  },
+  {
+   "key": "tax",
+   "i": 17,
+   "text": "mean",
+   "start": 27.863,
+   "end": 28.066
+  },
+  {
+   "key": "tax",
+   "i": 18,
+   "text": "you",
+   "start": 28.066,
+   "end": 28.328
+  },
+  {
+   "key": "tax",
+   "i": 19,
+   "text": "escape",
+   "start": 28.328,
+   "end": 28.668
+  },
+  {
+   "key": "tax",
+   "i": 20,
+   "text": "every",
+   "start": 28.668,
+   "end": 29.009
+  },
+  {
+   "key": "tax",
+   "i": 21,
+   "text": "tax.",
+   "start": 29.009,
+   "end": 29.388
+  },
+  {
+   "key": "transit",
+   "i": 0,
+   "text": "And",
+   "start": 29.748,
+   "end": 30.083
+  },
+  {
+   "key": "transit",
+   "i": 1,
+   "text": "here's",
+   "start": 30.083,
+   "end": 30.321
+  },
+  {
+   "key": "transit",
+   "i": 2,
+   "text": "another",
+   "start": 30.321,
+   "end": 30.587
+  },
+  {
+   "key": "transit",
+   "i": 3,
+   "text": "surprise:",
+   "start": 30.587,
+   "end": 30.881
+  },
+  {
+   "key": "transit",
+   "i": 4,
+   "text": "local",
+   "start": 30.881,
+   "end": 31.091
+  },
+  {
+   "key": "transit",
+   "i": 5,
+   "text": "buses",
+   "start": 31.091,
+   "end": 31.603
+  },
+  {
+   "key": "transit",
+   "i": 6,
+   "text": "operated",
+   "start": 31.603,
+   "end": 32.219
+  },
+  {
+   "key": "transit",
+   "i": 7,
+   "text": "by",
+   "start": 32.219,
+   "end": 32.415
+  },
+  {
+   "key": "transit",
+   "i": 8,
+   "text": "Intercity",
+   "start": 32.415,
+   "end": 33.069
+  },
+  {
+   "key": "transit",
+   "i": 9,
+   "text": "Transit",
+   "start": 33.069,
+   "end": 33.554
+  },
+  {
+   "key": "transit",
+   "i": 10,
+   "text": "have",
+   "start": 33.554,
+   "end": 33.819
+  },
+  {
+   "key": "transit",
+   "i": 11,
+   "text": "been",
+   "start": 33.819,
+   "end": 34.001
+  },
+  {
+   "key": "transit",
+   "i": 12,
+   "text": "fare-free.",
+   "start": 34.001,
+   "end": 34.449
+  },
+  {
+   "key": "transit",
+   "i": 13,
+   "text": "Check",
+   "start": 34.449,
+   "end": 34.838
+  },
+  {
+   "key": "transit",
+   "i": 14,
+   "text": "the",
+   "start": 34.838,
+   "end": 34.992
+  },
+  {
+   "key": "transit",
+   "i": 15,
+   "text": "current",
+   "start": 34.992,
+   "end": 35.386
+  },
+  {
+   "key": "transit",
+   "i": 16,
+   "text": "service",
+   "start": 35.386,
+   "end": 35.796
+  },
+  {
+   "key": "transit",
+   "i": 17,
+   "text": "rules",
+   "start": 35.796,
+   "end": 36.062
+  },
+  {
+   "key": "transit",
+   "i": 18,
+   "text": "before",
+   "start": 36.062,
+   "end": 36.508
+  },
+  {
+   "key": "transit",
+   "i": 19,
+   "text": "you",
+   "start": 36.508,
+   "end": 36.662
+  },
+  {
+   "key": "transit",
+   "i": 20,
+   "text": "plan",
+   "start": 36.662,
+   "end": 36.844
+  },
+  {
+   "key": "transit",
+   "i": 21,
+   "text": "your",
+   "start": 36.844,
+   "end": 37.06
+  },
+  {
+   "key": "transit",
+   "i": 22,
+   "text": "commute.",
+   "start": 37.06,
+   "end": 37.346
+  },
+  {
+   "key": "summary",
+   "i": 0,
+   "text": "So",
+   "start": 37.706,
+   "end": 38.07
+  },
+  {
+   "key": "summary",
+   "i": 1,
+   "text": "Olympia",
+   "start": 38.07,
+   "end": 38.362
+  },
+  {
+   "key": "summary",
+   "i": 2,
+   "text": "offers",
+   "start": 38.362,
+   "end": 38.609
+  },
+  {
+   "key": "summary",
+   "i": 3,
+   "text": "a",
+   "start": 38.609,
+   "end": 38.715
+  },
+  {
+   "key": "summary",
+   "i": 4,
+   "text": "state-capital",
+   "start": 38.715,
+   "end": 39.165
+  },
+  {
+   "key": "summary",
+   "i": 5,
+   "text": "lifestyle,",
+   "start": 39.165,
+   "end": 39.706
+  },
+  {
+   "key": "summary",
+   "i": 6,
+   "text": "Pacific",
+   "start": 39.706,
+   "end": 40.07
+  },
+  {
+   "key": "summary",
+   "i": 7,
+   "text": "Northwest",
+   "start": 40.07,
+   "end": 40.865
+  },
+  {
+   "key": "summary",
+   "i": 8,
+   "text": "scenery,",
+   "start": 40.865,
+   "end": 41.249
+  },
+  {
+   "key": "summary",
+   "i": 9,
+   "text": "and",
+   "start": 41.249,
+   "end": 41.439
+  },
+  {
+   "key": "summary",
+   "i": 10,
+   "text": "a",
+   "start": 41.439,
+   "end": 41.537
+  },
+  {
+   "key": "summary",
+   "i": 11,
+   "text": "transit",
+   "start": 41.537,
+   "end": 41.906
+  },
+  {
+   "key": "summary",
+   "i": 12,
+   "text": "perk.",
+   "start": 41.906,
+   "end": 42.279
+  },
+  {
+   "key": "summary",
+   "i": 13,
+   "text": "But",
+   "start": 42.279,
+   "end": 42.679
+  },
+  {
+   "key": "summary",
+   "i": 14,
+   "text": "housing",
+   "start": 42.679,
+   "end": 43.093
+  },
+  {
+   "key": "summary",
+   "i": 15,
+   "text": "is",
+   "start": 43.093,
+   "end": 43.268
+  },
+  {
+   "key": "summary",
+   "i": 16,
+   "text": "the",
+   "start": 43.268,
+   "end": 43.422
+  },
+  {
+   "key": "summary",
+   "i": 17,
+   "text": "number",
+   "start": 43.422,
+   "end": 43.695
+  },
+  {
+   "key": "summary",
+   "i": 18,
+   "text": "you",
+   "start": 43.695,
+   "end": 44.02
+  },
+  {
+   "key": "summary",
+   "i": 19,
+   "text": "really",
+   "start": 44.02,
+   "end": 44.417
+  },
+  {
+   "key": "summary",
+   "i": 20,
+   "text": "need",
+   "start": 44.417,
+   "end": 44.624
+  },
+  {
+   "key": "summary",
+   "i": 21,
+   "text": "to",
+   "start": 44.624,
+   "end": 44.9
+  },
+  {
+   "key": "summary",
+   "i": 22,
+   "text": "watch.",
+   "start": 44.9,
+   "end": 45.38
+  },
+  {
+   "key": "cta",
+   "i": 0,
+   "text": "Would",
+   "start": 45.74,
+   "end": 46.135
+  },
+  {
+   "key": "cta",
+   "i": 1,
+   "text": "you",
+   "start": 46.135,
+   "end": 46.289
+  },
+  {
+   "key": "cta",
+   "i": 2,
+   "text": "live",
+   "start": 46.289,
+   "end": 46.471
+  },
+  {
+   "key": "cta",
+   "i": 3,
+   "text": "in",
+   "start": 46.471,
+   "end": 46.597
+  },
+  {
+   "key": "cta",
+   "i": 4,
+   "text": "Olympia",
+   "start": 46.597,
+   "end": 46.863
+  },
+  {
+   "key": "cta",
+   "i": 5,
+   "text": "at",
+   "start": 46.863,
+   "end": 46.989
+  },
+  {
+   "key": "cta",
+   "i": 6,
+   "text": "these",
+   "start": 46.989,
+   "end": 47.199
+  },
+  {
+   "key": "cta",
+   "i": 7,
+   "text": "prices?",
+   "start": 47.199,
+   "end": 47.437
+  },
+  {
+   "key": "cta",
+   "i": 8,
+   "text": "Comment",
+   "start": 47.437,
+   "end": 47.895
+  },
+  {
+   "key": "cta",
+   "i": 9,
+   "text": "yes",
+   "start": 47.895,
+   "end": 48.195
+  },
+  {
+   "key": "cta",
+   "i": 10,
+   "text": "or",
+   "start": 48.195,
+   "end": 48.415
+  },
+  {
+   "key": "cta",
+   "i": 11,
+   "text": "no.",
+   "start": 48.415,
+   "end": 48.595
+  }
+ ]
+}

@@ -1,0 +1,1028 @@
+[
+ {
+  "start": 0.12,
+  "end": 1.501,
+  "tokens": [
+   {
+    "text": "Washington",
+    "start": 0.12,
+    "end": 0.743,
+    "em": null
+   },
+   {
+    "text": "has",
+    "start": 0.743,
+    "end": 0.927,
+    "em": null
+   },
+   {
+    "text": "no",
+    "start": 0.927,
+    "end": 1.053,
+    "em": null
+   },
+   {
+    "text": "state",
+    "start": 1.053,
+    "end": 1.263,
+    "em": null
+   },
+   {
+    "text": "income",
+    "start": 1.263,
+    "end": 1.501,
+    "em": "key"
+   }
+  ]
+ },
+ {
+  "start": 1.501,
+  "end": 2.741,
+  "tokens": [
+   {
+    "text": "tax",
+    "start": 1.501,
+    "end": 1.723,
+    "em": "key"
+   },
+   {
+    "text": "on",
+    "start": 1.723,
+    "end": 1.901,
+    "em": null
+   },
+   {
+    "text": "wages.",
+    "start": 1.901,
+    "end": 2.491,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 2.771,
+  "end": 4.701,
+  "tokens": [
+   {
+    "text": "But",
+    "start": 2.771,
+    "end": 3.081,
+    "em": null
+   },
+   {
+    "text": "does",
+    "start": 3.081,
+    "end": 3.34,
+    "em": null
+   },
+   {
+    "text": "that",
+    "start": 3.34,
+    "end": 3.532,
+    "em": null
+   },
+   {
+    "text": "make",
+    "start": 3.532,
+    "end": 3.724,
+    "em": null
+   },
+   {
+    "text": "its",
+    "start": 3.724,
+    "end": 3.886,
+    "em": null
+   },
+   {
+    "text": "capital",
+    "start": 3.886,
+    "end": 4.167,
+    "em": "key"
+   },
+   {
+    "text": "affordable?",
+    "start": 4.167,
+    "end": 4.561,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 4.701,
+  "end": 6.023,
+  "tokens": [
+   {
+    "text": "Meet",
+    "start": 4.701,
+    "end": 4.87,
+    "em": null
+   },
+   {
+    "text": "Olympia,",
+    "start": 4.87,
+    "end": 5.45,
+    "em": "key"
+   },
+   {
+    "text": "where",
+    "start": 5.45,
+    "end": 5.645,
+    "em": null
+   },
+   {
+    "text": "the",
+    "start": 5.645,
+    "end": 5.788,
+    "em": null
+   },
+   {
+    "text": "price",
+    "start": 5.788,
+    "end": 6.023,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 6.023,
+  "end": 7.917,
+  "tokens": [
+   {
+    "text": "of",
+    "start": 6.023,
+    "end": 6.181,
+    "em": null
+   },
+   {
+    "text": "housing",
+    "start": 6.181,
+    "end": 6.523,
+    "em": "key"
+   },
+   {
+    "text": "might",
+    "start": 6.523,
+    "end": 6.731,
+    "em": null
+   },
+   {
+    "text": "change",
+    "start": 6.731,
+    "end": 7.212,
+    "em": null
+   },
+   {
+    "text": "your",
+    "start": 7.212,
+    "end": 7.387,
+    "em": null
+   },
+   {
+    "text": "mind.",
+    "start": 7.387,
+    "end": 7.667,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 8.028,
+  "end": 8.986,
+  "tokens": [
+   {
+    "text": "First,",
+    "start": 8.028,
+    "end": 8.688,
+    "em": null
+   },
+   {
+    "text": "rent.",
+    "start": 8.758,
+    "end": 8.986,
+    "em": "key"
+   }
+  ]
+ },
+ {
+  "start": 8.986,
+  "end": 9.959,
+  "tokens": [
+   {
+    "text": "The",
+    "start": 8.986,
+    "end": 9.272,
+    "em": null
+   },
+   {
+    "text": "Census",
+    "start": 9.272,
+    "end": 9.49,
+    "em": null
+   },
+   {
+    "text": "Bureau",
+    "start": 9.49,
+    "end": 9.707,
+    "em": null
+   },
+   {
+    "text": "reports",
+    "start": 9.707,
+    "end": 9.959,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 9.959,
+  "end": 11.36,
+  "tokens": [
+   {
+    "text": "median",
+    "start": 9.959,
+    "end": 10.342,
+    "em": null
+   },
+   {
+    "text": "gross",
+    "start": 10.342,
+    "end": 10.649,
+    "em": null
+   },
+   {
+    "text": "rent",
+    "start": 10.649,
+    "end": 10.979,
+    "em": "key"
+   },
+   {
+    "text": "of",
+    "start": 10.979,
+    "end": 11.168,
+    "em": null
+   },
+   {
+    "text": "about",
+    "start": 11.168,
+    "end": 11.36,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 11.36,
+  "end": 13.218,
+  "tokens": [
+   {
+    "text": "$1,600",
+    "start": 11.36,
+    "end": 12.667,
+    "em": "money"
+   },
+   {
+    "text": "a",
+    "start": 12.667,
+    "end": 12.806,
+    "em": null
+   },
+   {
+    "text": "month,",
+    "start": 12.806,
+    "end": 12.998,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 13.218,
+  "end": 16.254,
+  "tokens": [
+   {
+    "text": "based",
+    "start": 13.218,
+    "end": 13.464,
+    "em": null
+   },
+   {
+    "text": "on",
+    "start": 13.464,
+    "end": 13.688,
+    "em": null
+   },
+   {
+    "text": "data",
+    "start": 13.688,
+    "end": 14.066,
+    "em": null
+   },
+   {
+    "text": "from",
+    "start": 14.066,
+    "end": 14.295,
+    "em": null
+   },
+   {
+    "text": "2020",
+    "start": 14.295,
+    "end": 14.863,
+    "em": null
+   },
+   {
+    "text": "through",
+    "start": 14.863,
+    "end": 15.124,
+    "em": null
+   },
+   {
+    "text": "2024.",
+    "start": 15.124,
+    "end": 16.004,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 16.404,
+  "end": 17.434,
+  "tokens": [
+   {
+    "text": "Want",
+    "start": 16.404,
+    "end": 16.82,
+    "em": null
+   },
+   {
+    "text": "to",
+    "start": 16.82,
+    "end": 16.946,
+    "em": null
+   },
+   {
+    "text": "buy",
+    "start": 16.946,
+    "end": 17.096,
+    "em": "key"
+   },
+   {
+    "text": "instead?",
+    "start": 17.096,
+    "end": 17.354,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 17.434,
+  "end": 18.3,
+  "tokens": [
+   {
+    "text": "The",
+    "start": 17.434,
+    "end": 17.732,
+    "em": null
+   },
+   {
+    "text": "median",
+    "start": 17.732,
+    "end": 17.967,
+    "em": null
+   },
+   {
+    "text": "value",
+    "start": 17.967,
+    "end": 18.175,
+    "em": null
+   },
+   {
+    "text": "of",
+    "start": 18.175,
+    "end": 18.3,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 18.3,
+  "end": 22.52,
+  "tokens": [
+   {
+    "text": "owner-occupied",
+    "start": 18.3,
+    "end": 19.153,
+    "em": null
+   },
+   {
+    "text": "homes",
+    "start": 19.153,
+    "end": 19.587,
+    "em": null
+   },
+   {
+    "text": "was",
+    "start": 19.587,
+    "end": 19.889,
+    "em": null
+   },
+   {
+    "text": "about",
+    "start": 19.889,
+    "end": 20.097,
+    "em": null
+   },
+   {
+    "text": "$486,000.",
+    "start": 20.097,
+    "end": 22.27,
+    "em": "money"
+   }
+  ]
+ },
+ {
+  "start": 22.669,
+  "end": 23.629,
+  "tokens": [
+   {
+    "text": "Now",
+    "start": 22.669,
+    "end": 23.052,
+    "em": null
+   },
+   {
+    "text": "for",
+    "start": 23.052,
+    "end": 23.203,
+    "em": null
+   },
+   {
+    "text": "the",
+    "start": 23.203,
+    "end": 23.354,
+    "em": null
+   },
+   {
+    "text": "twist.",
+    "start": 23.354,
+    "end": 23.559,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 23.629,
+  "end": 24.884,
+  "tokens": [
+   {
+    "text": "Washington",
+    "start": 23.629,
+    "end": 24.07,
+    "em": null
+   },
+   {
+    "text": "has",
+    "start": 24.07,
+    "end": 24.264,
+    "em": null
+   },
+   {
+    "text": "no",
+    "start": 24.264,
+    "end": 24.41,
+    "em": null
+   },
+   {
+    "text": "broad",
+    "start": 24.41,
+    "end": 24.618,
+    "em": null
+   },
+   {
+    "text": "state",
+    "start": 24.618,
+    "end": 24.884,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 24.884,
+  "end": 27.279,
+  "tokens": [
+   {
+    "text": "personal",
+    "start": 24.884,
+    "end": 25.587,
+    "em": null
+   },
+   {
+    "text": "income",
+    "start": 25.587,
+    "end": 26.047,
+    "em": "key"
+   },
+   {
+    "text": "tax",
+    "start": 26.047,
+    "end": 26.317,
+    "em": "key"
+   },
+   {
+    "text": "on",
+    "start": 26.317,
+    "end": 26.505,
+    "em": null
+   },
+   {
+    "text": "wages,",
+    "start": 26.505,
+    "end": 27.109,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 27.279,
+  "end": 28.414,
+  "tokens": [
+   {
+    "text": "but",
+    "start": 27.279,
+    "end": 27.421,
+    "em": null
+   },
+   {
+    "text": "that",
+    "start": 27.421,
+    "end": 27.62,
+    "em": null
+   },
+   {
+    "text": "doesn't",
+    "start": 27.62,
+    "end": 27.985,
+    "em": null
+   },
+   {
+    "text": "mean",
+    "start": 27.985,
+    "end": 28.172,
+    "em": null
+   },
+   {
+    "text": "you",
+    "start": 28.172,
+    "end": 28.414,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 28.414,
+  "end": 29.638,
+  "tokens": [
+   {
+    "text": "escape",
+    "start": 28.414,
+    "end": 28.728,
+    "em": "warn"
+   },
+   {
+    "text": "every",
+    "start": 28.728,
+    "end": 29.043,
+    "em": null
+   },
+   {
+    "text": "tax.",
+    "start": 29.043,
+    "end": 29.388,
+    "em": "key"
+   }
+  ]
+ },
+ {
+  "start": 29.748,
+  "end": 31.328,
+  "tokens": [
+   {
+    "text": "And",
+    "start": 29.748,
+    "end": 30.171,
+    "em": null
+   },
+   {
+    "text": "here's",
+    "start": 30.171,
+    "end": 30.471,
+    "em": null
+   },
+   {
+    "text": "another",
+    "start": 30.471,
+    "end": 30.807,
+    "em": null
+   },
+   {
+    "text": "surprise:",
+    "start": 30.807,
+    "end": 31.178,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 31.328,
+  "end": 32.717,
+  "tokens": [
+   {
+    "text": "local",
+    "start": 31.328,
+    "end": 31.518,
+    "em": null
+   },
+   {
+    "text": "buses",
+    "start": 31.518,
+    "end": 31.982,
+    "em": null
+   },
+   {
+    "text": "operated",
+    "start": 31.982,
+    "end": 32.539,
+    "em": null
+   },
+   {
+    "text": "by",
+    "start": 32.539,
+    "end": 32.717,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 32.717,
+  "end": 34.798,
+  "tokens": [
+   {
+    "text": "Intercity",
+    "start": 32.717,
+    "end": 33.309,
+    "em": null
+   },
+   {
+    "text": "Transit",
+    "start": 33.309,
+    "end": 33.748,
+    "em": null
+   },
+   {
+    "text": "have",
+    "start": 33.748,
+    "end": 33.988,
+    "em": null
+   },
+   {
+    "text": "been",
+    "start": 33.988,
+    "end": 34.153,
+    "em": null
+   },
+   {
+    "text": "fare-free.",
+    "start": 34.153,
+    "end": 34.558,
+    "em": "good"
+   }
+  ]
+ },
+ {
+  "start": 34.798,
+  "end": 35.986,
+  "tokens": [
+   {
+    "text": "Check",
+    "start": 34.798,
+    "end": 35.141,
+    "em": null
+   },
+   {
+    "text": "the",
+    "start": 35.141,
+    "end": 35.277,
+    "em": null
+   },
+   {
+    "text": "current",
+    "start": 35.277,
+    "end": 35.624,
+    "em": null
+   },
+   {
+    "text": "service",
+    "start": 35.624,
+    "end": 35.986,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 35.986,
+  "end": 37.596,
+  "tokens": [
+   {
+    "text": "rules",
+    "start": 35.986,
+    "end": 36.221,
+    "em": null
+   },
+   {
+    "text": "before",
+    "start": 36.221,
+    "end": 36.614,
+    "em": null
+   },
+   {
+    "text": "you",
+    "start": 36.614,
+    "end": 36.75,
+    "em": null
+   },
+   {
+    "text": "plan",
+    "start": 36.75,
+    "end": 36.91,
+    "em": null
+   },
+   {
+    "text": "your",
+    "start": 36.91,
+    "end": 37.101,
+    "em": null
+   },
+   {
+    "text": "commute.",
+    "start": 37.101,
+    "end": 37.346,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 37.706,
+  "end": 38.892,
+  "tokens": [
+   {
+    "text": "So",
+    "start": 37.706,
+    "end": 38.134,
+    "em": null
+   },
+   {
+    "text": "Olympia",
+    "start": 38.134,
+    "end": 38.477,
+    "em": "key"
+   },
+   {
+    "text": "offers",
+    "start": 38.477,
+    "end": 38.767,
+    "em": null
+   },
+   {
+    "text": "a",
+    "start": 38.767,
+    "end": 38.892,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 38.892,
+  "end": 40.126,
+  "tokens": [
+   {
+    "text": "state-capital",
+    "start": 38.892,
+    "end": 39.42,
+    "em": null
+   },
+   {
+    "text": "lifestyle,",
+    "start": 39.42,
+    "end": 40.056,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 40.126,
+  "end": 41.553,
+  "tokens": [
+   {
+    "text": "Pacific",
+    "start": 40.126,
+    "end": 40.463,
+    "em": null
+   },
+   {
+    "text": "Northwest",
+    "start": 40.463,
+    "end": 41.198,
+    "em": null
+   },
+   {
+    "text": "scenery,",
+    "start": 41.198,
+    "end": 41.553,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 41.553,
+  "end": 42.756,
+  "tokens": [
+   {
+    "text": "and",
+    "start": 41.553,
+    "end": 41.729,
+    "em": null
+   },
+   {
+    "text": "a",
+    "start": 41.729,
+    "end": 41.82,
+    "em": null
+   },
+   {
+    "text": "transit",
+    "start": 41.82,
+    "end": 42.161,
+    "em": null
+   },
+   {
+    "text": "perk.",
+    "start": 42.161,
+    "end": 42.506,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 42.886,
+  "end": 44.293,
+  "tokens": [
+   {
+    "text": "But",
+    "start": 42.886,
+    "end": 43.209,
+    "em": null
+   },
+   {
+    "text": "housing",
+    "start": 43.209,
+    "end": 43.544,
+    "em": "key"
+   },
+   {
+    "text": "is",
+    "start": 43.544,
+    "end": 43.685,
+    "em": null
+   },
+   {
+    "text": "the",
+    "start": 43.685,
+    "end": 43.809,
+    "em": null
+   },
+   {
+    "text": "number",
+    "start": 43.809,
+    "end": 44.03,
+    "em": null
+   },
+   {
+    "text": "you",
+    "start": 44.03,
+    "end": 44.293,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 44.293,
+  "end": 45.63,
+  "tokens": [
+   {
+    "text": "really",
+    "start": 44.293,
+    "end": 44.613,
+    "em": null
+   },
+   {
+    "text": "need",
+    "start": 44.613,
+    "end": 44.781,
+    "em": null
+   },
+   {
+    "text": "to",
+    "start": 44.781,
+    "end": 45.004,
+    "em": null
+   },
+   {
+    "text": "watch.",
+    "start": 45.004,
+    "end": 45.38,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 45.74,
+  "end": 47.55,
+  "tokens": [
+   {
+    "text": "Would",
+    "start": 45.74,
+    "end": 46.143,
+    "em": null
+   },
+   {
+    "text": "you",
+    "start": 46.143,
+    "end": 46.3,
+    "em": null
+   },
+   {
+    "text": "live",
+    "start": 46.3,
+    "end": 46.485,
+    "em": null
+   },
+   {
+    "text": "in",
+    "start": 46.485,
+    "end": 46.614,
+    "em": null
+   },
+   {
+    "text": "Olympia",
+    "start": 46.614,
+    "end": 46.885,
+    "em": "key"
+   },
+   {
+    "text": "at",
+    "start": 46.885,
+    "end": 47.013,
+    "em": null
+   },
+   {
+    "text": "these",
+    "start": 47.013,
+    "end": 47.227,
+    "em": null
+   },
+   {
+    "text": "prices?",
+    "start": 47.227,
+    "end": 47.47,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 47.55,
+  "end": 48.845,
+  "tokens": [
+   {
+    "text": "Comment",
+    "start": 47.55,
+    "end": 47.965,
+    "em": null
+   },
+   {
+    "text": "YES",
+    "start": 47.965,
+    "end": 48.238,
+    "em": "good"
+   },
+   {
+    "text": "or",
+    "start": 48.238,
+    "end": 48.437,
+    "em": null
+   },
+   {
+    "text": "NO.",
+    "start": 48.437,
+    "end": 48.595,
+    "em": null
+   }
+  ]
+ }
+]

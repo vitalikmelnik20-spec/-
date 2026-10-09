@@ -27,6 +27,10 @@ bash tools/setup-video-tools.sh
 - **Research sources are blocked.** reddit.com, hn.algolia.com, youtube.com, x.com and api.scrapecreators.com are unreachable here, so last30days runs in fallback mode on the built-in web search. To get its full data, add these domains to Allowed domains.
 - **HuggingFace is blocked.** Model weights don't download, so WhisperX, fish-speech, index-tts, VoxCPM and MusicGen won't work yet. To enable them, add `huggingface.co` to Allowed domains in the environment settings: https://code.claude.com/docs/en/cloud-environments#network-access
 
+## Projects built with it
+
+- `olympia/` + `remotion-lab/src/olympia/`: "Olympia, WA cost of living" Short (Remotion, Kokoro voice, synthesized score). One command: `bash olympia/render.sh`. Deliverables are in `output/olympia_cost_of_living/`.
+
 ## Smoke test
 
 ```bash
