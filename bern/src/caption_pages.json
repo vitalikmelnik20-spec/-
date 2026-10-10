@@ -1,0 +1,698 @@
+[
+ {
+  "start": 0.15,
+  "end": 2.276,
+  "tokens": [
+   {
+    "text": "Wie",
+    "start": 0.15,
+    "end": 0.556,
+    "em": null
+   },
+   {
+    "text": "viel",
+    "start": 0.556,
+    "end": 0.722,
+    "em": null
+   },
+   {
+    "text": "kostet",
+    "start": 0.722,
+    "end": 1.508,
+    "em": null
+   },
+   {
+    "text": "das",
+    "start": 1.508,
+    "end": 1.741,
+    "em": null
+   },
+   {
+    "text": "Leben",
+    "start": 1.741,
+    "end": 2.158,
+    "em": null
+   },
+   {
+    "text": "in",
+    "start": 2.158,
+    "end": 2.276,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 2.276,
+  "end": 4.785,
+  "tokens": [
+   {
+    "text": "Bern,",
+    "start": 2.276,
+    "end": 2.704,
+    "em": "key"
+   },
+   {
+    "text": "der",
+    "start": 2.704,
+    "end": 2.913,
+    "em": null
+   },
+   {
+    "text": "Hauptstadt",
+    "start": 2.913,
+    "end": 3.691,
+    "em": null
+   },
+   {
+    "text": "der",
+    "start": 3.691,
+    "end": 3.833,
+    "em": null
+   },
+   {
+    "text": "Schweiz?",
+    "start": 3.833,
+    "end": 4.535,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 4.915,
+  "end": 6.031,
+  "tokens": [
+   {
+    "text": "Die",
+    "start": 4.915,
+    "end": 5.448,
+    "em": null
+   },
+   {
+    "text": "Miete",
+    "start": 5.448,
+    "end": 5.714,
+    "em": "key"
+   },
+   {
+    "text": "für",
+    "start": 5.714,
+    "end": 5.85,
+    "em": null
+   },
+   {
+    "text": "eine",
+    "start": 5.85,
+    "end": 6.031,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 6.031,
+  "end": 7.315,
+  "tokens": [
+   {
+    "text": "Einzimmerwohnung",
+    "start": 6.031,
+    "end": 6.998,
+    "em": null
+   },
+   {
+    "text": "liegt",
+    "start": 6.998,
+    "end": 7.18,
+    "em": null
+   },
+   {
+    "text": "bei",
+    "start": 7.18,
+    "end": 7.315,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 7.315,
+  "end": 9.918,
+  "tokens": [
+   {
+    "text": "etwa",
+    "start": 7.315,
+    "end": 8.052,
+    "em": null
+   },
+   {
+    "text": "1.340 €",
+    "start": 8.052,
+    "end": 9.601,
+    "em": "money"
+   },
+   {
+    "text": "pro",
+    "start": 9.601,
+    "end": 9.736,
+    "em": null
+   },
+   {
+    "text": "Monat",
+    "start": 9.736,
+    "end": 9.918,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 9.918,
+  "end": 11.642,
+  "tokens": [
+   {
+    "text": "außerhalb",
+    "start": 9.918,
+    "end": 10.386,
+    "em": null
+   },
+   {
+    "text": "des",
+    "start": 10.386,
+    "end": 10.967,
+    "em": null
+   },
+   {
+    "text": "Zentrums,",
+    "start": 10.967,
+    "end": 11.642,
+    "em": "key"
+   }
+  ]
+ },
+ {
+  "start": 11.642,
+  "end": 14.308,
+  "tokens": [
+   {
+    "text": "und",
+    "start": 11.642,
+    "end": 11.854,
+    "em": null
+   },
+   {
+    "text": "1.780 €",
+    "start": 11.854,
+    "end": 13.779,
+    "em": "money"
+   },
+   {
+    "text": "im",
+    "start": 13.779,
+    "end": 13.891,
+    "em": null
+   },
+   {
+    "text": "Zentrum.",
+    "start": 13.891,
+    "end": 14.058,
+    "em": "key"
+   }
+  ]
+ },
+ {
+  "start": 14.459,
+  "end": 16.528,
+  "tokens": [
+   {
+    "text": "Für",
+    "start": 14.459,
+    "end": 15.734,
+    "em": null
+   },
+   {
+    "text": "Lebensmittel",
+    "start": 15.734,
+    "end": 16.082,
+    "em": "key"
+   },
+   {
+    "text": "benötigt",
+    "start": 16.082,
+    "end": 16.39,
+    "em": null
+   },
+   {
+    "text": "man",
+    "start": 16.39,
+    "end": 16.528,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 16.528,
+  "end": 17.959,
+  "tokens": [
+   {
+    "text": "rund",
+    "start": 16.528,
+    "end": 16.763,
+    "em": null
+   },
+   {
+    "text": "550 €,",
+    "start": 16.763,
+    "end": 17.889,
+    "em": "money"
+   }
+  ]
+ },
+ {
+  "start": 17.959,
+  "end": 19.417,
+  "tokens": [
+   {
+    "text": "die",
+    "start": 17.959,
+    "end": 18.095,
+    "em": null
+   },
+   {
+    "text": "Krankenversicherung",
+    "start": 18.095,
+    "end": 19.212,
+    "em": "key"
+   },
+   {
+    "text": "kostet",
+    "start": 19.212,
+    "end": 19.417,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 19.417,
+  "end": 20.839,
+  "tokens": [
+   {
+    "text": "410 €,",
+    "start": 19.417,
+    "end": 20.629,
+    "em": "money"
+   }
+  ]
+ },
+ {
+  "start": 20.839,
+  "end": 24.052,
+  "tokens": [
+   {
+    "text": "und",
+    "start": 20.839,
+    "end": 20.992,
+    "em": null
+   },
+   {
+    "text": "der",
+    "start": 20.992,
+    "end": 21.51,
+    "em": null
+   },
+   {
+    "text": "Transport",
+    "start": 21.51,
+    "end": 21.806,
+    "em": "key"
+   },
+   {
+    "text": "etwa",
+    "start": 21.806,
+    "end": 22.083,
+    "em": null
+   },
+   {
+    "text": "95 €",
+    "start": 22.083,
+    "end": 23.611,
+    "em": "money"
+   },
+   {
+    "text": "monatlich.",
+    "start": 23.611,
+    "end": 23.802,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 24.201,
+  "end": 26.302,
+  "tokens": [
+   {
+    "text": "Mit",
+    "start": 24.201,
+    "end": 24.864,
+    "em": null
+   },
+   {
+    "text": "Nebenkosten",
+    "start": 24.864,
+    "end": 25.676,
+    "em": null
+   },
+   {
+    "text": "und",
+    "start": 25.676,
+    "end": 25.976,
+    "em": null
+   },
+   {
+    "text": "anderen",
+    "start": 25.976,
+    "end": 26.302,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 26.302,
+  "end": 28.091,
+  "tokens": [
+   {
+    "text": "Ausgaben",
+    "start": 26.302,
+    "end": 26.872,
+    "em": null
+   },
+   {
+    "text": "gibt",
+    "start": 26.872,
+    "end": 27.255,
+    "em": null
+   },
+   {
+    "text": "eine",
+    "start": 27.255,
+    "end": 27.429,
+    "em": null
+   },
+   {
+    "text": "Person",
+    "start": 27.429,
+    "end": 27.87,
+    "em": null
+   },
+   {
+    "text": "etwa",
+    "start": 27.87,
+    "end": 28.091,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 28.091,
+  "end": 33.068,
+  "tokens": [
+   {
+    "text": "3.300",
+    "start": 28.091,
+    "end": 29.379,
+    "em": null
+   },
+   {
+    "text": "bis",
+    "start": 29.379,
+    "end": 29.89,
+    "em": null
+   },
+   {
+    "text": "3.900 €",
+    "start": 29.89,
+    "end": 31.33,
+    "em": "money"
+   },
+   {
+    "text": "im",
+    "start": 31.33,
+    "end": 31.527,
+    "em": null
+   },
+   {
+    "text": "Monat",
+    "start": 31.527,
+    "end": 32.003,
+    "em": null
+   },
+   {
+    "text": "aus.",
+    "start": 32.003,
+    "end": 32.818,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 33.219,
+  "end": 34.433,
+  "tokens": [
+   {
+    "text": "Das",
+    "start": 33.219,
+    "end": 33.706,
+    "em": null
+   },
+   {
+    "text": "durchschnittliche",
+    "start": 33.706,
+    "end": 34.433,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 34.433,
+  "end": 38.249,
+  "tokens": [
+   {
+    "text": "Nettogehalt",
+    "start": 34.433,
+    "end": 35.343,
+    "em": "good"
+   },
+   {
+    "text": "liegt",
+    "start": 35.343,
+    "end": 35.533,
+    "em": null
+   },
+   {
+    "text": "bei",
+    "start": 35.533,
+    "end": 35.675,
+    "em": null
+   },
+   {
+    "text": "etwa",
+    "start": 35.675,
+    "end": 36.219,
+    "em": null
+   },
+   {
+    "text": "6.400 €.",
+    "start": 36.219,
+    "end": 37.999,
+    "em": "money"
+   }
+  ]
+ },
+ {
+  "start": 38.419,
+  "end": 40.412,
+  "tokens": [
+   {
+    "text": "Eine",
+    "start": 38.419,
+    "end": 39.153,
+    "em": null
+   },
+   {
+    "text": "eigene",
+    "start": 39.153,
+    "end": 39.367,
+    "em": null
+   },
+   {
+    "text": "Wohnung",
+    "start": 39.367,
+    "end": 40.197,
+    "em": "key"
+   },
+   {
+    "text": "kaufen?",
+    "start": 40.197,
+    "end": 40.412,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 40.412,
+  "end": 44.309,
+  "tokens": [
+   {
+    "text": "Das",
+    "start": 40.412,
+    "end": 40.555,
+    "em": null
+   },
+   {
+    "text": "könnte",
+    "start": 40.555,
+    "end": 41.412,
+    "em": null
+   },
+   {
+    "text": "rund",
+    "start": 41.412,
+    "end": 41.578,
+    "em": null
+   },
+   {
+    "text": "980.000 €",
+    "start": 41.578,
+    "end": 43.419,
+    "em": "money"
+   },
+   {
+    "text": "kosten.",
+    "start": 43.419,
+    "end": 44.059,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 44.319,
+  "end": 46.372,
+  "tokens": [
+   {
+    "text": "Fast",
+    "start": 44.319,
+    "end": 45.253,
+    "em": null
+   },
+   {
+    "text": "eine",
+    "start": 45.253,
+    "end": 45.397,
+    "em": null
+   },
+   {
+    "text": "Million!",
+    "start": 45.397,
+    "end": 46.122,
+    "em": "money"
+   }
+  ]
+ },
+ {
+  "start": 46.541,
+  "end": 49.751,
+  "tokens": [
+   {
+    "text": "Ist",
+    "start": 46.541,
+    "end": 47.322,
+    "em": null
+   },
+   {
+    "text": "das",
+    "start": 47.322,
+    "end": 48.013,
+    "em": null
+   },
+   {
+    "text": "Leben",
+    "start": 48.013,
+    "end": 48.203,
+    "em": null
+   },
+   {
+    "text": "in",
+    "start": 48.203,
+    "end": 48.322,
+    "em": null
+   },
+   {
+    "text": "Bern",
+    "start": 48.322,
+    "end": 48.488,
+    "em": "key"
+   },
+   {
+    "text": "diesen",
+    "start": 48.488,
+    "end": 48.703,
+    "em": null
+   },
+   {
+    "text": "Preis",
+    "start": 48.703,
+    "end": 49.051,
+    "em": "key"
+   },
+   {
+    "text": "wert?",
+    "start": 49.051,
+    "end": 49.501,
+    "em": null
+   }
+  ]
+ },
+ {
+  "start": 49.901,
+  "end": 52.402,
+  "tokens": [
+   {
+    "text": "Schreib",
+    "start": 49.901,
+    "end": 50.524,
+    "em": null
+   },
+   {
+    "text": "JA",
+    "start": 50.524,
+    "end": 50.81,
+    "em": "good"
+   },
+   {
+    "text": "oder",
+    "start": 50.81,
+    "end": 51.37,
+    "em": null
+   },
+   {
+    "text": "NEIN",
+    "start": 51.37,
+    "end": 51.526,
+    "em": "warn"
+   },
+   {
+    "text": "in",
+    "start": 51.526,
+    "end": 51.626,
+    "em": null
+   },
+   {
+    "text": "die",
+    "start": 51.626,
+    "end": 51.921,
+    "em": null
+   },
+   {
+    "text": "Kommentare!",
+    "start": 51.921,
+    "end": 52.152,
+    "em": null
+   }
+  ]
+ }
+]

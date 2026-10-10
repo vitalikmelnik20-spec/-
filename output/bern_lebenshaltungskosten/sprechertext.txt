@@ -1,0 +1,26 @@
+# Sprechertext (so im Video eingesprochen)
+# Stimme: Coqui VITS, CSS10 German (eine native Sprecherin), lokal offline erzeugt
+# Zeiten = Start-Ende jeder Zeile im Video (Sekunden). Zahlen ausgeschrieben, wie gesprochen.
+
+[00.15s - 04.60s]  Wie viel kostet das Leben in Bern, der Hauptstadt der Schweiz?
+[04.92s - 14.12s]  Die Miete für eine Einzimmerwohnung liegt bei etwa tausenddreihundertvierzig Euro pro Monat außerhalb des Zentrums, und tausendsiebenhundertachtzig Euro im Zentrum.
+[14.46s - 23.86s]  Für Lebensmittel benötigt man rund fünfhundertfünfzig Euro, die Krankenversicherung kostet vierhundertzehn Euro, und der Transport etwa fünfundneunzig Euro monatlich.
+[24.20s - 32.88s]  Mit Nebenkosten und anderen Ausgaben gibt eine Person etwa dreitausenddreihundert bis dreitausendneunhundert Euro im Monat aus.
+[33.22s - 38.06s]  Das durchschnittliche Nettogehalt liegt bei etwa sechstausendvierhundert Euro.
+[38.42s - 46.18s]  Eine eigene Wohnung kaufen? Das könnte rund neunhundertachtzigtausend Euro kosten. Fast eine Million!
+[46.54s - 52.21s]  Ist das Leben in Bern diesen Preis wert? Schreib ja oder nein in die Kommentare!
+
+# Umrechnung USD -> EUR (EZB-Referenzkurs 9.10.2026: 1 EUR = 1,1206 USD), gerundet:
+  Miete 1-Zimmer, außerhalb        1.500 $  ->       1.339 €  -> gezeigt: 1.340 €
+  Miete 1-Zimmer, Zentrum          2.000 $  ->       1.785 €  -> gezeigt: 1.780 €
+  Lebensmittel                       620 $  ->         553 €  -> gezeigt: 550 €
+  Krankenversicherung                460 $  ->         410 €  -> gezeigt: 410 €
+  Transport                          105 $  ->          94 €  -> gezeigt: 95 €
+  Gesamt (von)                     3.700 $  ->       3.302 €  -> gezeigt: 3.300 €
+  Gesamt (bis)                     4.400 $  ->       3.926 €  -> gezeigt: 3.900 €
+  Nettogehalt                      7.200 $  ->       6.425 €  -> gezeigt: 6.400 €
+  Wohnung kaufen               1.100.000 $  ->     981.617 €  -> gezeigt: 980.000 €
+
+# Änderungen gegenüber dem Original-Text:
+#  - Dollarbeträge in Euro umgerechnet; '1,1 Millionen Dollar' -> 'rund 980.000 Euro ... Fast eine Million!'
+#  - Call-to-Action ergänzt: 'Schreib ja oder nein in die Kommentare!'

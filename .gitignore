@@ -34,3 +34,5 @@ remotion-lab/public/chicago/sfx/
 cost-intro/snapshots/
 olympia/build/
 olympia/.kokoro
+bern/build/
+bern/.tts

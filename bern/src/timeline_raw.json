@@ -1,0 +1,748 @@
+{
+ "voice_name": "CSS10 German (VITS)",
+ "speed": 1.136,
+ "total": 53.012,
+ "starts": {
+  "hook": 0.15,
+  "rent": 4.915,
+  "month": 14.459,
+  "total": 24.201,
+  "salary": 33.219,
+  "buy": 38.419,
+  "cta": 46.541
+ },
+ "durs": {
+  "hook": 4.445,
+  "rent": 9.203,
+  "month": 9.403,
+  "total": 8.677,
+  "salary": 4.84,
+  "buy": 7.763,
+  "cta": 5.671
+ },
+ "lines": {
+  "hook": "Wie viel kostet das Leben in Bern, der Hauptstadt der Schweiz?",
+  "rent": "Die Miete f\u00fcr eine Einzimmerwohnung liegt bei etwa tausenddreihundertvierzig Euro pro Monat au\u00dferhalb des Zentrums, und tausendsiebenhundertachtzig Euro im Zentrum.",
+  "month": "F\u00fcr Lebensmittel ben\u00f6tigt man rund f\u00fcnfhundertf\u00fcnfzig Euro, die Krankenversicherung kostet vierhundertzehn Euro, und der Transport etwa f\u00fcnfundneunzig Euro monatlich.",
+  "total": "Mit Nebenkosten und anderen Ausgaben gibt eine Person etwa dreitausenddreihundert bis dreitausendneunhundert Euro im Monat aus.",
+  "salary": "Das durchschnittliche Nettogehalt liegt bei etwa sechstausendvierhundert Euro.",
+  "buy": "Eine eigene Wohnung kaufen? Das k\u00f6nnte rund neunhundertachtzigtausend Euro kosten. Fast eine Million!",
+  "cta": "Ist das Leben in Bern diesen Preis wert? Schreib ja oder nein in die Kommentare!"
+ },
+ "words": [
+  {
+   "key": "hook",
+   "i": 0,
+   "text": "Wie",
+   "start": 0.15,
+   "end": 0.556
+  },
+  {
+   "key": "hook",
+   "i": 1,
+   "text": "viel",
+   "start": 0.556,
+   "end": 0.722
+  },
+  {
+   "key": "hook",
+   "i": 2,
+   "text": "kostet",
+   "start": 0.722,
+   "end": 1.508
+  },
+  {
+   "key": "hook",
+   "i": 3,
+   "text": "das",
+   "start": 1.508,
+   "end": 1.741
+  },
+  {
+   "key": "hook",
+   "i": 4,
+   "text": "Leben",
+   "start": 1.741,
+   "end": 2.158
+  },
+  {
+   "key": "hook",
+   "i": 5,
+   "text": "in",
+   "start": 2.158,
+   "end": 2.276
+  },
+  {
+   "key": "hook",
+   "i": 6,
+   "text": "Bern,",
+   "start": 2.276,
+   "end": 2.704
+  },
+  {
+   "key": "hook",
+   "i": 7,
+   "text": "der",
+   "start": 2.704,
+   "end": 2.913
+  },
+  {
+   "key": "hook",
+   "i": 8,
+   "text": "Hauptstadt",
+   "start": 2.913,
+   "end": 3.691
+  },
+  {
+   "key": "hook",
+   "i": 9,
+   "text": "der",
+   "start": 3.691,
+   "end": 3.833
+  },
+  {
+   "key": "hook",
+   "i": 10,
+   "text": "Schweiz?",
+   "start": 3.833,
+   "end": 4.515
+  },
+  {
+   "key": "rent",
+   "i": 0,
+   "text": "Die",
+   "start": 4.915,
+   "end": 5.448
+  },
+  {
+   "key": "rent",
+   "i": 1,
+   "text": "Miete",
+   "start": 5.448,
+   "end": 5.714
+  },
+  {
+   "key": "rent",
+   "i": 2,
+   "text": "f\u00fcr",
+   "start": 5.714,
+   "end": 5.85
+  },
+  {
+   "key": "rent",
+   "i": 3,
+   "text": "eine",
+   "start": 5.85,
+   "end": 6.031
+  },
+  {
+   "key": "rent",
+   "i": 4,
+   "text": "Einzimmerwohnung",
+   "start": 6.031,
+   "end": 6.998
+  },
+  {
+   "key": "rent",
+   "i": 5,
+   "text": "liegt",
+   "start": 6.998,
+   "end": 7.18
+  },
+  {
+   "key": "rent",
+   "i": 6,
+   "text": "bei",
+   "start": 7.18,
+   "end": 7.315
+  },
+  {
+   "key": "rent",
+   "i": 7,
+   "text": "etwa",
+   "start": 7.315,
+   "end": 8.052
+  },
+  {
+   "key": "rent",
+   "i": 8,
+   "text": "tausenddreihundertvierzig",
+   "start": 8.052,
+   "end": 9.442
+  },
+  {
+   "key": "rent",
+   "i": 9,
+   "text": "Euro",
+   "start": 9.442,
+   "end": 9.601
+  },
+  {
+   "key": "rent",
+   "i": 10,
+   "text": "pro",
+   "start": 9.601,
+   "end": 9.736
+  },
+  {
+   "key": "rent",
+   "i": 11,
+   "text": "Monat",
+   "start": 9.736,
+   "end": 9.918
+  },
+  {
+   "key": "rent",
+   "i": 12,
+   "text": "au\u00dferhalb",
+   "start": 9.918,
+   "end": 10.386
+  },
+  {
+   "key": "rent",
+   "i": 13,
+   "text": "des",
+   "start": 10.386,
+   "end": 10.967
+  },
+  {
+   "key": "rent",
+   "i": 14,
+   "text": "Zentrums,",
+   "start": 10.967,
+   "end": 11.642
+  },
+  {
+   "key": "rent",
+   "i": 15,
+   "text": "und",
+   "start": 11.642,
+   "end": 11.854
+  },
+  {
+   "key": "rent",
+   "i": 16,
+   "text": "tausendsiebenhundertachtzig",
+   "start": 11.854,
+   "end": 13.62
+  },
+  {
+   "key": "rent",
+   "i": 17,
+   "text": "Euro",
+   "start": 13.62,
+   "end": 13.779
+  },
+  {
+   "key": "rent",
+   "i": 18,
+   "text": "im",
+   "start": 13.779,
+   "end": 13.891
+  },
+  {
+   "key": "rent",
+   "i": 19,
+   "text": "Zentrum.",
+   "start": 13.891,
+   "end": 14.119
+  },
+  {
+   "key": "month",
+   "i": 0,
+   "text": "F\u00fcr",
+   "start": 14.459,
+   "end": 15.719
+  },
+  {
+   "key": "month",
+   "i": 1,
+   "text": "Lebensmittel",
+   "start": 15.719,
+   "end": 16.063
+  },
+  {
+   "key": "month",
+   "i": 2,
+   "text": "ben\u00f6tigt",
+   "start": 16.063,
+   "end": 16.367
+  },
+  {
+   "key": "month",
+   "i": 3,
+   "text": "man",
+   "start": 16.367,
+   "end": 16.503
+  },
+  {
+   "key": "month",
+   "i": 4,
+   "text": "rund",
+   "start": 16.503,
+   "end": 16.735
+  },
+  {
+   "key": "month",
+   "i": 5,
+   "text": "f\u00fcnfhundertf\u00fcnfzig",
+   "start": 16.735,
+   "end": 17.429
+  },
+  {
+   "key": "month",
+   "i": 6,
+   "text": "Euro,",
+   "start": 17.429,
+   "end": 17.848
+  },
+  {
+   "key": "month",
+   "i": 7,
+   "text": "die",
+   "start": 17.848,
+   "end": 17.985
+  },
+  {
+   "key": "month",
+   "i": 8,
+   "text": "Krankenversicherung",
+   "start": 17.985,
+   "end": 19.109
+  },
+  {
+   "key": "month",
+   "i": 9,
+   "text": "kostet",
+   "start": 19.109,
+   "end": 19.315
+  },
+  {
+   "key": "month",
+   "i": 10,
+   "text": "vierhundertzehn",
+   "start": 19.315,
+   "end": 20.099
+  },
+  {
+   "key": "month",
+   "i": 11,
+   "text": "Euro,",
+   "start": 20.099,
+   "end": 20.535
+  },
+  {
+   "key": "month",
+   "i": 12,
+   "text": "und",
+   "start": 20.535,
+   "end": 20.703
+  },
+  {
+   "key": "month",
+   "i": 13,
+   "text": "der",
+   "start": 20.703,
+   "end": 21.274
+  },
+  {
+   "key": "month",
+   "i": 14,
+   "text": "Transport",
+   "start": 21.274,
+   "end": 21.599
+  },
+  {
+   "key": "month",
+   "i": 15,
+   "text": "etwa",
+   "start": 21.599,
+   "end": 21.904
+  },
+  {
+   "key": "month",
+   "i": 16,
+   "text": "f\u00fcnfundneunzig",
+   "start": 21.904,
+   "end": 23.427
+  },
+  {
+   "key": "month",
+   "i": 17,
+   "text": "Euro",
+   "start": 23.427,
+   "end": 23.586
+  },
+  {
+   "key": "month",
+   "i": 18,
+   "text": "monatlich.",
+   "start": 23.586,
+   "end": 23.861
+  },
+  {
+   "key": "total",
+   "i": 0,
+   "text": "Mit",
+   "start": 24.201,
+   "end": 24.864
+  },
+  {
+   "key": "total",
+   "i": 1,
+   "text": "Nebenkosten",
+   "start": 24.864,
+   "end": 25.676
+  },
+  {
+   "key": "total",
+   "i": 2,
+   "text": "und",
+   "start": 25.676,
+   "end": 25.976
+  },
+  {
+   "key": "total",
+   "i": 3,
+   "text": "anderen",
+   "start": 25.976,
+   "end": 26.302
+  },
+  {
+   "key": "total",
+   "i": 4,
+   "text": "Ausgaben",
+   "start": 26.302,
+   "end": 26.872
+  },
+  {
+   "key": "total",
+   "i": 5,
+   "text": "gibt",
+   "start": 26.872,
+   "end": 27.255
+  },
+  {
+   "key": "total",
+   "i": 6,
+   "text": "eine",
+   "start": 27.255,
+   "end": 27.429
+  },
+  {
+   "key": "total",
+   "i": 7,
+   "text": "Person",
+   "start": 27.429,
+   "end": 27.87
+  },
+  {
+   "key": "total",
+   "i": 8,
+   "text": "etwa",
+   "start": 27.87,
+   "end": 28.091
+  },
+  {
+   "key": "total",
+   "i": 9,
+   "text": "dreitausenddreihundert",
+   "start": 28.091,
+   "end": 29.379
+  },
+  {
+   "key": "total",
+   "i": 10,
+   "text": "bis",
+   "start": 29.379,
+   "end": 29.89
+  },
+  {
+   "key": "total",
+   "i": 11,
+   "text": "dreitausendneunhundert",
+   "start": 29.89,
+   "end": 31.016
+  },
+  {
+   "key": "total",
+   "i": 12,
+   "text": "Euro",
+   "start": 31.016,
+   "end": 31.33
+  },
+  {
+   "key": "total",
+   "i": 13,
+   "text": "im",
+   "start": 31.33,
+   "end": 31.527
+  },
+  {
+   "key": "total",
+   "i": 14,
+   "text": "Monat",
+   "start": 31.527,
+   "end": 32.003
+  },
+  {
+   "key": "total",
+   "i": 15,
+   "text": "aus.",
+   "start": 32.003,
+   "end": 32.799
+  },
+  {
+   "key": "salary",
+   "i": 0,
+   "text": "Das",
+   "start": 33.219,
+   "end": 33.706
+  },
+  {
+   "key": "salary",
+   "i": 1,
+   "text": "durchschnittliche",
+   "start": 33.706,
+   "end": 34.433
+  },
+  {
+   "key": "salary",
+   "i": 2,
+   "text": "Nettogehalt",
+   "start": 34.433,
+   "end": 35.343
+  },
+  {
+   "key": "salary",
+   "i": 3,
+   "text": "liegt",
+   "start": 35.343,
+   "end": 35.533
+  },
+  {
+   "key": "salary",
+   "i": 4,
+   "text": "bei",
+   "start": 35.533,
+   "end": 35.675
+  },
+  {
+   "key": "salary",
+   "i": 5,
+   "text": "etwa",
+   "start": 35.675,
+   "end": 36.219
+  },
+  {
+   "key": "salary",
+   "i": 6,
+   "text": "sechstausendvierhundert",
+   "start": 36.219,
+   "end": 37.27
+  },
+  {
+   "key": "salary",
+   "i": 7,
+   "text": "Euro.",
+   "start": 37.27,
+   "end": 37.979
+  },
+  {
+   "key": "buy",
+   "i": 0,
+   "text": "Eine",
+   "start": 38.419,
+   "end": 39.15
+  },
+  {
+   "key": "buy",
+   "i": 1,
+   "text": "eigene",
+   "start": 39.15,
+   "end": 39.364
+  },
+  {
+   "key": "buy",
+   "i": 2,
+   "text": "Wohnung",
+   "start": 39.364,
+   "end": 40.191
+  },
+  {
+   "key": "buy",
+   "i": 3,
+   "text": "kaufen?",
+   "start": 40.191,
+   "end": 40.405
+  },
+  {
+   "key": "buy",
+   "i": 4,
+   "text": "Das",
+   "start": 40.405,
+   "end": 40.547
+  },
+  {
+   "key": "buy",
+   "i": 5,
+   "text": "k\u00f6nnte",
+   "start": 40.547,
+   "end": 41.401
+  },
+  {
+   "key": "buy",
+   "i": 6,
+   "text": "rund",
+   "start": 41.401,
+   "end": 41.567
+  },
+  {
+   "key": "buy",
+   "i": 7,
+   "text": "neunhundertachtzigtausend",
+   "start": 41.567,
+   "end": 43.099
+  },
+  {
+   "key": "buy",
+   "i": 8,
+   "text": "Euro",
+   "start": 43.099,
+   "end": 43.401
+  },
+  {
+   "key": "buy",
+   "i": 9,
+   "text": "kosten.",
+   "start": 43.401,
+   "end": 44.039
+  },
+  {
+   "key": "buy",
+   "i": 10,
+   "text": "Fast",
+   "start": 44.039,
+   "end": 45.113
+  },
+  {
+   "key": "buy",
+   "i": 11,
+   "text": "eine",
+   "start": 45.113,
+   "end": 45.279
+  },
+  {
+   "key": "buy",
+   "i": 12,
+   "text": "Million!",
+   "start": 45.279,
+   "end": 46.101
+  },
+  {
+   "key": "cta",
+   "i": 0,
+   "text": "Ist",
+   "start": 46.541,
+   "end": 47.319
+  },
+  {
+   "key": "cta",
+   "i": 1,
+   "text": "das",
+   "start": 47.319,
+   "end": 48.007
+  },
+  {
+   "key": "cta",
+   "i": 2,
+   "text": "Leben",
+   "start": 48.007,
+   "end": 48.197
+  },
+  {
+   "key": "cta",
+   "i": 3,
+   "text": "in",
+   "start": 48.197,
+   "end": 48.315
+  },
+  {
+   "key": "cta",
+   "i": 4,
+   "text": "Bern",
+   "start": 48.315,
+   "end": 48.481
+  },
+  {
+   "key": "cta",
+   "i": 5,
+   "text": "diesen",
+   "start": 48.481,
+   "end": 48.695
+  },
+  {
+   "key": "cta",
+   "i": 6,
+   "text": "Preis",
+   "start": 48.695,
+   "end": 49.042
+  },
+  {
+   "key": "cta",
+   "i": 7,
+   "text": "wert?",
+   "start": 49.042,
+   "end": 49.49
+  },
+  {
+   "key": "cta",
+   "i": 8,
+   "text": "Schreib",
+   "start": 49.49,
+   "end": 50.224
+  },
+  {
+   "key": "cta",
+   "i": 9,
+   "text": "ja",
+   "start": 50.224,
+   "end": 50.561
+  },
+  {
+   "key": "cta",
+   "i": 10,
+   "text": "oder",
+   "start": 50.561,
+   "end": 51.22
+  },
+  {
+   "key": "cta",
+   "i": 11,
+   "text": "nein",
+   "start": 51.22,
+   "end": 51.404
+  },
+  {
+   "key": "cta",
+   "i": 12,
+   "text": "in",
+   "start": 51.404,
+   "end": 51.522
+  },
+  {
+   "key": "cta",
+   "i": 13,
+   "text": "die",
+   "start": 51.522,
+   "end": 51.869
+  },
+  {
+   "key": "cta",
+   "i": 14,
+   "text": "Kommentare!",
+   "start": 51.869,
+   "end": 52.179
+  }
+ ]
+}

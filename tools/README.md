@@ -30,6 +30,7 @@ bash tools/setup-video-tools.sh
 ## Projects built with it
 
 - `olympia/` + `remotion-lab/src/olympia/`: "Olympia, WA cost of living" Short (Remotion, Kokoro voice, synthesized score). One command: `bash olympia/render.sh`. Deliverables are in `output/olympia_cost_of_living/`.
+- `bern/` + `remotion-lab/src/bern/`: "Bern – Lebenshaltungskosten" Short (German, EUR, local German VITS voice). Command: `bash bern/render.sh`.
 
 ## Smoke test
 

@@ -1,0 +1,716 @@
+[
+ {
+  "text": "Wie",
+  "startMs": 150,
+  "endMs": 556,
+  "timestampMs": 353,
+  "confidence": null
+ },
+ {
+  "text": " viel",
+  "startMs": 556,
+  "endMs": 722,
+  "timestampMs": 639,
+  "confidence": null
+ },
+ {
+  "text": " kostet",
+  "startMs": 722,
+  "endMs": 1508,
+  "timestampMs": 1115,
+  "confidence": null
+ },
+ {
+  "text": " das",
+  "startMs": 1508,
+  "endMs": 1741,
+  "timestampMs": 1624,
+  "confidence": null
+ },
+ {
+  "text": " Leben",
+  "startMs": 1741,
+  "endMs": 2158,
+  "timestampMs": 1950,
+  "confidence": null
+ },
+ {
+  "text": " in",
+  "startMs": 2158,
+  "endMs": 2276,
+  "timestampMs": 2217,
+  "confidence": null
+ },
+ {
+  "text": " Bern,",
+  "startMs": 2276,
+  "endMs": 2704,
+  "timestampMs": 2490,
+  "confidence": null
+ },
+ {
+  "text": " der",
+  "startMs": 2704,
+  "endMs": 2913,
+  "timestampMs": 2808,
+  "confidence": null
+ },
+ {
+  "text": " Hauptstadt",
+  "startMs": 2913,
+  "endMs": 3691,
+  "timestampMs": 3302,
+  "confidence": null
+ },
+ {
+  "text": " der",
+  "startMs": 3691,
+  "endMs": 3833,
+  "timestampMs": 3762,
+  "confidence": null
+ },
+ {
+  "text": " Schweiz?",
+  "startMs": 3833,
+  "endMs": 4535,
+  "timestampMs": 4184,
+  "confidence": null
+ },
+ {
+  "text": "Die",
+  "startMs": 4915,
+  "endMs": 5448,
+  "timestampMs": 5182,
+  "confidence": null
+ },
+ {
+  "text": " Miete",
+  "startMs": 5448,
+  "endMs": 5714,
+  "timestampMs": 5581,
+  "confidence": null
+ },
+ {
+  "text": " f\u00fcr",
+  "startMs": 5714,
+  "endMs": 5850,
+  "timestampMs": 5782,
+  "confidence": null
+ },
+ {
+  "text": " eine",
+  "startMs": 5850,
+  "endMs": 6031,
+  "timestampMs": 5940,
+  "confidence": null
+ },
+ {
+  "text": " Einzimmerwohnung",
+  "startMs": 6031,
+  "endMs": 6998,
+  "timestampMs": 6514,
+  "confidence": null
+ },
+ {
+  "text": " liegt",
+  "startMs": 6998,
+  "endMs": 7180,
+  "timestampMs": 7089,
+  "confidence": null
+ },
+ {
+  "text": " bei",
+  "startMs": 7180,
+  "endMs": 7315,
+  "timestampMs": 7248,
+  "confidence": null
+ },
+ {
+  "text": " etwa",
+  "startMs": 7315,
+  "endMs": 8052,
+  "timestampMs": 7684,
+  "confidence": null
+ },
+ {
+  "text": " tausenddreihundertvierzig",
+  "startMs": 8052,
+  "endMs": 9442,
+  "timestampMs": 8747,
+  "confidence": null
+ },
+ {
+  "text": " Euro",
+  "startMs": 9442,
+  "endMs": 9601,
+  "timestampMs": 9522,
+  "confidence": null
+ },
+ {
+  "text": " pro",
+  "startMs": 9601,
+  "endMs": 9736,
+  "timestampMs": 9669,
+  "confidence": null
+ },
+ {
+  "text": " Monat",
+  "startMs": 9736,
+  "endMs": 9918,
+  "timestampMs": 9827,
+  "confidence": null
+ },
+ {
+  "text": " au\u00dferhalb",
+  "startMs": 9918,
+  "endMs": 10386,
+  "timestampMs": 10152,
+  "confidence": null
+ },
+ {
+  "text": " des",
+  "startMs": 10386,
+  "endMs": 10967,
+  "timestampMs": 10676,
+  "confidence": null
+ },
+ {
+  "text": " Zentrums,",
+  "startMs": 10967,
+  "endMs": 11642,
+  "timestampMs": 11304,
+  "confidence": null
+ },
+ {
+  "text": " und",
+  "startMs": 11642,
+  "endMs": 11854,
+  "timestampMs": 11748,
+  "confidence": null
+ },
+ {
+  "text": " tausendsiebenhundertachtzig",
+  "startMs": 11854,
+  "endMs": 13620,
+  "timestampMs": 12737,
+  "confidence": null
+ },
+ {
+  "text": " Euro",
+  "startMs": 13620,
+  "endMs": 13779,
+  "timestampMs": 13700,
+  "confidence": null
+ },
+ {
+  "text": " im",
+  "startMs": 13779,
+  "endMs": 13891,
+  "timestampMs": 13835,
+  "confidence": null
+ },
+ {
+  "text": " Zentrum.",
+  "startMs": 13891,
+  "endMs": 14058,
+  "timestampMs": 13974,
+  "confidence": null
+ },
+ {
+  "text": "F\u00fcr",
+  "startMs": 14459,
+  "endMs": 15734,
+  "timestampMs": 15096,
+  "confidence": null
+ },
+ {
+  "text": " Lebensmittel",
+  "startMs": 15734,
+  "endMs": 16082,
+  "timestampMs": 15908,
+  "confidence": null
+ },
+ {
+  "text": " ben\u00f6tigt",
+  "startMs": 16082,
+  "endMs": 16390,
+  "timestampMs": 16236,
+  "confidence": null
+ },
+ {
+  "text": " man",
+  "startMs": 16390,
+  "endMs": 16528,
+  "timestampMs": 16459,
+  "confidence": null
+ },
+ {
+  "text": " rund",
+  "startMs": 16528,
+  "endMs": 16763,
+  "timestampMs": 16646,
+  "confidence": null
+ },
+ {
+  "text": " f\u00fcnfhundertf\u00fcnfzig",
+  "startMs": 16763,
+  "endMs": 17465,
+  "timestampMs": 17114,
+  "confidence": null
+ },
+ {
+  "text": " Euro,",
+  "startMs": 17465,
+  "endMs": 17889,
+  "timestampMs": 17677,
+  "confidence": null
+ },
+ {
+  "text": " die",
+  "startMs": 17959,
+  "endMs": 18095,
+  "timestampMs": 18027,
+  "confidence": null
+ },
+ {
+  "text": " Krankenversicherung",
+  "startMs": 18095,
+  "endMs": 19212,
+  "timestampMs": 18654,
+  "confidence": null
+ },
+ {
+  "text": " kostet",
+  "startMs": 19212,
+  "endMs": 19417,
+  "timestampMs": 19315,
+  "confidence": null
+ },
+ {
+  "text": " vierhundertzehn",
+  "startMs": 19417,
+  "endMs": 20196,
+  "timestampMs": 19806,
+  "confidence": null
+ },
+ {
+  "text": " Euro,",
+  "startMs": 20196,
+  "endMs": 20629,
+  "timestampMs": 20412,
+  "confidence": null
+ },
+ {
+  "text": " und",
+  "startMs": 20839,
+  "endMs": 20992,
+  "timestampMs": 20916,
+  "confidence": null
+ },
+ {
+  "text": " der",
+  "startMs": 20992,
+  "endMs": 21510,
+  "timestampMs": 21251,
+  "confidence": null
+ },
+ {
+  "text": " Transport",
+  "startMs": 21510,
+  "endMs": 21806,
+  "timestampMs": 21658,
+  "confidence": null
+ },
+ {
+  "text": " etwa",
+  "startMs": 21806,
+  "endMs": 22083,
+  "timestampMs": 21944,
+  "confidence": null
+ },
+ {
+  "text": " f\u00fcnfundneunzig",
+  "startMs": 22083,
+  "endMs": 23467,
+  "timestampMs": 22775,
+  "confidence": null
+ },
+ {
+  "text": " Euro",
+  "startMs": 23467,
+  "endMs": 23611,
+  "timestampMs": 23539,
+  "confidence": null
+ },
+ {
+  "text": " monatlich.",
+  "startMs": 23611,
+  "endMs": 23802,
+  "timestampMs": 23706,
+  "confidence": null
+ },
+ {
+  "text": "Mit",
+  "startMs": 24201,
+  "endMs": 24864,
+  "timestampMs": 24532,
+  "confidence": null
+ },
+ {
+  "text": " Nebenkosten",
+  "startMs": 24864,
+  "endMs": 25676,
+  "timestampMs": 25270,
+  "confidence": null
+ },
+ {
+  "text": " und",
+  "startMs": 25676,
+  "endMs": 25976,
+  "timestampMs": 25826,
+  "confidence": null
+ },
+ {
+  "text": " anderen",
+  "startMs": 25976,
+  "endMs": 26302,
+  "timestampMs": 26139,
+  "confidence": null
+ },
+ {
+  "text": " Ausgaben",
+  "startMs": 26302,
+  "endMs": 26872,
+  "timestampMs": 26587,
+  "confidence": null
+ },
+ {
+  "text": " gibt",
+  "startMs": 26872,
+  "endMs": 27255,
+  "timestampMs": 27063,
+  "confidence": null
+ },
+ {
+  "text": " eine",
+  "startMs": 27255,
+  "endMs": 27429,
+  "timestampMs": 27342,
+  "confidence": null
+ },
+ {
+  "text": " Person",
+  "startMs": 27429,
+  "endMs": 27870,
+  "timestampMs": 27650,
+  "confidence": null
+ },
+ {
+  "text": " etwa",
+  "startMs": 27870,
+  "endMs": 28091,
+  "timestampMs": 27980,
+  "confidence": null
+ },
+ {
+  "text": " dreitausenddreihundert",
+  "startMs": 28091,
+  "endMs": 29379,
+  "timestampMs": 28735,
+  "confidence": null
+ },
+ {
+  "text": " bis",
+  "startMs": 29379,
+  "endMs": 29890,
+  "timestampMs": 29635,
+  "confidence": null
+ },
+ {
+  "text": " dreitausendneunhundert",
+  "startMs": 29890,
+  "endMs": 31016,
+  "timestampMs": 30453,
+  "confidence": null
+ },
+ {
+  "text": " Euro",
+  "startMs": 31016,
+  "endMs": 31330,
+  "timestampMs": 31173,
+  "confidence": null
+ },
+ {
+  "text": " im",
+  "startMs": 31330,
+  "endMs": 31527,
+  "timestampMs": 31428,
+  "confidence": null
+ },
+ {
+  "text": " Monat",
+  "startMs": 31527,
+  "endMs": 32003,
+  "timestampMs": 31765,
+  "confidence": null
+ },
+ {
+  "text": " aus.",
+  "startMs": 32003,
+  "endMs": 32818,
+  "timestampMs": 32410,
+  "confidence": null
+ },
+ {
+  "text": "Das",
+  "startMs": 33219,
+  "endMs": 33706,
+  "timestampMs": 33463,
+  "confidence": null
+ },
+ {
+  "text": " durchschnittliche",
+  "startMs": 33706,
+  "endMs": 34433,
+  "timestampMs": 34070,
+  "confidence": null
+ },
+ {
+  "text": " Nettogehalt",
+  "startMs": 34433,
+  "endMs": 35343,
+  "timestampMs": 34888,
+  "confidence": null
+ },
+ {
+  "text": " liegt",
+  "startMs": 35343,
+  "endMs": 35533,
+  "timestampMs": 35438,
+  "confidence": null
+ },
+ {
+  "text": " bei",
+  "startMs": 35533,
+  "endMs": 35675,
+  "timestampMs": 35604,
+  "confidence": null
+ },
+ {
+  "text": " etwa",
+  "startMs": 35675,
+  "endMs": 36219,
+  "timestampMs": 35947,
+  "confidence": null
+ },
+ {
+  "text": " sechstausendvierhundert",
+  "startMs": 36219,
+  "endMs": 37270,
+  "timestampMs": 36744,
+  "confidence": null
+ },
+ {
+  "text": " Euro.",
+  "startMs": 37270,
+  "endMs": 37999,
+  "timestampMs": 37634,
+  "confidence": null
+ },
+ {
+  "text": "Eine",
+  "startMs": 38419,
+  "endMs": 39153,
+  "timestampMs": 38786,
+  "confidence": null
+ },
+ {
+  "text": " eigene",
+  "startMs": 39153,
+  "endMs": 39367,
+  "timestampMs": 39260,
+  "confidence": null
+ },
+ {
+  "text": " Wohnung",
+  "startMs": 39367,
+  "endMs": 40197,
+  "timestampMs": 39782,
+  "confidence": null
+ },
+ {
+  "text": " kaufen?",
+  "startMs": 40197,
+  "endMs": 40412,
+  "timestampMs": 40305,
+  "confidence": null
+ },
+ {
+  "text": " Das",
+  "startMs": 40412,
+  "endMs": 40555,
+  "timestampMs": 40484,
+  "confidence": null
+ },
+ {
+  "text": " k\u00f6nnte",
+  "startMs": 40555,
+  "endMs": 41412,
+  "timestampMs": 40984,
+  "confidence": null
+ },
+ {
+  "text": " rund",
+  "startMs": 41412,
+  "endMs": 41578,
+  "timestampMs": 41495,
+  "confidence": null
+ },
+ {
+  "text": " neunhundertachtzigtausend",
+  "startMs": 41578,
+  "endMs": 43116,
+  "timestampMs": 42347,
+  "confidence": null
+ },
+ {
+  "text": " Euro",
+  "startMs": 43116,
+  "endMs": 43419,
+  "timestampMs": 43268,
+  "confidence": null
+ },
+ {
+  "text": " kosten.",
+  "startMs": 43419,
+  "endMs": 44059,
+  "timestampMs": 43739,
+  "confidence": null
+ },
+ {
+  "text": " Fast",
+  "startMs": 44319,
+  "endMs": 45253,
+  "timestampMs": 44786,
+  "confidence": null
+ },
+ {
+  "text": " eine",
+  "startMs": 45253,
+  "endMs": 45397,
+  "timestampMs": 45325,
+  "confidence": null
+ },
+ {
+  "text": " Million!",
+  "startMs": 45397,
+  "endMs": 46122,
+  "timestampMs": 45760,
+  "confidence": null
+ },
+ {
+  "text": "Ist",
+  "startMs": 46541,
+  "endMs": 47322,
+  "timestampMs": 46932,
+  "confidence": null
+ },
+ {
+  "text": " das",
+  "startMs": 47322,
+  "endMs": 48013,
+  "timestampMs": 47668,
+  "confidence": null
+ },
+ {
+  "text": " Leben",
+  "startMs": 48013,
+  "endMs": 48203,
+  "timestampMs": 48108,
+  "confidence": null
+ },
+ {
+  "text": " in",
+  "startMs": 48203,
+  "endMs": 48322,
+  "timestampMs": 48262,
+  "confidence": null
+ },
+ {
+  "text": " Bern",
+  "startMs": 48322,
+  "endMs": 48488,
+  "timestampMs": 48405,
+  "confidence": null
+ },
+ {
+  "text": " diesen",
+  "startMs": 48488,
+  "endMs": 48703,
+  "timestampMs": 48596,
+  "confidence": null
+ },
+ {
+  "text": " Preis",
+  "startMs": 48703,
+  "endMs": 49051,
+  "timestampMs": 48877,
+  "confidence": null
+ },
+ {
+  "text": " wert?",
+  "startMs": 49051,
+  "endMs": 49501,
+  "timestampMs": 49276,
+  "confidence": null
+ },
+ {
+  "text": " Schreib",
+  "startMs": 49901,
+  "endMs": 50524,
+  "timestampMs": 50213,
+  "confidence": null
+ },
+ {
+  "text": " ja",
+  "startMs": 50524,
+  "endMs": 50810,
+  "timestampMs": 50667,
+  "confidence": null
+ },
+ {
+  "text": " oder",
+  "startMs": 50810,
+  "endMs": 51370,
+  "timestampMs": 51090,
+  "confidence": null
+ },
+ {
+  "text": " nein",
+  "startMs": 51370,
+  "endMs": 51526,
+  "timestampMs": 51448,
+  "confidence": null
+ },
+ {
+  "text": " in",
+  "startMs": 51526,
+  "endMs": 51626,
+  "timestampMs": 51576,
+  "confidence": null
+ },
+ {
+  "text": " die",
+  "startMs": 51626,
+  "endMs": 51921,
+  "timestampMs": 51774,
+  "confidence": null
+ },
+ {
+  "text": " Kommentare!",
+  "startMs": 51921,
+  "endMs": 52152,
+  "timestampMs": 52037,
+  "confidence": null
+ }
+]
