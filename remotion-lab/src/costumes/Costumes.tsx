@@ -46,10 +46,10 @@ const Bat: React.FC<{ x: number; y: number; s: number; t: number }> = ({ x, y, s
     </g>
   );
 };
-export const SpookyBg: React.FC<{ tint?: string; moon?: boolean }> = ({ tint = C.purple, moon = true }) => {
+export const SpookyBg: React.FC<{ tint?: string; moon?: boolean; clear?: boolean }> = ({ tint = C.purple, moon = true, clear = false }) => {
   const frame = useCurrentFrame();
   return (
-    <AbsoluteFill style={{ background: `radial-gradient(120% 70% at 50% 30%, ${C.night2} 0%, ${C.night} 55%, #07030D 100%)` }}>
+    <AbsoluteFill style={{ background: clear ? 'transparent' : `radial-gradient(120% 70% at 50% 30%, ${C.night2} 0%, ${C.night} 55%, #07030D 100%)` }}>
       <svg viewBox="0 0 1080 1920" width={1080} height={1920} style={{ position: 'absolute', inset: 0 }}>
         <defs><filter id="fogb"><feGaussianBlur stdDeviation="30" /></filter><radialGradient id="moon"><stop offset="0.6" stopColor="#FFF3D6" /><stop offset="1" stopColor="#FFF3D6" stopOpacity="0" /></radialGradient></defs>
         {moon && <g opacity={0.85}><circle cx={900} cy={1380} r={150} fill="url(#moon)" opacity={0.25} /><circle cx={900} cy={1380} r={95} fill="#FFF0CF" /><circle cx={875} cy={1362} r={15} fill="#EADBB8" /><circle cx={925} cy={1405} r={10} fill="#EADBB8" /></g>}
@@ -161,7 +161,7 @@ const CostumeScene: React.FC<{ k: CK; side: 1 | -1; extra?: React.ReactNode }> =
       {/* blurred photo backdrop */}
       <AbsoluteFill style={{ overflow: 'hidden' }}><Photo k={k} zoom={1.4} blur={40} /></AbsoluteFill>
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(10,4,20,0.75), rgba(10,4,20,0.45) 40%, rgba(10,4,20,0.9))` }} />
-      <SpookyBg moon={false} tint={c.accent} />
+      <SpookyBg moon={false} tint={c.accent} clear />
       <AbsoluteFill style={{ background: 'transparent' }} />
       <Center top={230}><Chip at={a + 2} size={30} bg="rgba(10,4,20,0.75)" fg={C.bone} border={c.accent}>#{c.rank} · TRENDING 2026</Chip></Center>
       {/* photo card */}
@@ -256,7 +256,7 @@ const Cta: React.FC = () => {
   const close = interpolate(frame, [DURATION - 10, DURATION - 1], [0, 0.8], clamp);
   return (
     <AbsoluteFill>
-      <SpookyBg />
+      <SpookyBg moon={false} />
       <Center top={250}>
         <Headline text="WHICH COSTUME" size={98} at={a + 2} color={C.bone} />
         <Headline text="WOULD YOU CHOOSE?" size={84} at={a + 8} color={C.pumpkin} style={{ marginTop: 6 }} />

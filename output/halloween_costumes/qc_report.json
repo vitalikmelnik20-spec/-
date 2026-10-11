@@ -1,0 +1,14 @@
+{
+ "file": "../output/halloween_costumes/halloween_costumes_music.mp4",
+ "size_MB": 24.6,
+ "video": "h264 High 1080x1920 30/1 yuv420p",
+ "audio": "aac 48000 Hz 2ch",
+ "duration_s": 43.633333,
+ "frames": 1309,
+ "decode_errors": "none",
+ "black_segments": "none",
+ "freezes_over_0.75s": "none",
+ "loudness_LUFS": -20.0,
+ "true_peak_dBFS": -3.2,
+ "silences_over_0.4s": "none"
+}

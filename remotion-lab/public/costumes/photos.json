@@ -1,1 +1,22 @@
-{}
+{
+ "kpop": {
+  "file": "kpop.jpg",
+  "pos": "50% 30%"
+ },
+ "penny": {
+  "file": "penny.jpg",
+  "pos": "50% 20%"
+ },
+ "wed": {
+  "file": "wed.jpg",
+  "pos": "50% 25%"
+ },
+ "mario": {
+  "file": "mario.jpg",
+  "pos": "50% 18%"
+ },
+ "dolly": {
+  "file": "dolly.jpg",
+  "pos": "53% 30%"
+ }
+}
