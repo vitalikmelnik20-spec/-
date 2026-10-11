@@ -22,6 +22,7 @@ import json
 import math
 import os
 import re
+import ssl
 import statistics
 import sys
 import urllib.error
@@ -67,11 +68,25 @@ EMOJI_RE = re.compile("[\U0001F300-\U0001FAFF☀-➿]")
 
 # --------------------------------------------------------------------------- HTTP
 
+def _ssl_context():
+    # Python з python.org на macOS не бачить системних сертифікатів; certifi, якщо встановлений, це виправляє
+    ctx = ssl.create_default_context()  # системні сертифікати лишаються
+    try:
+        import certifi
+        ctx.load_verify_locations(certifi.where())
+    except ImportError:
+        pass
+    return ctx
+
+
+SSL_CTX = _ssl_context()
+
+
 def http_get(url: str, params: dict | None = None, timeout: int = 25, headers: dict | None = None) -> bytes:
     if params:
         url += ("&" if "?" in url else "?") + urllib.parse.urlencode(params, doseq=True)
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "uk,en;q=0.8", **(headers or {})})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
+    with urllib.request.urlopen(req, timeout=timeout, context=SSL_CTX) as r:
         return r.read()
 
 
