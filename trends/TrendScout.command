@@ -34,6 +34,7 @@ if [ ! -f "$CONF" ]; then
   echo "Ключ YouTube Data API (як отримати: trends/README.md, розділ «Як отримати ключ YouTube»)."
 fi
 ask_key YOUTUBE_API_KEY "YOUTUBE_API_KEY (Enter, щоб пропустити): "
+ask_key MY_YOUTUBE_CHANNEL "Ваш YouTube-канал (@нік) для прогнозу переглядів (Enter, щоб пропустити): "
 ask_key OPENAI_API_KEY "OPENAI_API_KEY для ідей від ChatGPT (Enter, щоб пропустити): "
 ask_key THREADS_ACCESS_TOKEN "THREADS_ACCESS_TOKEN для аналізу Threads (Enter, щоб пропустити): "
 ask_key ANTHROPIC_API_KEY "ANTHROPIC_API_KEY для ідей від Claude (Enter, щоб пропустити): "

@@ -39,7 +39,7 @@ except ImportError:  # Python < 3.9
 
 HERE = Path(__file__).resolve().parent
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
-YT_API = "https://www.googleapis.com/youtube/v3/"
+YT_API = os.environ.get("YOUTUBE_API_BASE", "https://www.googleapis.com/youtube/v3/")
 SHORT_MAX_S = 180  # YouTube Shorts можуть бути до 3 хв
 
 STOPWORDS = set("""
@@ -153,8 +153,36 @@ class YouTube:
         if shorts_only:
             params["videoDuration"] = "short"  # < 4 хв
         data = self.get("search", 100, **params)
+        self.last_total = (data.get("pageInfo") or {}).get("totalResults")
         ids = [it["id"]["videoId"] for it in data.get("items", []) if it.get("id", {}).get("videoId")]
         return self.videos(ids) if ids else []
+
+    def channel(self, ref: str) -> dict | None:
+        """Канал за ID (UC…) або @handle: назва, підписники, медіана переглядів останніх відео."""
+        params = dict(part="snippet,statistics,contentDetails")
+        if ref.startswith("UC") and len(ref) == 24:
+            params["id"] = ref
+        else:
+            params["forHandle"] = ref if ref.startswith("@") else "@" + ref
+        items = self.get("channels", 1, **params).get("items", [])
+        if not items:
+            return None
+        ch = items[0]
+        uploads = ch["contentDetails"]["relatedPlaylists"]["uploads"]
+        pl = self.get("playlistItems", 1, part="contentDetails", playlistId=uploads, maxResults=20).get("items", [])
+        vids = self.videos([it["contentDetails"]["videoId"] for it in pl]) if pl else []
+        now = dt.datetime.now(dt.timezone.utc)
+        mature = [normalize_yt(v, "own") for v in vids]
+        mature = [v for v in mature if (t := parse_time(v["published_at"])) and (now - t).days >= 3]
+        views = [v["views"] for v in mature]
+        shorts = [v["views"] for v in mature if v["is_short"]]
+        return {
+            "id": ch["id"], "title": ch["snippet"]["title"],
+            "subs": int(ch["statistics"].get("subscriberCount", 0)),
+            "median_views": int(statistics.median(views)) if views else None,
+            "median_short_views": int(statistics.median(shorts)) if shorts else None,
+            "recent_count": len(views),
+        }
 
     def subscribers(self, channel_ids: list[str]) -> dict[str, int]:
         subs = {}
@@ -218,6 +246,193 @@ def collect_youtube(args) -> tuple[list[dict], dict]:
         warn(str(e))
         return list(videos.values()), {"status": f"partial: {e}", "quota_used": yt.quota}
     return list(videos.values()), {"status": "ok", "quota_used": yt.quota}
+
+
+# --------------------------------------------------------------------------- Аналіз однієї теми
+
+SIZE_BUCKETS = [(0, 10_000, "до 10 тис"), (10_000, 100_000, "10–100 тис"),
+                (100_000, 1_000_000, "100 тис – 1 млн"), (1_000_000, 10**12, "понад 1 млн")]
+
+
+def _pctl(vals: list[float], q: float) -> float:
+    vals = sorted(vals)
+    if not vals:
+        return 0
+    k = (len(vals) - 1) * q
+    lo, hi = math.floor(k), math.ceil(k)
+    return vals[lo] + (vals[hi] - vals[lo]) * (k - lo)
+
+
+def topic_research(query: str, region: str, lang: str, days: int = 30, my_channel: str | None = None,
+                   shorts_only: bool = False) -> dict:
+    """Шукає схожі відео на тему і оцінює, скільки переглядів вона може дати вашому каналу."""
+    key = os.environ.get("YOUTUBE_API_KEY")
+    if not key:
+        raise RuntimeError("потрібен YOUTUBE_API_KEY")
+    yt = YouTube(key)
+    now = dt.datetime.now(dt.timezone.utc)
+    raw = yt.search(query, region, lang, days, 25, shorts_only)
+    videos = [normalize_yt(it, "topic") for it in raw]
+    subs = yt.subscribers([v["channel_id"] for v in videos])
+    for v in videos:
+        v["subs"] = subs.get(v["channel_id"])
+    score_videos(videos, now)
+    me = None
+    if my_channel:
+        try:
+            me = yt.channel(my_channel)
+        except RuntimeError as ex:
+            warn(f"канал {my_channel}: {ex}")
+    res = {"query": query, "region": region, "days": days, "total_results": getattr(yt, "last_total", None),
+           "videos": sorted(videos, key=lambda v: -v["views"]), "me": me, "quota_used": yt.quota}
+    if not videos:
+        return res
+
+    views = [v["views"] for v in videos]
+    sh = [v["views"] for v in videos if v["is_short"]]
+    lg = [v["views"] for v in videos if not v["is_short"]]
+    res["stats"] = {
+        "median_views": int(statistics.median(views)), "p75_views": int(_pctl(views, .75)),
+        "shorts_share": round(len(sh) / len(videos), 2),
+        "median_short": int(statistics.median(sh)) if sh else None, "median_long": int(statistics.median(lg)) if lg else None,
+        "median_age_days": round(statistics.median(v["age_h"] for v in videos) / 24, 1),
+        "median_er": round(statistics.median(v["er"] for v in videos), 4),
+    }
+    buckets = []
+    for lo, hi, label in SIZE_BUCKETS:
+        vs = [v for v in videos if v.get("subs") is not None and lo <= v["subs"] < hi]
+        if vs:
+            buckets.append({"label": label, "count": len(vs), "median_views": int(statistics.median(v["views"] for v in vs)),
+                            "median_x": round(statistics.median(v["views"] / max(v["subs"], 1) for v in vs), 1)})
+    res["by_size"] = buckets
+    small = [v for v in videos if v.get("subs") is not None and v["subs"] < 100_000]
+    res["small_share"] = round(len(small) / len(videos), 2)
+
+    # Прогноз: як тема «множить» аудиторію схожих каналів (перегляди / підписники), застосоване до ваших підписників
+    ratios = [v["views"] / v["subs"] for v in videos if v.get("subs") and v["subs"] >= 1000]
+    if me and me["subs"] and ratios:
+        near = [v["views"] for v in videos if v.get("subs") and me["subs"] / 3 <= v["subs"] <= me["subs"] * 3]
+        # Пошук повертає найпопулярніші відео, тож верхні квантилі завищені; беремо нижчу половину розподілу
+        low, mid, high = (_pctl(ratios, q) * me["subs"] for q in (.1, .3, .6))
+        base = me["median_short_views"] if (res["stats"]["shorts_share"] >= .5 and me["median_short_views"]) else me["median_views"]
+        res["forecast"] = {
+            "low": int(low), "mid": int(mid), "high": int(high),
+            "similar_size_median": int(statistics.median(near)) if near else None, "similar_size_count": len(near),
+            "your_usual": base, "uplift": round(mid / base, 1) if base else None,
+        }
+    up = (res.get("forecast") or {}).get("uplift")
+    if up is not None:
+        level = "висока" if up >= 2 else "середня" if up >= 1 else "низька"
+        why = f"очікувано ×{up} від вашого звичайного результату"
+    else:
+        level = "висока" if res["small_share"] >= .4 else "середня" if res["small_share"] >= .2 else "низька"
+        why = f"{round(100 * res['small_share'])}% топ-відео зняли канали до 100 тис підписників"
+    res["verdict"] = {"level": level, "why": why}
+    return res
+
+
+def topic_ai(res: dict, args) -> dict | None:
+    """3 ідеї відео на тему з урахуванням знайдених схожих відео (OpenAI або Claude)."""
+    brief = {"topic": res["query"], "audience_language": args.lang_name, "stats": res.get("stats"),
+             "verdict": res.get("verdict"), "forecast": res.get("forecast"),
+             "similar_videos": [{k: v[k] for k in ("title", "channel", "views", "vph", "subs", "duration_s", "is_short", "age_h")}
+                                for v in res["videos"][:15]]}
+    prompt = (f"Дані про найпопулярніші відео на тему (JSON):\n{json.dumps(brief, ensure_ascii=False)}\n\n"
+              "Що спільного в найуспішніших відео (кут подачі, формат, назви)? Запропонуй рівно 3 відео на цю тему, "
+              f"які виділяться серед знайдених. Назви, хуки і сценарій мовою: {args.lang_name}. Формат відповіді:\n"
+              '{"summary": "2-3 речення: що працює в цій темі і де прогалина", '
+              '"clusters": [{"name": "тема", "videos": [{"title": "...", "hook": "...", "format": "...", '
+              '"script": ["..."], "hashtags": ["#..."], "why": "чому виділиться серед схожих"}]}]}')
+    provider = ai_provider(args)
+    if provider == "openai":
+        return openai_ideas(prompt, args)
+    if provider == "claude":
+        return claude_ideas(prompt, args)
+    return None
+
+
+def topic_text(res: dict, market_name: str, ai: dict | None = None) -> str:
+    e = html.escape
+    lines = [f"🔍 <b>Тема: {e(res['query'])}</b>", f"{e(market_name)} · YouTube за останні {res['days']} днів"]
+    if not res["videos"]:
+        lines.append("Нічого не знайдено. Спробуйте коротший або інший запит.")
+        return "\n".join(lines)
+    st = res["stats"]
+    if res.get("total_results"):
+        lines.append(f"Відео на тему: ~{fmt_n(res['total_results'])}; аналізую {len(res['videos'])} найпопулярніших.")
+    lines += ["", "📊 <b>Перегляди схожих відео</b>",
+              f"Медіана: <b>{fmt_n(st['median_views'])}</b> · топ-25%: від {fmt_n(st['p75_views'])}",
+              f"Shorts: {pct(st['shorts_share'])}" + (f" (медіана {fmt_n(st['median_short'])})" if st["median_short"] else "")
+              + (f" · довгі: медіана {fmt_n(st['median_long'])}" if st["median_long"] else ""),
+              f"Залучення: {pct(st['median_er'])} · середній вік відео: {st['median_age_days']} дн."]
+    lines += ["", "🔥 <b>Найпопулярніші схожі відео</b>"]
+    for i, v in enumerate(res["videos"][:7], 1):
+        ch = f"{fmt_n(v['subs'])} підп." if v.get("subs") else "підп. приховано"
+        o = v.get("outlier")
+        x = f", ×{o:.0f} від підп." if o and o >= 10 else (f", ×{o} від підп." if o else "")
+        lines.append(f'{i}. <a href="{e(v["url"])}">{e(v["title"][:70])}</a>\n'
+                     f"   👁 {fmt_n(v['views'])} · {round(v['age_h'] / 24)} дн. · {'Short' if v['is_short'] else fmt_dur(v['duration_s'])}"
+                     f" · {e(v['channel'][:30])} ({ch}{x})")
+    if res.get("by_size"):
+        lines += ["", "📏 <b>Скільки набирають канали різного розміру</b>"]
+        lines += [f"{e(b['label'])} підп.: медіана {fmt_n(b['median_views'])} ({b['count']} відео, ×{b['median_x']} від підписників)"
+                  for b in res["by_size"]]
+    me, fc = res.get("me"), res.get("forecast")
+    lines += ["", "🎯 <b>Що це може дати вам</b>"]
+    if me and fc:
+        lines.append(f"Ваш канал «{e(me['title'])}»: {fmt_n(me['subs'])} підп., зазвичай {fmt_n(fc['your_usual'])} переглядів")
+        lines.append(f"Якщо відео вдасться на рівні схожих: <b>{fmt_n(fc['low'])}–{fmt_n(fc['high'])}</b> (найімовірніше ~{fmt_n(fc['mid'])})")
+        if fc["similar_size_median"]:
+            lines.append(f"Канали вашого розміру тут набрали: медіана {fmt_n(fc['similar_size_median'])} ({fc['similar_size_count']} відео)")
+    elif me is None and os.environ.get("MY_YOUTUBE_CHANNEL"):
+        lines.append("Не вдалося знайти ваш канал: перевірте MY_YOUTUBE_CHANNEL.")
+    else:
+        lines.append("Додайте свій канал (MY_YOUTUBE_CHANNEL=@ваш_канал), щоб бачити прогноз саме для вас.")
+    v = res["verdict"]
+    icon = {"висока": "🟢", "середня": "🟡", "низька": "🔴"}[v["level"]]
+    lines.append(f"{icon} Можливість: <b>{v['level']}</b>, {e(v['why'])}")
+    lines.append("<i>Оцінка за схожими відео, не гарантія: результат залежить від хука, обкладинки й утримання.</i>")
+    if ai:
+        if ai.get("summary"):
+            lines += ["", "💡 " + e(ai["summary"])]
+        vids = [x for c in ai.get("clusters", []) for x in c.get("videos", [])] or ai.get("ideas", [])
+        for i, x in enumerate(vids[:3], 1):
+            lines.append(f"{i}. <b>{e(x.get('title', ''))}</b>")
+            if x.get("hook"):
+                lines.append(f"   Хук: {e(x['hook'])}")
+            if x.get("why"):
+                lines.append(f"   <i>{e(x['why'])}</i>")
+    return "\n".join(lines)
+
+
+def run_topic(args, markets: dict) -> int:
+    key = (args.market or "ua").lower()
+    m = markets.get(key)
+    if not m:
+        print(f"невідомий ринок {key}", file=sys.stderr)
+        return 2
+    args.lang_name = m.get("lang_name", m["lang"])
+    print(f"Аналіз теми «{args.topic}» ({m['name']})…")
+    try:
+        res = topic_research(args.topic, m["regions"][0], m["lang"], args.topic_days,
+                             os.environ.get("MY_YOUTUBE_CHANNEL"), args.shorts_only)
+    except RuntimeError as ex:
+        print(f"Помилка: {ex}", file=sys.stderr)
+        return 1
+    ai = topic_ai(res, args) if args.ai and res["videos"] else None
+    text = topic_text(res, m["name"], ai)
+    print(re.sub(r"<[^>]+>", "", html.unescape(text)))
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    slug = re.sub(r"\W+", "_", args.topic.lower()).strip("_")[:40]
+    (out / f"topic_{key}_{slug}.json").write_text(json.dumps({"result": res, "ai": ai}, ensure_ascii=False, indent=1), encoding="utf-8")
+    if os.environ.get("TELEGRAM_BOT_TOKEN") and os.environ.get("TELEGRAM_CHAT_ID") and not args.no_telegram:
+        try:
+            tg_send_text(os.environ["TELEGRAM_CHAT_ID"], text)
+            print("  Telegram: надіслано")
+        except Exception as ex:
+            warn(f"Telegram не вдалося надіслати: {ex}")
+    return 0
 
 
 # --------------------------------------------------------------------------- Google Trends
@@ -1321,6 +1536,8 @@ def main(argv=None) -> int:
     p.add_argument("--model", default="claude-opus-5-5", help="модель Claude для --ai")
     p.add_argument("--out", default=str(HERE / "out"), help="тека для звітів")
     p.add_argument("--demo", action="store_true", help="без мережі: показати звіт на демо-даних")
+    p.add_argument("--topic", default=None, help="швидкий аналіз однієї теми: схожі відео, перегляди і прогноз для вас")
+    p.add_argument("--topic-days", type=int, default=30, help="за скільки днів шукати схожі відео для --topic")
     p.add_argument("--no-telegram", action="store_true", help="не надсилати звіт у Telegram, навіть якщо бот налаштовано")
     p.add_argument("--telegram-chat-id", action="store_true",
                    help="знайти chat_id: спершу напишіть своєму боту /start; друкує лише id")
@@ -1339,6 +1556,9 @@ def main(argv=None) -> int:
             return 1
         print(chat)
         return 0
+
+    if args.topic:
+        return run_topic(args, markets)
 
     if args.region:
         region = args.region.upper()

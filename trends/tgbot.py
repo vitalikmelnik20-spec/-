@@ -3,8 +3,9 @@
 
 Команди (і кнопки меню):
   /trends [ua|de|us|all]      повний аналіз ринків (за замовчуванням усі три)
-  /topic [ua|de|us] <тема>    аналіз окремої теми, напр. /topic de Miete Berlin
+  /topic [ua|de|us] <тема>    схожі відео, їхні перегляди і прогноз для вашого каналу
   будь-який текст              те саме, що /topic у вашому основному ринку
+  /channel @нік                ваш YouTube-канал для персонального прогнозу
   /niche <ринок> <фраза; фраза> змінити постійні нішеві фрази ринку
   /market <ua|de|us>          основний ринок для простого тексту
   /status                     поточні налаштування
@@ -37,19 +38,22 @@ HELP = """<b>TrendScout</b>: тренди YouTube, TikTok, Google і Threads →
 
 /trends: усі три ринки (🇺🇦 🇩🇪 🇺🇸)
 /trends ua (або de, us): один ринок
-/topic оренда Київ: аналіз теми в основному ринку
+<b>Тема</b>: просто напишіть її текстом, напр. <i>оренда Київ</i>
+Бот знайде найпопулярніші схожі відео за 30 днів, покаже їхні перегляди,
+скільки набирають канали різного розміру і що тема може дати вам.
 /topic us rent prices: тема в конкретному ринку
-<i>Або просто напишіть тему текстом.</i>
+/channel @ваш_канал: ваш YouTube-канал для персонального прогнозу
 
 /niche ua вартість життя; ціни: змінити постійні фрази ринку
 /market de: основний ринок для тексту
 /status: налаштування
 
-Аналіз триває 1–3 хвилини. Результат: кластери трендів по 3 відео + HTML-звіт."""
+/trends триває 1–3 хв: кластери трендів по 3 відео + HTML-звіт. Тема: до хвилини."""
 
 COMMANDS = [
     ("trends", "Тренди всіх ринків або одного: /trends ua"),
-    ("topic", "Аналіз теми: /topic de Miete Berlin"),
+    ("topic", "Схожі відео і прогноз: /topic оренда Київ"),
+    ("channel", "Ваш YouTube-канал для прогнозу: /channel @нік"),
     ("niche", "Змінити нішеві фрази: /niche ua оренда; ціни"),
     ("market", "Основний ринок для тексту: /market us"),
     ("status", "Поточні налаштування"),
@@ -88,15 +92,19 @@ def allowed_chats() -> set[str]:
     return {x for x in ids if x}
 
 
-def run_job(chat: str, market_keys: list[str], topic: list[str] | None) -> None:
+def run_job(chat: str, market_keys: list[str], topic: str | None, my_channel: str | None = None) -> None:
     """Запускає trendscout.py окремим процесом; він сам надсилає результат у цей чат."""
-    args = [sys.executable, str(HERE / "trendscout.py"), "--markets", ",".join(market_keys), "--out", str(OUT_DIR)]
-    for t in topic or []:
-        args += ["--niche", t]
+    args = [sys.executable, str(HERE / "trendscout.py"), "--out", str(OUT_DIR)]
+    if topic:
+        args += ["--topic", topic, "--market", market_keys[0]]
+    else:
+        args += ["--markets", ",".join(market_keys)]
     if os.environ.get("OPENAI_API_KEY") or os.environ.get("ANTHROPIC_API_KEY"):
         args.append("--ai")
     args += shlex.split(os.environ.get("TRENDSCOUT_EXTRA_ARGS", ""))  # напр. "--days 3 --clusters 7"
     env = dict(os.environ, TELEGRAM_CHAT_ID=chat, TRENDSCOUT_MARKETS_FILE=str(MARKETS_FILE))
+    if my_channel:
+        env["MY_YOUTUBE_CHANNEL"] = my_channel
     started = time.time()
     proc = subprocess.run(args, env=env, capture_output=True, text=True, timeout=900)
     log = (proc.stdout + proc.stderr)[-3000:]
@@ -110,9 +118,9 @@ def run_job(chat: str, market_keys: list[str], topic: list[str] | None) -> None:
 
 def worker(jobs: "queue.Queue[tuple]") -> None:
     while True:
-        chat, keys, topic = jobs.get()
+        chat, keys, topic, my_channel = jobs.get()
         try:
-            run_job(chat, keys, topic)
+            run_job(chat, keys, topic, my_channel)
         except subprocess.TimeoutExpired:
             send(chat, "⚠️ Аналіз триває понад 15 хвилин, зупинено. Спробуйте один ринок: /trends ua")
         except Exception as ex:
@@ -130,11 +138,12 @@ def handle(text: str, chat: str, state: dict, jobs: "queue.Queue[tuple]") -> Non
 
     def enqueue(keys, topic=None):
         busy = jobs.unfinished_tasks
-        what = f"тему «{'; '.join(topic)}»" if topic else "тренди"
+        what = f"тему «{topic}»: шукаю схожі відео" if topic else "тренди"
         names = ", ".join(mk[k]["name"] for k in keys)
-        send(chat, f"⏳ Аналізую {ts.html.escape(what)}: {names}. Це займе 1–3 хв."
+        send(chat, f"⏳ Аналізую {ts.html.escape(what)} ({names}). "
+                   + ("Це займе до хвилини." if topic else "Це займе 1–3 хв.")
                    + (f"\nУ черзі перед вами: {busy}." if busy else ""))
-        jobs.put((chat, keys, topic))
+        jobs.put((chat, keys, topic, state.get("channel") or os.environ.get("MY_YOUTUBE_CHANNEL")))
 
     if cmd in ("/start", "/help"):
         send(chat, HELP)
@@ -143,8 +152,17 @@ def handle(text: str, chat: str, state: dict, jobs: "queue.Queue[tuple]") -> Non
         for k, m in mk.items():
             lines.append(f"{m['name']} (<code>{k}</code>): {ts.html.escape('; '.join(m.get('niche', [])))}")
         keys = {"YouTube": "YOUTUBE_API_KEY", "ChatGPT": "OPENAI_API_KEY", "Claude": "ANTHROPIC_API_KEY", "Threads": "THREADS_ACCESS_TOKEN"}
+        lines.append(f"Ваш канал: {ts.html.escape(state.get('channel') or os.environ.get('MY_YOUTUBE_CHANNEL') or 'не задано (/channel @нік)')}")
         lines.append("Джерела: " + ", ".join(f"{n} {'✅' if os.environ.get(v) else '—'}" for n, v in keys.items()))
         send(chat, "\n".join(lines))
+    elif cmd == "/channel":
+        ref = rest.strip()
+        if not ref:
+            send(chat, "Формат: <code>/channel @ваш_канал</code> (або ID каналу UC…). Потрібно для прогнозу переглядів саме для вас.")
+        else:
+            state["channel"] = ref
+            save_state(state)
+            send(chat, f"✅ Ваш канал: {ts.html.escape(ref)}. Тепер у відповідях на теми буде прогноз для нього.")
     elif cmd == "/market":
         key = rest.lower()
         if key not in mk:
@@ -183,7 +201,7 @@ def handle(text: str, chat: str, state: dict, jobs: "queue.Queue[tuple]") -> Non
         elif len(topic) > 100:
             send(chat, "Тема задовга: до 100 символів.")
         else:
-            enqueue([key], [x.strip() for x in topic.split(";") if x.strip()])
+            enqueue([key], topic)
     else:
         send(chat, "Не знаю такої команди. /help")
 
