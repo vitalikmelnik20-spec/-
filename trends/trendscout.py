@@ -59,7 +59,8 @@ der die das und oder aber ist sind war ein eine einer einen dem den des zu im in
 shorts short ep live hd 4k 2024 2025 2026 2027 feat ft x de la el en y que los las del se por con
 """.split())
 
-FILLER = set("скільки коштує коштуватиме ціна ціни ціною як чому що топ кращі найкращі огляд".split())
+FILLER = set(("скільки коштує коштуватиме ціна ціни ціною як чому що топ кращі найкращі огляд "
+               "україна україні україни україну ukraine ukrainian deutschland germany usa america american year").split())
 
 WORD_RE = re.compile(r"[^\W\d_][\w'’-]{2,}", re.UNICODE)
 HASHTAG_RE = re.compile(r"#([^\s#.,!?;:()\[\]{}\"']{2,})", re.UNICODE)
@@ -336,6 +337,63 @@ def collect_tiktok(region: str, period: int) -> tuple[dict, dict]:
     return result, {"status": "ok" if not errors else "partial: " + "; ".join(errors)}
 
 
+# --------------------------------------------------------------------------- Threads
+
+THREADS_API = "https://graph.threads.net/v1.0/keyword_search"
+
+
+def collect_threads(queries: list[str], now: dt.datetime) -> tuple[dict, dict]:
+    """Пошук публічних постів Threads за фразами (офіційний API, потрібен THREADS_ACCESS_TOKEN).
+
+    Без схваленого Meta дозволу threads_keyword_search API шукає лише у ваших власних постах.
+    """
+    token = os.environ.get("THREADS_ACCESS_TOKEN")
+    empty = {"posts": [], "queries": [], "keywords": []}
+    if not token:
+        return empty, {"status": "skipped: no THREADS_ACCESS_TOKEN"}
+    posts, per_query, errors = {}, [], []
+    for q in queries:
+        try:
+            data = json.loads(http_get(THREADS_API, {
+                "q": q, "search_type": "TOP", "limit": 25, "access_token": token,
+                "fields": "id,text,timestamp,permalink,username,media_type",
+            }))
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", "replace")
+            try:
+                reason = json.loads(body)["error"]["message"]
+            except Exception:
+                reason = body[:200]
+            errors.append(f"«{q}»: HTTP {e.code}: {reason}")
+            continue
+        except Exception as e:
+            errors.append(f"«{q}»: {e}")
+            continue
+        found = data.get("data", [])
+        recent = 0
+        for it in found:
+            ts = parse_time((it.get("timestamp") or "").replace("+0000", "+00:00"))
+            if ts and (now - ts).total_seconds() < 48 * 3600:
+                recent += 1
+            posts.setdefault(it["id"], {
+                "platform": "threads", "query": q, "text": (it.get("text") or "")[:500],
+                "username": it.get("username", ""), "url": it.get("permalink", ""),
+                "timestamp": it.get("timestamp", ""),
+            })
+        per_query.append({"query": q, "posts": len(found), "last_48h": recent})
+    plist = list(posts.values())
+    kw = Counter(t for p in plist for t in set(tokens(p["text"])))
+    result = {"posts": plist, "queries": per_query, "keywords": [(k, c) for k, c in kw.most_common(30) if c >= 2]}
+    print(f"  Threads: {len(plist)} постів за {len(queries)} запитами")
+    authors = {p["username"] for p in plist}
+    if plist and len(authors) == 1:
+        errors.append("усі пости від одного автора: схоже, API шукає лише у ваших постах, "
+                      "бо Meta ще не схвалила дозвіл threads_keyword_search")
+    for e in errors:
+        warn(f"Threads {e}")
+    return result, {"status": "ok" if not errors else "partial: " + "; ".join(errors)}
+
+
 # --------------------------------------------------------------------------- Аналіз
 
 def parse_time(s: str) -> dt.datetime | None:
@@ -459,67 +517,133 @@ def analyze(videos: list[dict], gtrends: list[dict], tiktok: dict, tz, prev: dic
 
 # --------------------------------------------------------------------------- Ідеї
 
-def rule_based_ideas(an: dict, niche: list[str]) -> list[dict]:
-    """Прості ідеї без AI: перетин вашої ніші з тим, що зараз набирає."""
-    ideas = []
+GENERIC_TAGS = {"fyp", "foryou", "foryoupage", "fy", "viral", "trending", "fürdich", "parati", "xyzbca", "tiktok"}
+
+
+def build_clusters(an: dict, videos: list[dict], niche: list[str], limit: int = 6) -> list[dict]:
+    """Групує сигнали з усіх джерел у теми-кластери і дає по 3 шаблонні ідеї відео на кластер."""
     niche_words = {w for n in niche for w in tokens(n)}
-    kws = []
-    for k, _ in an["keywords"]:
-        words = k.split()
-        # Пропускаємо службові слова, саму нішу і слова, вже покриті вибраною фразою
-        if all(w in FILLER or w in niche_words for w in words):
+    items = []
+    for v in videos:
+        items.append({"src": "YouTube", "label": v["title"], "url": v["url"], "w": math.log1p(v["vph"]) + 1,
+                      "terms": set(tokens(v["title"])) | {t for tag in v["tags"] for t in tokens(tag)}, "video": v})
+    for g in an["google_trends"]:
+        items.append({"src": "Google", "label": g["query"], "url": "", "w": math.log1p(g["traffic"]) / 2 + 1,
+                      "terms": set(tokens(g["query"] + " " + " ".join(g["news"])))})
+    hashtags = [h for h in an["tiktok"].get("hashtags", []) if h["name"].lower() not in GENERIC_TAGS]
+    for p in (an.get("threads") or {}).get("posts", []):
+        items.append({"src": "Threads", "label": p["text"][:90], "url": p["url"], "w": 1.0, "terms": set(tokens(p["text"]))})
+    # Хештег TikTok — одне злите слово («costofliving»), тож шукаємо в ньому слова з інших джерел
+    vocab = {t for it in items for t in it["terms"] if len(t) >= 4}
+    for h in hashtags:
+        name = h["name"].lower()
+        terms = {re.sub(r"\d+$", "", name)} | {t for t in vocab if t in name}
+        rank = h["rank"] if isinstance(h["rank"], int) else 30
+        items.append({"src": "TikTok", "label": "#" + h["name"], "url": "", "w": max(1.0, (31 - rank) / 6), "terms": terms})
+
+    def usable(t):
+        return t not in FILLER and t not in niche_words and len(t) >= 3
+
+    # Грубий стемінг: «зарплата/зарплати», «карпати/карпатах» групуються разом; показуємо найчастішу форму
+    surface = defaultdict(Counter)
+
+    def stem(t):
+        st = t[:6] if len(t) > 6 else t
+        surface[st][t] += 1
+        return st
+
+    for it in items:
+        it["terms"] = {stem(t) for t in it["terms"] if usable(t)}
+    word = lambda st: surface[st].most_common(1)[0][0] if surface[st] else st
+
+    weight, count = defaultdict(float), Counter()
+    for it in items:
+        for t in it["terms"]:
+            weight[t] += it["w"]
+            count[t] += 1
+    seeds = sorted((t for t in weight if count[t] >= 2), key=lambda t: -weight[t])
+    assigned, clusters = set(), []
+    for seed in seeds:
+        members = [i for i, it in enumerate(items) if i not in assigned and seed in it["terms"]]
+        if len(members) < 2:
             continue
-        if any(w in chosen.split() for chosen in kws for w in words):
-            continue
-        kws.append(k)
-        if len(kws) == 4:
+        co = Counter(t for i in members for t in items[i]["terms"] if t != seed)
+        terms = [word(t) for t, c in co.most_common(4) if c >= 2]
+        assigned.update(members)
+        mem = sorted((items[i] for i in members), key=lambda it: -it["w"])
+        best = next((it["video"] for it in mem if it.get("video")), None)
+        clusters.append({
+            "name": " · ".join([word(seed)] + terms[:2]),
+            "seed": word(seed),
+            "terms": [word(seed)] + terms,
+            "strength": round(sum(it["w"] for it in mem), 1),
+            "sources": dict(Counter(it["src"] for it in mem)),
+            "signals": [{"src": it["src"], "label": it["label"], "url": it["url"]} for it in mem[:6]],
+            "top_video": {"title": best["title"], "url": best["url"], "vph": best["vph"], "is_short": best["is_short"]} if best else None,
+        })
+        if len(clusters) == limit:
             break
+    top = max((c["strength"] for c in clusters), default=1) or 1
     fmt = an.get("format_top") or {}
     short = (fmt.get("shorts_share") or 0) >= 0.4
-    hook_q = (fmt.get("with_question") or 0) >= 0.2
-    topic = niche[0] if niche else "ваша тема"
-    for k in kws:
-        ideas.append({
-            "title": f"{k.capitalize()} + {topic}: те, про що зараз говорять",
-            "format": "Short 30–45 с" if short else "Відео 6–10 хв",
-            "hook": f"«{k.capitalize()}? Ось що це означає для тебе{'?' if hook_q else '.'}»",
-            "why": f"«{k}» серед найвагоміших слів у швидких відео цього тижня",
-        })
-    for g in an["google_trends"][:3]:
-        ideas.append({
-            "title": f"{g['query']}: коротко і по суті",
-            "format": "Short 20–30 с, текст на екрані",
-            "hook": f"«Всі шукають «{g['query']}». Пояснюю за 20 секунд»",
-            "why": f"Google Trends: {g['traffic_label'] or g['traffic']} пошуків",
-        })
-    for h in an["tiktok"].get("hashtags", [])[:3]:
-        ideas.append({
-            "title": f"#{h['name']} у вашій ніші",
-            "format": "TikTok/Reels 15–30 с",
-            "hook": f"Адаптуйте тренд #{h['name']} під «{topic}»",
-            "why": f"TikTok: місце {h['rank']}" + (" (новий)" if h.get("is_new") else ""),
-        })
-    return ideas
+    for c in clusters:
+        c["score"] = round(100 * c["strength"] / top)
+        s_, extra = c["seed"].capitalize(), (c["terms"][1] if len(c["terms"]) > 1 else "")
+        vids = [{
+            "title": f"{s_}: що відбувається і чому всі про це говорять",
+            "format": "Short 25–35 с, текст на екрані" if short else "Відео 5–8 хв",
+            "hook": f"«{s_}{(' і ' + extra) if extra else ''}: ось що це означає для тебе»",
+            "why": "Пояснювач: найшвидший спосіб зайти в тему, поки вона росте",
+        }, {
+            "title": f"{s_} у цифрах: порівняння",
+            "format": "Short 40–60 с, порівняння або топ-5",
+            "hook": f"«{s_} у цифрах: що змінилось і де найбільша різниця»",
+            "why": "Порівняння і списки дають високе утримання і збереження",
+        }]
+        if c["top_video"]:
+            vids.append({
+                "title": f"Своя версія: «{c['top_video']['title'][:60]}»",
+                "format": "Short 30–45 с від першої особи" if c["top_video"]["is_short"] else "Відео в тому ж форматі",
+                "hook": "Той самий кут, але ваш досвід, ваше місто, ваші цифри",
+                "why": f"Найшвидше відео кластера: {fmt_n(c['top_video']['vph'])} переглядів/год",
+            })
+        else:
+            vids.append({
+                "title": f"Перевіряю на собі: {c['seed']}",
+                "format": "Short 30–45 с від першої особи",
+                "hook": f"«Всі говорять про {c['seed']}. Я перевірив»",
+                "why": "Особистий досвід вирізняється серед новинних відео",
+            })
+        c["videos"] = vids
+    return clusters
 
 
 AI_SYSTEM = """Ти досвідчений стратег коротких відео для YouTube Shorts, TikTok і Reels.
-Тобі дають зведення трендів, зібране автоматично з YouTube API, Google Trends і TikTok Creative Center.
-Твоє завдання: запропонувати конкретні ідеї відео, які автор може зняти найближчими днями, щоб зловити хвилю.
+Тобі дають зведення трендів, зібране автоматично з YouTube API, Google Trends, TikTok Creative Center і Threads,
+а також чорнове автоматичне групування сигналів у кластери.
+Твоє завдання: проаналізувати тренди, згрупувати їх у тематичні кластери і для кожного кластера запропонувати
+рівно 3 конкретні відео різних форматів, які автор може зняти найближчими днями, щоб зловити хвилю.
+Чорнові кластери можна об'єднувати, розділяти, перейменовувати або відкидати, якщо вони беззмістовні.
 Спирайся тільки на дані зі зведення; якщо даних мало, так і скажи. Не вигадуй цифр.
 Пояснення (summary, why, avoid, format) пиши українською. Назви, хуки, біти сценарію і хештеги пиши мовою цільового ринку,
 природно для місцевих глядачів, а не дослівним перекладом. Відповідай лише валідним JSON без markdown."""
 
 AI_SCHEMA_HINT = """Формат відповіді:
 {"summary": "2-3 речення: які теми і формати зараз ростуть",
- "ideas": [{"title": "назва відео до 70 символів",
-            "hook": "що сказати/показати в перші 2 секунди",
-            "format": "платформа, тривалість, стиль",
-            "script": ["3-6 коротких бітів сценарію"],
-            "hashtags": ["#..."],
-            "sound": "трендовий звук або стиль музики, якщо доречно",
-            "why": "на який конкретний тренд зі зведення спирається",
-            "urgency": "зараз | цього тижня | вічнозелене"}],
- "avoid": ["що зараз не варто знімати і чому"]}"""
+ "clusters": [{"name": "коротка назва теми українською",
+               "strength": "висока | середня | низька",
+               "why_now": "чому ця тема росте саме зараз, з посиланням на сигнали зі зведення",
+               "signals": ["2-4 конкретні сигнали: назви відео, запити, хештеги, пости"],
+               "videos": [{"title": "назва відео до 70 символів",
+                           "hook": "що сказати/показати в перші 2 секунди",
+                           "format": "платформа, тривалість, стиль",
+                           "script": ["3-6 коротких бітів сценарію"],
+                           "hashtags": ["#..."],
+                           "sound": "трендовий звук або стиль музики, якщо доречно",
+                           "why": "чому саме цей формат спрацює",
+                           "urgency": "зараз | цього тижня | вічнозелене"}]}],
+ "avoid": ["що зараз не варто знімати і чому"]}
+У кожному кластері рівно 3 відео: різні формати (наприклад, пояснювач, порівняння/список, особистий досвід/реакція)."""
 
 
 def ai_brief(an: dict, args) -> str:
@@ -539,9 +663,14 @@ def ai_brief(an: dict, args) -> str:
         "google_trends": [{"query": g["query"], "traffic": g["traffic_label"], "news": g["news"]} for g in an["google_trends"][:15]],
         "tiktok_hashtags": an["tiktok"].get("hashtags", [])[:20],
         "tiktok_sounds": an["tiktok"].get("songs", [])[:15],
+        "threads_posts": [{"text": p["text"][:200], "query": p["query"]} for p in (an.get("threads") or {}).get("posts", [])[:25]],
+        "threads_queries": (an.get("threads") or {}).get("queries", []),
+        "draft_clusters": [{"name": c["name"], "terms": c["terms"], "sources": c["sources"],
+                            "signals": [x["label"] for x in c["signals"]]} for c in an.get("clusters", [])],
     }
     return (f"Зведення трендів (JSON):\n{json.dumps(brief, ensure_ascii=False)}\n\n"
-            f"Запропонуй {args.ideas} ідей відео під мою нішу для глядачів, які говорять мовою: {args.lang_name}. {AI_SCHEMA_HINT}")
+            f"Проаналізуй тренди і дай {args.clusters} найсильніших кластерів, по 3 відео в кожному, під мою нішу "
+            f"для глядачів, які говорять мовою: {args.lang_name}. {AI_SCHEMA_HINT}")
 
 
 def parse_ai_json(text: str, who: str) -> dict:
@@ -732,24 +861,56 @@ def render_html(report: dict) -> str:
         return (f'<div class="scroll"><table><tr><th>#</th><th>{"Хештег" if kind == "hashtag" else "Звук"}</th><th>Позиція</th><th>Ріст</th></tr>{"".join(out)}</table></div>'
                 if out else '<p class="muted">Немає даних (див. «Джерела» нижче).</p>')
 
+    def video_card(i):
+        beats = "".join(f"<li>{e(b)}</li>" for b in i.get("script", []))
+        tags = " ".join(e(t) for t in i.get("hashtags", []))
+        meta_line = tags + ((" · 🎵 " + e(i["sound"])) if i.get("sound") else "")
+        return (f'<div class="idea"><div class="ih"><b>{e(i.get("title", ""))}</b>'
+                + (f'<span class="pill">{e(i["urgency"])}</span>' if i.get("urgency") else "") + "</div>"
+                f'<div class="sub">{e(i.get("format", ""))}</div><p><b>Хук:</b> {e(i.get("hook", ""))}</p>'
+                + (f"<ol>{beats}</ol>" if beats else "") + (f'<p class="sub">{meta_line}</p>' if meta_line else "")
+                + f'<p class="why">Чому: {e(i.get("why", ""))}</p></div>')
+
+    def cluster_block(c, auto):
+        if auto:
+            badge = f'<span class="pill">сила {c["score"]}/100</span>'
+            src = " ".join(f'<span class="chip">{e(k)}: {v}</span>' for k, v in c["sources"].items())
+            sig = "".join(f'<li><span class="pill">{e(x["src"])}</span> '
+                          + (f'<a href="{e(x["url"])}" target="_blank" rel="noopener">{e(x["label"])}</a>' if x["url"] else e(x["label"]))
+                          + "</li>" for x in c["signals"])
+            why = ""
+        else:
+            badge = f'<span class="pill">{e(c.get("strength", ""))}</span>' if c.get("strength") else ""
+            src = ""
+            sig = "".join(f"<li>{e(x)}</li>" for x in c.get("signals", []))
+            why = f'<p>{e(c.get("why_now", ""))}</p>' if c.get("why_now") else ""
+        return (f'<div class="cluster"><div class="ih"><h3>🧩 {e(c.get("name", ""))}</h3>{badge}</div>{why}'
+                + (f"<p>{src}</p>" if src else "")
+                + (f'<details><summary class="sub">Сигнали</summary><ul class="sig">{sig}</ul></details>' if sig else "")
+                + f'<div class="ideas">{"".join(video_card(v) for v in c.get("videos", [])[:3])}</div></div>')
+
     ai = report.get("ai")
-    if ai:
-        cards = []
-        for i in ai.get("ideas", []):
-            beats = "".join(f"<li>{e(b)}</li>" for b in i.get("script", []))
-            tags = " ".join(e(t) for t in i.get("hashtags", []))
-            cards.append(f"""<div class="idea"><div class="ih"><b>{e(i.get('title', ''))}</b><span class="pill">{e(i.get('urgency', ''))}</span></div>
-<div class="sub">{e(i.get('format', ''))}</div><p><b>Хук:</b> {e(i.get('hook', ''))}</p>
-{f'<ol>{beats}</ol>' if beats else ''}<p class="sub">{tags}{(' · 🎵 ' + e(i['sound'])) if i.get('sound') else ''}</p>
-<p class="why">Чому: {e(i.get('why', ''))}</p></div>""")
+    if ai and ai.get("clusters"):
         avoid = "".join(f"<li>{e(a)}</li>" for a in ai.get("avoid", []))
-        ideas_html = (f'<p>{e(ai.get("summary", ""))}</p><div class="ideas">{"".join(cards)}</div>'
-                      + (f'<h3>Чого уникати</h3><ul>{avoid}</ul>' if avoid else ""))
+        ideas_html = (f'<p>{e(ai.get("summary", ""))}</p>' + "".join(cluster_block(c, False) for c in ai["clusters"])
+                      + (f"<h3>Чого уникати</h3><ul>{avoid}</ul>" if avoid else ""))
+    elif an.get("clusters"):
+        ideas_html = ('<p class="muted">Автоматичні кластери з шаблонними ідеями. Запустіть з <code>--ai</code>, '
+                      "щоб AI (OpenAI або Claude) проаналізував кластери й написав 3 відео зі сценарієм для кожного.</p>"
+                      + "".join(cluster_block(c, True) for c in an["clusters"]))
     else:
-        cards = "".join(f"""<div class="idea"><b>{e(i['title'])}</b><div class="sub">{e(i['format'])}</div>
-<p><b>Хук:</b> {e(i['hook'])}</p><p class="why">Чому: {e(i['why'])}</p></div>""" for i in report["rule_ideas"])
-        ideas_html = (f'<p class="muted">Шаблонні ідеї. Запустіть з <code>--ai</code>, щоб AI (OpenAI або Claude) написав повні ідеї зі сценарієм.</p>'
-                      f'<div class="ideas">{cards}</div>')
+        ideas_html = '<p class="muted">Замало даних, щоб виділити кластери.</p>'
+
+    th = an.get("threads") or {}
+    th_rows = "".join(
+        f'<tr><td>{e(p["text"][:160])}<div class="sub">@{e(p["username"])} · {e(p["query"])}</div></td>'
+        f'<td class="num">' + (f'<a href="{e(p["url"])}" target="_blank" rel="noopener">відкрити</a>' if p["url"] else "") + "</td></tr>"
+        for p in th.get("posts", [])[:12])
+    th_q = " ".join(f'<span class="chip">{e(q["query"])}: {q["posts"]} постів, {q["last_48h"]} за 48 год</span>' for q in th.get("queries", []))
+    th_kw = " ".join(f'<span class="chip">{e(k)}</span>' for k, _ in th.get("keywords", [])[:15])
+    threads_html = ((f"<p>{th_q}</p>" if th_q else "") + (f"<p>{th_kw}</p>" if th_kw else "")
+                    + (f'<div class="scroll"><table><tr><th>Пост</th><th></th></tr>{th_rows}</table></div>' if th_rows else
+                       '<p class="muted">Немає даних. Потрібен THREADS_ACCESS_TOKEN (див. trends/README.md).</p>'))
 
     hours = dict(an["best_hours"])
     hours_html = "".join(
@@ -782,12 +943,14 @@ th{{font-size:12px;color:var(--muted);font-weight:600}}td.num{{text-align:right;
 .ideas{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:12px}}.idea{{border:1px solid var(--line);border-radius:12px;padding:14px}}
 .idea p{{margin:6px 0}}.idea ol{{margin:6px 0;padding-left:20px;font-size:13.5px}}.ih{{display:flex;justify-content:space-between;gap:8px}}.why{{font-size:12.5px;color:var(--ok)}}
 code{{background:var(--line);padding:1px 5px;border-radius:4px}}
+.cluster{{border-top:1px solid var(--line);padding-top:12px;margin-top:14px}}.cluster h3{{margin:0;font-size:16px}}.cluster .ih{{align-items:center;margin-bottom:6px}}
+.sig{{font-size:13px;margin:6px 0 10px}}details summary{{cursor:pointer;margin:4px 0}}
 </style></head><body><main>
 <h1>Тренди: {e(meta.get('market_name') or meta['region'])}{(' · ' + e(', '.join(meta['niche']))) if meta['niche'] else ''}</h1>
-<div class="muted"><a href="index.html">← усі ринки</a> · {e(', '.join(meta.get('regions', [meta['region']])))} · Згенеровано {e(meta['generated_local'])} · YouTube, Google Trends, TikTok Creative Center{' · ДЕМО-ДАНІ' if meta.get('demo') else ''}</div>
+<div class="muted"><a href="index.html">← усі ринки</a> · {e(', '.join(meta.get('regions', [meta['region']])))} · Згенеровано {e(meta['generated_local'])} · YouTube, Google Trends, TikTok Creative Center, Threads{' · ДЕМО-ДАНІ' if meta.get('demo') else ''}</div>
 <div class="tiles">{tiles_html}</div>
 
-<section><h2>💡 Ідеї для відео</h2>{ideas_html}</section>
+<section><h2>🧩 Кластери трендів: по 3 відео на кожен</h2>{ideas_html}</section>
 
 <section><h2>📈 Що росте з минулого запуску</h2>{rising}</section>
 
@@ -816,6 +979,8 @@ code{{background:var(--line);padding:1px 5px;border-radius:4px}}
 <section><h2>📺 Канали, які зараз у топі</h2>{bars(an['top_channels'])}</section>
 </div>
 
+<section><h2>🧵 Threads: про що пишуть</h2>{threads_html}</section>
+
 <section><h2>Джерела</h2><ul>{sources}</ul></section>
 </main></body></html>"""
 
@@ -833,6 +998,13 @@ def print_summary(report: dict) -> None:
         print("TikTok #:      " + ", ".join("#" + h["name"] for h in an["tiktok"]["hashtags"][:10]))
     for v in an["top_videos"][:5]:
         print(f"  [{v['score']:>3}] {v['title'][:70]}  ({fmt_n(v['vph'])}/год)")
+    clusters = (report.get("ai") or {}).get("clusters") or an.get("clusters") or []
+    if clusters:
+        print("Кластери:")
+        for c in clusters:
+            print(f"  🧩 {c.get('name', '')}")
+            for v in c.get("videos", [])[:3]:
+                print(f"     - {v.get('title', '')}")
     f = an.get("format_top") or {}
     if f:
         print(f"Формат топу: Shorts {pct(f.get('shorts_share'))}, медіана {fmt_dur(f.get('median_duration_s') or 0)}, "
@@ -864,9 +1036,11 @@ def run_market(args, now: dt.datetime, out_dir: Path) -> dict | None:
             v["published_at"] = (now - dt.timedelta(hours=v.pop("age_hours"))).isoformat()
             videos.append(v)
         gtrends, tiktok = demo["google_trends"], demo["tiktok"]
+        threads_demo = demo.get("threads")
         sources = {"demo": {"status": "демо-дані з trends/demo_data.json (вигадані)"}}
     else:
         videos, gtrends, tiktok = [], [], {"hashtags": [], "songs": []}
+        threads_demo = None
         if not args.no_youtube:
             videos, sources["YouTube"] = collect_youtube(args)
         if not args.no_google:
@@ -876,7 +1050,7 @@ def run_market(args, now: dt.datetime, out_dir: Path) -> dict | None:
         if not args.no_tiktok:
             tiktok, sources["TikTok"] = collect_tiktok(args.region, args.tiktok_period)
 
-    if not videos and not gtrends and not tiktok.get("hashtags"):
+    if not videos and not gtrends and not tiktok.get("hashtags") and not os.environ.get("THREADS_ACCESS_TOKEN"):
         warn(f"{args.market_name}: жодне джерело не дало даних")
         return None
 
@@ -886,6 +1060,13 @@ def run_market(args, now: dt.datetime, out_dir: Path) -> dict | None:
     snaps = sorted(history.glob(f"{snap_name}_*.json"))
     prev = json.loads(snaps[-1].read_text(encoding="utf-8")) if snaps and not args.demo else None
     an = analyze(videos, gtrends, tiktok, tz, prev)
+    if threads_demo is not None:
+        an["threads"] = threads_demo
+    elif not args.no_threads:
+        niche_words = {w for n in args.niche for w in tokens(n)}
+        extra = [k for k, _ in an["keywords"] if " " not in k and k not in FILLER and k not in niche_words][:3]
+        an["threads"], sources["Threads"] = collect_threads(list(dict.fromkeys(args.niche[:3] + extra)), now)
+    an["clusters"] = build_clusters(an, videos, args.niche, args.clusters)
 
     report = {
         "meta": {
@@ -897,12 +1078,11 @@ def run_market(args, now: dt.datetime, out_dir: Path) -> dict | None:
         },
         "analysis": an,
         "videos": videos,
-        "rule_ideas": rule_based_ideas(an, args.niche),
     }
     if args.ai:
         provider = ai_provider(args)
         if provider:
-            print(f"  Питаю {'OpenAI (' + args.openai_model if provider == 'openai' else 'Claude (' + args.model}) про ідеї…")
+            print(f"  Питаю {'OpenAI (' + args.openai_model if provider == 'openai' else 'Claude (' + args.model}) : аналіз кластерів і ідеї…")
             report["ai"] = ai_ideas(an, args)
 
     stamp = now.astimezone(ZoneInfo("Europe/Kyiv") if ZoneInfo else None).strftime("%Y%m%d_%H%M")
@@ -923,7 +1103,7 @@ def run_market(args, now: dt.datetime, out_dir: Path) -> dict | None:
 
 def cross_market(reports: list[dict]) -> dict:
     """Що є в кількох ринках одразу, і що вже є в США, але ще не дійшло до інших."""
-    generic = {"fyp", "foryou", "foryoupage", "fy", "viral", "trending", "fürdich", "fy", "parati", "xyzbca", "tiktok"}
+    generic = GENERIC_TAGS
     tags = {r["meta"]["market"]: {h["name"].lower() for h in r["analysis"]["tiktok"].get("hashtags", [])} - generic for r in reports}
     kws = {r["meta"]["market"]: {k for k, _ in r["analysis"]["keywords"]} for r in reports}
     names = {r["meta"]["market"]: r["meta"]["market_name"] for r in reports}
@@ -951,7 +1131,10 @@ def render_index(reports: list[dict], cross: dict, generated: str, demo: bool) -
         f = an.get("format_top") or {}
         hours = sorted(an["best_hours"], key=lambda x: -x[1])[:3]
         li = lambda items: "".join(f"<li>{x}</li>" for x in items) or '<li class="muted">немає даних</li>'
-        ideas = (r.get("ai") or {}).get("ideas") or r["rule_ideas"]
+        clusters = (r.get("ai") or {}).get("clusters") or an.get("clusters") or []
+        cl_html = "".join(f'<li><b>{e(c.get("name", ""))}</b><ul>'
+                          + "".join(f'<li>{e(v.get("title", ""))}</li>' for v in c.get("videos", [])[:3]) + "</ul></li>"
+                          for c in clusters[:4]) or '<li class="muted">немає даних</li>'
         cols.append(f"""<section><h2>{e(m['market_name'])}</h2>
 <div class="sub">{e(', '.join(m['regions']))} · ніша: {e(', '.join(m['niche']) or '—')}</div>
 <p><a class="btn" href="{e(r['file'])}">Повний звіт →</a></p>
@@ -963,7 +1146,7 @@ def render_index(reports: list[dict], cross: dict, generated: str, demo: bool) -
 <h3>🔎 Google Trends</h3><ol>{li(e(g['query']) for g in an['google_trends'][:6])}</ol>
 <h3>#️⃣ TikTok</h3><p>{''.join(f'<span class="chip">#{e(h["name"])}</span>' for h in an['tiktok'].get('hashtags', [])[:8]) or '<span class="muted">немає даних</span>'}</p>
 <h3>🔥 Топ відео</h3><ol>{li(f'<a href="{e(v["url"])}" target="_blank" rel="noopener">{e(v["title"])}</a> <span class="sub">{fmt_n(v["vph"])}/год</span>' for v in an['top_videos'][:5])}</ol>
-<h3>💡 Ідеї</h3><ul>{li(e(i.get('title', '')) for i in ideas[:5])}</ul></section>""")
+<h3>🧩 Кластери і відео</h3><ul>{cl_html}</ul></section>""")
 
     def shared_html(items, prefix=""):
         return "".join(f'<li><b>{e(prefix + x)}</b> <span class="sub">{e(" · ".join(ms))}</span></li>' for x, ms in items) \
@@ -1016,11 +1199,12 @@ def main(argv=None) -> int:
     p.add_argument("--no-youtube", action="store_true")
     p.add_argument("--no-google", action="store_true")
     p.add_argument("--no-tiktok", action="store_true")
+    p.add_argument("--no-threads", action="store_true")
+    p.add_argument("--clusters", type=int, default=5, help="скільки кластерів трендів (по 3 відео в кожному)")
     p.add_argument("--ai", action="store_true", help="згенерувати ідеї через AI (потрібен OPENAI_API_KEY або ANTHROPIC_API_KEY)")
     p.add_argument("--ai-provider", default="auto", choices=["auto", "openai", "claude"],
                    help="хто пише ідеї; auto = OpenAI, якщо задано OPENAI_API_KEY, інакше Claude")
     p.add_argument("--openai-model", default="gpt-5.4-mini", help="модель OpenAI для --ai")
-    p.add_argument("--ideas", type=int, default=10, help="скільки ідей просити в Claude на ринок")
     p.add_argument("--model", default="claude-opus-5-5", help="модель Claude для --ai")
     p.add_argument("--out", default=str(HERE / "out"), help="тека для звітів")
     p.add_argument("--demo", action="store_true", help="без мережі: показати звіт на демо-даних")

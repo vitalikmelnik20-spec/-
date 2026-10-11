@@ -950,6 +950,68 @@
      "growth": -0.05
     }
    ]
+  },
+  "threads": {
+   "posts": [
+    {
+     "platform": "threads",
+     "query": "ціни",
+     "text": "Ціни на продукти знову виросли, гречка вже як м'ясо",
+     "username": "olena.kyiv",
+     "url": "",
+     "timestamp": ""
+    },
+    {
+     "platform": "threads",
+     "query": "ціни",
+     "text": "Хто ще помітив, що оренда у Львові злетіла цієї осені?",
+     "username": "lviv_life",
+     "url": "",
+     "timestamp": ""
+    },
+    {
+     "platform": "threads",
+     "query": "вартість життя",
+     "text": "Порахувала бюджет на місяць у Києві: 38 тисяч мінімум",
+     "username": "money.mama",
+     "url": "",
+     "timestamp": ""
+    },
+    {
+     "platform": "threads",
+     "query": "оренда",
+     "text": "Оренда квартири у Львові 18 тисяч за однушку, це норм?",
+     "username": "andrii_r",
+     "url": "",
+     "timestamp": ""
+    },
+    {
+     "platform": "threads",
+     "query": "ціни",
+     "text": "Тарифи на світло взимку: хтось уже рахував?",
+     "username": "energy_ua",
+     "url": "",
+     "timestamp": ""
+    }
+   ],
+   "queries": [
+    {
+     "query": "ціни",
+     "posts": 3,
+     "last_48h": 2
+    },
+    {
+     "query": "вартість життя",
+     "posts": 1,
+     "last_48h": 0
+    },
+    {
+     "query": "оренда",
+     "posts": 1,
+     "last_48h": 0
+    }
+   ],
+   "keywords": []
   }
  },
  "de": {
@@ -1559,6 +1621,60 @@
      "growth": 0.2
     }
    ]
+  },
+  "threads": {
+   "posts": [
+    {
+     "platform": "threads",
+     "query": "Preise",
+     "text": "Miete in München ist einfach nicht mehr bezahlbar",
+     "username": "lena.muc",
+     "url": "",
+     "timestamp": ""
+    },
+    {
+     "platform": "threads",
+     "query": "Lebenshaltungskosten",
+     "text": "Strompreise im Winter: wie viel zahlt ihr?",
+     "username": "sparfuchs",
+     "url": "",
+     "timestamp": ""
+    },
+    {
+     "platform": "threads",
+     "query": "Preise",
+     "text": "Deutschlandticket wird wieder teurer, ernsthaft?",
+     "username": "pendler.de",
+     "url": "",
+     "timestamp": ""
+    },
+    {
+     "platform": "threads",
+     "query": "Miete",
+     "text": "Miete Berlin 1400 kalt für 2 Zimmer",
+     "username": "berlin.wohnen",
+     "url": "",
+     "timestamp": ""
+    }
+   ],
+   "queries": [
+    {
+     "query": "Preise",
+     "posts": 2,
+     "last_48h": 1
+    },
+    {
+     "query": "Lebenshaltungskosten",
+     "posts": 1,
+     "last_48h": 0
+    },
+    {
+     "query": "Miete",
+     "posts": 1,
+     "last_48h": 0
+    }
+   ],
+   "keywords": []
   }
  },
  "us": {
@@ -2164,6 +2280,60 @@
      "growth": 1.1
     }
    ]
+  },
+  "threads": {
+   "posts": [
+    {
+     "platform": "threads",
+     "query": "cost of living",
+     "text": "Rent in Austin finally dropping? My lease renewal went down",
+     "username": "atx.renter",
+     "url": "",
+     "timestamp": ""
+    },
+    {
+     "platform": "threads",
+     "query": "prices",
+     "text": "Grocery prices this week are wild, eggs again",
+     "username": "frugal.jen",
+     "url": "",
+     "timestamp": ""
+    },
+    {
+     "platform": "threads",
+     "query": "cost of living",
+     "text": "Loud budgeting is the only way I survived this year",
+     "username": "budget.queen",
+     "url": "",
+     "timestamp": ""
+    },
+    {
+     "platform": "threads",
+     "query": "rent",
+     "text": "Rent in Miami: $2800 for a 1 bed is normal now??",
+     "username": "mia.life",
+     "url": "",
+     "timestamp": ""
+    }
+   ],
+   "queries": [
+    {
+     "query": "cost of living",
+     "posts": 2,
+     "last_48h": 1
+    },
+    {
+     "query": "prices",
+     "posts": 1,
+     "last_48h": 0
+    },
+    {
+     "query": "rent",
+     "posts": 1,
+     "last_48h": 0
+    }
+   ],
+   "keywords": []
   }
  }
 }
