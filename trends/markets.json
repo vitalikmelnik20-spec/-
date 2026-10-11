@@ -1,0 +1,9 @@
+{
+ "_note": "Ринки для --market / --markets. regions: перша країна основна (пошук у ніші, TikTok), решта додають свої «Популярне» і Google Trends. niche: фрази мовою ринку; --niche у командному рядку їх замінює.",
+ "ua": {"name": "🇺🇦 Україномовний", "regions": ["UA"], "lang": "uk", "lang_name": "українська", "tz": "Europe/Kyiv",
+        "niche": ["вартість життя", "ціни"]},
+ "de": {"name": "🇩🇪 Німецькомовний", "regions": ["DE", "AT", "CH"], "lang": "de", "lang_name": "німецька", "tz": "Europe/Berlin",
+        "niche": ["Lebenshaltungskosten", "Preise"]},
+ "us": {"name": "🇺🇸 Англомовний (США)", "regions": ["US"], "lang": "en", "lang_name": "англійська (американська)", "tz": "America/New_York",
+        "niche": ["cost of living", "prices"]}
+}

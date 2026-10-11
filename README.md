@@ -62,3 +62,7 @@ render/         render.mjs (parallel frame renderer) · snapshot.mjs · common.m
 output/         lviv_30s_shorts.mp4
 make_video.sh   one-command build
 ```
+
+## Trend research
+
+`trends/trendscout.py` shows what is trending right now on YouTube, in Google Trends and on TikTok, and turns that into video ideas. See [`trends/README.md`](trends/README.md).
