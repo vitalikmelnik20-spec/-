@@ -6,12 +6,15 @@ import { PlateTest } from './olympia/PlateTest';
 import { Olympia } from './olympia/Olympia';
 import { BernPlateTest } from './bern/PlateTest';
 import { Bern } from './bern/Bern';
+import { Zahid } from './zahid/Zahid';
+import { DURATION as ZAHID_DUR } from './zahid/theme';
 import { DURATION as BERN_DUR } from './bern/theme';
 import { DURATION as OLY_DUR } from './olympia/theme';
 export const Root = () => (
   <>
   <Composition id="ChicagoV2" component={ChicagoV2} durationInFrames={1200} fps={30} width={1080} height={1920} />
   <Composition id="Olympia" component={Olympia} durationInFrames={OLY_DUR} fps={30} width={1080} height={1920} />
+  <Composition id="Zahid" component={Zahid} durationInFrames={ZAHID_DUR} fps={30} width={1080} height={1920} />
   <Composition id="Bern" component={Bern} durationInFrames={BERN_DUR} fps={30} width={1080} height={1920} />
   <Composition id="BernPlateTest" component={BernPlateTest} durationInFrames={4} fps={30} width={1080} height={1920} />
   <Composition id="PlateTest" component={PlateTest} durationInFrames={5} fps={30} width={1080} height={1920} />
