@@ -1125,7 +1125,9 @@ def send_telegram(reports: list[dict], cross: dict, out_dir: Path, generated: st
 
 
 def load_markets() -> dict:
-    data = json.loads((HERE / "markets.json").read_text(encoding="utf-8"))
+    # TRENDSCOUT_MARKETS_FILE дозволяє боту зберігати власні нішеві фрази, не змінюючи файл у репозиторії
+    path = Path(os.environ.get("TRENDSCOUT_MARKETS_FILE") or HERE / "markets.json")
+    data = json.loads(path.read_text(encoding="utf-8"))
     return {k: v for k, v in data.items() if not k.startswith("_")}
 
 
