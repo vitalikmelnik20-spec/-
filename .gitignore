@@ -39,3 +39,7 @@ bern/.tts
 zahid/build/
 trends/out/
 costumes/build/
+costumes/photos/*.jpg
+costumes/photos/*.jpeg
+costumes/photos/*.png
+costumes/photos/*.webp
