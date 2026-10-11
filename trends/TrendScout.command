@@ -18,26 +18,32 @@ if [ ! -x "$VENV/bin/python" ]; then
   echo "Перший запуск: готую середовище Python (близько хвилини)…"
   python3 -m venv "$VENV"
   # certifi лікує типову на Mac помилку CERTIFICATE_VERIFY_FAILED; anthropic потрібен для --ai
-  "$VENV/bin/pip" install -q --upgrade pip certifi anthropic
+  "$VENV/bin/pip" install -q --upgrade pip certifi anthropic openai
 fi
+"$VENV/bin/python" -c "import openai" 2>/dev/null || "$VENV/bin/pip" install -q openai
 
+ask_key() {  # ask_key ЗМІННА "підказка": питає ключ, якщо його ще немає в ~/.trendscout
+  if [ -f "$CONF" ] && grep -q "^export $1=" "$CONF"; then return; fi
+  read -r -p "$2" VALUE
+  umask 077
+  echo "export $1='$VALUE'" >> "$CONF"
+  NEW_KEYS=1
+}
 if [ ! -f "$CONF" ]; then
   echo
   echo "Ключ YouTube Data API (як отримати: trends/README.md, розділ «Як отримати ключ YouTube»)."
-  read -r -p "YOUTUBE_API_KEY (Enter, щоб пропустити): " YT
-  read -r -p "ANTHROPIC_API_KEY для ідей від Claude (Enter, щоб пропустити): " AK
-  umask 077
-  {
-    echo "export YOUTUBE_API_KEY='$YT'"
-    echo "export ANTHROPIC_API_KEY='$AK'"
-  } > "$CONF"
+fi
+ask_key YOUTUBE_API_KEY "YOUTUBE_API_KEY (Enter, щоб пропустити): "
+ask_key OPENAI_API_KEY "OPENAI_API_KEY для ідей від ChatGPT (Enter, щоб пропустити): "
+ask_key ANTHROPIC_API_KEY "ANTHROPIC_API_KEY для ідей від Claude (Enter, щоб пропустити): "
+if [ -n "$NEW_KEYS" ]; then
   echo "Збережено в $CONF (змінити ключі: відредагуйте або видаліть цей файл)."
 fi
 # shellcheck disable=SC1090
 source "$CONF"
 
 EXTRA=()
-if [ $# -eq 0 ] && [ -n "$ANTHROPIC_API_KEY" ]; then EXTRA=(--ai); fi
+if [ $# -eq 0 ] && { [ -n "$OPENAI_API_KEY" ] || [ -n "$ANTHROPIC_API_KEY" ]; }; then EXTRA=(--ai); fi
 
 echo
 "$VENV/bin/python" trendscout.py "${EXTRA[@]}" "$@" && open out/index.html

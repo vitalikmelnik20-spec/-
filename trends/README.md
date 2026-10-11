@@ -12,7 +12,7 @@
 2. Відкрийте теку `trends` і двічі клацніть **`TrendScout.command`**.
    - Якщо macOS пише, що файл «від невідомого розробника», клацніть на ньому **правою кнопкою → Відкрити → Відкрити**. Це потрібно лише один раз.
    - Якщо після ZIP файл не запускається, виконайте в Терміналі: `chmod +x trends/TrendScout.command`.
-3. Перший запуск сам підготує Python і попросить ключі YouTube та Claude. Можна натиснути Enter і пропустити. Ключі зберігаються у `~/.trendscout`.
+3. Перший запуск сам підготує Python і попросить ключі: YouTube, OpenAI (ChatGPT) і Claude. Будь-який можна пропустити клавішею Enter. Для ідей зі сценаріями достатньо одного з двох: OpenAI або Claude. Ключі зберігаються у `~/.trendscout`.
 4. Коли все збереться, у браузері відкриється звіт по трьох ринках.
 
 Python 3.9+ зазвичай уже є на Mac. Якщо ні, скрипт підкаже, як його встановити.
@@ -39,9 +39,9 @@ python3 trends/trendscout.py
 python3 trends/trendscout.py --market de
 python3 trends/trendscout.py --market us --niche "rent prices" --niche "grocery haul"
 
-# 3. Те саме + повні ідеї зі сценаріями від Claude (назви й хуки мовою ринку, пояснення українською)
-pip install anthropic
-export ANTHROPIC_API_KEY=...
+# 3. Те саме + повні ідеї зі сценаріями від ChatGPT або Claude (назви й хуки мовою ринку, пояснення українською)
+pip install openai                    # або: pip install anthropic
+export OPENAI_API_KEY=...             # або: export ANTHROPIC_API_KEY=...
 python3 trends/trendscout.py --ai --about "Shorts про ціни та життя в різних містах"
 ```
 
@@ -61,7 +61,7 @@ python3 trends/trendscout.py --ai --about "Shorts про ціни та житт�
 | YouTube Data API v3 | Вкладка «Популярне» країни (до 50 відео) і найпопулярніші відео вашої ніші за останні N днів, з підписниками каналів | `YOUTUBE_API_KEY`, безкоштовно |
 | Google Trends | Що люди в країні шукають сьогодні, з обсягом пошуків і новинами | не потрібен |
 | TikTok Creative Center | Топ хештегів і трендових звуків країни, з позицією і ростом | не потрібен |
-| Claude (необов'язково, `--ai`) | 10 ідей: назва, хук на перші 2 секунди, біти сценарію, хештеги, звук, «чому зараз» | `ANTHROPIC_API_KEY` |
+| ChatGPT або Claude (необов'язково, `--ai`) | 10 ідей на ринок: назва, хук на перші 2 секунди, біти сценарію, хештеги, звук, «чому зараз» | `OPENAI_API_KEY` або `ANTHROPIC_API_KEY` |
 
 Для кожного відео рахуються:
 
@@ -94,7 +94,11 @@ python3 trends/trendscout.py --ai --about "Shorts про ціни та житт�
 | `--tiktok-period 30` | TikTok за 30 днів замість 7 |
 | `--tz Europe/Warsaw` | Часовий пояс для годин публікації |
 | `--no-youtube` / `--no-google` / `--no-tiktok` | Вимкнути джерело |
-| `--model claude-sonnet-5-5` | Дешевша модель для `--ai` |
+| `--ai-provider openai` / `claude` | Хто пише ідеї. За замовчуванням OpenAI, якщо є його ключ |
+| `--openai-model gpt-5.4` | Інша модель OpenAI (за замовчуванням `gpt-5.4-mini`) |
+| `--model claude-sonnet-5-5` | Інша модель Claude |
+
+Ключ OpenAI створюється на https://platform.openai.com/api-keys. Підписка ChatGPT Plus його не включає: API оплачується окремо, з балансу на platform.openai.com. Один запуск на три ринки коштує копійки, але на балансі має бути хоча б $5.
 
 ## Щоденний автозапуск
 

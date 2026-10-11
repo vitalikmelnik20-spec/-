@@ -522,12 +522,7 @@ AI_SCHEMA_HINT = """Формат відповіді:
  "avoid": ["що зараз не варто знімати і чому"]}"""
 
 
-def ai_ideas(an: dict, args) -> dict | None:
-    try:
-        import anthropic
-    except ImportError:
-        warn("для --ai встановіть пакет: pip install anthropic")
-        return None
+def ai_brief(an: dict, args) -> str:
     brief = {
         "market": args.market_name,
         "regions": args.regions,
@@ -545,8 +540,83 @@ def ai_ideas(an: dict, args) -> dict | None:
         "tiktok_hashtags": an["tiktok"].get("hashtags", [])[:20],
         "tiktok_sounds": an["tiktok"].get("songs", [])[:15],
     }
-    prompt = (f"Зведення трендів (JSON):\n{json.dumps(brief, ensure_ascii=False)}\n\n"
-              f"Запропонуй {args.ideas} ідей відео під мою нішу для глядачів, які говорять мовою: {args.lang_name}. {AI_SCHEMA_HINT}")
+    return (f"Зведення трендів (JSON):\n{json.dumps(brief, ensure_ascii=False)}\n\n"
+            f"Запропонуй {args.ideas} ідей відео під мою нішу для глядачів, які говорять мовою: {args.lang_name}. {AI_SCHEMA_HINT}")
+
+
+def parse_ai_json(text: str, who: str) -> dict:
+    text = re.sub(r"^```(?:json)?|```$", "", text.strip(), flags=re.M).strip()
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        warn(f"{who} повернув не-JSON; зберігаю як текст")
+        return {"summary": text, "ideas": [], "avoid": []}
+
+
+def ai_provider(args) -> str | None:
+    if args.ai_provider != "auto":
+        return args.ai_provider
+    if os.environ.get("OPENAI_API_KEY"):
+        return "openai"
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return "claude"
+    warn("для --ai задайте OPENAI_API_KEY або ANTHROPIC_API_KEY")
+    return None
+
+
+def ai_ideas(an: dict, args) -> dict | None:
+    provider = ai_provider(args)
+    if provider == "openai":
+        return openai_ideas(ai_brief(an, args), args)
+    if provider == "claude":
+        return claude_ideas(ai_brief(an, args), args)
+    return None
+
+
+def openai_ideas(prompt: str, args) -> dict | None:
+    try:
+        import openai
+    except ImportError:
+        warn("для ідей через OpenAI встановіть пакет: pip install openai")
+        return None
+    try:
+        client = openai.OpenAI()
+        response = client.chat.completions.create(
+            model=args.openai_model,
+            messages=[{"role": "system", "content": AI_SYSTEM}, {"role": "user", "content": prompt}],
+            response_format={"type": "json_object"},
+        )
+    except openai.AuthenticationError:
+        warn("OpenAI: невірний OPENAI_API_KEY")
+        return None
+    except openai.NotFoundError:
+        warn(f"OpenAI: модель «{args.openai_model}» недоступна; вкажіть іншу через --openai-model")
+        return None
+    except openai.RateLimitError as e:
+        warn(f"OpenAI: ліміт або закінчились кошти на балансі API: {e}")
+        return None
+    except openai.APIStatusError as e:
+        warn(f"OpenAI API {e.status_code}: {e.message}")
+        return None
+    except openai.APIConnectionError as e:
+        warn(f"OpenAI: немає з'єднання: {e}")
+        return None
+    except openai.OpenAIError as e:  # наприклад, ключ не задано
+        warn(f"OpenAI: {e}")
+        return None
+    choice = response.choices[0]
+    if getattr(choice.message, "refusal", None):
+        warn(f"OpenAI відмовився відповідати: {choice.message.refusal}")
+        return None
+    return parse_ai_json(choice.message.content or "", "OpenAI")
+
+
+def claude_ideas(prompt: str, args) -> dict | None:
+    try:
+        import anthropic
+    except ImportError:
+        warn("для ідей через Claude встановіть пакет: pip install anthropic")
+        return None
     try:
         client = anthropic.Anthropic()
         response = client.beta.messages.create(
@@ -576,13 +646,7 @@ def ai_ideas(an: dict, args) -> dict | None:
     if response.stop_reason == "refusal":
         warn("Claude відмовився відповідати на цей запит")
         return None
-    text = "".join(b.text for b in response.content if b.type == "text").strip()
-    text = re.sub(r"^```(?:json)?|```$", "", text, flags=re.M).strip()
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        warn("Claude повернув не-JSON; зберігаю як текст")
-        return {"summary": text, "ideas": [], "avoid": []}
+    return parse_ai_json("".join(b.text for b in response.content if b.type == "text"), "Claude")
 
 
 # --------------------------------------------------------------------------- Звіт
@@ -684,7 +748,7 @@ def render_html(report: dict) -> str:
     else:
         cards = "".join(f"""<div class="idea"><b>{e(i['title'])}</b><div class="sub">{e(i['format'])}</div>
 <p><b>Хук:</b> {e(i['hook'])}</p><p class="why">Чому: {e(i['why'])}</p></div>""" for i in report["rule_ideas"])
-        ideas_html = (f'<p class="muted">Шаблонні ідеї. Запустіть з <code>--ai</code>, щоб Claude написав повні ідеї зі сценарієм.</p>'
+        ideas_html = (f'<p class="muted">Шаблонні ідеї. Запустіть з <code>--ai</code>, щоб AI (OpenAI або Claude) написав повні ідеї зі сценарієм.</p>'
                       f'<div class="ideas">{cards}</div>')
 
     hours = dict(an["best_hours"])
@@ -836,8 +900,10 @@ def run_market(args, now: dt.datetime, out_dir: Path) -> dict | None:
         "rule_ideas": rule_based_ideas(an, args.niche),
     }
     if args.ai:
-        print(f"  Питаю Claude ({args.model}) про ідеї…")
-        report["ai"] = ai_ideas(an, args)
+        provider = ai_provider(args)
+        if provider:
+            print(f"  Питаю {'OpenAI (' + args.openai_model if provider == 'openai' else 'Claude (' + args.model}) про ідеї…")
+            report["ai"] = ai_ideas(an, args)
 
     stamp = now.astimezone(ZoneInfo("Europe/Kyiv") if ZoneInfo else None).strftime("%Y%m%d_%H%M")
     if not args.demo:
@@ -950,7 +1016,10 @@ def main(argv=None) -> int:
     p.add_argument("--no-youtube", action="store_true")
     p.add_argument("--no-google", action="store_true")
     p.add_argument("--no-tiktok", action="store_true")
-    p.add_argument("--ai", action="store_true", help="згенерувати ідеї через Claude (потрібен ANTHROPIC_API_KEY)")
+    p.add_argument("--ai", action="store_true", help="згенерувати ідеї через AI (потрібен OPENAI_API_KEY або ANTHROPIC_API_KEY)")
+    p.add_argument("--ai-provider", default="auto", choices=["auto", "openai", "claude"],
+                   help="хто пише ідеї; auto = OpenAI, якщо задано OPENAI_API_KEY, інакше Claude")
+    p.add_argument("--openai-model", default="gpt-5.4-mini", help="модель OpenAI для --ai")
     p.add_argument("--ideas", type=int, default=10, help="скільки ідей просити в Claude на ринок")
     p.add_argument("--model", default="claude-opus-5-5", help="модель Claude для --ai")
     p.add_argument("--out", default=str(HERE / "out"), help="тека для звітів")
