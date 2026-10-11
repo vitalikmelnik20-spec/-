@@ -1,0 +1,513 @@
+{
+ "scenes": {
+  "hook": {
+   "start": 0.25,
+   "beats": [
+    {
+     "t": 0.25,
+     "dur": 3.7,
+     "text": "How much does it cost to dress up for Halloween in America?",
+     "words": [
+      {
+       "w": "How",
+       "t": 0.25
+      },
+      {
+       "w": "much",
+       "t": 0.47
+      },
+      {
+       "w": "does",
+       "t": 0.68
+      },
+      {
+       "w": "it",
+       "t": 0.9
+      },
+      {
+       "w": "cost",
+       "t": 1.12
+      },
+      {
+       "w": "to",
+       "t": 1.34
+      },
+      {
+       "w": "dress",
+       "t": 1.55
+      },
+      {
+       "w": "up",
+       "t": 1.77
+      },
+      {
+       "w": "for",
+       "t": 1.99
+      },
+      {
+       "w": "Halloween",
+       "t": 2.21
+      },
+      {
+       "w": "in",
+       "t": 2.86
+      },
+      {
+       "w": "America?",
+       "t": 3.08
+      }
+     ]
+    }
+   ]
+  },
+  "trend": {
+   "start": 4.6,
+   "beats": [
+    {
+     "t": 4.6,
+     "dur": 3.04,
+     "text": "In 2026, these costumes are trending!",
+     "words": [
+      {
+       "w": "In",
+       "t": 4.6
+      },
+      {
+       "w": "2026,",
+       "t": 4.81
+      },
+      {
+       "w": "these",
+       "t": 5.9
+      },
+      {
+       "w": "costumes",
+       "t": 6.12
+      },
+      {
+       "w": "are",
+       "t": 6.77
+      },
+      {
+       "w": "trending!",
+       "t": 7.2
+      }
+     ]
+    }
+   ]
+  },
+  "kpop": {
+   "start": 8.29,
+   "beats": [
+    {
+     "t": 8.29,
+     "dur": 3.26,
+     "text": "First, K-Pop Demon Hunters \u2014 around $41.",
+     "words": [
+      {
+       "w": "First,",
+       "t": 8.29
+      },
+      {
+       "w": "K-Pop",
+       "t": 8.51
+      },
+      {
+       "w": "Demon",
+       "t": 8.94
+      },
+      {
+       "w": "Hunters",
+       "t": 9.38
+      },
+      {
+       "w": "\u2014",
+       "t": 9.81
+      },
+      {
+       "w": "around",
+       "t": 9.81
+      },
+      {
+       "w": "$41.",
+       "t": 10.25
+      }
+     ]
+    }
+   ]
+  },
+  "penny": {
+   "start": 12.2,
+   "beats": [
+    {
+     "t": 12.2,
+     "dur": 1.3,
+     "text": "Want something scarier?",
+     "words": [
+      {
+       "w": "Want",
+       "t": 12.2
+      },
+      {
+       "w": "something",
+       "t": 12.42
+      },
+      {
+       "w": "scarier?",
+       "t": 13.07
+      }
+     ]
+    },
+    {
+     "t": 13.85,
+     "dur": 3.7,
+     "text": "Pennywise from IT costs approximately $49.",
+     "words": [
+      {
+       "w": "Pennywise",
+       "t": 13.85
+      },
+      {
+       "w": "from",
+       "t": 14.51
+      },
+      {
+       "w": "IT",
+       "t": 14.72
+      },
+      {
+       "w": "costs",
+       "t": 14.94
+      },
+      {
+       "w": "approximately",
+       "t": 15.16
+      },
+      {
+       "w": "$49.",
+       "t": 16.46
+      }
+     ]
+    }
+   ]
+  },
+  "wed": {
+   "start": 18.2,
+   "beats": [
+    {
+     "t": 18.2,
+     "dur": 1.09,
+     "text": "Wednesday Addams?",
+     "words": [
+      {
+       "w": "Wednesday",
+       "t": 18.2
+      },
+      {
+       "w": "Addams?",
+       "t": 18.85
+      }
+     ]
+    },
+    {
+     "t": 19.64,
+     "dur": 2.39,
+     "text": "Expect to pay around $34.",
+     "words": [
+      {
+       "w": "Expect",
+       "t": 19.64
+      },
+      {
+       "w": "to",
+       "t": 20.07
+      },
+      {
+       "w": "pay",
+       "t": 20.29
+      },
+      {
+       "w": "around",
+       "t": 20.51
+      },
+      {
+       "w": "$34.",
+       "t": 20.94
+      }
+     ]
+    }
+   ]
+  },
+  "mario": {
+   "start": 22.68,
+   "beats": [
+    {
+     "t": 22.68,
+     "dur": 3.26,
+     "text": "Mario fans can get their look for about $38.",
+     "words": [
+      {
+       "w": "Mario",
+       "t": 22.68
+      },
+      {
+       "w": "fans",
+       "t": 23.11
+      },
+      {
+       "w": "can",
+       "t": 23.33
+      },
+      {
+       "w": "get",
+       "t": 23.55
+      },
+      {
+       "w": "their",
+       "t": 23.77
+      },
+      {
+       "w": "look",
+       "t": 23.98
+      },
+      {
+       "w": "for",
+       "t": 24.2
+      },
+      {
+       "w": "about",
+       "t": 24.42
+      },
+      {
+       "w": "$38.",
+       "t": 24.85
+      }
+     ]
+    }
+   ]
+  },
+  "dolly": {
+   "start": 26.59,
+   "beats": [
+    {
+     "t": 26.59,
+     "dur": 4.78,
+     "text": "And if you want to become Dolly Parton, expect to spend around $56.",
+     "words": [
+      {
+       "w": "And",
+       "t": 26.59
+      },
+      {
+       "w": "if",
+       "t": 26.81
+      },
+      {
+       "w": "you",
+       "t": 27.02
+      },
+      {
+       "w": "want",
+       "t": 27.24
+      },
+      {
+       "w": "to",
+       "t": 27.46
+      },
+      {
+       "w": "become",
+       "t": 27.68
+      },
+      {
+       "w": "Dolly",
+       "t": 28.11
+      },
+      {
+       "w": "Parton,",
+       "t": 28.55
+      },
+      {
+       "w": "expect",
+       "t": 28.98
+      },
+      {
+       "w": "to",
+       "t": 29.42
+      },
+      {
+       "w": "spend",
+       "t": 29.63
+      },
+      {
+       "w": "around",
+       "t": 29.85
+      },
+      {
+       "w": "$56.",
+       "t": 30.28
+      }
+     ]
+    }
+   ]
+  },
+  "scary": {
+   "start": 32.02,
+   "beats": [
+    {
+     "t": 32.02,
+     "dur": 1.52,
+     "text": "But here's the scary part:",
+     "words": [
+      {
+       "w": "But",
+       "t": 32.02
+      },
+      {
+       "w": "here's",
+       "t": 32.24
+      },
+      {
+       "w": "the",
+       "t": 32.67
+      },
+      {
+       "w": "scary",
+       "t": 32.89
+      },
+      {
+       "w": "part:",
+       "t": 33.33
+      }
+     ]
+    },
+    {
+     "t": 33.89,
+     "dur": 4.78,
+     "text": "a full Halloween outfit can cost even more when you add makeup and accessories!",
+     "words": [
+      {
+       "w": "a",
+       "t": 33.89
+      },
+      {
+       "w": "full",
+       "t": 34.11
+      },
+      {
+       "w": "Halloween",
+       "t": 34.33
+      },
+      {
+       "w": "outfit",
+       "t": 34.98
+      },
+      {
+       "w": "can",
+       "t": 35.42
+      },
+      {
+       "w": "cost",
+       "t": 35.63
+      },
+      {
+       "w": "even",
+       "t": 35.85
+      },
+      {
+       "w": "more",
+       "t": 36.28
+      },
+      {
+       "w": "when",
+       "t": 36.5
+      },
+      {
+       "w": "you",
+       "t": 36.72
+      },
+      {
+       "w": "add",
+       "t": 36.94
+      },
+      {
+       "w": "makeup",
+       "t": 37.15
+      },
+      {
+       "w": "and",
+       "t": 37.59
+      },
+      {
+       "w": "accessories!",
+       "t": 37.81
+      }
+     ]
+    }
+   ]
+  },
+  "cta": {
+   "start": 39.33,
+   "beats": [
+    {
+     "t": 39.33,
+     "dur": 1.52,
+     "text": "So, which costume would you choose?",
+     "words": [
+      {
+       "w": "So,",
+       "t": 39.33
+      },
+      {
+       "w": "which",
+       "t": 39.54
+      },
+      {
+       "w": "costume",
+       "t": 39.76
+      },
+      {
+       "w": "would",
+       "t": 40.2
+      },
+      {
+       "w": "you",
+       "t": 40.41
+      },
+      {
+       "w": "choose?",
+       "t": 40.63
+      }
+     ]
+    },
+    {
+     "t": 41.2,
+     "dur": 0.87,
+     "text": "Comment below!",
+     "words": [
+      {
+       "w": "Comment",
+       "t": 41.2
+      },
+      {
+       "w": "below!",
+       "t": 41.63
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "cuts": {
+  "hook": 0,
+  "trend": 4.45,
+  "kpop": 8.14,
+  "penny": 12.05,
+  "wed": 18.05,
+  "mario": 22.53,
+  "dolly": 26.44,
+  "scary": 31.87,
+  "cta": 39.18
+ },
+ "total": 43.62,
+ "frames": 1309
+}
