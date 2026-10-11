@@ -40,8 +40,23 @@ ask_key ANTHROPIC_API_KEY "ANTHROPIC_API_KEY для ідей від Claude (Ente
 if [ -n "$NEW_KEYS" ]; then
   echo "Збережено в $CONF (змінити ключі: відредагуйте або видаліть цей файл)."
 fi
+ask_key TELEGRAM_BOT_TOKEN "TELEGRAM_BOT_TOKEN від @BotFather, щоб отримувати звіти в Telegram (Enter, щоб пропустити): "
 # shellcheck disable=SC1090
 source "$CONF"
+
+if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -z "$TELEGRAM_CHAT_ID" ]; then
+  echo
+  echo "Відкрийте свого бота в Telegram і натисніть Start (або напишіть /start). Потім поверніться сюди."
+  read -r -p "Натисніть Enter, коли написали боту… "
+  if CHAT=$("$VENV/bin/python" trendscout.py --telegram-chat-id); then
+    sed -i '' '/^export TELEGRAM_CHAT_ID=/d' "$CONF" 2>/dev/null || true
+    echo "export TELEGRAM_CHAT_ID='$CHAT'" >> "$CONF"
+    export TELEGRAM_CHAT_ID="$CHAT"
+    echo "Telegram підключено (chat_id $CHAT)."
+  else
+    echo "Не вдалося знайти чат. Звіт буде тільки в браузері; спробуйте ще раз наступного запуску."
+  fi
+fi
 
 EXTRA=()
 if [ $# -eq 0 ] && { [ -n "$OPENAI_API_KEY" ] || [ -n "$ANTHROPIC_API_KEY" ]; }; then EXTRA=(--ai); fi

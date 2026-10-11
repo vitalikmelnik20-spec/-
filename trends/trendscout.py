@@ -1013,6 +1013,117 @@ def print_summary(report: dict) -> None:
 
 # --------------------------------------------------------------------------- main
 
+# --------------------------------------------------------------------------- Telegram
+
+TG_API = os.environ.get("TELEGRAM_API_BASE", "https://api.telegram.org")
+
+
+def tg_call(method: str, fields: dict | None = None, file: Path | None = None) -> dict:
+    token = os.environ["TELEGRAM_BOT_TOKEN"]
+    url = f"{TG_API}/bot{token}/{method}"
+    fields = {k: str(v) for k, v in (fields or {}).items()}
+    if file:
+        boundary = "----trendscout" + os.urandom(8).hex()
+        parts = []
+        for k, v in fields.items():
+            parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="{k}"\r\n\r\n{v}\r\n'.encode())
+        parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="document"; filename="{file.name}"\r\n'
+                     f"Content-Type: text/html\r\n\r\n".encode() + file.read_bytes() + b"\r\n")
+        parts.append(f"--{boundary}--\r\n".encode())
+        body, ctype = b"".join(parts), f"multipart/form-data; boundary={boundary}"
+    else:
+        body, ctype = urllib.parse.urlencode(fields).encode(), "application/x-www-form-urlencoded"
+    req = urllib.request.Request(url, data=body, headers={"Content-Type": ctype, "User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=60, context=SSL_CTX) as r:
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        try:
+            desc = json.loads(e.read())["description"]
+        except Exception:
+            desc = str(e)
+        raise RuntimeError(f"Telegram {method}: {desc}") from None
+
+
+def tg_chat_id() -> str | None:
+    """Шукає chat_id в останніх повідомленнях боту (спершу треба написати боту /start)."""
+    res = tg_call("getUpdates").get("result", [])
+    for upd in reversed(res):
+        msg = upd.get("message") or upd.get("channel_post") or upd.get("my_chat_member") or {}
+        chat = msg.get("chat")
+        if chat:
+            return str(chat["id"])
+    return None
+
+
+def tg_send_text(chat: str, text: str) -> None:
+    chunk = ""
+    for line in text.split("\n"):  # ліміт Telegram 4096 символів на повідомлення
+        if len(chunk) + len(line) + 1 > 3900:
+            tg_call("sendMessage", {"chat_id": chat, "text": chunk, "parse_mode": "HTML", "disable_web_page_preview": "true"})
+            chunk = ""
+        chunk += line + "\n"
+    if chunk.strip():
+        tg_call("sendMessage", {"chat_id": chat, "text": chunk, "parse_mode": "HTML", "disable_web_page_preview": "true"})
+
+
+def tg_market_text(r: dict) -> str:
+    e = html.escape
+    an, m = r["analysis"], r["meta"]
+    lines = [f"<b>{e(m['market_name'])}</b>" + (" (демо)" if m.get("demo") else "")]
+    if an["google_trends"]:
+        lines.append("🔎 <b>Google:</b> " + ", ".join(e(g["query"]) for g in an["google_trends"][:6]))
+    tags = [h for h in an["tiktok"].get("hashtags", []) if h["name"].lower() not in GENERIC_TAGS]
+    if tags:
+        lines.append("#️⃣ <b>TikTok:</b> " + " ".join("#" + e(h["name"]) for h in tags[:8]))
+    if an["rising_keywords"]:
+        lines.append("📈 <b>Ростуть:</b> " + ", ".join(f"{e(x['term'])} ({e(x['change'])})" for x in an["rising_keywords"][:8]))
+    if an["top_videos"]:
+        lines.append("🔥 <b>Найшвидші відео:</b>")
+        lines += [f'• <a href="{e(v["url"])}">{e(v["title"][:80])}</a> ({fmt_n(v["vph"])}/год)' for v in an["top_videos"][:3]]
+    ai = r.get("ai") or {}
+    if ai.get("summary"):
+        lines.append("\n💡 " + e(ai["summary"]))
+    for c in ai.get("clusters") or an.get("clusters") or []:
+        strength = c.get("strength") if ai.get("clusters") else f"сила {c.get('score')}/100"
+        lines.append(f"\n🧩 <b>{e(c.get('name', ''))}</b> · {e(str(strength))}")
+        if c.get("why_now"):
+            lines.append(f"<i>{e(c['why_now'])}</i>")
+        for i, v in enumerate(c.get("videos", [])[:3], 1):
+            lines.append(f"{i}. <b>{e(v.get('title', ''))}</b>")
+            if v.get("hook"):
+                lines.append(f"   Хук: {e(v['hook'])}")
+            if v.get("format"):
+                lines.append(f"   {e(v['format'])}")
+    return "\n".join(lines)
+
+
+def send_telegram(reports: list[dict], cross: dict, out_dir: Path, generated: str) -> None:
+    chat = os.environ.get("TELEGRAM_CHAT_ID")
+    if not chat:
+        warn("Telegram: немає TELEGRAM_CHAT_ID; напишіть боту /start і запустіть з --telegram-chat-id")
+        return
+    e = html.escape
+    try:
+        tg_send_text(chat, f"📊 <b>Тренди на {e(generated)}</b>")
+        for r in reports:
+            tg_send_text(chat, tg_market_text(r))
+        cross_lines = []
+        if cross["shared_hashtags"]:
+            cross_lines.append("🌍 <b>У кількох ринках:</b> " + " ".join("#" + e(h) for h, _ in cross["shared_hashtags"][:8]))
+        for m, hs in cross["us_ahead"].items():
+            if hs:
+                cross_lines.append(f"⏩ <b>Уже в США, ще не в «{e(m)}»:</b> " + " ".join("#" + e(h) for h in hs[:8]))
+        if cross_lines:
+            tg_send_text(chat, "\n".join(cross_lines))
+        for r in reports:
+            tg_call("sendDocument", {"chat_id": chat, "caption": f"Повний звіт: {r['meta']['market_name']}"},
+                    file=out_dir / r["file"])
+        print("  Telegram: надіслано")
+    except Exception as ex:
+        warn(f"Telegram не вдалося надіслати: {ex}")
+
+
 def load_markets() -> dict:
     data = json.loads((HERE / "markets.json").read_text(encoding="utf-8"))
     return {k: v for k, v in data.items() if not k.startswith("_")}
@@ -1208,7 +1319,24 @@ def main(argv=None) -> int:
     p.add_argument("--model", default="claude-opus-5-5", help="модель Claude для --ai")
     p.add_argument("--out", default=str(HERE / "out"), help="тека для звітів")
     p.add_argument("--demo", action="store_true", help="без мережі: показати звіт на демо-даних")
+    p.add_argument("--no-telegram", action="store_true", help="не надсилати звіт у Telegram, навіть якщо бот налаштовано")
+    p.add_argument("--telegram-chat-id", action="store_true",
+                   help="знайти chat_id: спершу напишіть своєму боту /start; друкує лише id")
     args = p.parse_args(argv)
+
+    if args.telegram_chat_id:
+        if not os.environ.get("TELEGRAM_BOT_TOKEN"):
+            p.error("задайте TELEGRAM_BOT_TOKEN")
+        try:
+            chat = tg_chat_id()
+        except Exception as ex:
+            print(f"Помилка Telegram: {ex}", file=sys.stderr)
+            return 1
+        if not chat:
+            print("Повідомлень боту не знайдено. Відкрийте бота в Telegram, натисніть Start і спробуйте ще раз.", file=sys.stderr)
+            return 1
+        print(chat)
+        return 0
 
     if args.region:
         region = args.region.upper()
@@ -1242,7 +1370,10 @@ def main(argv=None) -> int:
               " або запустіть з --demo, щоб побачити приклад звіту.", file=sys.stderr)
         return 1
     generated = now.astimezone(ZoneInfo("Europe/Kyiv") if ZoneInfo else None).strftime("%Y-%m-%d %H:%M")
-    (out_dir / "index.html").write_text(render_index(reports, cross_market(reports), generated, args.demo), encoding="utf-8")
+    cross = cross_market(reports)
+    (out_dir / "index.html").write_text(render_index(reports, cross, generated, args.demo), encoding="utf-8")
+    if os.environ.get("TELEGRAM_BOT_TOKEN") and not args.no_telegram:
+        send_telegram(reports, cross, out_dir, generated)
     print(f"\nЗагальна сторінка: {out_dir / 'index.html'}")
     return 0
 
