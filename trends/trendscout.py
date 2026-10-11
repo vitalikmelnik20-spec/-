@@ -54,6 +54,7 @@ STOPWORDS = set("""
 the a an and or but of to in on for with at by from is are was were be been it its this that these
 those you your we our they their i me my he she his her as not no so do does did have has had can
 will just how what why who when where which all more most new vs video official full part episode
+der die das und oder aber ist sind war ein eine einer einen dem den des zu im in am an auf aus mit von für bei nach vor über unter wie was wer wo warum nicht kein keine ich du er sie es wir ihr mein dein sein ihr uns euch so auch noch nur schon sehr mehr hier dort alle alles man wird werden hat haben kann können mal jetzt dann denn doch ja nein vom zum zur ins beim als bis
 shorts short ep live hd 4k 2024 2025 2026 2027 feat ft x de la el en y que los las del se por con
 """.split())
 
@@ -184,9 +185,11 @@ def collect_youtube(args) -> tuple[list[dict], dict]:
     yt = YouTube(key)
     videos: dict[str, dict] = {}
     try:
-        for it in yt.popular(args.region, args.category, args.limit):
-            videos[it["id"]] = normalize_yt(it, "popular")
-        print(f"  YouTube «Популярне» {args.region}: {len(videos)} відео")
+        for region in args.regions:
+            found = yt.popular(region, args.category, args.limit)
+            for it in found:
+                videos.setdefault(it["id"], normalize_yt(it, f"popular:{region}"))
+            print(f"  YouTube «Популярне» {region}: {len(found)} відео")
         for q in args.niche:
             found = yt.search(q, args.region, args.lang, args.days, args.niche_limit, args.shorts_only)
             for it in found:
@@ -221,6 +224,7 @@ def collect_google_trends(geo: str) -> tuple[list[dict], dict]:
             traffic_n = 0
         news = [n.findtext("ht:news_item_title", "", ns) for n in item.findall("ht:news_item", ns)]
         out.append({
+            "geo": geo,
             "query": item.findtext("title", ""),
             "traffic": traffic_n,
             "traffic_label": item.findtext("ht:approx_traffic", "", ns),
@@ -348,22 +352,26 @@ def tokens(text: str) -> list[str]:
     return [w.lower().strip("'’-") for w in WORD_RE.findall(text) if w.lower() not in STOPWORDS]
 
 
+def bigrams(text: str) -> list[str]:
+    """Пари сусідніх слів; пара через службове слово («cost of living») не склеюється в «cost living»."""
+    words = [w.lower().strip("'’-") for w in re.findall(r"[\w'’-]+", text)]
+    ok = lambda w: w not in STOPWORDS and WORD_RE.fullmatch(w)
+    return [f"{a} {b}" for a, b in zip(words, words[1:]) if ok(a) and ok(b)]
+
+
 def keyword_weights(videos: list[dict]) -> dict[str, float]:
     weights: dict[str, float] = defaultdict(float)
     for v in videos:
         w = math.log1p(v["vph"])
         words = tokens(v["title"]) + [t for tag in v["tags"] for t in tokens(tag)]
         uniq = set(words)
-        title_words = tokens(v["title"])
-        uniq |= {f"{a} {b}" for a, b in zip(title_words, title_words[1:])}
+        uniq |= set(bigrams(v["title"]))
         for term in uniq:
             weights[term] += w
     # Слово, що трапилось лише в одному відео, — шум, а не тренд
     counts = Counter()
     for v in videos:
-        t = tokens(v["title"])
-        counts.update(set(tokens(v["title"]) + [x for tag in v["tags"] for x in tokens(tag)]
-                          + [f"{a} {b}" for a, b in zip(t, t[1:])]))
+        counts.update(set(tokens(v["title"]) + [x for tag in v["tags"] for x in tokens(tag)] + bigrams(v["title"])))
     return {k: round(w, 2) for k, w in weights.items() if counts[k] >= 2}
 
 
@@ -483,7 +491,8 @@ AI_SYSTEM = """Ти досвідчений стратег коротких ві�
 Тобі дають зведення трендів, зібране автоматично з YouTube API, Google Trends і TikTok Creative Center.
 Твоє завдання: запропонувати конкретні ідеї відео, які автор може зняти найближчими днями, щоб зловити хвилю.
 Спирайся тільки на дані зі зведення; якщо даних мало, так і скажи. Не вигадуй цифр.
-Пиши українською. Відповідай лише валідним JSON без markdown."""
+Пояснення (summary, why, avoid, format) пиши українською. Назви, хуки, біти сценарію і хештеги пиши мовою цільового ринку,
+природно для місцевих глядачів, а не дослівним перекладом. Відповідай лише валідним JSON без markdown."""
 
 AI_SCHEMA_HINT = """Формат відповіді:
 {"summary": "2-3 речення: які теми і формати зараз ростуть",
@@ -505,7 +514,9 @@ def ai_ideas(an: dict, args) -> dict | None:
         warn("для --ai встановіть пакет: pip install anthropic")
         return None
     brief = {
-        "region": args.region,
+        "market": args.market_name,
+        "regions": args.regions,
+        "audience_language": args.lang_name,
         "niche": args.niche,
         "channel_about": args.about,
         "top_videos": [{k: v[k] for k in ("title", "channel", "views", "vph", "er", "outlier", "duration_s", "is_short", "tags")}
@@ -520,7 +531,7 @@ def ai_ideas(an: dict, args) -> dict | None:
         "tiktok_sounds": an["tiktok"].get("songs", [])[:15],
     }
     prompt = (f"Зведення трендів (JSON):\n{json.dumps(brief, ensure_ascii=False)}\n\n"
-              f"Запропонуй {args.ideas} ідей відео під мою нішу. {AI_SCHEMA_HINT}")
+              f"Запропонуй {args.ideas} ідей відео під мою нішу для глядачів, які говорять мовою: {args.lang_name}. {AI_SCHEMA_HINT}")
     try:
         client = anthropic.Anthropic()
         response = client.beta.messages.create(
@@ -621,7 +632,7 @@ def render_html(report: dict) -> str:
     rising = "".join(f'<span class="chip up">{e(r["term"])} <b>{e(r["change"])}</b></span>' for r in an["rising_keywords"]) \
         or '<p class="muted">З\'явиться після другого запуску: інструмент порівнює зі збереженим знімком.</p>'
 
-    gt = "".join(f"""<tr><td><b>{e(g['query'])}</b><div class="sub">{e(' · '.join(g['news'][:2]))}</div></td>
+    gt = "".join(f"""<tr><td><b>{e(g['query'])}</b>{(' <span class="pill">' + e(g['geo']) + '</span>') if g.get('geo') and len(meta.get('regions', [])) > 1 else ''}<div class="sub">{e(' · '.join(g['news'][:2]))}</div></td>
 <td class="num">{e(g['traffic_label'] or fmt_n(g['traffic']))}</td></tr>""" for g in an["google_trends"])
     gt = f'<div class="scroll"><table><tr><th>Запит</th><th>Пошуки</th></tr>{gt}</table></div>' if gt else '<p class="muted">Немає даних.</p>'
 
@@ -693,8 +704,8 @@ th{{font-size:12px;color:var(--muted);font-weight:600}}td.num{{text-align:right;
 .idea p{{margin:6px 0}}.idea ol{{margin:6px 0;padding-left:20px;font-size:13.5px}}.ih{{display:flex;justify-content:space-between;gap:8px}}.why{{font-size:12.5px;color:var(--ok)}}
 code{{background:var(--line);padding:1px 5px;border-radius:4px}}
 </style></head><body><main>
-<h1>Тренди: {e(meta['region'])}{(' · ' + e(', '.join(meta['niche']))) if meta['niche'] else ''}</h1>
-<div class="muted">Згенеровано {e(meta['generated_local'])} · YouTube, Google Trends, TikTok Creative Center{' · ДЕМО-ДАНІ' if meta.get('demo') else ''}</div>
+<h1>Тренди: {e(meta.get('market_name') or meta['region'])}{(' · ' + e(', '.join(meta['niche']))) if meta['niche'] else ''}</h1>
+<div class="muted"><a href="index.html">← усі ринки</a> · {e(', '.join(meta.get('regions', [meta['region']])))} · Згенеровано {e(meta['generated_local'])} · YouTube, Google Trends, TikTok Creative Center{' · ДЕМО-ДАНІ' if meta.get('demo') else ''}</div>
 <div class="tiles">{tiles_html}</div>
 
 <section><h2>💡 Ідеї для відео</h2>{ideas_html}</section>
@@ -751,71 +762,56 @@ def print_summary(report: dict) -> None:
 
 # --------------------------------------------------------------------------- main
 
-def main(argv=None) -> int:
-    p = argparse.ArgumentParser(description="Аналіз трендів YouTube / TikTok / Google для ідей відео",
-                                formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    p.add_argument("--region", default="UA", help="код країни ISO (UA, US, DE, PL…)")
-    p.add_argument("--lang", default="uk", help="мова для пошуку в ніші (uk, en, de…)")
-    p.add_argument("--niche", action="append", default=[], help="ключова фраза вашої ніші; можна кілька разів")
-    p.add_argument("--about", default="", help="1–2 речення про ваш канал (для --ai)")
-    p.add_argument("--days", type=int, default=7, help="наскільки свіжі відео в ніші")
-    p.add_argument("--limit", type=int, default=50, help="скільки відео з «Популярного»")
-    p.add_argument("--niche-limit", type=int, default=25, help="скільки відео на кожну нішеву фразу")
-    p.add_argument("--category", default=None, help="ID категорії YouTube (24=Розваги, 10=Музика, 20=Ігри, 22=Люди і блоги, 27=Освіта, 28=Наука)")
-    p.add_argument("--shorts-only", action="store_true", help="у ніші шукати лише короткі відео")
-    p.add_argument("--tiktok-period", type=int, default=7, choices=[7, 30, 120], help="період TikTok у днях")
-    p.add_argument("--tz", default="Europe/Kyiv", help="часовий пояс для годин публікації")
-    p.add_argument("--no-youtube", action="store_true")
-    p.add_argument("--no-google", action="store_true")
-    p.add_argument("--no-tiktok", action="store_true")
-    p.add_argument("--ai", action="store_true", help="згенерувати ідеї через Claude (потрібен ANTHROPIC_API_KEY)")
-    p.add_argument("--ideas", type=int, default=10, help="скільки ідей просити в Claude")
-    p.add_argument("--model", default="claude-opus-5-5", help="модель Claude для --ai")
-    p.add_argument("--out", default=str(HERE / "out"), help="тека для звітів")
-    p.add_argument("--demo", action="store_true", help="без мережі: показати звіт на демо-даних")
-    args = p.parse_args(argv)
-    args.region = args.region.upper()
+def load_markets() -> dict:
+    data = json.loads((HERE / "markets.json").read_text(encoding="utf-8"))
+    return {k: v for k, v in data.items() if not k.startswith("_")}
 
+
+def run_market(args, now: dt.datetime, out_dir: Path) -> dict | None:
+    """Збирає й аналізує один ринок; повертає звіт або None, якщо даних немає."""
     tz = ZoneInfo(args.tz) if ZoneInfo else None
-    now = dt.datetime.now(dt.timezone.utc)
-    out_dir = Path(args.out)
-    out_dir.mkdir(parents=True, exist_ok=True)
     history = out_dir / "history"
-    history.mkdir(exist_ok=True)
+    history.mkdir(parents=True, exist_ok=True)
 
-    print(f"Збираю тренди для {args.region}…")
+    print(f"\n### {args.market_name}: {', '.join(args.regions)}")
     sources = {}
     if args.demo:
-        demo = json.loads((HERE / "demo_data.json").read_text(encoding="utf-8"))
+        demo_all = json.loads((HERE / "demo_data.json").read_text(encoding="utf-8"))
+        demo = demo_all.get(args.market_key) or demo_all["ua"]
         # Зсуваємо дати демо-даних до «зараз», щоб швидкість переглядів була реалістичною
+        videos = []
         for v in demo["videos"]:
+            v = dict(v)
             v["published_at"] = (now - dt.timedelta(hours=v.pop("age_hours"))).isoformat()
-        videos, gtrends, tiktok = demo["videos"], demo["google_trends"], demo["tiktok"]
-        sources = {"demo": {"status": "демо-дані з trends/demo_data.json"}}
+            videos.append(v)
+        gtrends, tiktok = demo["google_trends"], demo["tiktok"]
+        sources = {"demo": {"status": "демо-дані з trends/demo_data.json (вигадані)"}}
     else:
         videos, gtrends, tiktok = [], [], {"hashtags": [], "songs": []}
         if not args.no_youtube:
             videos, sources["YouTube"] = collect_youtube(args)
         if not args.no_google:
-            gtrends, sources["Google Trends"] = collect_google_trends(args.region)
+            for region in args.regions:
+                found, sources[f"Google Trends {region}"] = collect_google_trends(region)
+                gtrends += found
         if not args.no_tiktok:
             tiktok, sources["TikTok"] = collect_tiktok(args.region, args.tiktok_period)
 
     if not videos and not gtrends and not tiktok.get("hashtags"):
-        print("\nЖодне джерело не дало даних. Перевірте ключ YOUTUBE_API_KEY та доступ до інтернету,"
-              " або запустіть з --demo, щоб побачити приклад звіту.", file=sys.stderr)
-        return 1
+        warn(f"{args.market_name}: жодне джерело не дало даних")
+        return None
 
     score_videos(videos, now)
     niche_slug = "-".join(re.sub(r"\W+", "_", n.lower()).strip("_") for n in args.niche) or "all"
-    snap_name = f"{args.region}_{niche_slug}"
+    snap_name = f"{args.market_key}_{niche_slug}"
     snaps = sorted(history.glob(f"{snap_name}_*.json"))
-    prev = json.loads(snaps[-1].read_text(encoding="utf-8")) if snaps else None
+    prev = json.loads(snaps[-1].read_text(encoding="utf-8")) if snaps and not args.demo else None
     an = analyze(videos, gtrends, tiktok, tz, prev)
 
     report = {
         "meta": {
-            "region": args.region, "niche": args.niche, "tz": args.tz, "demo": args.demo,
+            "market": args.market_key, "market_name": args.market_name, "region": args.region,
+            "regions": args.regions, "lang": args.lang, "niche": args.niche, "tz": args.tz, "demo": args.demo,
             "generated_utc": now.isoformat(),
             "generated_local": (now.astimezone(tz) if tz else now).strftime("%Y-%m-%d %H:%M"),
             "sources": sources,
@@ -825,20 +821,161 @@ def main(argv=None) -> int:
         "rule_ideas": rule_based_ideas(an, args.niche),
     }
     if args.ai:
-        print(f"Питаю Claude ({args.model}) про ідеї…")
+        print(f"  Питаю Claude ({args.model}) про ідеї…")
         report["ai"] = ai_ideas(an, args)
 
-    stamp = (now.astimezone(tz) if tz else now).strftime("%Y%m%d_%H%M")
+    stamp = now.astimezone(ZoneInfo("Europe/Kyiv") if ZoneInfo else None).strftime("%Y%m%d_%H%M")
     if not args.demo:
         (history / f"{snap_name}_{stamp}.json").write_text(json.dumps(
             {"generated_utc": now.isoformat(), "keywords": dict(an["keywords"])}, ensure_ascii=False), encoding="utf-8")
     base = out_dir / f"trends_{snap_name}_{stamp}{'_demo' if args.demo else ''}"
     base.with_suffix(".json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
-    base.with_suffix(".html").write_text(render_html(report), encoding="utf-8")
-    (out_dir / "latest.html").write_text(render_html(report), encoding="utf-8")
+    page = render_html(report)
+    base.with_suffix(".html").write_text(page, encoding="utf-8")
+    (out_dir / f"latest_{args.market_key}.html").write_text(page, encoding="utf-8")
+    report["file"] = f"latest_{args.market_key}.html"
 
     print_summary(report)
-    print(f"\nЗвіт: {base.with_suffix('.html')}\nДані: {base.with_suffix('.json')}")
+    print(f"Звіт: {base.with_suffix('.html')}")
+    return report
+
+
+def cross_market(reports: list[dict]) -> dict:
+    """Що є в кількох ринках одразу, і що вже є в США, але ще не дійшло до інших."""
+    generic = {"fyp", "foryou", "foryoupage", "fy", "viral", "trending", "fürdich", "fy", "parati", "xyzbca", "tiktok"}
+    tags = {r["meta"]["market"]: {h["name"].lower() for h in r["analysis"]["tiktok"].get("hashtags", [])} - generic for r in reports}
+    kws = {r["meta"]["market"]: {k for k, _ in r["analysis"]["keywords"]} for r in reports}
+    names = {r["meta"]["market"]: r["meta"]["market_name"] for r in reports}
+
+    def shared(sets):
+        cnt = Counter(x for s in sets.values() for x in s)
+        return sorted(((x, [names[m] for m, s in sets.items() if x in s]) for x, c in cnt.items() if c >= 2),
+                      key=lambda t: -len(t[1]))
+
+    ahead = {}
+    if "us" in tags:
+        for m, t in tags.items():
+            if m != "us":
+                ahead[names[m]] = [h for h in (x["name"] for r in reports if r["meta"]["market"] == "us"
+                                               for x in r["analysis"]["tiktok"].get("hashtags", []))
+                                   if h.lower() not in t and h.lower() not in generic][:12]
+    return {"shared_hashtags": shared(tags)[:20], "shared_keywords": shared(kws)[:20], "us_ahead": ahead}
+
+
+def render_index(reports: list[dict], cross: dict, generated: str, demo: bool) -> str:
+    e = html.escape
+    cols = []
+    for r in reports:
+        an, m = r["analysis"], r["meta"]
+        f = an.get("format_top") or {}
+        hours = sorted(an["best_hours"], key=lambda x: -x[1])[:3]
+        li = lambda items: "".join(f"<li>{x}</li>" for x in items) or '<li class="muted">немає даних</li>'
+        ideas = (r.get("ai") or {}).get("ideas") or r["rule_ideas"]
+        cols.append(f"""<section><h2>{e(m['market_name'])}</h2>
+<div class="sub">{e(', '.join(m['regions']))} · ніша: {e(', '.join(m['niche']) or '—')}</div>
+<p><a class="btn" href="{e(r['file'])}">Повний звіт →</a></p>
+<div class="kpis"><div><b>{pct(f.get('shorts_share'))}</b><span>Shorts у топі</span></div>
+<div><b>{fmt_dur(f.get('median_duration_s') or 0)}</b><span>медіана</span></div>
+<div><b>{e(', '.join(f'{h}:00' for h, _ in hours) or '—')}</b><span>години топу ({e(m['tz'].split('/')[-1])})</span></div></div>
+<h3>🔑 Ключові слова</h3><p>{''.join(f'<span class="chip">{e(k)}</span>' for k, _ in an['keywords'][:10]) or '<span class="muted">—</span>'}</p>
+{('<h3>📈 Ростуть</h3><p>' + ''.join(f'<span class="chip up">{e(x["term"])} <b>{e(x["change"])}</b></span>' for x in an['rising_keywords'][:8]) + '</p>') if an['rising_keywords'] else ''}
+<h3>🔎 Google Trends</h3><ol>{li(e(g['query']) for g in an['google_trends'][:6])}</ol>
+<h3>#️⃣ TikTok</h3><p>{''.join(f'<span class="chip">#{e(h["name"])}</span>' for h in an['tiktok'].get('hashtags', [])[:8]) or '<span class="muted">немає даних</span>'}</p>
+<h3>🔥 Топ відео</h3><ol>{li(f'<a href="{e(v["url"])}" target="_blank" rel="noopener">{e(v["title"])}</a> <span class="sub">{fmt_n(v["vph"])}/год</span>' for v in an['top_videos'][:5])}</ol>
+<h3>💡 Ідеї</h3><ul>{li(e(i.get('title', '')) for i in ideas[:5])}</ul></section>""")
+
+    def shared_html(items, prefix=""):
+        return "".join(f'<li><b>{e(prefix + x)}</b> <span class="sub">{e(" · ".join(ms))}</span></li>' for x, ms in items) \
+            or '<li class="muted">Спільних поки немає</li>'
+    ahead = "".join(f"<p><b>{e(m)}:</b> " + (" ".join(f'<span class="chip">#{e(h)}</span>' for h in hs) or '<span class="muted">—</span>') + "</p>"
+                    for m, hs in cross["us_ahead"].items())
+    return f"""<!doctype html><html lang="uk"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Тренди: три ринки</title>
+<style>
+:root{{--bg:#f7f7f8;--card:#fff;--fg:#17171a;--muted:#6b6b76;--line:#e6e6ea;--acc2:#0b7bdc;--ok:#1a9f5a}}
+@media (prefers-color-scheme:dark){{:root{{--bg:#111114;--card:#1b1b20;--fg:#ececf1;--muted:#9a9aa6;--line:#2c2c33;--acc2:#4aa8ff;--ok:#3dd68c}}}}
+*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}}
+main{{max-width:1300px;margin:0 auto;padding:24px 16px 64px}}h1{{margin:0 0 4px;font-size:26px}}h2{{margin:0;font-size:20px}}h3{{font-size:14px;margin:16px 0 6px}}
+.muted,.sub{{color:var(--muted)}}.sub{{font-size:12.5px}}a{{color:var(--acc2);text-decoration:none}}
+section{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}}
+.cols{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:16px;margin-top:16px}}
+.chip{{display:inline-block;margin:2px;padding:3px 9px;border-radius:99px;border:1px solid var(--line);font-size:13px}}.chip.up b{{color:var(--ok)}}
+.btn{{display:inline-block;padding:6px 12px;border-radius:8px;border:1px solid var(--acc2)}}
+.kpis{{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}}.kpis div{{border:1px solid var(--line);border-radius:10px;padding:8px}}.kpis b{{display:block;font-size:17px}}.kpis span{{font-size:12px;color:var(--muted)}}
+ol,ul{{padding-left:20px;margin:4px 0}}li{{margin:3px 0}}
+</style></head><body><main>
+<h1>Тренди: три ринки</h1><div class="muted">Згенеровано {e(generated)}{' · ДЕМО-ДАНІ (вигадані)' if demo else ''}</div>
+<div class="cols">
+<section><h2>🌍 Тренд у кількох ринках</h2><p class="sub">Хештеги й слова, що є одразу в кількох ринках. Ці теми найбезпечніше знімати на всі три канали.</p>
+<h3>TikTok-хештеги</h3><ul>{shared_html(cross['shared_hashtags'], '#')}</ul><h3>Слова</h3><ul>{shared_html(cross['shared_keywords'])}</ul></section>
+<section><h2>⏩ Уже в США, ще не у вас</h2><p class="sub">Хештеги з TikTok США, яких ще немає в топі інших ринків. Тренди зі США часто доходять до Європи за 1–3 тижні: можна зняти першим.</p>{ahead or '<p class="muted">Потрібен ринок us і ще хоча б один.</p>'}</section>
+</div>
+<div class="cols">{''.join(cols)}</div>
+</main></body></html>"""
+
+
+def main(argv=None) -> int:
+    markets = load_markets()
+    p = argparse.ArgumentParser(description="Аналіз трендів YouTube / TikTok / Google для ідей відео",
+                                formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    p.add_argument("--markets", default="ua,de,us",
+                   help=f"ринки через кому з trends/markets.json: {', '.join(markets)}; або 'all'")
+    p.add_argument("--market", default=None, help="один ринок (скорочення для --markets)")
+    p.add_argument("--region", default=None, help="замість ринку: довільна країна ISO (PL, FR…)")
+    p.add_argument("--lang", default="en", help="мова пошуку для --region")
+    p.add_argument("--niche", action="append", default=[], help="нішева фраза; замінює фрази ринку; можна кілька разів")
+    p.add_argument("--about", default="", help="1–2 речення про ваш канал (для --ai)")
+    p.add_argument("--days", type=int, default=7, help="наскільки свіжі відео в ніші")
+    p.add_argument("--limit", type=int, default=50, help="скільки відео з «Популярного» на країну")
+    p.add_argument("--niche-limit", type=int, default=25, help="скільки відео на кожну нішеву фразу")
+    p.add_argument("--category", default=None, help="ID категорії YouTube (24=Розваги, 10=Музика, 20=Ігри, 22=Люди і блоги, 27=Освіта, 28=Наука)")
+    p.add_argument("--shorts-only", action="store_true", help="у ніші шукати лише короткі відео")
+    p.add_argument("--tiktok-period", type=int, default=7, choices=[7, 30, 120], help="період TikTok у днях")
+    p.add_argument("--tz", default=None, help="часовий пояс (за замовчуванням з ринку)")
+    p.add_argument("--no-youtube", action="store_true")
+    p.add_argument("--no-google", action="store_true")
+    p.add_argument("--no-tiktok", action="store_true")
+    p.add_argument("--ai", action="store_true", help="згенерувати ідеї через Claude (потрібен ANTHROPIC_API_KEY)")
+    p.add_argument("--ideas", type=int, default=10, help="скільки ідей просити в Claude на ринок")
+    p.add_argument("--model", default="claude-opus-5-5", help="модель Claude для --ai")
+    p.add_argument("--out", default=str(HERE / "out"), help="тека для звітів")
+    p.add_argument("--demo", action="store_true", help="без мережі: показати звіт на демо-даних")
+    args = p.parse_args(argv)
+
+    if args.region:
+        region = args.region.upper()
+        plan = {region.lower(): {"name": region, "regions": [region], "lang": args.lang, "lang_name": args.lang,
+                                 "tz": args.tz or "UTC", "niche": []}}
+    else:
+        keys = list(markets) if args.markets == "all" else [k.strip().lower() for k in (args.market or args.markets).split(",") if k.strip()]
+        unknown = [k for k in keys if k not in markets]
+        if unknown:
+            p.error(f"невідомі ринки: {', '.join(unknown)}; є: {', '.join(markets)}")
+        plan = {k: markets[k] for k in keys}
+
+    now = dt.datetime.now(dt.timezone.utc)
+    out_dir = Path(args.out)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    reports = []
+    for key, m in plan.items():
+        a = argparse.Namespace(**vars(args))
+        a.market_key, a.market_name = key, m["name"]
+        a.regions = [r.upper() for r in m["regions"]]
+        a.region = a.regions[0]
+        a.lang, a.lang_name = m["lang"], m.get("lang_name", m["lang"])
+        a.tz = args.tz or m["tz"]
+        a.niche = args.niche or list(m.get("niche", []))
+        rep = run_market(a, now, out_dir)
+        if rep:
+            reports.append(rep)
+
+    if not reports:
+        print("\nЖодне джерело не дало даних. Перевірте ключ YOUTUBE_API_KEY та доступ до інтернету,"
+              " або запустіть з --demo, щоб побачити приклад звіту.", file=sys.stderr)
+        return 1
+    generated = now.astimezone(ZoneInfo("Europe/Kyiv") if ZoneInfo else None).strftime("%Y-%m-%d %H:%M")
+    (out_dir / "index.html").write_text(render_index(reports, cross_market(reports), generated, args.demo), encoding="utf-8")
+    print(f"\nЗагальна сторінка: {out_dir / 'index.html'}")
     return 0
 
 
